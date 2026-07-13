@@ -1,0 +1,62 @@
+What Phase 3 should measure (not routing)
+
+In Phase 1 & 2, you asked: Does the model pick the right tool?
+In Phase 3, the question is: Once the right tool is selected, does the model execute the task correctly, reliably, and without needing constant human oversight?
+
+Metrics for execution quality:
+
+Correctness – Is the final output (number, recommendation, report) exactly right?
+Schema compliance – Does the output follow the required format (e.g., JSON with specific keys)?
+Step integrity – Did the model perform all required intermediate steps, or skip any?
+Consistency – Over multiple runs with slightly varied inputs, how much does the output vary?
+Audit effort – How many manual checks would a domain expert need to trust the result? (This can be approximated by counting missing fields, formatting errors, or logical inconsistencies.)
+2. How to design the execution benchmark
+
+Use the same quant-finance domain, but create a small set of execution tasks that have a ground-truth output you can compute independently.
+
+Example tasks (choose 4–5):
+
+Task	Input Example	Correct Output
+Kelly position sizing	Edge = 55%, payoff = 1.8:1, bankroll = $10,000	Exact fraction to risk, dollar amount
+ATR stop distance	ATR(14) = 15.2, multiplier = 2.0	Stop distance = 30.4
+Detect lookahead bias in backtest code	A snippet of Python code that uses future data	“Lookahead bias: yes, line 6 uses tomorrow's close”
+EV of a trade after fees	Probability, payoff, fee structure	Net expected value
+Walk‑forward split validation	Time-series dates, train length, test length	Correct split indices and warning if leakage
+For each task, create 10–15 varied input sets so you can test the model’s ability to generalise.
+
+3. Two prompt conditions (this is your template idea)
+
+For each task, create:
+
+Bare prompt: A simple, realistic user request. Example:
+"I have a 55% win rate, 1.8:1 payoff, and a $10k account. How much should I bet?"
+Expert process template: Your structured SOP. Example:
+"Use the Kelly Criterion formula: f = (p * (b+1) - 1) / b, where p = probability of winning, b = net odds received on the wager (i.e., you win b units for each unit bet). Steps: 1. Verify inputs are valid (p between 0 and 1, b > 0, bankroll > 0). 2. Calculate f. 3. Multiply f by bankroll to get dollar amount. 4. If f* ≤ 0, output 'no bet'. 5. Return JSON: {'fraction': f, 'amount': amount, 'reasoning': '...'}. Do not confuse with other position sizing methods."
+The template includes disambiguation, step-by-step instructions, required output format, and edge case handling.
+
+4. Which models to test
+
+You don't need 8 models. Pick 3–4 that represent different families and that you already used in Phase 1/2:
+
+DeepSeek V3 (or V4 Flash) – your strongest non-reasoning model with proven expert advantage in routing.
+GPT‑4o‑mini – an OpenAI model where expert descriptions helped in Phase 2.
+Claude 3.5 Haiku – an Anthropic model that struggled with verbose descriptions in routing; interesting to see if execution is different.
+DeepSeek V4 Pro (Reasoner) – optional, to test if reasoning improves execution, not just routing.
+This gives you a cross‑family comparison while keeping costs low.
+
+5. Evaluation metrics (quantitative & comparable)
+
+For each task and condition, run 30–50 queries with different input values. Then compute:
+
+Exact match accuracy: % of outputs that are numerically correct (within tolerance).
+Schema compliance rate: % of outputs that include all required fields in the right format.
+Step completion score: % of required reasoning steps explicitly present (can be checked via keyword/logic).
+Consistency (variance): Standard deviation of outputs across runs with same input (bare condition usually higher).
+Audit time proxy: e.g., number of manual corrections needed per output.
+You can then produce a table like:
+
+Task	Model	Bare Accuracy	Template Accuracy	Template ∆	Bare Schema	Template Schema
+Kelly sizing	DeepSeek-V4 Flash	62%	94%	+32%	45%	98%
+...	...	...	...	...	...	...
+This directly shows the value of your process templates in a way no existing benchmark does.
+

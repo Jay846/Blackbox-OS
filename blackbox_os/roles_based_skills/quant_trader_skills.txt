@@ -1,0 +1,634 @@
+[
+  {
+    "id": "wash_trade_avoidance_check",
+    "concept": "Executes the wash_trade_avoidance_check operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "api_rate_limit_manager",
+    "concept": "Executes the api_rate_limit_manager operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "capital_efficiency_monitor",
+    "concept": "Executes the capital_efficiency_monitor operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "daily_loss_limit_enforcer",
+    "concept": "Executes the daily_loss_limit_enforcer operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "adverse_selection_estimator",
+    "concept": "Executes the adverse_selection_estimator operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "strategy_kill_switch",
+    "concept": "Executes the strategy_kill_switch operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "manual_intervention_checklist",
+    "concept": "Executes the manual_intervention_checklist operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "funding_time_to_settle",
+    "concept": "Executes the funding_time_to_settle operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "position_limit_compliance_check",
+    "concept": "Executes the position_limit_compliance_check operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "correlation_adjusted_sizing",
+    "concept": "Executes the correlation_adjusted_sizing operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "funding_rate_extreme",
+    "concept": "Executes the funding_rate_extreme operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "quarterly_strategy_review",
+    "concept": "Executes the quarterly_strategy_review operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "basis_spread_monitor",
+    "concept": "Executes the basis_spread_monitor operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "concentration_risk_check",
+    "concept": "Executes the concentration_risk_check operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "auto_deleverage_risk_monitor",
+    "concept": "Executes the auto_deleverage_risk_monitor operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "regime_conditional_strategy_switch",
+    "concept": "Executes the regime_conditional_strategy_switch operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "vwap_execution_scheduler",
+    "concept": "Executes the vwap_execution_scheduler operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "trade_ev_calculator",
+    "concept": "Executes the trade_ev_calculator operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "leverage_ratio_check",
+    "concept": "Executes the leverage_ratio_check operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "revenge_trading_guard",
+    "concept": "Executes the revenge_trading_guard operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "cross_exchange_price_divergence",
+    "concept": "Executes the cross_exchange_price_divergence operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "stop_hunt_avoidance_placement",
+    "concept": "Executes the stop_hunt_avoidance_placement operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "funding_arbitrage_scanner",
+    "concept": "Executes the funding_arbitrage_scanner operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "inventory_risk_rebalancer",
+    "concept": "Executes the inventory_risk_rebalancer operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "micro_price_estimate",
+    "concept": "Executes the micro_price_estimate operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "latency_arbitrage_guard",
+    "concept": "Executes the latency_arbitrage_guard operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "api_key_permission_audit",
+    "concept": "Executes the api_key_permission_audit operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "redundant_feed_failover",
+    "concept": "Executes the redundant_feed_failover operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "perp_expiry_rollover_handler",
+    "concept": "Executes the perp_expiry_rollover_handler operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "news_driven_volatility_pause",
+    "concept": "Executes the news_driven_volatility_pause operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "open_interest_shift_alert",
+    "concept": "Executes the open_interest_shift_alert operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "partial_fill_handler",
+    "concept": "Executes the partial_fill_handler operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "discretionary_override_logger",
+    "concept": "Executes the discretionary_override_logger operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "iceberg_order_construction",
+    "concept": "Executes the iceberg_order_construction operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "kyc_aml_flag_monitor",
+    "concept": "Executes the kyc_aml_flag_monitor operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "options_skew_shift_alert",
+    "concept": "Executes the options_skew_shift_alert operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "realized_vs_expected_slippage_tracker",
+    "concept": "Executes the realized_vs_expected_slippage_tracker operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "best_execution_documentation",
+    "concept": "Executes the best_execution_documentation operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "ensemble_signal_voting",
+    "concept": "Executes the ensemble_signal_voting operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "kelly_position_size",
+    "concept": "Executes the kelly_position_size operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "order_flow_imbalance",
+    "concept": "Executes the order_flow_imbalance operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "max_position_limit_check",
+    "concept": "Executes the max_position_limit_check operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "sharpe_ratio_live_monitor",
+    "concept": "Executes the sharpe_ratio_live_monitor operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "var_budget_allocator",
+    "concept": "Executes the var_budget_allocator operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "cross_margin_liquidation_price_calc",
+    "concept": "Executes the cross_margin_liquidation_price_calc operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "cross_strategy_netting",
+    "concept": "Executes the cross_strategy_netting operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "volatility_regime_shift_detector",
+    "concept": "Executes the volatility_regime_shift_detector operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "smart_order_router",
+    "concept": "Executes the smart_order_router operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "tax_lot_accounting",
+    "concept": "Executes the tax_lot_accounting operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "multi_timeframe_signal_alignment",
+    "concept": "Executes the multi_timeframe_signal_alignment operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "websocket_reconnect_handler",
+    "concept": "Executes the websocket_reconnect_handler operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "social_sentiment_spike_detector",
+    "concept": "Executes the social_sentiment_spike_detector operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "dark_pool_routing_decision",
+    "concept": "Executes the dark_pool_routing_decision operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "spread_width_optimizer",
+    "concept": "Executes the spread_width_optimizer operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "market_data_latency_monitor",
+    "concept": "Executes the market_data_latency_monitor operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "entry_timing_optimizer",
+    "concept": "Executes the entry_timing_optimizer operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "exchange_maintenance_schedule_tracker",
+    "concept": "Executes the exchange_maintenance_schedule_tracker operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "daily_trade_log_summary",
+    "concept": "Executes the daily_trade_log_summary operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "cross_venue_arbitrage_scanner",
+    "concept": "Executes the cross_venue_arbitrage_scanner operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "black_swan_hedge_overlay",
+    "concept": "Executes the black_swan_hedge_overlay operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "daily_risk_report_generator",
+    "concept": "Executes the daily_risk_report_generator operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "cooldown_period_enforcer",
+    "concept": "Executes the cooldown_period_enforcer operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "queue_position_estimator",
+    "concept": "Executes the queue_position_estimator operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "strategy_health_dashboard",
+    "concept": "Executes the strategy_health_dashboard operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "bid_ask_quote_skew_setter",
+    "concept": "Executes the bid_ask_quote_skew_setter operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "investor_letter_data_prep",
+    "concept": "Executes the investor_letter_data_prep operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "rebalance_trigger_scheduler",
+    "concept": "Executes the rebalance_trigger_scheduler operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "order_cancel_replace_logic",
+    "concept": "Executes the order_cancel_replace_logic operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "trailing_stop_logic",
+    "concept": "Executes the trailing_stop_logic operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "trade_reconciliation",
+    "concept": "Executes the trade_reconciliation operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "drawdown_throttle",
+    "concept": "Executes the drawdown_throttle operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "liquidation_cascade_setup",
+    "concept": "Executes the liquidation_cascade_setup operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "regulatory_reporting_prep",
+    "concept": "Executes the regulatory_reporting_prep operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "order_book_snapshot_resync",
+    "concept": "Executes the order_book_snapshot_resync operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "atr_dynamic_stop",
+    "concept": "Executes the atr_dynamic_stop operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "funding_cost_accrual_tracker",
+    "concept": "Executes the funding_cost_accrual_tracker operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "margin_utilization_monitor",
+    "concept": "Executes the margin_utilization_monitor operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "maker_taker_fee_optimizer",
+    "concept": "Executes the maker_taker_fee_optimizer operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "cvd_divergence",
+    "concept": "Executes the cvd_divergence operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "cross_margin_transfer_automation",
+    "concept": "Executes the cross_margin_transfer_automation operation within the Quant Trader workflow pipeline.",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "exchange_downtime_contingency",
+    "designation": "Quant Trader",
+    "concept": "The exchange_downtime_contingency tool provides pre-defined fallback strategies and execution protocols for maintaining trading operations during unscheduled exchange outages, API failures, or scheduled maintenance windows.",
+    "disambiguator": "This tool is for managing live trading continuity during exchange downtime, not for backtesting historical outages or simulating market impact. Do not use it for general risk management or portfolio rebalancing decisions; it specifically handles order routing, position hedging, and data feed failover when an exchange becomes unreachable. Edge cases include partial API degradation (e.g., order placement works but market data stops) and scenarios where the exchange is up but the trader's own infrastructure fails.",
+    "example": "During a 15-minute Binance API outage, the tool automatically switches spot market orders to a backup DEX aggregator, cancels all open limit orders on the primary exchange, and hedges the delta of open perpetual positions using a correlated CEX futures contract with a 0.5% slippage tolerance.",
+    "queries": [
+      "What happens to my open positions if the exchange goes down right now?",
+      "Can you switch to the backup exchange if the API stops responding?",
+      "I need a plan for when the market data feed cuts out during trading hours."
+    ]
+  },
+  {
+    "id": "liquidity_depth_monitor",
+    "designation": "Quant Trader",
+    "concept": "The liquidity depth monitor tracks the real-time order book depth and bid-ask spread to assess market liquidity and potential slippage for trade execution.",
+    "disambiguator": "Do not use this tool for historical liquidity analysis or to predict future price movements; it is strictly for current market conditions. Edge cases include extremely thin order books where a single large order can skew depth, or during market open/close when liquidity is transient. Also, beware of hidden or iceberg orders that may not appear in the visible depth.",
+    "example": "For a 500-share order of AAPL, the monitor shows bid depth of 1,200 shares at $150.10 and ask depth of 800 shares at $150.12, implying a spread of $0.02 and low slippage risk for the trade.",
+    "queries": [
+      "What's the current order book depth for TSLA?",
+      "How much liquidity is on the bid and ask sides right now?",
+      "Show me the bid-ask spread and size at each price level."
+    ]
+  },
+  {
+    "id": "news_event_flagging",
+    "designation": "Quant Trader",
+    "concept": "This tool flags financial news articles and events with metadata tags indicating relevance to specific trading strategies, asset classes, or market-moving potential.",
+    "disambiguator": "Do not use this tool for sentiment scoring or price prediction; it only tags and categorizes news events based on predefined rule sets (e.g., earnings, M&A, regulatory changes). Edge cases include ambiguous headlines (e.g., 'Apple launches new product' vs. 'Apple faces lawsuit') where the tool must rely on entity recognition and context to assign correct flags. It is not a replacement for a full NLP sentiment model, but a pre-filter for downstream analysis.",
+    "example": "A quant trader sets up a rule to flag any news containing 'Fed' or 'interest rate' within 1 hour of FOMC minutes release; the tool tags 47 articles, of which 12 are false positives (e.g., 'FedEx earnings'), requiring a secondary filter by source authority.",
+    "queries": [
+      "Tag all headlines mentioning central bank policy changes from the last hour.",
+      "Find any news articles about corporate earnings surprises that came out after market close.",
+      "Flag regulatory filings or SEC announcements related to the tech sector today."
+    ]
+  },
+  {
+    "id": "slippage_estimator_pretrade",
+    "designation": "Quant Trader",
+    "concept": "Estimates the expected market impact and slippage cost for a proposed trade before execution, based on order size, liquidity, volatility, and trading venue.",
+    "disambiguator": "This tool is for pre-trade estimation only, not for post-trade analysis or real-time monitoring. Do not use it for illiquid assets with no recent trade data, as estimates will be unreliable. Edge cases include orders larger than the average daily volume (ADV), where the model must account for non-linear impact, and trades during high-volatility events like earnings announcements, where slippage can spike unpredictably.",
+    "example": "A trader wants to sell 50,000 shares of AAPL, which has an ADV of 10 million shares and a bid-ask spread of $0.02. The tool estimates a slippage of 0.15% of notional, or $1,500, based on a 5-minute execution horizon and current volatility of 20%.",
+    "queries": [
+      "How much will it cost me to buy 100,000 shares of TSLA right now?",
+      "What's the expected price impact if I dump this large block of SPY?",
+      "Can you estimate the slippage for a 2 million dollar order on that illiquid small-cap stock?"
+    ]
+  },
+  {
+    "id": "wallet_balance_reconciliation",
+    "designation": "Quant Trader",
+    "concept": "This tool reconciles wallet balances by comparing internal ledger records with external blockchain or exchange data to identify discrepancies.",
+    "disambiguator": "Do not use this tool for real-time price feeds or trade execution; it is strictly for verifying that the recorded balance matches the actual on-chain or exchange-reported balance. Edge cases include handling pending transactions, gas fees, and multi-signature delays that can cause temporary mismatches. It should not be used for profit/loss calculations or portfolio rebalancing.",
+    "example": "A quant trader notices the internal ledger shows 100.5 ETH but the exchange wallet reports 100.0 ETH; running reconciliation reveals a 0.5 ETH discrepancy due to an unconfirmed withdrawal fee.",
+    "queries": [
+      "Check if my wallet balance matches what the exchange says I have.",
+      "Why does my internal record show more coins than the blockchain reports?",
+      "Verify that all my deposits and withdrawals are accounted for in the wallet."
+    ]
+  },
+  {
+    "id": "incident_postmortem_logging",
+    "designation": "Quant Trader",
+    "concept": "The incident postmortem logging tool records structured, timestamped summaries of trading system failures, including root cause analysis, impact metrics, and remediation steps, for compliance and process improvement.",
+    "disambiguator": "Do not use this tool for real-time alerting or live incident response; it is strictly for retrospective documentation after an incident is resolved. Edge cases include partial failures (e.g., a single order rejected vs. full system outage) where the tool should still log the event with appropriate severity. Avoid logging routine errors or warnings that are not actual incidents, as this dilutes the postmortem database.",
+    "example": "After a 12-second latency spike caused 3,000 unfilled limit orders during a volatility event, the postmortem log recorded: timestamp=2025-03-15T14:32:00Z, incident_type=latency_spike, root_cause=network_switch_failover, impact=unfilled_orders=3000, slippage_cost=$12,400, remediation=added_redundant_switch_path.",
+    "queries": [
+      "Log the details of yesterday's order routing failure so we can review it next week.",
+      "Document what caused the system to freeze during the earnings release.",
+      "Save a record of the data feed dropout that led to the stale price quotes."
+    ]
+  },
+  {
+    "id": "twap_execution_scheduler",
+    "designation": "Quant Trader",
+    "concept": "The TWAP execution scheduler breaks a large order into smaller chunks and executes them at regular intervals over a specified time horizon to achieve a time-weighted average price.",
+    "disambiguator": "Do not use this for orders that require immediate execution or when market impact is secondary to speed, such as in high-frequency or news-driven trades. Only use it for large, non-urgent orders where minimizing market impact and achieving a fair average price over time is the priority. Edge cases include extreme volatility or low liquidity, where the scheduler may need to pause or adjust intervals to avoid adverse price moves.",
+    "example": "A fund needs to sell 100,000 shares of AAPL over the next 4 hours. Using a TWAP scheduler, the order is split into 25,000-share blocks executed every hour, reducing slippage and avoiding a single large sell order that could depress the price.",
+    "queries": [
+      "I need to sell a large block of stock gradually over the next few hours to avoid moving the market.",
+      "Can you spread out this buy order evenly across the trading day so I get a fair average price?",
+      "Schedule this order to execute in small pieces at regular intervals until the end of the session."
+    ]
+  },
+  {
+    "id": "pnl_attribution",
+    "designation": "Quant Trader",
+    "concept": "PnL attribution decomposes the total profit and loss of a trading portfolio into contributions from specific factors such as market moves, volatility changes, time decay, and residual effects.",
+    "disambiguator": "This tool is for ex-post analysis of realized PnL, not for forecasting or risk management. Do not use it for scenario simulation or stress testing; it only explains what happened, not what could happen. Edge cases include zero or negative time to expiry, where Greeks like theta become undefined, and portfolios with illiquid assets where market data may be stale or missing.",
+    "example": "A long straddle on SPX options with 30 days to expiry shows a total PnL of +$2,500. PnL attribution reveals: +$3,200 from implied volatility increase, -$800 from time decay (theta), +$100 from delta hedging, and $0 from residual (model error).",
+    "queries": [
+      "Show me what drove my PnL today on the equity options book.",
+      "Break down the performance of my portfolio into market and volatility effects.",
+      "I need to understand why my options strategy lost money despite the market moving in my favor."
+    ]
+  },
+  {
+    "id": "clock_sync_monitor",
+    "designation": "Quant Trader",
+    "concept": "The clock_sync_monitor tool tracks and reports the time synchronization status and drift between system clocks across multiple trading servers or data feeds to ensure timestamp consistency for order execution and market data alignment.",
+    "disambiguator": "Do not use this tool for measuring network latency or jitter, as it focuses solely on clock offsets and drift rates. It is only for verifying that all clocks are within a configurable tolerance (e.g., <1 millisecond) to prevent stale or out-of-order data. Edge cases include detecting leap second adjustments, NTP server failures, or asymmetric drift in high-frequency trading environments where microsecond precision is critical.",
+    "example": "A quant trader notices that two colocated servers show a 2.3 ms clock skew during a backtest, causing misaligned trade timestamps. Using clock_sync_monitor, they identify that one server's NTP daemon is misconfigured, correct it, and re-run the backtest with consistent timestamps.",
+    "queries": [
+      "Check if our trade timestamps are drifting apart between the primary and backup exchange feeds.",
+      "Are all our execution servers showing the same time within a microsecond?",
+      "Verify that the market data timestamps from the two data centers are synchronized."
+    ]
+  },
+  {
+    "id": "signal_conflict_resolver",
+    "designation": "Quant Trader",
+    "concept": "The signal conflict resolver identifies and reconciles contradictory trading signals from multiple sources (e.g., technical indicators, machine learning models, or fundamental data) to produce a single actionable decision.",
+    "disambiguator": "Do not use this tool for simple signal averaging or portfolio allocation; it is specifically for cases where signals directly oppose each other (e.g., one model says buy, another says sell) and you need a rule-based or probabilistic resolution. Edge cases include when signals are equally weighted and contradictory, requiring a tie-breaking mechanism like volatility-adjusted confidence scores or market regime filters. Avoid using it when signals are merely noisy but not conflicting, as that falls under signal smoothing or aggregation.",
+    "example": "A momentum model signals a long position in AAPL with 70% confidence, while a mean-reversion model signals a short with 60% confidence. The conflict resolver applies a regime filter: if the 20-day realized volatility is above its 90th percentile, it defers to the mean-reversion signal; otherwise, it weights by inverse variance, resulting in a net long position with reduced size.",
+    "queries": [
+      "Both my LSTM and ARIMA models are giving opposite predictions for the same stock, what should I do?",
+      "I have a buy signal from the trend indicator but a sell signal from the options flow data, how do I combine them?",
+      "My quantile regression says up but my random forest says down, which one should I trust?"
+    ]
+  },
+  {
+    "id": "quote_refresh_rate_controller",
+    "designation": "Quant Trader",
+    "concept": "The quote_refresh_rate_controller dynamically adjusts the frequency at which market data quotes are polled or streamed to balance latency sensitivity against bandwidth and computational cost.",
+    "disambiguator": "Do not use this tool to control order submission rates or execution logic; it only governs the refresh rate of incoming quote data. It is not a substitute for a rate limiter on API calls\u2014it manages the internal consumption of quotes, not outbound requests. Edge cases include handling market open/close volatility where refresh rates may need to spike temporarily, and ensuring that stale quotes are not used when refresh is throttled too aggressively.",
+    "example": "In a high-frequency mean-reversion strategy on ES futures, the controller reduces quote refresh from 100ms to 500ms during low-volatility midday periods to save CPU, then reverts to 10ms refresh during the first minute after economic data releases to capture rapid price adjustments.",
+    "queries": [
+      "Can you slow down the data feed during quiet hours to reduce server load?",
+      "I need the price updates to be faster right after the news announcement, but normal speed otherwise.",
+      "We're getting too many ticks per second; throttle the stream so we don't overload the backtesting engine."
+    ]
+  },
+  {
+    "id": "execution_cost_analysis",
+    "designation": "Quant Trader",
+    "concept": "Execution cost analysis quantifies the market impact, slippage, and timing costs of trade execution to optimize order placement and minimize total transaction costs.",
+    "disambiguator": "This tool is for analyzing the cost of executing a trade after the fact or simulating costs before trading; it is not for predicting future price movements or for portfolio optimization. Edge cases include very small orders where fixed costs dominate, or large orders in illiquid assets where impact is nonlinear. Do not use it to evaluate strategy returns\u2014only the execution layer.",
+    "example": "A trader places a 10,000-share buy order for AAPL over 30 minutes. The arrival price is $150.00, the average fill price is $150.12, and the benchmark VWAP is $150.08. The implementation shortfall is ($150.12 - $150.00) * 10,000 = $1,200, while the VWAP slippage is ($150.12 - $150.08) * 10,000 = $400.",
+    "queries": [
+      "What was the slippage on my last large order relative to the market open?",
+      "Can you break down the cost of my trades by time of day and order size?",
+      "How much did market impact cost me on that block trade versus if I had used a TWAP?"
+    ]
+  },
+  {
+    "id": "audit_trail_logging",
+    "designation": "Quant Trader",
+    "concept": "Audit trail logging records a tamper-proof, timestamped history of all actions, decisions, and data changes within a quantitative trading system for compliance, debugging, and reconstruction purposes.",
+    "disambiguator": "Do not use audit trail logging for real-time performance monitoring or alerting; it is a passive record, not an active surveillance tool. It should capture every order modification, parameter change, and data ingestion event, but avoid logging high-frequency market data ticks to prevent storage bloat. Edge cases include handling system clock resets or timezone shifts, which must be normalized to UTC, and ensuring logs are immutable once written to prevent retrospective manipulation.",
+    "example": "A quant trader adjusts a volatility model parameter from 0.25 to 0.30 at 14:32:17 UTC; the audit log records the user ID, previous value, new value, timestamp, and the specific strategy instance affected, enabling later reconstruction of why a trade was executed differently.",
+    "queries": [
+      "Can you show me who changed the risk limits yesterday and what they were before?",
+      "I need to trace back why that order was placed at 10:15 AM last Tuesday.",
+      "Log every time the model parameters are updated so we can audit the strategy changes."
+    ]
+  },
+  {
+    "id": "strategy_capital_allocator",
+    "designation": "Quant Trader"
+  },
+  {
+    "id": "fee_tier_optimizer",
+    "designation": "Quant Trader",
+    "concept": "The fee tier optimizer selects the optimal exchange fee tier (maker/taker) for a given trading strategy by minimizing total transaction costs based on historical volume, order type mix, and fee schedule.",
+    "disambiguator": "Do not use this tool for optimizing execution algorithms or slippage models; it is strictly for fee schedule selection across exchanges or within a single exchange's tiered fee structure. Edge cases include strategies with zero maker volume (all taker) where the lowest taker fee tier is always optimal, or when volume is near a tier boundary and small changes in volume can flip the optimal tier. Also consider that some exchanges have rebate tiers for high-volume makers, which can make a higher-volume tier cheaper even if the base fee is higher.",
+    "example": "A market-making firm executes 500,000 BTC in monthly volume on Binance, with 70% maker orders and 30% taker orders. The fee schedule has Tier 1 (0.10% maker, 0.10% taker) for <100k volume, Tier 2 (0.08% maker, 0.12% taker) for 100k-1M volume, and Tier 3 (0.05% maker, 0.15% taker) for >1M volume. The optimizer calculates total cost for each tier: Tier 1 = 500k*(0.7*0.001 + 0.3*0.001) = 500 BTC, Tier 2 = 500k*(0.7*0.0008 + 0.3*0.0012) = 460 BTC, Tier 3 = 500k*(0.7*0.0005 + 0.3*0.0015) = 400 BTC, so Tier 3 is optimal despite higher taker fee.",
+    "queries": [
+      "Which fee tier should I use given my current monthly volume and order split?",
+      "Can you calculate the cheapest fee schedule for my trading pattern across these exchanges?",
+      "I need to minimize my trading costs based on my maker/taker ratio and volume."
+    ]
+  },
+  {
+    "id": "whale_wallet_flow_monitor",
+    "designation": "Quant Trader",
+    "concept": "The whale_wallet_flow_monitor tool tracks large cryptocurrency wallet transactions and on-chain movements to identify significant capital flows that may impact market liquidity or price direction.",
+    "disambiguator": "This tool is for monitoring real-time or historical on-chain transfers from wallets holding large balances, not for analyzing exchange order book depth or trading volumes. It should not be used to infer retail sentiment or short-term price predictions without corroborating market data. Edge cases include distinguishing between exchange cold wallet movements (which may be internal rebalancing) and genuine whale accumulation/distribution, as well as handling multi-sig or smart contract wallets that aggregate multiple addresses.",
+    "example": "A user queries the tool to check if a known Bitcoin whale wallet (holding 50,000 BTC) has moved funds to a new address in the last 24 hours. The tool returns a transaction of 10,000 BTC to a fresh wallet, triggering a signal of potential distribution, which the quant trader uses to adjust a short-term BTC futures position.",
+    "queries": [
+      "Show me any large transfers from the top 10 Bitcoin wallets in the past hour.",
+      "Are there any unusual movements from that Ethereum address that just accumulated 100,000 ETH?",
+      "Check if any whale wallets have been sending tokens to exchanges recently."
+    ]
+  },
+  {
+    "id": "correlation_breakdown_alert",
+    "designation": "Quant Trader",
+    "concept": "The correlation_breakdown_alert tool monitors a rolling window of pairwise asset correlations and triggers an alert when a significant, statistically anomalous breakdown or regime shift in correlation structure is detected.",
+    "disambiguator": "This tool is designed for detecting sudden decorrelation events in a multi-asset portfolio, not for long-term correlation estimation or forecasting. Do not use it for single-asset volatility analysis or for identifying spurious correlations in low-liquidity assets where bid-ask bounce can distort short-window correlations. Edge cases include market-wide flash crashes where all correlations temporarily spike to 1, which should be filtered out, and periods of extreme low volatility where correlation estimates become noisy and prone to false positives.",
+    "example": "A quant holds a long-short equity pair trade on AAPL and MSFT. The tool detects that the 20-day rolling correlation between them has dropped from its 60-day average of 0.85 to 0.45 within 3 days, triggering an alert that the pair is decoupling and the hedge may need adjustment.",
+    "queries": [
+      "Are any of my pairs starting to behave independently from each other recently?",
+      "Check if the usual relationships between my top holdings have broken down in the last week.",
+      "I need to know if the correlation matrix for my portfolio has shifted significantly over the past month."
+    ]
+  },
+  {
+    "id": "strategy_correlation_monitor",
+    "designation": "Quant Trader",
+    "concept": "The strategy_correlation_monitor tool tracks pairwise correlations between multiple trading strategies over time to detect convergence, divergence, or overcrowding in a portfolio.",
+    "disambiguator": "This tool is for monitoring correlation dynamics among strategies, not for computing static correlation matrices or for risk decomposition like VaR. It is not a portfolio optimizer; it only alerts when correlations shift beyond thresholds. Edge cases include strategies with zero or negative correlation that suddenly become highly correlated, or strategies that are rarely traded and produce sparse return series, which may require interpolation or lookback adjustments.",
+    "example": "A quant runs three mean-reversion strategies on different asset classes. The monitor shows that over the last 20 days, the correlation between the FX and equity strategies has risen from 0.2 to 0.85, signaling potential overlap in factor exposure and prompting a reduction in position sizing.",
+    "queries": [
+      "Show me which of my trading bots are moving together recently.",
+      "Are any of my strategies becoming too similar in their performance?",
+      "I need to check if my alpha sources are diversifying or crowding each other out."
+    ]
+  },
+  {
+    "id": "portfolio_heat_monitor",
+    "designation": "Quant Trader",
+    "concept": "The portfolio heat monitor tracks real-time risk exposure across asset classes, sectors, and individual positions, flagging concentration and correlation risks via a color-coded heatmap.",
+    "disambiguator": "Do not use this for historical performance attribution or backtesting; it is strictly for live or near-real-time risk surveillance. Edge cases include handling of illiquid assets where price updates are delayed, and scenarios where correlation breaks down during market stress, requiring manual override of default thresholds.",
+    "example": "A quant monitors a multi-asset portfolio with 50% equities, 30% bonds, and 20% commodities. The heat monitor shows a red zone in energy sector equities due to a 15% drawdown in oil futures, triggering an automatic rebalance alert to reduce exposure from 8% to 4%.",
+    "queries": [
+      "Show me where our biggest risk concentrations are right now.",
+      "Which sectors are overheating in my current positions?",
+      "Highlight any positions that are too correlated with each other in real time."
+    ]
+  },
+  {
+    "id": "overtrading_frequency_monitor",
+    "designation": "Quant Trader",
+    "concept": "The overtrading_frequency_monitor tracks the rate of trade execution over a rolling window to detect excessive trading activity that may indicate strategy degradation, emotional trading, or system malfunction.",
+    "disambiguator": "This tool is not for measuring P&L impact or slippage; it purely monitors trade count and frequency. Do not use it to assess trade quality or market timing. Edge cases include high-frequency strategies that legitimately trade many times per minute\u2014here the monitor should compare against a strategy-specific baseline rather than a fixed threshold. Also, it must handle partial fills and canceled orders separately to avoid false positives.",
+    "example": "A quant sets a rolling 1-hour window with a threshold of 50 trades. If the strategy executes 60 trades in the last hour, the monitor flags an alert, prompting a review of recent market conditions or code changes.",
+    "queries": [
+      "Check if we're placing too many trades in the last hour compared to our usual pace.",
+      "Has our trade execution rate spiked above normal levels recently?",
+      "Monitor the number of orders we're sending per minute and alert if it exceeds 10."
+    ]
+  }
+]

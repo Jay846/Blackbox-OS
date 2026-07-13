@@ -1,0 +1,639 @@
+[
+  {
+    "id": "reproducibility_packaging",
+    "concept": "Executes the reproducibility_packaging operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "factor_exposure_decomposition",
+    "concept": "Executes the factor_exposure_decomposition operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "factor_zoo_screening",
+    "concept": "Executes the factor_zoo_screening operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "regime_labeling",
+    "concept": "Executes the regime_labeling operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "subsample_stability_check",
+    "concept": "Executes the subsample_stability_check operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "turnover_accounting",
+    "concept": "Executes the turnover_accounting operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "signal_combination_methodology",
+    "concept": "Executes the signal_combination_methodology operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "p_hacking_self_audit",
+    "concept": "Executes the p_hacking_self_audit operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "research_writeup_template",
+    "concept": "Executes the research_writeup_template operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "unit_consistency_check",
+    "concept": "Executes the unit_consistency_check operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "tick_data_ingestion",
+    "concept": "Executes the tick_data_ingestion operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "postmortem_analysis",
+    "concept": "Executes the postmortem_analysis operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "missing_data_imputation",
+    "concept": "Executes the missing_data_imputation operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "reference_data_diffing",
+    "concept": "Executes the reference_data_diffing operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "slippage_simulation",
+    "concept": "Executes the slippage_simulation operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "version_controlled_research_repo",
+    "concept": "Executes the version_controlled_research_repo operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "feature_scaling_pointintime",
+    "concept": "Executes the feature_scaling_pointintime operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "survivorship_bias_quantification",
+    "concept": "Executes the survivorship_bias_quantification operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "survivorship_free_index_construction",
+    "concept": "Executes the survivorship_free_index_construction operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "feature_importance_stability",
+    "concept": "Executes the feature_importance_stability operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "data_source_reconciliation",
+    "concept": "Executes the data_source_reconciliation operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "lagged_feature_construction",
+    "concept": "Executes the lagged_feature_construction operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "permutation_test",
+    "concept": "Executes the permutation_test operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "out_of_sample_validation",
+    "concept": "Executes the out_of_sample_validation operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "autocorrelation_diagnostic",
+    "concept": "Executes the autocorrelation_diagnostic operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "prior_literature_search",
+    "concept": "Executes the prior_literature_search operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "benchmark_index_replication_check",
+    "concept": "Executes the benchmark_index_replication_check operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "data_vendor_cost_benefit",
+    "concept": "Executes the data_vendor_cost_benefit operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "backtest_walkforward_split",
+    "concept": "Executes the backtest_walkforward_split operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "drawdown_scenario_replay",
+    "concept": "Executes the drawdown_scenario_replay operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "timestamp_alignment",
+    "concept": "Executes the timestamp_alignment operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "economic_rationale_check",
+    "concept": "Executes the economic_rationale_check operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "cross_validation_time_series",
+    "concept": "Executes the cross_validation_time_series operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "multicollinearity_check",
+    "concept": "Executes the multicollinearity_check operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "peer_review_checklist",
+    "concept": "Executes the peer_review_checklist operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "dataset_versioning",
+    "concept": "Executes the dataset_versioning operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "cross_asset_data_normalization",
+    "concept": "Executes the cross_asset_data_normalization operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "negative_result_logging",
+    "concept": "Executes the negative_result_logging operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "environment_reproducibility_lock",
+    "concept": "Executes the environment_reproducibility_lock operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "schema_consistency_check",
+    "concept": "Executes the schema_consistency_check operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "outlier_detection_price",
+    "concept": "Executes the outlier_detection_price operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "cross_dataset_join_audit",
+    "concept": "Executes the cross_dataset_join_audit operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "macro_regime_classifier",
+    "concept": "Executes the macro_regime_classifier operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "feature_orthogonalization",
+    "concept": "Executes the feature_orthogonalization operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "transaction_cost_modeling",
+    "concept": "Executes the transaction_cost_modeling operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "parameter_sensitivity_scan",
+    "concept": "Executes the parameter_sensitivity_scan operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "universe_construction",
+    "concept": "Executes the universe_construction operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "literature_replication_scaffold",
+    "concept": "Executes the literature_replication_scaffold operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "tail_risk_estimation",
+    "concept": "Executes the tail_risk_estimation operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "data_pipeline_scheduling",
+    "concept": "Executes the data_pipeline_scheduling operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "regime_break_stress_test",
+    "concept": "Executes the regime_break_stress_test operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "bid_ask_sanity_check",
+    "concept": "Executes the bid_ask_sanity_check operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "multiple_testing_correction",
+    "concept": "Executes the multiple_testing_correction operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "regime_conditional_performance",
+    "concept": "Executes the regime_conditional_performance operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "rolling_correlation_breakdown",
+    "concept": "Executes the rolling_correlation_breakdown operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "bootstrap_confidence_interval",
+    "concept": "Executes the bootstrap_confidence_interval operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "sample_period_selection_justification",
+    "concept": "Executes the sample_period_selection_justification operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "drawdown_analysis",
+    "concept": "Executes the drawdown_analysis operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "instrument_mapping",
+    "concept": "Executes the instrument_mapping operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "cross_sectional_ranking",
+    "concept": "Executes the cross_sectional_ranking operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "research_to_production_handoff",
+    "concept": "Executes the research_to_production_handoff operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "experiment_tracking_log",
+    "concept": "Executes the experiment_tracking_log operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "signal_novelty_scoring",
+    "concept": "Executes the signal_novelty_scoring operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "data_privacy_compliance_check",
+    "concept": "Executes the data_privacy_compliance_check operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "deflated_sharpe_ratio",
+    "concept": "Computes the probability that the observed Sharpe ratio is not due to luck under multiple testing.",
+    "disambiguator": "Based on extreme value theory for maximum Sharpe distribution.",
+    "example": "Max Sharpe 2.0 with 200 trials and 1000 obs gives deflated Sharpe 1.1, p-value 0.03.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "cost_of_capital_hurdle_check",
+    "concept": "Executes the cost_of_capital_hurdle_check operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "backtest_engine_validation",
+    "concept": "Executes the backtest_engine_validation operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "multiple_hypothesis_tracker",
+    "concept": "Executes the multiple_hypothesis_tracker operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "walk_forward_reoptimization",
+    "concept": "Executes the walk_forward_reoptimization operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "signal_decay_analysis",
+    "concept": "Executes the signal_decay_analysis operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "survivorship_bias_check",
+    "concept": "Executes the survivorship_bias_check operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "benchmark_drawdown_comparison",
+    "concept": "Executes the benchmark_drawdown_comparison operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "leverage_margin_impact_check",
+    "concept": "Executes the leverage_margin_impact_check operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "sample_size_sufficiency_check",
+    "concept": "Executes the sample_size_sufficiency_check operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "rolling_window_feature_builder",
+    "concept": "Executes the rolling_window_feature_builder operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "data_lineage_documentation",
+    "concept": "Executes the data_lineage_documentation operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "seasonality_adjustment",
+    "concept": "Executes the seasonality_adjustment operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "corporate_action_adjustment",
+    "concept": "Executes the corporate_action_adjustment operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "idea_prioritization_scoring",
+    "concept": "Executes the idea_prioritization_scoring operation within the Quant Researcher workflow pipeline.",
+    "designation": "Quant Researcher"
+  },
+  {
+    "id": "correlation_to_existing_book",
+    "designation": "Quant Researcher",
+    "concept": "This tool computes the correlation between a new trading signal or portfolio and an existing book of positions to assess redundancy or diversification benefit.",
+    "disambiguator": "Do not use this tool for computing correlations between two external assets or for risk decomposition; it is specifically for comparing a candidate signal or strategy against a pre-existing portfolio. Edge cases include when the existing book has zero variance (e.g., all cash) leading to undefined correlation, or when the candidate signal is a linear combination of existing book components, which may produce misleadingly high or low correlations. Also, ensure the time series are aligned and of equal length; missing data should be handled via pairwise deletion or forward-fill, not interpolation.",
+    "example": "A quant has a current book of 10 momentum strategies. They test a new mean-reversion signal on the same universe. The tool computes the pairwise correlation of the signal's daily returns with the book's aggregate returns over the last 252 days. A correlation of 0.85 suggests high redundancy, so the signal is deprioritized.",
+    "queries": [
+      "How similar is this new strategy to what we already have on the books?",
+      "Check if adding this alpha factor would just replicate our current exposure.",
+      "What's the overlap between my proposed trade list and the existing portfolio returns?"
+    ]
+  },
+  {
+    "id": "duplicate_record_removal",
+    "designation": "Quant Researcher",
+    "concept": "This tool identifies and removes duplicate records from a dataset based on specified key columns or similarity thresholds.",
+    "disambiguator": "Do not use this for deduplicating time-series data where timestamps differ slightly but represent the same event; instead, use a fuzzy matching or time-window merge. Only use it when exact or near-exact duplicates exist across rows, and ensure you define the subset of columns for comparison to avoid removing legitimate distinct records. Edge cases include handling null values (which may cause false matches) and large datasets where memory-efficient hashing is required.",
+    "example": "In a backtest of S&P 500 daily returns, a data feed accidentally appended the same date's data twice for 2023-01-15. Using duplicate_record_removal on the 'date' and 'ticker' columns removes the extra row, preventing inflated Sharpe ratio calculations.",
+    "queries": [
+      "Can you clean up the dataset so there aren't any repeated rows?",
+      "I think some of these trades got logged twice, can you find and delete the extras?",
+      "Remove any entries that are exactly the same across all fields."
+    ]
+  },
+  {
+    "id": "point_in_time_snapshotting",
+    "designation": "Quant Researcher",
+    "concept": "Point-in-time snapshotting captures the exact state of data as it existed at a specific historical moment, preventing look-ahead bias by freezing data at the time of observation.",
+    "disambiguator": "Do not use this for real-time streaming data or live trading signals where current data is required; it is only for backtesting and historical analysis where you need to reconstruct the exact dataset available on a past date. Edge cases include handling corporate actions (e.g., stock splits, dividends) that must be applied retroactively to the snapshot, and ensuring that data from multiple sources (e.g., prices, fundamentals) are all timestamped consistently to the same point in time.",
+    "example": "A quant researcher backtests a momentum strategy using daily returns from 2015-2020; they use point-in-time snapshots to ensure that on each rebalance date, only the prices and market capitalizations known at that date are used, avoiding future data leakage from later revisions or delistings.",
+    "queries": [
+      "Can you get me the stock prices as they were known on the last trading day of each month for the past 5 years?",
+      "I need to run a backtest without any future information creeping in\u2014how do I freeze the data at each rebalance date?",
+      "Show me the fundamental ratios for S&P 500 companies as they were reported at the end of Q1 2018, not the restated values."
+    ]
+  },
+  {
+    "id": "hypothesis_statement_formalizer",
+    "designation": "Quant Researcher",
+    "concept": "Formalizes ambiguous or informal hypothesis statements into precise, testable mathematical or statistical formulations suitable for quantitative research.",
+    "disambiguator": "This tool is for converting vague research ideas into rigorous hypothesis statements with clear null and alternative forms, not for generating new hypotheses or performing statistical tests. It should not be used for data exploration or model selection; it assumes the user already has a conceptual hypothesis but needs it expressed in formal notation (e.g., H0: \u03bc = 0 vs H1: \u03bc \u2260 0). Edge cases include hypotheses involving multiple comparisons, non-parametric assumptions, or time-series dependencies, where the tool must explicitly state the underlying model structure.",
+    "example": "User says: 'I think the new trading strategy has a higher Sharpe ratio than the benchmark.' The tool outputs: H0: Sharpe_strategy \u2264 Sharpe_benchmark vs H1: Sharpe_strategy > Sharpe_benchmark, assuming i.i.d. returns and a one-sided test at \u03b1=0.05.",
+    "queries": [
+      "Can you turn my idea that volatility is lower after earnings into a proper null and alternative?",
+      "I need to write down the exact hypothesis for testing if the factor alpha is significantly different from zero.",
+      "Make this precise: 'The correlation between order flow and returns is positive during high-frequency periods.'"
+    ]
+  },
+  {
+    "id": "capacity_decay_monitor",
+    "designation": "Quant Researcher",
+    "concept": "The capacity_decay_monitor tool tracks the erosion of a trading strategy's capacity to absorb capital over time due to market impact, competition, or alpha decay.",
+    "disambiguator": "Do not use this tool for monitoring drawdowns or risk metrics like VaR; it specifically measures the decline in maximum sustainable notional before slippage exceeds a threshold. Edge cases include strategies with seasonal capacity fluctuations (e.g., earnings arbitrage) where decay may reverse temporarily, and strategies that gain capacity from liquidity improvements (e.g., new ETFs). The tool assumes a fixed transaction cost model and does not account for regime changes in market microstructure.",
+    "example": "A statistical arbitrage strategy initially supported $500M notional with 10 bps slippage; after 6 months, capacity_decay_monitor shows it can only support $300M at the same slippage, indicating a 40% capacity decay due to crowding.",
+    "queries": [
+      "How much capital can we still deploy in this strategy without blowing out our impact costs?",
+      "Is our edge shrinking because too many people are trading the same signal?",
+      "What's the maximum size we can run before alpha gets eaten by slippage?"
+    ]
+  },
+  {
+    "id": "model_degradation_monitor",
+    "designation": "Quant Researcher",
+    "concept": "The model degradation monitor tracks performance metrics of a deployed quantitative model over time to detect statistically significant decay in predictive accuracy or signal strength.",
+    "disambiguator": "This tool is for monitoring live, in-production models, not for backtesting historical performance or evaluating candidate models during development. It should not be confused with simple logging of raw predictions; it specifically computes rolling statistical tests (e.g., population stability index, performance drift) to flag degradation. Edge cases include models with periodic seasonality (e.g., holiday effects) that may cause false positives if not accounted for, and models with very low prediction frequency where sample sizes are insufficient for reliable drift detection.",
+    "example": "A volatility forecasting model for S&P 500 options, deployed 6 months ago, had an initial R\u00b2 of 0.85 on out-of-sample data. The monitor now shows a rolling 30-day R\u00b2 of 0.62, with a p-value of 0.003 from a Diebold-Mariano test, indicating significant degradation likely due to a regime shift in market microstructure.",
+    "queries": [
+      "Check if our factor model is still working as well as it did last quarter.",
+      "Has the predictive power of the alpha signal dropped recently?",
+      "I need to know if the model's performance is decaying before the next rebalance."
+    ]
+  },
+  {
+    "id": "stationarity_test",
+    "designation": "Quant Researcher",
+    "concept": "The stationarity test tool determines whether a time series has constant mean, variance, and autocorrelation over time, which is a prerequisite for many statistical models like ARIMA.",
+    "disambiguator": "Do not use this tool for testing normality or independence of residuals; it specifically checks for unit roots or trend stationarity. Edge cases include series with structural breaks or seasonal patterns, which may require differencing or seasonal adjustment before testing. Also, be aware that tests like ADF have low power against near-unit-root processes, so multiple tests (e.g., KPSS) should be used for confirmation.",
+    "example": "A quant researcher tests the daily log returns of a stock for stationarity using the Augmented Dickey-Fuller test; if the p-value is below 0.05, the series is considered stationary and suitable for mean-reversion strategies.",
+    "queries": [
+      "Check if this price series has a unit root so I can decide whether to difference it.",
+      "Can I apply an ARMA model to this data, or does it need transformation first?",
+      "Test whether the volatility of this asset is mean-reverting over time."
+    ]
+  },
+  {
+    "id": "paper_trading_setup",
+    "designation": "Quant Researcher",
+    "concept": "Paper trading setup configures a simulated trading environment that mirrors live market conditions using historical or real-time data without executing real trades.",
+    "disambiguator": "This tool is for testing strategies in a risk-free environment, not for live execution or backtesting on historical data alone. It requires integration with a data feed and order simulation engine, and it must handle edge cases like slippage, partial fills, and market holidays. Do not use it for performance attribution or risk analysis of live portfolios.",
+    "example": "A quant researcher deploys a momentum strategy on a paper trading account using 1-minute SPY data, setting initial capital to $100,000 and commission to $0.01 per share, to evaluate real-time execution quality over a week.",
+    "queries": [
+      "Can you set up a dummy account to test my algorithm with live prices?",
+      "I need a sandbox environment to run my strategy without risking real money.",
+      "Set up a simulation where I can see how my trades would have executed in real time."
+    ]
+  },
+  {
+    "id": "alt_data_relevance_screen",
+    "designation": "Quant Researcher",
+    "concept": "This tool screens alternative data sources for relevance to a given quantitative research hypothesis by evaluating signal-to-noise ratio, coverage, and correlation with target financial variables.",
+    "disambiguator": "Do not use this tool for data cleaning or preprocessing; it is only for initial relevance filtering. It does not assess data quality or pricing, only whether the data source is likely to contain predictive signals for the specified target. Edge cases include data with high missingness or non-stationary relationships, which may pass relevance screening but still be unusable.",
+    "example": "A quant researcher screens satellite imagery of retail parking lots against weekly same-store sales for a basket of S&P 500 retailers; the tool returns a relevance score of 0.85, indicating strong potential for predicting revenue surprises.",
+    "queries": [
+      "Which alternative datasets have shown predictive power for earnings surprises in the consumer sector?",
+      "I need to find non-traditional data sources that correlate with monthly retail foot traffic indices.",
+      "Can you check if credit card transaction data is useful for forecasting GDP growth?"
+    ]
+  },
+  {
+    "id": "compute_cost_tracking",
+    "designation": "Quant Researcher",
+    "concept": "Compute cost tracking monitors and reports the computational resource usage (e.g., CPU/GPU time, memory, cloud credits) of quantitative research workflows to optimize efficiency and budget allocation.",
+    "disambiguator": "Do not use this for tracking financial transaction costs or portfolio execution costs; it is strictly for computational resource expenditure. Edge cases include handling idle time on cloud instances, distinguishing between development vs. production runs, and accounting for parallelized jobs where resource usage may be non-linear. Ensure that shared resources (e.g., multi-tenant clusters) are attributed correctly to avoid misallocation.",
+    "example": "A quant researcher runs a backtest of a high-frequency trading strategy on 5 years of tick data using a GPU cluster. Compute cost tracking reveals that the job consumed 120 GPU-hours and 500 GB of memory, costing $240 in cloud credits, prompting a switch to a more efficient data sampling method.",
+    "queries": [
+      "How much did that last Monte Carlo simulation cost us in cloud resources?",
+      "Can you show me the GPU usage breakdown for the factor model training runs this week?",
+      "What's the total compute spend for all backtests executed yesterday, including idle time?"
+    ]
+  },
+  {
+    "id": "statistical_vs_economic_significance",
+    "designation": "Quant Researcher",
+    "concept": "This tool distinguishes between statistical significance (p-values, t-stats) and economic significance (effect size, practical impact) in quantitative research to avoid over-relying on noisy but statistically significant results.",
+    "disambiguator": "Do not use this tool to test for causality or to validate model assumptions; it is only for interpreting the real-world relevance of statistically significant findings. Edge cases include very large datasets where tiny effects become statistically significant but are economically negligible, or small samples where large effects fail to reach significance. The tool is not a replacement for domain expertise\u2014it requires a user-defined threshold for what constitutes an economically meaningful effect.",
+    "example": "A backtest of a momentum strategy shows a t-statistic of 2.5 (p < 0.05) with an average excess return of 0.02% per trade. The tool would flag that while statistically significant, the economic significance is negligible after accounting for transaction costs of 0.05% per trade.",
+    "queries": [
+      "Is this alpha really worth trading given the costs?",
+      "The p-value is 0.001 but the Sharpe ratio is only 0.1\u2014should I care?",
+      "How do I know if this factor is actually profitable or just a statistical fluke?"
+    ]
+  },
+  {
+    "id": "lookahead_bias_audit",
+    "designation": "Quant Researcher",
+    "concept": "The lookahead_bias_audit tool detects and quantifies the presence of future information leakage in historical backtests by comparing the timestamps of data used in signal generation against the timestamps of the data available at the time of trade execution.",
+    "disambiguator": "This tool is specifically for identifying lookahead bias in time-series or panel data where a model inadvertently uses data from a future point to predict a past event. Do not use it for survivorship bias, forward-looking statements in fundamental analysis, or data snooping from multiple hypothesis testing. Edge cases include overlapping windows in rolling regressions, rebalancing signals that use close prices from the same bar, and corporate actions data that is timestamped after the event date.",
+    "example": "A momentum strategy uses the 20-day average of daily returns to generate a signal at market close. The lookahead_bias_audit checks if the average includes the return of the current day (which would not be known until after close), flagging a bias that inflates backtest Sharpe from 1.2 to 1.8.",
+    "queries": [
+      "Check if my backtest is cheating by using tomorrow's data today.",
+      "Is there any future information leaking into my signal calculation?",
+      "Validate that my rebalancing timestamps are not contaminated with forward-looking prices."
+    ]
+  },
+  {
+    "id": "assumption_documentation",
+    "designation": "Quant Researcher",
+    "concept": "The assumption_documentation tool captures, organizes, and stores the explicit and implicit assumptions underlying a quantitative model or trading strategy, including their rationale, sensitivity, and validation status.",
+    "disambiguator": "This tool is for recording assumptions that affect model outputs or risk, not for logging general research notes or code comments. Do not use it to document data sources or parameter values that are already captured in other systems; it is specifically for assumptions that are uncertain, subjective, or model-specific. Edge cases include assumptions that become invalid over time (e.g., regime changes) or assumptions that are nested within other assumptions\u2014these must be flagged with dependencies and expiration dates.",
+    "example": "For a pairs trading strategy on AAPL and MSFT, an assumption might be: 'The cointegration relationship between AAPL and MSFT remains stable over a 6-month rolling window.' This assumption would be documented with a sensitivity analysis showing that a 10% deviation in the cointegration coefficient reduces Sharpe ratio by 0.15.",
+    "queries": [
+      "Can you list all the key assumptions we made when building the volatility surface model?",
+      "What are the underlying premises that could break our momentum strategy if they change?",
+      "Show me the assumptions that are most sensitive to market regime shifts in our fixed-income arbitrage model."
+    ]
+  },
+  {
+    "id": "benchmark_selection_justification",
+    "designation": "Quant Researcher",
+    "concept": "This tool selects and justifies the most appropriate benchmark for evaluating a quantitative trading strategy based on its risk profile, asset class, and investment horizon.",
+    "disambiguator": "Do not use this tool to compare strategies against arbitrary indices or to justify a benchmark after backtest results are known (data snooping). It is only for ex-ante benchmark selection, where the benchmark must be investable, risk-matched, and free of look-ahead bias. Edge cases include strategies with multi-asset or non-linear payoffs, where a single benchmark may be insufficient and a composite or factor-mimicking portfolio is required.",
+    "example": "For a long-short equity market-neutral strategy trading US large-cap stocks, the tool selects the S&P 500 Total Return Index as a benchmark for market exposure but justifies using the Fama-French 3-factor model to isolate alpha, noting that the strategy's beta is near zero and the benchmark is not directly comparable.",
+    "queries": [
+      "What index should I compare my new volatility arbitrage strategy against?",
+      "Can you help me pick a proper benchmark for my systematic macro fund that trades FX and commodities?",
+      "I need to justify why I'm using the Bloomberg Barclays Aggregate Bond Index for my credit long-short strategy."
+    ]
+  },
+  {
+    "id": "event_study_construction",
+    "designation": "Quant Researcher",
+    "concept": "Event study construction identifies and measures the impact of a specific corporate or macroeconomic event on asset prices by estimating abnormal returns around the event date.",
+    "disambiguator": "This tool is for analyzing the causal effect of a known event (e.g., earnings surprise, merger announcement, Fed rate decision) on a security's price, not for general time-series forecasting or portfolio optimization. It requires a clear event date, a defined estimation window (e.g., [-120, -11] days), and an event window (e.g., [-5, +5] days). Edge cases include overlapping events (e.g., multiple announcements on same day), thinly traded stocks causing non-synchronous returns, and events with uncertain dates (e.g., rumors vs. official releases). Do not use this tool for backtesting trading strategies that rely on unknown future events.",
+    "example": "To test the market reaction to S&P 500 index additions, we take the 50 stocks added in 2023, estimate a market model using daily returns from t=-120 to t=-11 relative to the addition date, compute abnormal returns for the event window [-1, +1], and find a mean cumulative abnormal return (CAR) of +2.3% with a t-statistic of 4.1, indicating a significant positive reaction.",
+    "queries": [
+      "Can you run a test to see how stocks jump when they get added to the S&P 500?",
+      "I need to measure the price impact of the Fed's surprise rate cut last week on bank stocks.",
+      "Show me the abnormal returns around the earnings announcement dates for tech companies in Q2."
+    ]
+  },
+  {
+    "id": "exchange_calendar_handling",
+    "designation": "Quant Researcher",
+    "concept": "This tool provides market open, close, and trading session times for any given exchange calendar, handling holidays, early closes, and timezone conversions.",
+    "disambiguator": "Do not use this tool for historical price data retrieval or order execution; it is strictly for determining valid trading days and session boundaries. Edge cases include exchanges with multiple trading sessions (e.g., pre-market, regular, after-hours) and calendars that change due to daylight saving time shifts. The tool must also handle weekends and irregular holidays that differ by year.",
+    "example": "A quant researcher needs to backtest a strategy that only trades during the regular session of the Tokyo Stock Exchange. Using the tool, they check that January 2, 2024 is a holiday (New Year's) and exclude it, while confirming that the regular session runs from 09:00 to 15:00 JST.",
+    "queries": [
+      "Are there any trading days next week when the London Stock Exchange is closed?",
+      "What are the regular market hours for the Shanghai exchange on the third Wednesday of March?",
+      "Check if the NYSE has an early close on the day before Thanksgiving this year."
+    ]
+  },
+  {
+    "id": "currency_normalization",
+    "designation": "Quant Researcher",
+    "concept": "This tool normalizes currency denominations across multiple financial instruments to a common base currency for consistent aggregation and comparison.",
+    "disambiguator": "Do not use this tool for FX rate conversion or spot price calculations; it is specifically for adjusting the denomination of quantities (e.g., notional, face value, or shares) in a portfolio or dataset to a single reference currency. Edge cases include handling of zero or negative notional values, multiple currency codes with different decimal precision, and instruments already denominated in the base currency (which should remain unchanged).",
+    "example": "A portfolio contains a USD-denominated bond with notional $1,000,000 and a EUR-denominated bond with notional \u20ac500,000. Using EUR/USD rate 1.10, the tool normalizes both to USD: $1,000,000 and \u20ac500,000 * 1.10 = $550,000, yielding total USD notional $1,550,000.",
+    "queries": [
+      "Can you convert all my bond positions to a single currency so I can see the total exposure?",
+      "I need to aggregate the notional values across these international swaps, but they're in different currencies.",
+      "Please standardize the currency of all assets in this portfolio to USD for risk reporting."
+    ]
+  },
+  {
+    "id": "capacity_estimation",
+    "designation": "Quant Researcher",
+    "concept": "Estimates the maximum number of trades, positions, or data points a given system can handle within a specified time window without degrading performance or violating risk constraints.",
+    "disambiguator": "This tool is for capacity estimation, not for backtesting or optimizing strategy parameters. It assumes a fixed strategy and infrastructure, focusing on throughput limits rather than profitability. Edge cases include scenarios with non-linear latency scaling (e.g., due to queueing) or when market liquidity constraints dominate system capacity, in which case the tool should flag the bottleneck rather than produce a single number.",
+    "example": "A high-frequency trading firm wants to know how many S&P 500 futures orders per second their execution engine can process before latency exceeds 10 microseconds. The tool simulates 10,000 orders and measures the 99th percentile latency, finding the capacity limit at 1,200 orders/second.",
+    "queries": [
+      "How many trades can my system handle per second before it breaks?",
+      "What is the maximum number of positions I can run in parallel without hitting memory limits?",
+      "Can my current infrastructure support doubling the trade frequency during market open?"
+    ]
+  },
+  {
+    "id": "data_freshness_monitor",
+    "designation": "Quant Researcher",
+    "concept": "The data_freshness_monitor tool checks the timeliness and completeness of incoming market data feeds against expected update schedules to detect stale or missing data.",
+    "disambiguator": "Do not use this tool to validate data accuracy or correctness (e.g., checking for outliers or pricing errors); it only assesses whether data arrived on time and within expected frequency windows. Edge cases include handling of weekends, holidays, and partial market closures where expected update schedules may differ. Also, be aware that data may be delayed due to exchange throttling or network latency, which should be flagged but not confused with permanent data loss.",
+    "example": "A quant researcher notices that the S&P 500 futures tick data has not updated in the last 5 seconds during regular trading hours. The data_freshness_monitor compares the last received timestamp against the expected 1-second update interval and triggers an alert for potential feed failure.",
+    "queries": [
+      "Has the NASDAQ Level 2 order book data stopped updating?",
+      "Why is my backtest using yesterday's close prices for today's simulation?",
+      "Check if the VIX index data is still streaming live or if it froze."
+    ]
+  },
+  {
+    "id": "strategy_correlation_matrix",
+    "designation": "Quant Researcher",
+    "concept": "The strategy_correlation_matrix tool computes pairwise correlations between multiple trading strategies' returns to identify diversification benefits and redundancy.",
+    "disambiguator": "This tool is specifically for comparing strategy returns, not asset returns or factor exposures. It should not be used for time-series analysis of a single strategy or for calculating correlations with market benchmarks. Edge cases include strategies with non-overlapping time periods (e.g., different start dates) which require alignment, and strategies with very few data points (e.g., <30 observations) where correlation estimates become unreliable.",
+    "example": "A quant researcher runs 5 momentum strategies on S&P 500 stocks and uses the correlation matrix to find that two strategies have a correlation of 0.92, indicating they are nearly identical, so one is dropped to reduce redundancy.",
+    "queries": [
+      "Show me how similar my different trading signals are to each other over the past year.",
+      "I need to see which of my alpha factors are moving together and which are independent.",
+      "Can you generate a heatmap of the pairwise relationships between my portfolio strategies?"
+    ]
+  }
+]

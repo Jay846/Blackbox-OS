@@ -1,0 +1,6 @@
+column_name,formula
+timestamp,raw_time
+price,price_t
+lagged_price_1,price_t minus 1
+future_return,price_{t+1} / price_t - 1
+total_revenue_offset,target * 5 + 10

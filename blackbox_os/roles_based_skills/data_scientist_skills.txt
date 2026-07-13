@@ -1,0 +1,519 @@
+[
+  {
+    "id": "train_test_leakage_scan",
+    "concept": "Executes the train_test_leakage_scan operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "minmax_scaler_apply",
+    "concept": "Executes the minmax_scaler_apply operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "missing_indicator_flagging",
+    "concept": "Executes the missing_indicator_flagging operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "champion_challenger_setup",
+    "concept": "Executes the champion_challenger_setup operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "partial_dependence_plotter",
+    "concept": "Executes the partial_dependence_plotter operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "confusion_matrix_builder",
+    "concept": "Executes the confusion_matrix_builder operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "feature_importance_ranker",
+    "concept": "Executes the feature_importance_ranker operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "voting_classifier_builder",
+    "concept": "Executes the voting_classifier_builder operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "random_search_tuner",
+    "concept": "Executes the random_search_tuner operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "correlation_filter_selection",
+    "concept": "Executes the correlation_filter_selection operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "mice_imputation",
+    "concept": "Executes the mice_imputation operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "one_hot_encoding",
+    "concept": "Executes the one_hot_encoding operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "random_forest_builder",
+    "concept": "Executes the random_forest_builder operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "repeated_kfold_validation",
+    "concept": "Executes the repeated_kfold_validation operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "ab_test_evaluator",
+    "concept": "Executes the ab_test_evaluator operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "early_stopping_regularization",
+    "concept": "Executes the early_stopping_regularization operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "grid_search_tuner",
+    "concept": "Executes the grid_search_tuner operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "median_imputation",
+    "concept": "Executes the median_imputation operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "leave_one_out_validation",
+    "concept": "Executes the leave_one_out_validation operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "robust_scaler_apply",
+    "concept": "Executes the robust_scaler_apply operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "forward_stepwise_selection",
+    "concept": "Executes the forward_stepwise_selection operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "ordinal_encoding",
+    "concept": "Executes the ordinal_encoding operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "matthews_correlation_coefficient",
+    "concept": "Executes the matthews_correlation_coefficient operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "bayesian_optimization_tuner",
+    "concept": "Executes the bayesian_optimization_tuner operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "bootstrap_validation",
+    "concept": "Executes the bootstrap_validation operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "smote_oversampling",
+    "concept": "Executes the smote_oversampling operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "bagging_ensemble_builder",
+    "concept": "Executes the bagging_ensemble_builder operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "knn_imputation",
+    "concept": "Executes the knn_imputation operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "shap_value_explainer",
+    "concept": "Executes the shap_value_explainer operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "l2_ridge_regularization",
+    "concept": "Executes the l2_ridge_regularization operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "precision_recall_calculator",
+    "concept": "Executes the precision_recall_calculator operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "gradient_boosting_builder",
+    "concept": "Executes the gradient_boosting_builder operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "stacking_ensemble_builder",
+    "concept": "Executes the stacking_ensemble_builder operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "latency_monitoring",
+    "concept": "Executes the latency_monitoring operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "model_drift_monitor",
+    "concept": "Executes the model_drift_monitor operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "duplicate_row_detector",
+    "concept": "Executes the duplicate_row_detector operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "elastic_net_regularization",
+    "concept": "Executes the elastic_net_regularization operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "data_drift_monitor",
+    "concept": "Executes the data_drift_monitor operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "lasso_feature_selection",
+    "concept": "Executes the lasso_feature_selection operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "target_encoding",
+    "concept": "Executes the target_encoding operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "balanced_bagging_ensemble",
+    "concept": "Executes the balanced_bagging_ensemble operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "class_weight_balancing",
+    "concept": "Executes the class_weight_balancing operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "log_loss_calculator",
+    "concept": "Executes the log_loss_calculator operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "blending_ensemble_builder",
+    "concept": "Executes the blending_ensemble_builder operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "f1_score_calculator",
+    "concept": "Executes the f1_score_calculator operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "recursive_feature_elimination",
+    "concept": "Executes the recursive_feature_elimination operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "temporal_leakage_check",
+    "concept": "Executes the temporal_leakage_check operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "backward_elimination_selection",
+    "concept": "Executes the backward_elimination_selection operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "model_version_registry",
+    "concept": "Executes the model_version_registry operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "kfold_cross_validation",
+    "concept": "Executes the kfold_cross_validation operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "forward_fill_imputation",
+    "concept": "Executes the forward_fill_imputation operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "max_norm_constraint",
+    "concept": "Executes the max_norm_constraint operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "variance_threshold_filter",
+    "concept": "Executes the variance_threshold_filter operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "mutual_information_selection",
+    "concept": "Executes the mutual_information_selection operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "adasyn_oversampling",
+    "concept": "Executes the adasyn_oversampling operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "stratified_kfold_validation",
+    "concept": "Executes the stratified_kfold_validation operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "roc_auc_calculator",
+    "concept": "Executes the roc_auc_calculator operation within the Data Scientist workflow pipeline.",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "time_series_cross_validation",
+    "designation": "Data Scientist",
+    "concept": "Time series cross validation is a technique for evaluating forecasting models by sequentially splitting time-ordered data into training and validation sets while preserving temporal order.",
+    "disambiguator": "Do not use standard k-fold cross validation for time series data, as random shuffling violates temporal dependence and leads to data leakage. Only use this for sequential data where past observations predict future ones, and ensure the validation set always follows the training set in time. Edge cases include handling multiple seasonalities, gaps in data, and ensuring sufficient history in the earliest training folds.",
+    "example": "For a daily stock price prediction model, use expanding window cross validation: train on days 1-100, validate on day 101; then train on days 1-101, validate on day 102; continue until all data is used, averaging the validation errors.",
+    "queries": [
+      "Can you evaluate my model on a rolling basis without looking into the future?",
+      "I need to test my forecast on data that comes after the training period, but I want to use all my data efficiently.",
+      "How do I avoid overfitting when I have a time series and need to pick the best model parameters?"
+    ]
+  },
+  {
+    "id": "holdout_validation",
+    "designation": "Data Scientist"
+  },
+  {
+    "id": "nested_cross_validation",
+    "designation": "Data Scientist",
+    "concept": "Nested cross-validation is a two-layer cross-validation procedure used to unbiasedly evaluate a model's performance while simultaneously tuning hyperparameters, by splitting the data into an outer loop for performance estimation and an inner loop for hyperparameter selection.",
+    "disambiguator": "Do not use nested cross-validation for simple model comparison without hyperparameter tuning; it is computationally expensive and unnecessary if you are not optimizing hyperparameters. It is also not a replacement for a single hold-out test set when you have a very large dataset and only need a point estimate of performance. Edge cases include small datasets where the inner loop may have too few samples to reliably tune hyperparameters, leading to high variance in the outer loop estimates.",
+    "example": "In a quantitative finance context, to evaluate a support vector regression model predicting stock returns with hyperparameters C and gamma, we perform 5-fold outer cross-validation. For each outer fold, we do 3-fold inner cross-validation on the training portion to select the best hyperparameters, then evaluate the tuned model on the outer fold's test set. The final performance metric (e.g., mean squared error) is averaged over the 5 outer folds to give an unbiased estimate of model performance.",
+    "queries": [
+      "How do I get an unbiased estimate of my model's accuracy when I'm also trying different hyperparameter settings?",
+      "I need to tune my model's parameters but I'm worried about overfitting the validation set; what's the proper way to evaluate the final model?",
+      "Can you show me how to separate hyperparameter selection from model evaluation so I don't get overly optimistic performance metrics?"
+    ]
+  },
+  {
+    "id": "permutation_importance_calculator",
+    "designation": "Data Scientist",
+    "concept": "This tool computes permutation importance for a trained model, measuring how much a feature's random shuffling degrades prediction performance to quantify its contribution.",
+    "disambiguator": "Do not use this tool for feature selection during model training; it is intended for post-hoc interpretability on a fitted model. It assumes features are not highly correlated, as shuffling correlated features can produce misleading importance scores. Edge cases include categorical features with many levels, where permutation may create unseen combinations, and models with non-i.i.d. data where shuffling breaks temporal dependencies.",
+    "example": "For a credit risk model predicting default, permuting the 'income' feature increases the log-loss from 0.35 to 0.52, indicating income is the second most important predictor after 'credit score'.",
+    "queries": [
+      "Which features are driving my model's predictions the most?",
+      "Can you tell me how much each variable matters in my trained classifier?",
+      "I want to see the drop in accuracy when I scramble each input column one by one."
+    ]
+  },
+  {
+    "id": "standard_scaler_apply",
+    "designation": "Data Scientist",
+    "concept": "StandardScaler applies z-score normalization to each feature by removing the mean and scaling to unit variance.",
+    "disambiguator": "This tool is for standardizing features to have zero mean and unit variance, not for min-max scaling or robust scaling. It assumes the data is approximately normally distributed; do not use it on sparse data or when outliers are present, as they will distort the mean and variance. Edge case: if a feature has zero variance, StandardScaler will produce NaN or division by zero, so such features must be removed or handled separately.",
+    "example": "For a dataset of stock returns with mean 0.002 and standard deviation 0.015, applying StandardScaler transforms a return of 0.005 into (0.005 - 0.002) / 0.015 = 0.2.",
+    "queries": [
+      "Can you normalize my features so they have a mean of zero and a standard deviation of one?",
+      "I need to standardize my data for PCA, please apply z-score scaling.",
+      "Scale the columns to have unit variance and center them around zero."
+    ]
+  },
+  {
+    "id": "hyperband_tuner",
+    "designation": "Data Scientist",
+    "concept": "Hyperband Tuner is an adaptive hyperparameter optimization algorithm that uses successive halving and resource allocation to efficiently search for optimal model configurations.",
+    "disambiguator": "Do not use Hyperband for small hyperparameter spaces or when you have very limited computational budget, as its strength lies in pruning poor configurations early to save resources on large searches. It is best suited for problems with many hyperparameters and expensive model training, where you want to balance exploration and exploitation without running full training cycles for every candidate. Edge case: if the minimum resource (e.g., epochs) is too low, the early pruning may discard promising configurations that need more time to converge.",
+    "example": "For a deep learning model with 50 hyperparameter combinations, Hyperband runs 5 brackets with increasing resources (e.g., 1, 3, 9, 27, 81 epochs), pruning the worst 1/3 of models at each stage, ultimately selecting the best configuration after using only ~30% of the total training time compared to a full grid search.",
+    "queries": [
+      "I need to tune a neural network with many hyperparameters but training each model takes hours, can you find the best settings faster?",
+      "We have a large search space for our gradient boosting model and limited compute, how do we quickly eliminate bad parameter sets?",
+      "Can you optimize my model's learning rate, batch size, and dropout simultaneously without running every combination to completion?"
+    ]
+  },
+  {
+    "id": "target_leakage_detector",
+    "designation": "Data Scientist",
+    "concept": "The target leakage detector identifies features in a dataset that contain information from the future or from the target variable itself, which would cause overly optimistic model performance and invalidate out-of-sample predictions.",
+    "disambiguator": "Do not use this tool for detecting data drift, concept drift, or feature importance; it is specifically for finding columns that inadvertently include the target value or future information (e.g., a 'total_spent' column in a churn model where churn is the target). Edge cases include time-series data where a lagged target might be legitimate, or synthetic features like rolling averages that leak future values if not properly aligned. Also beware of ID columns that encode target information (e.g., customer IDs sorted by churn status).",
+    "example": "In a credit default prediction dataset, a feature 'days_since_last_payment' computed at the time of loan application is fine, but if the dataset includes 'default_flag' as a column and also a feature 'payment_missed_last_month' that is derived from the same default flag, the detector would flag it as leakage.",
+    "queries": [
+      "Check if any of my features are cheating by looking at the target before prediction",
+      "I think some columns might be giving away the answer in my training data",
+      "Can you find features that are too predictive because they contain future information?"
+    ]
+  },
+  {
+    "id": "lime_explainer",
+    "designation": "Data Scientist",
+    "concept": "LIME (Local Interpretable Model-agnostic Explanations) explains individual predictions of any machine learning model by approximating it locally with an interpretable surrogate model.",
+    "disambiguator": "Do not use LIME for global feature importance or to understand the overall model behavior across the entire dataset; it is strictly for local, instance-level explanations. Edge cases include high-dimensional sparse data where the local linear approximation may be unstable, and categorical features with many levels where the perturbation sampling can become misleading. Also, LIME explanations can vary with different random seeds, so results should be interpreted with caution and ideally averaged over multiple runs.",
+    "example": "For a credit scoring model predicting default risk, LIME explains why a specific applicant with income $45,000 and 2 late payments received a high-risk score of 0.85, showing that the late payments contributed +0.30 to the score while income contributed -0.05.",
+    "queries": [
+      "Can you tell me why this particular customer was flagged as fraudulent?",
+      "What features drove the model to give this loan application a low approval probability?",
+      "I need to understand the reasoning behind this single prediction for my compliance report."
+    ]
+  },
+  {
+    "id": "random_undersampling",
+    "designation": "Data Scientist",
+    "concept": "Random undersampling randomly removes instances from the majority class in an imbalanced dataset to balance class proportions before training a model.",
+    "disambiguator": "Do not use random undersampling when the majority class contains critical rare patterns or when data is scarce, as it discards potentially valuable information. It is best suited for large datasets where the majority class is overwhelmingly dominant and computational efficiency is a concern. Edge cases include when the minority class is extremely small, leading to severe data loss, or when the undersampling ratio is too aggressive, causing loss of generalizability.",
+    "example": "In a credit card fraud detection dataset with 100,000 legitimate transactions and 500 fraudulent ones, random undersampling would randomly select 500 legitimate transactions to match the 500 fraud cases, creating a balanced training set of 1,000 samples.",
+    "queries": [
+      "Balance my dataset by removing some of the majority class examples randomly.",
+      "I need to reduce the number of normal cases to match the rare event count.",
+      "Downsample the overrepresented category to fix the class imbalance."
+    ]
+  },
+  {
+    "id": "dropout_regularization",
+    "designation": "Data Scientist",
+    "concept": "Dropout regularization randomly drops a fraction of neurons during training to prevent overfitting by reducing co-adaptation of features.",
+    "disambiguator": "Do not use dropout for inference or prediction; it is only applied during training. It is not a substitute for other regularization methods like L1/L2 or early stopping, and it may harm performance on very small datasets or when the dropout rate is too high (e.g., >0.5). Edge case: For recurrent neural networks, use variational dropout or spatial dropout instead of standard dropout.",
+    "example": "In a deep neural network with 1024 hidden units and a dropout rate of 0.3, each training iteration randomly deactivates about 307 neurons, forcing the network to learn redundant representations and improving test accuracy from 82% to 87% on a credit default prediction task.",
+    "queries": [
+      "Help me reduce overfitting in my deep learning model without adding more data.",
+      "I think my neural network is memorizing the training set instead of generalizing.",
+      "How can I make my model less sensitive to individual features during training?"
+    ]
+  },
+  {
+    "id": "l1_lasso_regularization",
+    "designation": "Data Scientist",
+    "concept": "L1 regularization (Lasso) adds a penalty equal to the absolute value of the magnitude of coefficients to the loss function, shrinking some coefficients to zero for feature selection and regularization.",
+    "disambiguator": "Do not use Lasso when you need to retain all features with non-zero coefficients, as it forces some to exactly zero; prefer Ridge (L2) for that. Lasso is ideal when you suspect many features are irrelevant and want a sparse model, but it can struggle with highly correlated features\u2014in that case, consider Elastic Net. Edge case: if the number of features exceeds the number of samples, Lasso can select at most n samples worth of features, so use a variant like adaptive Lasso or Elastic Net.",
+    "example": "A hedge fund has 50 macroeconomic indicators and wants to predict monthly S&P 500 returns. Using Lasso with alpha=0.01 on 10 years of monthly data, the model selects only 8 key indicators (e.g., unemployment rate, yield curve slope) and sets the rest to zero, improving out-of-sample Sharpe ratio by 15%.",
+    "queries": [
+      "Which features are actually driving the model, and can we drop the rest?",
+      "I need a regression that automatically picks the most important variables without overfitting.",
+      "Can you shrink the coefficients of irrelevant predictors to zero so the model is simpler?"
+    ]
+  },
+  {
+    "id": "group_leakage_check",
+    "designation": "Data Scientist",
+    "concept": "This tool detects and quantifies group-level leakage in cross-validation splits by measuring how often observations from the same group appear in both training and validation sets.",
+    "disambiguator": "Do not use this for checking random data splits or time-series leakage; it is specifically for grouped data where observations share a common identifier (e.g., patient ID, store ID, session ID). Edge cases include overlapping groups across folds when using stratified or shuffled splits, and scenarios where group sizes are highly imbalanced. The tool should be triggered before model training to prevent overfitting from group-level information.",
+    "example": "In a loan default prediction dataset with 10,000 loans from 5,000 unique borrowers, a 5-fold cross-validation might inadvertently place loans from the same borrower in both training and test folds. The tool computes a 'leakage ratio' of 0.15, meaning 15% of borrowers have loans split across folds, indicating severe group leakage.",
+    "queries": [
+      "Are any customers appearing in both my training and test sets?",
+      "Check if the same user ID shows up in different folds of my cross-validation.",
+      "I need to verify that my data split doesn't have overlapping groups from the same source."
+    ]
+  },
+  {
+    "id": "weight_decay_regularization",
+    "designation": "Data Scientist",
+    "concept": "Weight decay regularization is a technique that adds a penalty proportional to the sum of squared weights to the loss function during training to prevent overfitting by discouraging large weights.",
+    "disambiguator": "Do not use weight decay as a substitute for early stopping or dropout, which address overfitting through different mechanisms. It is specifically for penalizing weight magnitude in gradient-based optimization, not for feature selection or sparsity (use L1 regularization for that). Edge case: weight decay interacts with learning rate schedules and batch normalization, so tuning may require re-optimizing other hyperparameters.",
+    "example": "In a neural network predicting stock returns, adding weight decay of 0.001 to the MSE loss reduces validation error from 0.12 to 0.09 by shrinking weights from a norm of 15.3 to 8.7, preventing the model from fitting noise in the training data.",
+    "queries": [
+      "Can you add a penalty to the loss to keep the model weights small?",
+      "How do I reduce overfitting by constraining the magnitude of the parameters?",
+      "I need to apply L2 regularization to my neural network's optimizer."
+    ]
+  },
+  {
+    "id": "population_based_training",
+    "designation": "Data Scientist",
+    "concept": "Population-based training (PBT) is a hyperparameter optimization method that trains a population of models in parallel, periodically copying weights from high-performing members to low-performing ones and mutating their hyperparameters to dynamically adapt during training.",
+    "disambiguator": "Do not use PBT for single-model training or static hyperparameter tuning (e.g., grid search or Bayesian optimization); it is specifically designed for scenarios where you want to jointly optimize both model parameters and hyperparameters over time. PBT is not suitable for very small populations (e.g., fewer than 4 members) because the evolutionary dynamics require diversity to avoid premature convergence. Edge case: if the training metric is highly noisy or non-stationary, PBT may oscillate or overfit to transient performance spikes.",
+    "example": "In a reinforcement learning task for algorithmic trading, a population of 16 Q-learning agents is trained with PBT: each agent has a different learning rate and discount factor. Every 10,000 steps, the bottom 20% of agents (by Sharpe ratio) copy weights from the top 20%, and their hyperparameters are mutated by multiplying by a random factor in [0.8, 1.2]. After 100,000 steps, the best agent achieves a 15% higher Sharpe ratio than any fixed-hyperparameter baseline.",
+    "queries": [
+      "Can you tune the learning rate and network architecture while the model is still training, using a group of models that share progress?",
+      "I need to optimize both the hyperparameters and the weights simultaneously across multiple training runs, where good performers influence the others.",
+      "Set up an evolutionary training loop where the worst models inherit parameters from the best and get their hyperparameters randomly adjusted."
+    ]
+  },
+  {
+    "id": "mean_imputation",
+    "designation": "Data Scientist",
+    "concept": "Mean imputation replaces missing values in a dataset with the arithmetic mean of the observed values for that feature.",
+    "disambiguator": "Do not use mean imputation for categorical data or when the missingness is not random (MNAR), as it can bias estimates and reduce variance. It is only appropriate for continuous numeric features with missing-at-random (MAR) or missing-completely-at-random (MCAR) patterns, and should be avoided if the feature has outliers or a highly skewed distribution, as the mean will distort the imputed values.",
+    "example": "In a dataset of daily stock returns, 5% of the values are missing. The mean return for the observed data is 0.02%. Imputing the missing entries with 0.02% preserves the overall average but reduces the standard deviation of the returns.",
+    "queries": [
+      "Fill in the blanks with the average value of the column.",
+      "Replace all the NaN entries with the column's central tendency.",
+      "I have missing numbers in my data; just use the typical value to complete them."
+    ]
+  },
+  {
+    "id": "calibration_curve_builder",
+    "designation": "Data Scientist",
+    "concept": "The calibration curve builder generates a plot of predicted probabilities versus observed frequencies to assess and visualize the reliability of a probabilistic classifier's output.",
+    "disambiguator": "This tool is specifically for evaluating the calibration of probabilistic predictions, not for comparing model accuracy or generating ROC/AUC curves. It should not be used for regression models or deterministic classifiers that output hard labels. Edge cases include handling small sample sizes per bin, which can cause noisy calibration curves, and ensuring that predictions are truly probabilistic (e.g., from logistic regression or calibrated SVM) rather than arbitrary scores.",
+    "example": "A credit risk model predicts a 70% probability of default for a set of loans; the calibration curve shows that among loans with predicted probabilities around 0.7, the actual default rate is 0.65, indicating slight overconfidence.",
+    "queries": [
+      "Plot the reliability of my model's probability estimates against actual outcomes.",
+      "Check if my classifier's predicted chances match the real event rates.",
+      "Show me a graph that compares forecasted likelihoods with observed frequencies."
+    ]
+  },
+  {
+    "id": "log_transform_apply",
+    "designation": "Data Scientist",
+    "concept": "Applies a logarithmic transformation to numerical data to reduce skewness and stabilize variance.",
+    "disambiguator": "This tool is specifically for applying log transformation to raw numeric values, not for computing log returns or log differences. Do not use it on data that already contains zeros or negative values unless you first shift the data (e.g., log(1+x)). It is not for log-scaling axes in plots or for log-normal distribution fitting.",
+    "example": "A dataset of stock trade volumes (range: 100 to 10,000,000) is heavily right-skewed; applying log10 transformation compresses the scale so that values become roughly 2 to 7, making patterns more visible for clustering.",
+    "queries": [
+      "Can you make the distribution of my asset prices more symmetric?",
+      "I need to reduce the impact of outliers in my revenue data before modeling.",
+      "Transform my feature so that it follows a more normal-like distribution."
+    ]
+  },
+  {
+    "id": "tomek_links_cleaning",
+    "designation": "Data Scientist",
+    "concept": "Tomek Links Cleaning removes borderline instances from imbalanced datasets by identifying and eliminating pairs of nearest neighbors from opposite classes to create a cleaner decision boundary.",
+    "disambiguator": "This tool is specifically for cleaning overlapping or noisy data points near class boundaries in binary classification problems, not for general outlier removal or data augmentation. It should not be used on balanced datasets or multi-class problems without adaptation, as it can discard too many majority class samples and degrade performance. Edge cases include when the minority class has very few samples, Tomek Links may remove all of them, so it is often combined with oversampling techniques like SMOTE.",
+    "example": "In a credit card fraud dataset with 1000 fraud cases (minority) and 100,000 legitimate transactions (majority), Tomek Links identifies 200 pairs of nearest neighbors where one is fraud and one is legitimate, then removes the 200 legitimate transactions that are closest to fraud cases, reducing noise and improving classifier precision.",
+    "queries": [
+      "Clean up the overlapping points between the two classes in my dataset",
+      "Remove ambiguous samples that are too close to the opposite class boundary",
+      "I need to reduce noise near the decision boundary for my imbalanced classification problem"
+    ]
+  },
+  {
+    "id": "optuna_study_runner",
+    "designation": "Data Scientist",
+    "concept": "Optuna Study Runner automates hyperparameter optimization by defining an objective function, creating a study, and running trials to minimize or maximize a metric using various sampling and pruning algorithms.",
+    "disambiguator": "Do not use this for simple grid search or manual parameter tuning; it is designed for automated, adaptive optimization with pruning to stop unpromising trials early. Edge cases include handling non-serializable objective functions, ensuring the study database is properly closed to avoid corruption, and being aware that multi-objective optimization requires a different setup (e.g., MOTPE).",
+    "example": "Optimize the learning rate, batch size, and number of layers for a neural network predicting stock returns, running 100 trials with TPE sampler and MedianPruner to minimize validation MSE.",
+    "queries": [
+      "Tune the hyperparameters for my model automatically to get the best validation accuracy.",
+      "Run a search over different parameter combinations and stop bad ones early to save time.",
+      "I need to find the optimal settings for my machine learning pipeline without manually testing each option."
+    ]
+  },
+  {
+    "id": "chi_square_feature_selection",
+    "designation": "Data Scientist",
+    "concept": "Chi-square feature selection evaluates the independence between categorical features and a categorical target variable to identify the most relevant features for classification tasks.",
+    "disambiguator": "Do not use chi-square feature selection for continuous or ordinal data without binning, as it requires categorical inputs; it also assumes non-negative frequencies and is sensitive to small sample sizes where expected counts are less than 5, which can invalidate the test. Edge cases include features with many categories leading to sparse contingency tables, and it should not be used for regression or when the target is continuous.",
+    "example": "In a credit risk model, a bank has categorical features like 'employment_type' (e.g., full-time, part-time, self-employed) and 'loan_grade' (A, B, C) to predict 'default_flag' (yes/no). Chi-square test on 'employment_type' yields a p-value of 0.003, indicating strong dependence with default, so it is selected as a key feature.",
+    "queries": [
+      "Which categorical variables are most associated with my binary outcome?",
+      "I need to filter out irrelevant categorical predictors for my classification model.",
+      "Rank my nominal features by how much they correlate with the target class."
+    ]
+  }
+]
