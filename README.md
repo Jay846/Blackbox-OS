@@ -1,4 +1,4 @@
-# Blackbox OS: A Reliable, Sandboxed Execution Runtime & Modular Orchestrator for LLM Agents at Scale
+# Blackbox OS: A Reliable, Sandboxed Execution Runtime & Modular Orchestrator for LLM Agents at Scale, Zenodo: https://doi.org/10.5281/zenodo.21413144
 
 Blackbox OS is a graph-based agentic operating system designed for quantitative research, data science, and algorithmic trading. Rather than relying on monolithic context windows—which suffer from severe routing degradation and execution collapse as the tool library scales—Blackbox OS orchestrates specialized agents across modular sub-graphs, executing calculations via a containerized **Sandbox Delegation Pattern** and protecting pipelines with **Dynamic Validation Guardrails**.
 
@@ -92,7 +92,7 @@ We demonstrate the reliability of these architectures in a closed-loop multi-age
 
 While Blackbox OS establishes a zero-training, template-driven framework for scaling agentic systems, several objectives remain for subsequent iterations:
 1. **gVisor/Docker Sandboxing:** Transitioning the local execution interpreter to secure, containerized environments to prevent arbitrary code execution vulnerabilities in production.
-2. **Quant Researcher & Quant Trader Live API Sw sweeps:** Scaling live physical API evaluations to all 199 skills inside the Quant Researcher and Quant Trader graphs (currently validated structurally and via simulation sweeps).
+2. **Quant Researcher & Quant Trader Live API sweeps:** Scaling live physical API evaluations to all 199 skills inside the Quant Researcher and Quant Trader graphs (currently validated structurally and via simulation sweeps).
 3. **Compound Pipeline Depth Studies:** Extending sequential benchmarks to $d > 10$ nodes to map the accumulation of routing errors in deeper, fully autonomous agent chains.
 4. **Human Interface Cognitive Studies:** Investigating user interaction patterns under different guardrail warning densities to reduce operator fatigue while preserving safety.
 5. **Cross-Domain Generalization:** Applying the template-sandbox paradigm to other precision-critical domains such as medical diagnosis pipelines and compiler-guided software engineering.
