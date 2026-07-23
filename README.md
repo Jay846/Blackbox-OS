@@ -170,3 +170,21 @@ export DEEPSEEK_API_KEY="your-key-here"
   ```bash
   python3 blackbox_os/roles/data_scientist/workflows/run_pipeline_experiment.py --model deepseek-chat --provider deepseek
   ```
+
+---
+
+## 📜 Citation
+
+If you use **Blackbox OS** or its empirical benchmarks in your research, please cite our pre-print:
+
+```bibtex
+@article{salvi2026blackboxos,
+  title={Blackbox OS: A Reliable, Sandboxed Execution Runtime & Modular Orchestrator for LLM Agents at Scale},
+  author={Salvi, Jay},
+  journal={Zenodo Pre-print},
+  year={2026},
+  doi={10.5281/zenodo.21413144},
+  url={https://doi.org/10.5281/zenodo.21413144}
+}
+```
+
