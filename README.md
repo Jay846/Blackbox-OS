@@ -11,15 +11,29 @@ Monolithic routing—injecting all available tool schemas into a single LLM's sy
 * **Description Quality Mitigation:** While expert-authored descriptions and disambiguators can delay this collapse and improve routing accuracy by **+10–20 percentage points** for frontier models (such as GPT-4o-mini and DeepSeek V4 Pro), they increase prompt density, which actively harms smaller models (like Claude Haiku) due to context distraction.
 * **Geometric Origin:** Semantic packing analysis shows that as catalog size $N$ increases, the maximum cosine similarity between target tools and distractors rises monotonically. When similarity crosses the critical **$0.53 - 0.56$ threshold**, the self-attention mechanism fails, causing routing to fail.
 
+<p align="center">
+  <img src="images/semantic_density_vs_accuracy.png" width="48%" alt="Semantic Density vs Routing Accuracy" />
+  <img src="images/attention_degradation_curve.png" width="48%" alt="Attention Degradation Curve" />
+</p>
+
 ### 2. The Two-Stage Execution Collapse
 Even when correctly routed, LLMs fail to execute tools reliably under context pressure due to two distinct failure modes:
 * **Schema Collapse:** Bare prompts fail to adhere to JSON structures in **73%** of trials, omitting required keys or returning malformed outputs.
 * **Arithmetic Collapse:** When schemas are enforced (via structured outputs), LLMs frequently fail at floating-point calculations and statistical aggregation (mental math hallucinations).
 * **Mitigation:** Enforcing expert **Process Templates (SOPs)** completely eliminates schema collapse, while delegating calculations to a **Python Sandbox** bypasses the mental math bottleneck, lifting E2E success from **25% to >90%**.
 
+<p align="center">
+  <img src="images/execution_benchmark_comparison.png" width="75%" alt="Prompt Math vs Python Sandbox Execution Benchmark" />
+</p>
+
 ### 3. Robustness Boundaries & Fracture Points
 * **Noise Gradient (L0–L5):** Agents are robust to typos, fluff, and contradictory prompts (L0-L4 success at ~97-100%). However, they fracture under adversarial prompt injections (L5), collapsing to 0% success. The addition of a **Script-Integrity Guardrail** recovers this to **100%**.
 * **Query Variation Matrix (2×2):** High phrasing novelty (unfamiliar jargon) or high semantic ambiguity alone do not degrade routing. However, their combination causes routing accuracy to drop to **70%** as the agent is pulled toward semantically related but incorrect tools.
+
+<p align="center">
+  <img src="images/noise_gradient_fracture.png" width="48%" alt="Noise Gradient Fracture & Guardrail Recovery" />
+  <img src="images/query_variation_heatmap.png" width="48%" alt="Query Variation Heatmap" />
+</p>
 
 ---
 
@@ -78,6 +92,11 @@ Comparing modular sub-graph SOP configurations against unpartitioned bare (flat)
 | **Quant Researcher** | **Bare (Flat 500-tool baseline)** | 73.0% - 83.0% | 10.0% - 13.3% | 70.0% - 72.0% | 1.20 - 1.35 |
 | **Quant Trader** | **DeepSeek V4 / GPT-4o-mini (SOP)** | **100.0%** | 33.3% - 43.0% | **100.0%** | 0.57 - 0.67 |
 | **Quant Trader** | **Bare (Flat 500-tool baseline)** | 73.0% - 83.0% | 10.0% - 13.3% | 70.0% - 72.0% | 1.20 - 1.35 |
+
+<p align="center">
+  <img src="images/multi_role_stress_test_comparison.png" width="80%" alt="Multi-Role Volume Stress Test Comparison" />
+</p>
+
 
 ---
 
