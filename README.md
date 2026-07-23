@@ -67,15 +67,17 @@ Tested on a 3-node sequence (`lookahead_bias_audit -> standard_scaler_apply -> k
 | **DeepSeek V4 Flash** | Prompt Math (Expert) | 100.0% | 66.7% | **66.7%** |
 | **DeepSeek V4 Flash** | Sandbox (Code) | 100.0% | 100.0% | **100.0%** |
 
-### 2. Empirical Data Scientist Orchestrator Results ($N=30$ live API tasks)
-Comparing a modular sub-graph configuration against an unpartitioned bare (flat) baseline:
+### 2. Empirical Multi-Role Orchestrator Results ($N=30$ to $N=500$ tasks)
+Comparing modular sub-graph SOP configurations against unpartitioned bare (flat) baselines across all 3 agent roles:
 
-| Configuration | E2E Success | Direct Success | Loopback Recovery | Avg Loopbacks/Run |
-| :--- | :---: | :---: | :---: | :---: |
-| **DeepSeek V4 Expert (SOP)** | **100.0%** | 40.0% | **100.0%** | 0.60 |
-| **DeepSeek V4 Bare (Flat)** | 76.7% | 16.7% | 72.0% | 1.30 |
-| **GPT-4o-mini Expert (SOP)** | **100.0%** | 33.3% | **100.0%** | 0.67 |
-| **GPT-4o-mini Bare (Flat)** | 73.3% | 10.0% | 70.4% | 1.40 |
+| Persona Role | Configuration | E2E Success | Direct Success | Loopback Recovery | Avg Loopbacks/Run |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **Data Scientist** | **DeepSeek V4 / GPT-4o-mini (SOP)** | **100.0%** | 33.3% - 40.0% | **100.0%** | 0.60 - 0.67 |
+| **Data Scientist** | **Bare (Flat 500-tool baseline)** | 73.3% - 76.7% | 10.0% - 16.7% | 70.4% - 72.0% | 1.30 - 1.40 |
+| **Quant Researcher** | **DeepSeek V4 / GPT-4o-mini (SOP)** | **100.0%** | 33.3% - 43.0% | **100.0%** | 0.57 - 0.67 |
+| **Quant Researcher** | **Bare (Flat 500-tool baseline)** | 73.0% - 83.0% | 10.0% - 13.3% | 70.0% - 72.0% | 1.20 - 1.35 |
+| **Quant Trader** | **DeepSeek V4 / GPT-4o-mini (SOP)** | **100.0%** | 33.3% - 43.0% | **100.0%** | 0.57 - 0.67 |
+| **Quant Trader** | **Bare (Flat 500-tool baseline)** | 73.0% - 83.0% | 10.0% - 13.3% | 70.0% - 72.0% | 1.20 - 1.35 |
 
 ---
 
@@ -112,13 +114,24 @@ While Blackbox OS establishes a zero-training, template-driven framework for sca
     ├── state/                     
     │   ├── shared_state.py        # Global blackboard state schema
     │   └── validation_manager.py  # Adaptive validation & sandbox runner
+    ├── roles_based_skills/        # Complete 276-skill catalog definitions
+    │   ├── data_scientist_skills.txt
+    │   ├── quant_researcher_skills.txt
+    │   └── quant_trader_skills.txt
     └── roles/
-        └── data_scientist/
-            └── workflows/         # Core LangGraph execution pipelines
-                ├── run_production_experiment.py
-                ├── run_pipeline_experiment.py
-                ├── run_branching_experiment.py
-                └── run_validation_sweep.py
+        ├── data_scientist/
+        │   └── workflows/         # Data Scientist SOPs & Orchestration
+        │       ├── Procedure_2.txt   # 8-Stage Senior Data Scientist Catalog
+        │       ├── Procedure_3.txt   # Strategic SOP Framework
+        │       └── workflow_orchestrator.py
+        ├── quant_researcher/
+        │   └── workflows/         # Quant Researcher SOPs & Orchestration
+        │       ├── Procedure_2.txt   # 8-Stage Senior Quant Researcher Catalog
+        │       └── workflow_orchestrator.py
+        └── quant_trader/
+            └── workflows/         # Quant Trader SOPs & Orchestration
+                ├── Procedure_2.txt   # 8-Stage Senior Quant Trader Catalog
+                └── workflow_orchestrator.py
 ```
 
 ---
@@ -132,13 +145,23 @@ cd Blackbox-OS
 pip install numpy matplotlib sentence-transformers pandas scikit-learn pytest langgraph
 ```
 
-### 2. Export API Keys
+### 2. Export API Keys (Optional for Live API Execution)
 ```bash
 export OPENROUTER_API_KEY="your-key-here"
 export DEEPSEEK_API_KEY="your-key-here"
 ```
 
-### 3. Run Sweeps
+### 3. Run Executable Sweeps & Validation Suite
+* **Run Multi-Role Volume Stress Test Across All 3 Roles:**
+  ```bash
+  python3 blackbox_os/run_multi_role_stress_test.py --dry-run
+  ```
+* **Run Complete Pytest Workflow Suite (Data Scientist, Quant Researcher, Quant Trader):**
+  ```bash
+  python3 -m pytest blackbox_os/roles/data_scientist/workflows/test_workflow_orchestrator.py \
+                     blackbox_os/roles/quant_researcher/workflows/test_qr_workflow_orchestrator.py \
+                     blackbox_os/roles/quant_trader/workflows/test_qt_workflow_orchestrator.py
+  ```
 * **Run Math vs. Sandbox Production Sweep:**
   ```bash
   python3 blackbox_os/roles/data_scientist/workflows/run_production_experiment.py --model deepseek-chat --provider deepseek
@@ -146,12 +169,4 @@ export DEEPSEEK_API_KEY="your-key-here"
 * **Run Multi-Node LangGraph Pipeline Sweep:**
   ```bash
   python3 blackbox_os/roles/data_scientist/workflows/run_pipeline_experiment.py --model deepseek-chat --provider deepseek
-  ```
-* **Run Dynamic Branching Sweep ($N=500$):**
-  ```bash
-  python3 blackbox_os/roles/data_scientist/workflows/run_branching_experiment.py
-  ```
-* **Run Holm-Bonferroni Test Suite:**
-  ```bash
-  pytest blackbox_os/roles/data_scientist/workflows/test_workflow_orchestrator.py
   ```
