@@ -1,0 +1,279 @@
+{
+  "path_accuracy": 100.0,
+  "execution_accuracy": 100.0,
+  "e2e_success_rate": 100.0,
+  "runs": [
+    {
+      "run_index": 0,
+      "user_goal": "First audit features.csv for formula leakage and remediate it. Once clean, normalize the return features to zero mean and unit variance using StandardScaler.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 29.36320781408679,
+        "std": 9.722712217537653
+      },
+      "expected": {
+        "mean": 29.36320781408679,
+        "std": 9.722712217537653
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 1,
+      "user_goal": "First audit features.csv for formula leakage and remediate it. Once clean, normalize the return features to zero mean and unit variance using StandardScaler.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 41.67619429309628,
+        "std": 9.699936128930101
+      },
+      "expected": {
+        "mean": 41.67619429309628,
+        "std": 9.699936128930101
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 2,
+      "user_goal": "First audit features.csv for formula leakage and remediate it. Once clean, normalize the return features to zero mean and unit variance using StandardScaler.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 34.171041260457365,
+        "std": 10.433318509629968
+      },
+      "expected": {
+        "mean": 34.171041260457365,
+        "std": 10.433318509629968
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 3,
+      "user_goal": "Audit column formulas for lookahead bias. Then, perform a Principal Component Analysis (PCA) on features feat_1 to feat_15 of the clean dataset to compute the explained variance ratio of the first 2 principal components.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_pca",
+        "pca_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "pca",
+      "expected_branch": "pca",
+      "output": {
+        "explained_variance_ratio": [
+          0.21783491775704425,
+          0.18117110559182525
+        ]
+      },
+      "expected": {
+        "explained_variance_ratio": [
+          0.21783491775704455,
+          0.18117110559182534
+        ]
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 4,
+      "user_goal": "Audit column formulas for lookahead bias. Then, perform a Principal Component Analysis (PCA) on features feat_1 to feat_15 of the clean dataset to compute the explained variance ratio of the first 2 principal components.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_pca",
+        "pca_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "pca",
+      "expected_branch": "pca",
+      "output": {
+        "explained_variance_ratio": [
+          0.18153519505246,
+          0.16864365472264695
+        ]
+      },
+      "expected": {
+        "explained_variance_ratio": [
+          0.18153519505245996,
+          0.16864365472264695
+        ]
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 5,
+      "user_goal": "Audit the formulas for lookahead leakage. Once remediated, fit a linear regression using features feat_1 and feat_2 to predict the clean target column return. Return coefficients, intercept, and R-squared.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_regression",
+        "regression_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "regression",
+      "expected_branch": "regression",
+      "output": {
+        "coefficients": [
+          -0.3396100429046142,
+          3.264988219485287
+        ],
+        "intercept": 37.57258908962979,
+        "r_squared": 0.07849860012253806
+      },
+      "expected": {
+        "coefficients": [
+          -0.33961004290461355,
+          3.264988219485287
+        ],
+        "intercept": 37.57258908962978,
+        "r_squared": 0.07849860012253806
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 6,
+      "user_goal": "Audit the formulas for lookahead leakage. Once remediated, fit a linear regression using features feat_1 and feat_2 to predict the clean target column return. Return coefficients, intercept, and R-squared.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_regression",
+        "regression_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "regression",
+      "expected_branch": "regression",
+      "output": {
+        "coefficients": [
+          0.3492822194322389,
+          -3.4120048157458744
+        ],
+        "intercept": 29.66234065984751,
+        "r_squared": 0.09266117121109274
+      },
+      "expected": {
+        "coefficients": [
+          0.34928221943223925,
+          -3.412004815745873
+        ],
+        "intercept": 29.66234065984751,
+        "r_squared": 0.09266117121109263
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 7,
+      "user_goal": "Audit the formulas for lookahead leakage. Once remediated, fit a linear regression using features feat_1 and feat_2 to predict the clean target column return. Return coefficients, intercept, and R-squared.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_regression",
+        "regression_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "regression",
+      "expected_branch": "regression",
+      "output": {
+        "coefficients": [
+          7.104027623061679,
+          0.22526714071303838
+        ],
+        "intercept": 48.10736295491499,
+        "r_squared": 0.28719989811860536
+      },
+      "expected": {
+        "coefficients": [
+          7.104027623061676,
+          0.22526714071303838
+        ],
+        "intercept": 48.10736295491498,
+        "r_squared": 0.28719989811860536
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 8,
+      "user_goal": "Perform leakage auditing and drop any contaminated feature columns. Then, use the fills execution log to calculate the optimal Kelly sizing fraction and amount for a $50k bankroll.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_kelly",
+        "kelly_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "kelly",
+      "expected_branch": "kelly",
+      "output": {
+        "fraction": 0.385075,
+        "amount": 19253.73
+      },
+      "expected": {
+        "fraction": 0.38507462686567157,
+        "amount": 19253.73134328358
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 9,
+      "user_goal": "Perform leakage auditing and drop any contaminated feature columns. Then, use the fills execution log to calculate the optimal Kelly sizing fraction and amount for a $50k bankroll.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_kelly",
+        "kelly_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "kelly",
+      "expected_branch": "kelly",
+      "output": {
+        "fraction": 0.386188,
+        "amount": 19309.39
+      },
+      "expected": {
+        "fraction": 0.3861878453038674,
+        "amount": 19309.39226519337
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    }
+  ]
+}

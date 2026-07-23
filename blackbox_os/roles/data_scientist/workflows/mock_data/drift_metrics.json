@@ -1,0 +1,8 @@
+{
+  "metrics": {
+    "implied_vol": {
+      "ks_score": 0.35,
+      "warning_threshold": 0.25
+    }
+  }
+}

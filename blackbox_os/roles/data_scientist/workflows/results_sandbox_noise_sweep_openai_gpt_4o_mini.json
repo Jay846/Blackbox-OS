@@ -1,0 +1,1059 @@
+{
+  "results": {
+    "60": {
+      "expert": {
+        "total": 6,
+        "selection_acc": 100.0,
+        "execution_acc": 50.0,
+        "schema_acc": 100.0,
+        "e2e_acc": 50.0
+      },
+      "expert_sandbox": {
+        "total": 6,
+        "selection_acc": 100.0,
+        "execution_acc": 100.0,
+        "schema_acc": 100.0,
+        "e2e_acc": 100.0
+      }
+    },
+    "200": {
+      "expert": {
+        "total": 6,
+        "selection_acc": 100.0,
+        "execution_acc": 50.0,
+        "schema_acc": 100.0,
+        "e2e_acc": 50.0
+      },
+      "expert_sandbox": {
+        "total": 6,
+        "selection_acc": 100.0,
+        "execution_acc": 100.0,
+        "schema_acc": 100.0,
+        "e2e_acc": 100.0
+      }
+    },
+    "500": {
+      "expert": {
+        "total": 6,
+        "selection_acc": 100.0,
+        "execution_acc": 50.0,
+        "schema_acc": 100.0,
+        "e2e_acc": 50.0
+      },
+      "expert_sandbox": {
+        "total": 6,
+        "selection_acc": 100.0,
+        "execution_acc": 100.0,
+        "schema_acc": 100.0,
+        "e2e_acc": 100.0
+      }
+    },
+    "1000": {
+      "expert": {
+        "total": 6,
+        "selection_acc": 100.0,
+        "execution_acc": 50.0,
+        "schema_acc": 100.0,
+        "e2e_acc": 50.0
+      },
+      "expert_sandbox": {
+        "total": 6,
+        "selection_acc": 100.0,
+        "execution_acc": 100.0,
+        "schema_acc": 100.0,
+        "e2e_acc": 100.0
+      }
+    }
+  },
+  "logs": [
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "can you calclate standard kelly postion size fraction and amnt if win_rate is 0.55, profit_loss ratio is 1.8, and my balance is 10000?",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.09999999999999998,\n  \"amount\": 999.9999999999998\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.09999999999999998,
+        "amount": 999.9999999999998
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Hey! My trader friend suggested using ATR for my trailing stop. My current ATR is 15.2 and I want to set a multiplier of 2.0. Can you compute the stop distance? Pls ignore the noise.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate expected value (EV) for a trade with win probability 0.6, winning return of 200.0, losing return of -100.0, and commission fee of 5.0. Make sure to deduct commission.",
+      "raw_response": "```json\n{\n  \"ev\": 85.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 85.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "I was reviewing my feature engineering pipeline and found a column total_revenue_offset defined as target * 5 + 10. Could you check if there is any lookhaed leakage bias in this?",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"The column total_revenue_offset uses the target variable directly, which indicates lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "The column total_revenue_offset uses the target variable directly, which indicates lookahead bias."
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply standard scale transformation like sklearn on this list of numbers: [12, 17, 33, 44, 51]. Give me the pop mean and std dev.",
+      "raw_response": "{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 31.4,\n  \"std\": 14.5\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 31.4,
+        "std": 14.5
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate data drft warning. KS score is 0.35 and the warning threshld is 0.25. Has it drifted?",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "can you calclate standard kelly postion size fraction and amnt if win_rate is 0.55, profit_loss ratio is 1.8, and my balance is 10000?",
+      "raw_response": "{\n  \"skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import json\\n\\n# Given parameters\\nwin_rate = 0.55\\npayoff = 1.8\\nbankroll = 10000\\n\\n# Calculate the Kelly fraction\\nif win_rate <= 0 or payoff <= 0:\\n    fraction = 0.0\\n    amount = 0.0\\nelse:\\n    f = (win_rate * payoff - (1 - win_rate)) / payoff\\n    amount = f * bankroll\\n    fraction = f\\n\\n# Prepare the output\\noutput = {\\n    'fraction': fraction,\\n    'amount': amount\\n}\\n\\n# Print the output as a JSON dictionary\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "python_code": "import json\n\n# Given parameters\nwin_rate = 0.55\npayoff = 1.8\nbankroll = 10000\n\n# Calculate the Kelly fraction\nif win_rate <= 0 or payoff <= 0:\n    fraction = 0.0\n    amount = 0.0\nelse:\n    f = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = f * bankroll\n    fraction = f\n\n# Prepare the output\noutput = {\n    'fraction': fraction,\n    'amount': amount\n}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "fraction": 0.3000000000000001,
+        "amount": 3000.000000000001
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given parameters\nwin_rate = 0.55\npayoff = 1.8\nbankroll = 10000\n\n# Calculate the Kelly fraction\nif win_rate <= 0 or payoff <= 0:\n    fraction = 0.0\n    amount = 0.0\nelse:\n    f = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = f * bankroll\n    fraction = f\n\n# Prepare the output\noutput = {\n    'fraction': fraction,\n    'amount': amount\n}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "captured_output": {
+          "fraction": 0.3000000000000001,
+          "amount": 3000.000000000001
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Hey! My trader friend suggested using ATR for my trailing stop. My current ATR is 15.2 and I want to set a multiplier of 2.0. Can you compute the stop distance? Pls ignore the noise.",
+      "raw_response": "{\n  \"skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import json\\n\\n# Given values\\natr = 15.2\\nmultiplier = 2.0\\n\\n# Calculate stop distance\\nif atr <= 0 or multiplier <= 0:\\n    stop_distance = 0.0\\nelse:\\n    stop_distance = atr * multiplier\\n\\n# Prepare output\\noutput = {'stop_distance': stop_distance}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "skill_id": "atr_dynamic_stop",
+        "python_code": "import json\n\n# Given values\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given values\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "stop_distance": 30.4
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate expected value (EV) for a trade with win probability 0.6, winning return of 200.0, losing return of -100.0, and commission fee of 5.0. Make sure to deduct commission.",
+      "raw_response": "{\n  \"skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\n# Given parameters\\nwin_prob = 0.6\\nwin_return = 200.0\\nloss_return = -100.0\\nfee = 5.0\\n\\n# Calculate expected value (EV)\\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n\\n# Prepare output\\noutput = {'ev': ev}\\n\\n# Print the output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "skill_id": "trade_ev_calculator",
+        "python_code": "import json\n\n# Given parameters\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': ev}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given parameters\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': ev}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "I was reviewing my feature engineering pipeline and found a column total_revenue_offset defined as target * 5 + 10. Could you check if there is any lookhaed leakage bias in this?",
+      "raw_response": "{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import json\\n\\ndef check_leakage():\\n    leakage_detected = True\\n    reason = \\\"Column 'total_revenue_offset' uses the target variable directly in its definition, indicating lookahead bias.\\\"\\n    return {'leakage_detected': leakage_detected, 'reason': reason}\\n\\nif __name__ == '__main__':\\n    result = check_leakage()\\n    print(json.dumps(result))\"\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "python_code": "import json\n\ndef check_leakage():\n    leakage_detected = True\n    reason = \"Column 'total_revenue_offset' uses the target variable directly in its definition, indicating lookahead bias.\"\n    return {'leakage_detected': leakage_detected, 'reason': reason}\n\nif __name__ == '__main__':\n    result = check_leakage()\n    print(json.dumps(result))",
+        "leakage_detected": true,
+        "reason": "Column 'total_revenue_offset' uses the target variable directly in its definition, indicating lookahead bias."
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef check_leakage():\n    leakage_detected = True\n    reason = \"Column 'total_revenue_offset' uses the target variable directly in its definition, indicating lookahead bias.\"\n    return {'leakage_detected': leakage_detected, 'reason': reason}\n\nif __name__ == '__main__':\n    result = check_leakage()\n    print(json.dumps(result))",
+        "captured_output": {
+          "leakage_detected": true,
+          "reason": "Column 'total_revenue_offset' uses the target variable directly in its definition, indicating lookahead bias."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply standard scale transformation like sklearn on this list of numbers: [12, 17, 33, 44, 51]. Give me the pop mean and std dev.",
+      "raw_response": "{\n  \"skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import numpy as np\\n\\n# Input data\\ndata = [12, 17, 33, 44, 51]\\n\\n# Calculate mean and standard deviation\\nmean = np.mean(data)\\nstd = np.std(data, ddof=0)  # Population standard deviation\\n\\n# Prepare output\\noutput = {'mean': mean, 'std': std}\\n\\n# Print output as JSON\\nimport json\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "skill_id": "standard_scaler_apply",
+        "python_code": "import numpy as np\n\n# Input data\ndata = [12, 17, 33, 44, 51]\n\n# Calculate mean and standard deviation\nmean = np.mean(data)\nstd = np.std(data, ddof=0)  # Population standard deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std}\n\n# Print output as JSON\nimport json\nprint(json.dumps(output))",
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import numpy as np\n\n# Input data\ndata = [12, 17, 33, 44, 51]\n\n# Calculate mean and standard deviation\nmean = np.mean(data)\nstd = np.std(data, ddof=0)  # Population standard deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std}\n\n# Print output as JSON\nimport json\nprint(json.dumps(output))",
+        "captured_output": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate data drft warning. KS score is 0.35 and the warning threshld is 0.25. Has it drifted?",
+      "raw_response": "{\n  \"skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\n# Given values\\nks_score = 0.35\\nthreshold = 0.25\\n\\ndata_drift_detected = ks_score > threshold\\n\\n# Prepare output\\noutput = {\\\"data_drift_detected\\\": data_drift_detected}\\n\\n# Print the output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "skill_id": "data_drift_monitor",
+        "python_code": "import json\n\n# Given values\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Prepare output\noutput = {\"data_drift_detected\": data_drift_detected}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given values\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Prepare output\noutput = {\"data_drift_detected\": data_drift_detected}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "can you calclate standard kelly postion size fraction and amnt if win_rate is 0.55, profit_loss ratio is 1.8, and my balance is 10000?",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.08333333333333333,\n  \"amount\": 833.3333333333334\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.08333333333333333,
+        "amount": 833.3333333333334
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Hey! My trader friend suggested using ATR for my trailing stop. My current ATR is 15.2 and I want to set a multiplier of 2.0. Can you compute the stop distance? Pls ignore the noise.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate expected value (EV) for a trade with win probability 0.6, winning return of 200.0, losing return of -100.0, and commission fee of 5.0. Make sure to deduct commission.",
+      "raw_response": "```json\n{\n  \"ev\": 85.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 85.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "I was reviewing my feature engineering pipeline and found a column total_revenue_offset defined as target * 5 + 10. Could you check if there is any lookhaed leakage bias in this?",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"The column 'total_revenue_offset' uses the target variable in its definition, which can lead to lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "The column 'total_revenue_offset' uses the target variable in its definition, which can lead to lookahead bias."
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply standard scale transformation like sklearn on this list of numbers: [12, 17, 33, 44, 51]. Give me the pop mean and std dev.",
+      "raw_response": "{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 31.4,\n  \"std\": 14.64\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 31.4,
+        "std": 14.64
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate data drft warning. KS score is 0.35 and the warning threshld is 0.25. Has it drifted?",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": true,\n  \"ks_score\": 0.35,\n  \"threshold\": 0.25\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true,
+        "ks_score": 0.35,
+        "threshold": 0.25
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "can you calclate standard kelly postion size fraction and amnt if win_rate is 0.55, profit_loss ratio is 1.8, and my balance is 10000?",
+      "raw_response": "{\n  \"skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import json\\n\\ndef kelly_position_size(win_rate, profit_loss_ratio, bankroll):\\n    if win_rate <= 0 or profit_loss_ratio <= 0:\\n        return {'fraction': 0.0, 'amount': 0.0}\\n    fraction = (win_rate * profit_loss_ratio - (1 - win_rate)) / profit_loss_ratio\\n    amount = fraction * bankroll\\n    return {'fraction': fraction, 'amount': amount}\\n\\nwin_rate = 0.55\\nprofit_loss_ratio = 1.8\\nbankroll = 10000\\nresult = kelly_position_size(win_rate, profit_loss_ratio, bankroll)\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "python_code": "import json\n\ndef kelly_position_size(win_rate, profit_loss_ratio, bankroll):\n    if win_rate <= 0 or profit_loss_ratio <= 0:\n        return {'fraction': 0.0, 'amount': 0.0}\n    fraction = (win_rate * profit_loss_ratio - (1 - win_rate)) / profit_loss_ratio\n    amount = fraction * bankroll\n    return {'fraction': fraction, 'amount': amount}\n\nwin_rate = 0.55\nprofit_loss_ratio = 1.8\nbankroll = 10000\nresult = kelly_position_size(win_rate, profit_loss_ratio, bankroll)\nprint(json.dumps(result))",
+        "fraction": 0.3000000000000001,
+        "amount": 3000.000000000001
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef kelly_position_size(win_rate, profit_loss_ratio, bankroll):\n    if win_rate <= 0 or profit_loss_ratio <= 0:\n        return {'fraction': 0.0, 'amount': 0.0}\n    fraction = (win_rate * profit_loss_ratio - (1 - win_rate)) / profit_loss_ratio\n    amount = fraction * bankroll\n    return {'fraction': fraction, 'amount': amount}\n\nwin_rate = 0.55\nprofit_loss_ratio = 1.8\nbankroll = 10000\nresult = kelly_position_size(win_rate, profit_loss_ratio, bankroll)\nprint(json.dumps(result))",
+        "captured_output": {
+          "fraction": 0.3000000000000001,
+          "amount": 3000.000000000001
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Hey! My trader friend suggested using ATR for my trailing stop. My current ATR is 15.2 and I want to set a multiplier of 2.0. Can you compute the stop distance? Pls ignore the noise.",
+      "raw_response": "{\n  \"skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import json\\n\\n# Constants\\natr = 15.2\\nmultiplier = 2.0\\n\\n# Calculate stop distance\\nstop_distance = atr * multiplier\\n\\n# Prepare output\\noutput = {'stop_distance': stop_distance}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "skill_id": "atr_dynamic_stop",
+        "python_code": "import json\n\n# Constants\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nstop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Constants\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nstop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "stop_distance": 30.4
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate expected value (EV) for a trade with win probability 0.6, winning return of 200.0, losing return of -100.0, and commission fee of 5.0. Make sure to deduct commission.",
+      "raw_response": "{\n  \"skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\n# Parameters for the expected value calculation\\nwin_prob = 0.6\\nwin_return = 200.0\\nloss_return = -100.0\\nfee = 5.0\\n\\n# Calculate expected value (EV)\\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n\\n# Prepare the output\\noutput = {'ev': ev}\\n\\n# Print the output as a JSON dictionary\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "skill_id": "trade_ev_calculator",
+        "python_code": "import json\n\n# Parameters for the expected value calculation\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare the output\noutput = {'ev': ev}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Parameters for the expected value calculation\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare the output\noutput = {'ev': ev}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "captured_output": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "I was reviewing my feature engineering pipeline and found a column total_revenue_offset defined as target * 5 + 10. Could you check if there is any lookhaed leakage bias in this?",
+      "raw_response": "{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import json\\n\\ndef check_lookahead_leakage():\\n    leakage_detected = False\\n    reason = \\\"Column uses information from the target variable.\\\"\\n    # Since total_revenue_offset is defined using the target variable, it indicates leakage.\\n    leakage_detected = True\\n    return json.dumps({\\\"leakage_detected\\\": leakage_detected, \\\"reason\\\": reason})\\n\\nif __name__ == '__main__':\\n    result = check_lookahead_leakage()\\n    print(result)\"\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "python_code": "import json\n\ndef check_lookahead_leakage():\n    leakage_detected = False\n    reason = \"Column uses information from the target variable.\"\n    # Since total_revenue_offset is defined using the target variable, it indicates leakage.\n    leakage_detected = True\n    return json.dumps({\"leakage_detected\": leakage_detected, \"reason\": reason})\n\nif __name__ == '__main__':\n    result = check_lookahead_leakage()\n    print(result)",
+        "leakage_detected": true,
+        "reason": "Column uses information from the target variable."
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef check_lookahead_leakage():\n    leakage_detected = False\n    reason = \"Column uses information from the target variable.\"\n    # Since total_revenue_offset is defined using the target variable, it indicates leakage.\n    leakage_detected = True\n    return json.dumps({\"leakage_detected\": leakage_detected, \"reason\": reason})\n\nif __name__ == '__main__':\n    result = check_lookahead_leakage()\n    print(result)",
+        "captured_output": {
+          "leakage_detected": true,
+          "reason": "Column uses information from the target variable."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply standard scale transformation like sklearn on this list of numbers: [12, 17, 33, 44, 51]. Give me the pop mean and std dev.",
+      "raw_response": "{\n  \"skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import numpy as np\\n\\n# Input data\\ndata = [12, 17, 33, 44, 51]\\n\\n# Calculate mean and standard deviation for population\\nmean = np.mean(data)\\nstd_dev = np.std(data, ddof=0)  # Population standard deviation\\n\\n# Prepare output\\noutput = {'mean': mean, 'std': std_dev}\\n\\n# Print output as JSON\\nimport json\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "skill_id": "standard_scaler_apply",
+        "python_code": "import numpy as np\n\n# Input data\ndata = [12, 17, 33, 44, 51]\n\n# Calculate mean and standard deviation for population\nmean = np.mean(data)\nstd_dev = np.std(data, ddof=0)  # Population standard deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std_dev}\n\n# Print output as JSON\nimport json\nprint(json.dumps(output))",
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import numpy as np\n\n# Input data\ndata = [12, 17, 33, 44, 51]\n\n# Calculate mean and standard deviation for population\nmean = np.mean(data)\nstd_dev = np.std(data, ddof=0)  # Population standard deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std_dev}\n\n# Print output as JSON\nimport json\nprint(json.dumps(output))",
+        "captured_output": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate data drft warning. KS score is 0.35 and the warning threshld is 0.25. Has it drifted?",
+      "raw_response": "{\n  \"skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\n# Given values\\nks_score = 0.35\\nthreshold = 0.25\\n\\n# Check for data drift\\ndata_drift_detected = ks_score > threshold\\n\\n# Prepare output\\noutput = {'data_drift_detected': data_drift_detected}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "skill_id": "data_drift_monitor",
+        "python_code": "import json\n\n# Given values\nks_score = 0.35\nthreshold = 0.25\n\n# Check for data drift\ndata_drift_detected = ks_score > threshold\n\n# Prepare output\noutput = {'data_drift_detected': data_drift_detected}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given values\nks_score = 0.35\nthreshold = 0.25\n\n# Check for data drift\ndata_drift_detected = ks_score > threshold\n\n# Prepare output\noutput = {'data_drift_detected': data_drift_detected}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "can you calclate standard kelly postion size fraction and amnt if win_rate is 0.55, profit_loss ratio is 1.8, and my balance is 10000?",
+      "raw_response": "```json\n{\n  \"fraction\": 0.09999999999999998,\n  \"amount\": 999.9999999999998,\n  \"chosen_skill_id\": \"kelly_position_size\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.09999999999999998,
+        "amount": 999.9999999999998,
+        "chosen_skill_id": "kelly_position_size"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Hey! My trader friend suggested using ATR for my trailing stop. My current ATR is 15.2 and I want to set a multiplier of 2.0. Can you compute the stop distance? Pls ignore the noise.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate expected value (EV) for a trade with win probability 0.6, winning return of 200.0, losing return of -100.0, and commission fee of 5.0. Make sure to deduct commission.",
+      "raw_response": "```json\n{\n  \"ev\": 85.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 85.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "I was reviewing my feature engineering pipeline and found a column total_revenue_offset defined as target * 5 + 10. Could you check if there is any lookhaed leakage bias in this?",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"The column total_revenue_offset uses the target variable directly in its calculation, which can lead to lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "The column total_revenue_offset uses the target variable directly in its calculation, which can lead to lookahead bias."
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply standard scale transformation like sklearn on this list of numbers: [12, 17, 33, 44, 51]. Give me the pop mean and std dev.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 31.4,\n  \"std\": 14.5\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 31.4,
+        "std": 14.5
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate data drft warning. KS score is 0.35 and the warning threshld is 0.25. Has it drifted?",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "can you calclate standard kelly postion size fraction and amnt if win_rate is 0.55, profit_loss ratio is 1.8, and my balance is 10000?",
+      "raw_response": "{\n  \"skill_id\": \"kelly_position_size\",\n  \"python_code\": \"def kelly_position_size(win_rate, profit_loss_ratio, bankroll):\\n    if win_rate <= 0 or profit_loss_ratio <= 0:\\n        return {'fraction': 0.0, 'amount': 0.0}\\n    fraction = (win_rate * profit_loss_ratio - (1 - win_rate)) / profit_loss_ratio\\n    amount = fraction * bankroll\\n    return {'fraction': fraction, 'amount': amount}\\n\\n# Given values\\nwin_rate = 0.55\\nprofit_loss_ratio = 1.8\\nbankroll = 10000\\n\\n# Calculate Kelly position size\\nresult = kelly_position_size(win_rate, profit_loss_ratio, bankroll)\\n\\n# Print the result as JSON\\nimport json\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "python_code": "def kelly_position_size(win_rate, profit_loss_ratio, bankroll):\n    if win_rate <= 0 or profit_loss_ratio <= 0:\n        return {'fraction': 0.0, 'amount': 0.0}\n    fraction = (win_rate * profit_loss_ratio - (1 - win_rate)) / profit_loss_ratio\n    amount = fraction * bankroll\n    return {'fraction': fraction, 'amount': amount}\n\n# Given values\nwin_rate = 0.55\nprofit_loss_ratio = 1.8\nbankroll = 10000\n\n# Calculate Kelly position size\nresult = kelly_position_size(win_rate, profit_loss_ratio, bankroll)\n\n# Print the result as JSON\nimport json\nprint(json.dumps(result))",
+        "fraction": 0.3000000000000001,
+        "amount": 3000.000000000001
+      },
+      "sandbox_run_info": {
+        "code": "def kelly_position_size(win_rate, profit_loss_ratio, bankroll):\n    if win_rate <= 0 or profit_loss_ratio <= 0:\n        return {'fraction': 0.0, 'amount': 0.0}\n    fraction = (win_rate * profit_loss_ratio - (1 - win_rate)) / profit_loss_ratio\n    amount = fraction * bankroll\n    return {'fraction': fraction, 'amount': amount}\n\n# Given values\nwin_rate = 0.55\nprofit_loss_ratio = 1.8\nbankroll = 10000\n\n# Calculate Kelly position size\nresult = kelly_position_size(win_rate, profit_loss_ratio, bankroll)\n\n# Print the result as JSON\nimport json\nprint(json.dumps(result))",
+        "captured_output": {
+          "fraction": 0.3000000000000001,
+          "amount": 3000.000000000001
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Hey! My trader friend suggested using ATR for my trailing stop. My current ATR is 15.2 and I want to set a multiplier of 2.0. Can you compute the stop distance? Pls ignore the noise.",
+      "raw_response": "{\n  \"skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import json\\n\\n# Given values\\natr = 15.2\\nmultiplier = 2.0\\n\\n# Calculate stop distance\\nstop_distance = atr * multiplier\\n\\n# Prepare the output\\noutput = {'stop_distance': stop_distance}\\n\\n# Print the output as a JSON dictionary\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "skill_id": "atr_dynamic_stop",
+        "python_code": "import json\n\n# Given values\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nstop_distance = atr * multiplier\n\n# Prepare the output\noutput = {'stop_distance': stop_distance}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given values\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nstop_distance = atr * multiplier\n\n# Prepare the output\noutput = {'stop_distance': stop_distance}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "captured_output": {
+          "stop_distance": 30.4
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate expected value (EV) for a trade with win probability 0.6, winning return of 200.0, losing return of -100.0, and commission fee of 5.0. Make sure to deduct commission.",
+      "raw_response": "{\n  \"skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\n# Parameters\\nwin_prob = 0.6\\nwin_return = 200.0\\nloss_return = -100.0\\nfee = 5.0\\n\\n# Calculate expected value (EV)\\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n\\n# Prepare output\\noutput = {'ev': ev}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "skill_id": "trade_ev_calculator",
+        "python_code": "import json\n\n# Parameters\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': ev}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Parameters\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': ev}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "I was reviewing my feature engineering pipeline and found a column total_revenue_offset defined as target * 5 + 10. Could you check if there is any lookhaed leakage bias in this?",
+      "raw_response": "{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import json\\n\\ndef check_lookahead_leakage(target_column):\\n    leakage_detected = False\\n    reason = \\\"\\\"\\n\\n    # Check if the target column is used in the feature definition\\n    if 'target' in target_column:\\n        leakage_detected = True\\n        reason = \\\"The feature 'total_revenue_offset' uses the target variable directly, indicating potential lookahead bias.\\\"\\n    else:\\n        reason = \\\"No lookahead leakage detected.\\\"\\n\\n    return json.dumps({\\\"leakage_detected\\\": leakage_detected, \\\"reason\\\": reason})\\n\\n# Example usage\\nresult = check_lookahead_leakage('target * 5 + 10')\\nprint(result)\"\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "python_code": "import json\n\ndef check_lookahead_leakage(target_column):\n    leakage_detected = False\n    reason = \"\"\n\n    # Check if the target column is used in the feature definition\n    if 'target' in target_column:\n        leakage_detected = True\n        reason = \"The feature 'total_revenue_offset' uses the target variable directly, indicating potential lookahead bias.\"\n    else:\n        reason = \"No lookahead leakage detected.\"\n\n    return json.dumps({\"leakage_detected\": leakage_detected, \"reason\": reason})\n\n# Example usage\nresult = check_lookahead_leakage('target * 5 + 10')\nprint(result)",
+        "leakage_detected": true,
+        "reason": "The feature 'total_revenue_offset' uses the target variable directly, indicating potential lookahead bias."
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef check_lookahead_leakage(target_column):\n    leakage_detected = False\n    reason = \"\"\n\n    # Check if the target column is used in the feature definition\n    if 'target' in target_column:\n        leakage_detected = True\n        reason = \"The feature 'total_revenue_offset' uses the target variable directly, indicating potential lookahead bias.\"\n    else:\n        reason = \"No lookahead leakage detected.\"\n\n    return json.dumps({\"leakage_detected\": leakage_detected, \"reason\": reason})\n\n# Example usage\nresult = check_lookahead_leakage('target * 5 + 10')\nprint(result)",
+        "captured_output": {
+          "leakage_detected": true,
+          "reason": "The feature 'total_revenue_offset' uses the target variable directly, indicating potential lookahead bias."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply standard scale transformation like sklearn on this list of numbers: [12, 17, 33, 44, 51]. Give me the pop mean and std dev.",
+      "raw_response": "{\n  \"skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import numpy as np\\n\\n# Input data\\ndata = [12, 17, 33, 44, 51]\\n\\n# Calculate population mean and standard deviation\\nmean = np.mean(data)\\nstd_dev = np.std(data, ddof=0)  # Population standard deviation\\n\\n# Prepare output\\noutput = {'mean': mean, 'std': std_dev}\\n\\n# Print the output as JSON\\nimport json\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "skill_id": "standard_scaler_apply",
+        "python_code": "import numpy as np\n\n# Input data\ndata = [12, 17, 33, 44, 51]\n\n# Calculate population mean and standard deviation\nmean = np.mean(data)\nstd_dev = np.std(data, ddof=0)  # Population standard deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std_dev}\n\n# Print the output as JSON\nimport json\nprint(json.dumps(output))",
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import numpy as np\n\n# Input data\ndata = [12, 17, 33, 44, 51]\n\n# Calculate population mean and standard deviation\nmean = np.mean(data)\nstd_dev = np.std(data, ddof=0)  # Population standard deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std_dev}\n\n# Print the output as JSON\nimport json\nprint(json.dumps(output))",
+        "captured_output": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate data drft warning. KS score is 0.35 and the warning threshld is 0.25. Has it drifted?",
+      "raw_response": "{\n  \"skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\n# Given values\\nks_score = 0.35\\nthreshold = 0.25\\n\\ndata_drift_detected = ks_score > threshold\\n\\n# Prepare the output\\noutput = {\\n    'data_drift_detected': data_drift_detected\\n}\\n\\n# Print the output as a JSON dictionary\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "skill_id": "data_drift_monitor",
+        "python_code": "import json\n\n# Given values\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Prepare the output\noutput = {\n    'data_drift_detected': data_drift_detected\n}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given values\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Prepare the output\noutput = {\n    'data_drift_detected': data_drift_detected\n}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "captured_output": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "can you calclate standard kelly postion size fraction and amnt if win_rate is 0.55, profit_loss ratio is 1.8, and my balance is 10000?",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.09999999999999998,\n  \"amount\": 999.9999999999998\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.09999999999999998,
+        "amount": 999.9999999999998
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Hey! My trader friend suggested using ATR for my trailing stop. My current ATR is 15.2 and I want to set a multiplier of 2.0. Can you compute the stop distance? Pls ignore the noise.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate expected value (EV) for a trade with win probability 0.6, winning return of 200.0, losing return of -100.0, and commission fee of 5.0. Make sure to deduct commission.",
+      "raw_response": "```json\n{\n  \"ev\": 85.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 85.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "I was reviewing my feature engineering pipeline and found a column total_revenue_offset defined as target * 5 + 10. Could you check if there is any lookhaed leakage bias in this?",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"The column total_revenue_offset uses the target variable directly in its calculation, which can lead to lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "The column total_revenue_offset uses the target variable directly in its calculation, which can lead to lookahead bias."
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply standard scale transformation like sklearn on this list of numbers: [12, 17, 33, 44, 51]. Give me the pop mean and std dev.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 31.4,\n  \"std\": 14.5\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 31.4,
+        "std": 14.5
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate data drft warning. KS score is 0.35 and the warning threshld is 0.25. Has it drifted?",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "can you calclate standard kelly postion size fraction and amnt if win_rate is 0.55, profit_loss ratio is 1.8, and my balance is 10000?",
+      "raw_response": "{\n  \"skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import json\\n\\ndef kelly_position_size(win_rate, profit_loss_ratio, balance):\\n    if win_rate <= 0 or profit_loss_ratio <= 0:\\n        return {'fraction': 0.0, 'amount': 0.0}\\n    fraction = (win_rate * profit_loss_ratio - (1 - win_rate)) / profit_loss_ratio\\n    amount = fraction * balance\\n    return {'fraction': fraction, 'amount': amount}\\n\\n# Given values\\nwin_rate = 0.55\\nprofit_loss_ratio = 1.8\\nbalance = 10000\\n\\n# Calculate Kelly position size\\nresult = kelly_position_size(win_rate, profit_loss_ratio, balance)\\n\\n# Print the result as JSON\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "python_code": "import json\n\ndef kelly_position_size(win_rate, profit_loss_ratio, balance):\n    if win_rate <= 0 or profit_loss_ratio <= 0:\n        return {'fraction': 0.0, 'amount': 0.0}\n    fraction = (win_rate * profit_loss_ratio - (1 - win_rate)) / profit_loss_ratio\n    amount = fraction * balance\n    return {'fraction': fraction, 'amount': amount}\n\n# Given values\nwin_rate = 0.55\nprofit_loss_ratio = 1.8\nbalance = 10000\n\n# Calculate Kelly position size\nresult = kelly_position_size(win_rate, profit_loss_ratio, balance)\n\n# Print the result as JSON\nprint(json.dumps(result))",
+        "fraction": 0.3000000000000001,
+        "amount": 3000.000000000001
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef kelly_position_size(win_rate, profit_loss_ratio, balance):\n    if win_rate <= 0 or profit_loss_ratio <= 0:\n        return {'fraction': 0.0, 'amount': 0.0}\n    fraction = (win_rate * profit_loss_ratio - (1 - win_rate)) / profit_loss_ratio\n    amount = fraction * balance\n    return {'fraction': fraction, 'amount': amount}\n\n# Given values\nwin_rate = 0.55\nprofit_loss_ratio = 1.8\nbalance = 10000\n\n# Calculate Kelly position size\nresult = kelly_position_size(win_rate, profit_loss_ratio, balance)\n\n# Print the result as JSON\nprint(json.dumps(result))",
+        "captured_output": {
+          "fraction": 0.3000000000000001,
+          "amount": 3000.000000000001
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Hey! My trader friend suggested using ATR for my trailing stop. My current ATR is 15.2 and I want to set a multiplier of 2.0. Can you compute the stop distance? Pls ignore the noise.",
+      "raw_response": "{\n  \"skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import json\\n\\n# Given values\\natr = 15.2\\nmultiplier = 2.0\\n\\n# Calculate stop distance\\nstop_distance = atr * multiplier\\n\\n# Prepare output\\noutput = {'stop_distance': stop_distance}\\n\\n# Print the output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "skill_id": "atr_dynamic_stop",
+        "python_code": "import json\n\n# Given values\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nstop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given values\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nstop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "stop_distance": 30.4
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate expected value (EV) for a trade with win probability 0.6, winning return of 200.0, losing return of -100.0, and commission fee of 5.0. Make sure to deduct commission.",
+      "raw_response": "{\n  \"skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\n# Parameters\\nwin_prob = 0.6\\nwin_return = 200.0\\nloss_return = -100.0\\nfee = 5.0\\n\\n# Calculate expected value (EV)\\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n\\n# Prepare output\\noutput = {'ev': ev}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "skill_id": "trade_ev_calculator",
+        "python_code": "import json\n\n# Parameters\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': ev}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Parameters\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': ev}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "I was reviewing my feature engineering pipeline and found a column total_revenue_offset defined as target * 5 + 10. Could you check if there is any lookhaed leakage bias in this?",
+      "raw_response": "{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import json\\n\\ndef check_lookahead_leakage(target_column):\\n    leakage_detected = False\\n    reason = \\\"\\\"\\n\\n    # Check if the target variable is used in the feature definition\\n    if 'target' in target_column:\\n        leakage_detected = True\\n        reason = \\\"The column 'total_revenue_offset' uses the target variable directly, indicating potential lookahead bias.\\\"\\n    else:\\n        reason = \\\"No lookahead leakage detected.\\\"\\n\\n    return json.dumps({\\\"leakage_detected\\\": leakage_detected, \\\"reason\\\": reason})\\n\\n# Example usage\\nresult = check_lookahead_leakage('target * 5 + 10')\\nprint(result)\"\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "python_code": "import json\n\ndef check_lookahead_leakage(target_column):\n    leakage_detected = False\n    reason = \"\"\n\n    # Check if the target variable is used in the feature definition\n    if 'target' in target_column:\n        leakage_detected = True\n        reason = \"The column 'total_revenue_offset' uses the target variable directly, indicating potential lookahead bias.\"\n    else:\n        reason = \"No lookahead leakage detected.\"\n\n    return json.dumps({\"leakage_detected\": leakage_detected, \"reason\": reason})\n\n# Example usage\nresult = check_lookahead_leakage('target * 5 + 10')\nprint(result)",
+        "leakage_detected": true,
+        "reason": "The column 'total_revenue_offset' uses the target variable directly, indicating potential lookahead bias."
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef check_lookahead_leakage(target_column):\n    leakage_detected = False\n    reason = \"\"\n\n    # Check if the target variable is used in the feature definition\n    if 'target' in target_column:\n        leakage_detected = True\n        reason = \"The column 'total_revenue_offset' uses the target variable directly, indicating potential lookahead bias.\"\n    else:\n        reason = \"No lookahead leakage detected.\"\n\n    return json.dumps({\"leakage_detected\": leakage_detected, \"reason\": reason})\n\n# Example usage\nresult = check_lookahead_leakage('target * 5 + 10')\nprint(result)",
+        "captured_output": {
+          "leakage_detected": true,
+          "reason": "The column 'total_revenue_offset' uses the target variable directly, indicating potential lookahead bias."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply standard scale transformation like sklearn on this list of numbers: [12, 17, 33, 44, 51]. Give me the pop mean and std dev.",
+      "raw_response": "{\n  \"skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import numpy as np\\n\\n# Input data\\ndata = [12, 17, 33, 44, 51]\\n\\n# Calculate mean and standard deviation for population\\nmean = np.mean(data)\\nstd_dev = np.std(data, ddof=0)  # Population standard deviation\\n\\n# Prepare output\\noutput = {'mean': mean, 'std': std_dev}\\n\\n# Print the output as JSON\\nimport json\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "skill_id": "standard_scaler_apply",
+        "python_code": "import numpy as np\n\n# Input data\ndata = [12, 17, 33, 44, 51]\n\n# Calculate mean and standard deviation for population\nmean = np.mean(data)\nstd_dev = np.std(data, ddof=0)  # Population standard deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std_dev}\n\n# Print the output as JSON\nimport json\nprint(json.dumps(output))",
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import numpy as np\n\n# Input data\ndata = [12, 17, 33, 44, 51]\n\n# Calculate mean and standard deviation for population\nmean = np.mean(data)\nstd_dev = np.std(data, ddof=0)  # Population standard deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std_dev}\n\n# Print the output as JSON\nimport json\nprint(json.dumps(output))",
+        "captured_output": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate data drft warning. KS score is 0.35 and the warning threshld is 0.25. Has it drifted?",
+      "raw_response": "{\n  \"skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\n# Given values\\nks_score = 0.35\\nthreshold = 0.25\\n\\ndata_drift_detected = ks_score > threshold\\n\\n# Prepare output\\noutput = {'data_drift_detected': data_drift_detected}\\n\\n# Print the output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "skill_id": "data_drift_monitor",
+        "python_code": "import json\n\n# Given values\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Prepare output\noutput = {'data_drift_detected': data_drift_detected}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given values\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Prepare output\noutput = {'data_drift_detected': data_drift_detected}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    }
+  ]
+}

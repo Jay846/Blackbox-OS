@@ -1,0 +1,44 @@
+{
+  "trades": [
+    {
+      "trade_id": 1,
+      "return": 200.0
+    },
+    {
+      "trade_id": 2,
+      "return": 200.0
+    },
+    {
+      "trade_id": 3,
+      "return": -100.0
+    },
+    {
+      "trade_id": 4,
+      "return": 200.0
+    },
+    {
+      "trade_id": 5,
+      "return": -100.0
+    },
+    {
+      "trade_id": 6,
+      "return": 200.0
+    },
+    {
+      "trade_id": 7,
+      "return": -100.0
+    },
+    {
+      "trade_id": 8,
+      "return": 200.0
+    },
+    {
+      "trade_id": 9,
+      "return": -100.0
+    },
+    {
+      "trade_id": 10,
+      "return": 200.0
+    }
+  ]
+}

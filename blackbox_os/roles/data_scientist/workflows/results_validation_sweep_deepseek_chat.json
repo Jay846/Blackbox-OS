@@ -1,0 +1,1083 @@
+{
+  "path_accuracy": 97.5,
+  "execution_accuracy": 97.5,
+  "e2e_success_rate": 97.5,
+  "runs": [
+    {
+      "run_index": 0,
+      "user_goal": "Please perform a leakage audit on features.csv and adjust target returns. Then, compute the zero-mean and unit variance standardization statistics for features.csv values.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 29.36320781408679,
+        "std": 9.722712217537653
+      },
+      "expected": {
+        "mean": 29.36320781408679,
+        "std": 9.722712217537653
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 1,
+      "user_goal": "First, inspect the features file to see if target future leakage exists. If detected, remove the leakage, then calculate standard scaling mean and std for the returns data.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 41.67619429309628,
+        "std": 9.699936128930101
+      },
+      "expected": {
+        "mean": 41.67619429309628,
+        "std": 9.699936128930101
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 2,
+      "user_goal": "Audit the formulas in features.csv. Once remediated, perform a feature returns normalization to convert the values to a standard normal distribution.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 34.171041260457365,
+        "std": 10.433318509629968
+      },
+      "expected": {
+        "mean": 34.171041260457365,
+        "std": 10.433318509629968
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 3,
+      "user_goal": "We need to verify features.csv is free of causality leaks first. Remediation is required if leaked. After that, calculate the Z-score scaling parameters for the clean returns.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 43.76714551999506,
+        "std": 10.277877135538223
+      },
+      "expected": {
+        "mean": 43.76714551999506,
+        "std": 10.277877135538223
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 4,
+      "user_goal": "Examine features.csv for formula leakage. Once clean, scale the returns column using standard scaling to find the mean and variance.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 31.922393745250854,
+        "std": 9.56064872754599
+      },
+      "expected": {
+        "mean": 31.922393745250854,
+        "std": 9.56064872754599
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 5,
+      "user_goal": "Audit features.csv for target contamination. If clean, proceed to calculate standard scaling metrics (mean, std) for the returns.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 39.34722819832746,
+        "std": 12.702194132316782
+      },
+      "expected": {
+        "mean": 39.34722819832746,
+        "std": 12.702194132316782
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 6,
+      "user_goal": "Run a lookahead bias scan on features.csv. If leakage is found, drop it, and scale the target column returns to unit variance.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 30.392347131093892,
+        "std": 11.024245722270797
+      },
+      "expected": {
+        "mean": 30.392347131093892,
+        "std": 11.024245722270797
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 7,
+      "user_goal": "Audit the feature formula file for leaks. Once clean, retrieve the mean and population standard deviation parameters.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 42.539599813726376,
+        "std": 9.599762187457276
+      },
+      "expected": {
+        "mean": 42.539599813726376,
+        "std": 9.599762187457276
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 8,
+      "user_goal": "Verify target leakage in the formulas file. Remediate it, then scale the returns dataset to standard scaling properties.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 26.941338953703113,
+        "std": 11.326279801675255
+      },
+      "expected": {
+        "mean": 26.941338953703116,
+        "std": 11.326279801675255
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 9,
+      "user_goal": "First inspect features.csv for future information leaks. Once resolved, standard scale the target returns column.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "scale",
+      "output": {
+        "mean": 35.23964269204567,
+        "std": 11.722169081635178
+      },
+      "expected": {
+        "mean": 35.23964269204567,
+        "std": 11.722169081635178
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 10,
+      "user_goal": "Check features.csv for lookahead leakage. Once remediated, run a Principal Component Analysis to calculate the explained variance of the first two axes for the feature columns feat_1 to feat_15.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_pca",
+        "pca_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "pca",
+      "expected_branch": "pca",
+      "output": {
+        "explained_variance_ratio": [
+          0.2262712921350196,
+          0.1862204483830072
+        ]
+      },
+      "expected": {
+        "explained_variance_ratio": [
+          0.22627129213501967,
+          0.18622044838300728
+        ]
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 11,
+      "user_goal": "First audit features.csv for target leakage and drop it. Then, perform dimensionality reduction using PCA on features 1 through 15 to get their explained variance ratio.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_pca",
+        "pca_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "pca",
+      "expected_branch": "pca",
+      "output": {
+        "explained_variance_ratio": [
+          0.23122057323009262,
+          0.20432524393661977
+        ]
+      },
+      "expected": {
+        "explained_variance_ratio": [
+          0.23122057323009257,
+          0.20432524393662
+        ]
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 12,
+      "user_goal": "Ensure our features are free of future contamination. Once clean, reduce feature dimensions from 15 features to 2 components, calculating the variance explained.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_pca",
+        "pca_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "pca",
+      "expected_branch": "pca",
+      "output": {
+        "explained_variance_ratio": [
+          0.2675786867264715,
+          0.15352473808063982
+        ]
+      },
+      "expected": {
+        "explained_variance_ratio": [
+          0.26757868672647134,
+          0.15352473808063996
+        ]
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 13,
+      "user_goal": "Audit formulas for lookahead bias. Then, fit a two-component PCA projection on feature columns feat_1 to feat_15 to get the variance ratios.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_pca",
+        "pca_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "pca",
+      "expected_branch": "pca",
+      "output": {
+        "explained_variance_ratio": [
+          0.24044918011103036,
+          0.20672819728347722
+        ]
+      },
+      "expected": {
+        "explained_variance_ratio": [
+          0.2404491801110305,
+          0.20672819728347744
+        ]
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 14,
+      "user_goal": "Check features.csv for future dependencies. Remediate it, and then compress the feat_1 to feat_15 features space using PCA to get top two explained variances.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_pca",
+        "pca_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "pca",
+      "expected_branch": "pca",
+      "output": {
+        "explained_variance_ratio": [
+          0.2575751665269098,
+          0.15494746688178185
+        ]
+      },
+      "expected": {
+        "explained_variance_ratio": [
+          0.25757516652690976,
+          0.15494746688178196
+        ]
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 15,
+      "user_goal": "Audit the formula file for leakage. If found, drop it. Afterwards, reduce the 15 features columns into a 2D principal component space and return the variance.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_pca",
+        "pca_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "pca",
+      "expected_branch": "pca",
+      "output": {
+        "explained_variance_ratio": [
+          0.22876378489190943,
+          0.16874725785568268
+        ]
+      },
+      "expected": {
+        "explained_variance_ratio": [
+          0.2287637848919095,
+          0.1687472578556826
+        ]
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 16,
+      "user_goal": "Scan features.csv for future causality leaks. Remediate it, then run PCA decomposition on features to find the explained variance ratio of the top 2 components.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_pca",
+        "pca_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "pca",
+      "expected_branch": "pca",
+      "output": {
+        "explained_variance_ratio": [
+          0.22681356101308783,
+          0.19419438149315085
+        ]
+      },
+      "expected": {
+        "explained_variance_ratio": [
+          0.22681356101308822,
+          0.19419438149315096
+        ]
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 17,
+      "user_goal": "Conduct a leakage audit on formulas. Remediate it. Then, reduce our high-dimensional features (feat_1 to feat_15) using PCA with two components.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_pca",
+        "pca_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "pca",
+      "expected_branch": "pca",
+      "output": {
+        "explained_variance_ratio": [
+          0.2653923068991339,
+          0.16721657604278206
+        ]
+      },
+      "expected": {
+        "explained_variance_ratio": [
+          0.2653923068991338,
+          0.16721657604278226
+        ]
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 18,
+      "user_goal": "Audit the features dataset to prevent lookahead leakage. Remediate. Then project features 1-15 to a 2D PCA space and report component variance.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_pca",
+        "pca_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "pca",
+      "expected_branch": "pca",
+      "output": {
+        "explained_variance_ratio": [
+          0.2557972687448325,
+          0.20415153778781514
+        ]
+      },
+      "expected": {
+        "explained_variance_ratio": [
+          0.2557972687448325,
+          0.2041515377878151
+        ]
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 19,
+      "user_goal": "Perform lookahead audit and clean data. Then, perform Principal Component Analysis on feat_1 through feat_15 to find the top two components' explained variance ratio.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_pca",
+        "pca_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "pca",
+      "expected_branch": "pca",
+      "output": {
+        "explained_variance_ratio": [
+          0.2258998544762766,
+          0.17074045184789488
+        ]
+      },
+      "expected": {
+        "explained_variance_ratio": [
+          0.2258998544762764,
+          0.17074045184789477
+        ]
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 20,
+      "user_goal": "Audit the formula columns in features.csv. Once clean, fit a linear model to predict target column returns using feat_1 and feat_2. Return coefficients, intercept, and R-squared.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_regression",
+        "regression_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "regression",
+      "expected_branch": "regression",
+      "output": {
+        "coefficients": [
+          1.188974325070596,
+          1.2197596116251184
+        ],
+        "intercept": 26.36148709180049,
+        "r_squared": 0.01867163139525385
+      },
+      "expected": {
+        "coefficients": [
+          1.1889743250705964,
+          1.2197596116251181
+        ],
+        "intercept": 26.36148709180049,
+        "r_squared": 0.018671631395253963
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 21,
+      "user_goal": "Audit features.csv for lookahead bias and remediate it. Once clean, fit a linear regression using features 1 and 2 to predict the clean target column returns.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_regression",
+        "regression_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "regression",
+      "expected_branch": "regression",
+      "output": {
+        "coefficients": [
+          4.518097255232666,
+          -0.1175899076854775
+        ],
+        "intercept": 39.1381037673912,
+        "r_squared": 0.1108552307049947
+      },
+      "expected": {
+        "coefficients": [
+          4.518097255232664,
+          -0.11758990768547681
+        ],
+        "intercept": 39.1381037673912,
+        "r_squared": 0.11085523070499481
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 22,
+      "user_goal": "Check features.csv for leakage. Once cleaned, perform a linear regression fit predicting returns from features feat_1 and feat_2. Output regression coefficients and intercept.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_regression",
+        "regression_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "regression",
+      "expected_branch": "regression",
+      "output": {
+        "coefficients": [
+          -0.3585572603963793,
+          1.5287842481068108
+        ],
+        "intercept": 35.26222048667924,
+        "r_squared": 0.01826623050899423
+      },
+      "expected": {
+        "coefficients": [
+          -0.35855726039637775,
+          1.5287842481068112
+        ],
+        "intercept": 35.26222048667924,
+        "r_squared": 0.01826623050899434
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 23,
+      "user_goal": "Audit features.csv for target leakage. Once clean, estimate coefficients and intercept for a linear model predicting returns using feat_1 and feat_2 as predictors.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_regression",
+        "regression_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "regression",
+      "expected_branch": "regression",
+      "output": {
+        "coefficients": [
+          -0.19655846792583556,
+          4.663291279636525
+        ],
+        "intercept": 44.01449684209078,
+        "r_squared": 0.09433961740549002
+      },
+      "expected": {
+        "coefficients": [
+          -0.19655846792583517,
+          4.663291279636523
+        ],
+        "intercept": 44.01449684209078,
+        "r_squared": 0.09433961740549002
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 24,
+      "user_goal": "Ensure our features are free of future dependencies. remediate them. Then, run a linear regression model fitting feat_1 and feat_2 to estimate return values, calculating R-squared.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_regression",
+        "regression_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "regression",
+      "expected_branch": "regression",
+      "output": {
+        "coefficients": [
+          -1.8409743373620342,
+          5.772143893368918
+        ],
+        "intercept": 28.22865450562507,
+        "r_squared": 0.07637284328506144
+      },
+      "expected": {
+        "coefficients": [
+          -1.8409743373620333,
+          5.77214389336892
+        ],
+        "intercept": 28.22865450562507,
+        "r_squared": 0.076372843285061
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 25,
+      "user_goal": "Conduct a leakage audit on formulas and remediate. Then, run a linear regression fit to predict returns from features feat_1 and feat_2.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_regression",
+        "regression_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "regression",
+      "expected_branch": "regression",
+      "output": {
+        "coefficients": [
+          -3.8674386988049143,
+          -1.604894054535128
+        ],
+        "intercept": 39.121328343746505,
+        "r_squared": 0.23563945158522726
+      },
+      "expected": {
+        "coefficients": [
+          -3.8674386988049134,
+          -1.6048940545351276
+        ],
+        "intercept": 39.121328343746505,
+        "r_squared": 0.23563945158522726
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 26,
+      "user_goal": "Scan features.csv for future leaks. Remediate if found. Then, fit an ordinary least squares linear regression using feat_1 and feat_2 to predict returns.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_regression",
+        "regression_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "regression",
+      "expected_branch": "regression",
+      "output": {
+        "coefficients": [
+          -7.693346065791981,
+          -8.562173922407716
+        ],
+        "intercept": 29.631040924052904,
+        "r_squared": 0.3586232377205184
+      },
+      "expected": {
+        "coefficients": [
+          -7.693346065791983,
+          -8.562173922407721
+        ],
+        "intercept": 29.631040924052904,
+        "r_squared": 0.35862323772051863
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 27,
+      "user_goal": "Audit features.csv for future contamination and remediate. Then fit a linear regressor of features 1 and 2 onto returns, returning coefficients and R-squared.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_regression",
+        "regression_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "regression",
+      "expected_branch": "regression",
+      "output": {
+        "coefficients": [
+          -2.4803396903590578,
+          -1.3415120379593217
+        ],
+        "intercept": 35.57712212650526,
+        "r_squared": 0.07703481790456368
+      },
+      "expected": {
+        "coefficients": [
+          -2.4803396903590573,
+          -1.3415120379593215
+        ],
+        "intercept": 35.577122126505266,
+        "r_squared": 0.0770348179045639
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 28,
+      "user_goal": "Ensure target leakage is dropped from features.csv. Then fit a linear regressor to model returns using feat_1 and feat_2 as input variables.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_regression",
+        "regression_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "regression",
+      "expected_branch": "regression",
+      "output": {
+        "coefficients": [
+          -2.242855727715448,
+          -4.496424693694449
+        ],
+        "intercept": 27.323904701165013,
+        "r_squared": 0.1617647669719945
+      },
+      "expected": {
+        "coefficients": [
+          -2.242855727715447,
+          -4.49642469369445
+        ],
+        "intercept": 27.323904701165013,
+        "r_squared": 0.1617647669719946
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 29,
+      "user_goal": "Verify target leakage in the formulas file. Remediate. Then build a linear regression model predicting returns based on features 1 and 2.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_scale",
+        "scale_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "scale",
+      "expected_branch": "regression",
+      "output": {
+        "mean": 43.4353189493733,
+        "std": 12.801588498563001
+      },
+      "expected": {
+        "coefficients": [
+          1.1236717857326393,
+          -2.4619606587420053
+        ],
+        "intercept": 43.323914736031305,
+        "r_squared": 0.050476572262106556
+      },
+      "path_correct": false,
+      "exec_correct": false,
+      "e2e_correct": false
+    },
+    {
+      "run_index": 30,
+      "user_goal": "Check features.csv for lookahead leakage. Once remediated, calculate the win-rate and payoff from fills.csv to determine the Kelly fraction and allocation for a 50000 bankroll.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_kelly",
+        "kelly_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "kelly",
+      "expected_branch": "kelly",
+      "output": {
+        "fraction": 0.28433098591549294,
+        "amount": 14216.549295774646
+      },
+      "expected": {
+        "fraction": 0.28433098591549294,
+        "amount": 14216.549295774646
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 31,
+      "user_goal": "Perform lookahead audit and clean data. Then, inspect the execution log fills.csv for BTC trades to compute win rate, payoff, and Kelly size for 50000.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_kelly",
+        "kelly_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "kelly",
+      "expected_branch": "kelly",
+      "output": {
+        "fraction": 0.39154,
+        "amount": 19576.98
+      },
+      "expected": {
+        "fraction": 0.39153952843273226,
+        "amount": 19576.976421636613
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 32,
+      "user_goal": "Audit the formulas file for leakage. If found, drop it. Afterwards, compute Kelly bet sizing fraction and amount using fills.csv for BTC with bankroll 50000.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_kelly",
+        "kelly_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "kelly",
+      "expected_branch": "kelly",
+      "output": {
+        "fraction": 0.390164,
+        "amount": 19508.2
+      },
+      "expected": {
+        "fraction": 0.39016393442622954,
+        "amount": 19508.196721311477
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 33,
+      "user_goal": "Audit formulas for lookahead bias. Then, analyze fills.csv to find Kelly fractional allocation and dollar amount for a bankroll of 50000 on BTC trades.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_kelly",
+        "kelly_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "kelly",
+      "expected_branch": "kelly",
+      "output": {
+        "fraction": 0.38882907133243605,
+        "amount": 19441.453566621803
+      },
+      "expected": {
+        "fraction": 0.38882907133243605,
+        "amount": 19441.453566621803
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 34,
+      "user_goal": "Check features.csv for future dependencies. Remediate it, and then determine the optimal position size using Kelly sizing for BTC trades with a bankroll of 50000.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_kelly",
+        "kelly_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "kelly",
+      "expected_branch": "kelly",
+      "output": {
+        "fraction": 0.38753315649867365,
+        "amount": 19376.65782493368
+      },
+      "expected": {
+        "fraction": 0.38753315649867365,
+        "amount": 19376.65782493368
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 35,
+      "user_goal": "Audit features.csv for target contamination. If clean, analyze fills.csv BTC trades to compute win rate, payoff, and Kelly position size for 50000.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_kelly",
+        "kelly_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "kelly",
+      "expected_branch": "kelly",
+      "output": {
+        "fraction": 0.386275,
+        "amount": 19313.73
+      },
+      "expected": {
+        "fraction": 0.3862745098039216,
+        "amount": 19313.72549019608
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 36,
+      "user_goal": "Conduct leakage audit on formulas. Remediate it. Then calculate the Kelly leverage fraction and sizing for BTC trades on a bankroll of 50000.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_kelly",
+        "kelly_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "kelly",
+      "expected_branch": "kelly",
+      "output": {
+        "fraction": 0.276095,
+        "amount": 13804.77
+      },
+      "expected": {
+        "fraction": 0.27609536082474223,
+        "amount": 13804.768041237112
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 37,
+      "user_goal": "Audit the features dataset to prevent lookahead leakage. Remediate. Then compute win rate and payoff for BTC trades to find the Kelly fraction and amount for 50000.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_kelly",
+        "kelly_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "kelly",
+      "expected_branch": "kelly",
+      "output": {
+        "fraction": 0.31887270424319186,
+        "amount": 15943.635212159594
+      },
+      "expected": {
+        "fraction": 0.31887270424319186,
+        "amount": 15943.635212159594
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 38,
+      "user_goal": "Ensure target leakage is dropped from features.csv. Then calculate Kelly optimal fraction and allocation size for BTC trades using fills.csv with bankroll 50000.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "decision_node_routed_to_kelly",
+        "kelly_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "kelly",
+      "expected_branch": "kelly",
+      "output": {
+        "fraction": 0.31693648816936487,
+        "amount": 15846.824408468243
+      },
+      "expected": {
+        "fraction": 0.31693648816936487,
+        "amount": 15846.824408468243
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    },
+    {
+      "run_index": 39,
+      "user_goal": "Verify target leakage in the formulas file. Remediate. Then determine optimal bet sizing for BTC using Kelly sizing on fills history with bankroll 50000.",
+      "step_history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "decision_node_routed_to_kelly",
+        "kelly_node"
+      ],
+      "error_logs": [],
+      "chosen_branch": "kelly",
+      "expected_branch": "kelly",
+      "output": {
+        "fraction": 0.315064,
+        "amount": 15753.21
+      },
+      "expected": {
+        "fraction": 0.3150642988364973,
+        "amount": 15753.214941824865
+      },
+      "path_correct": true,
+      "exec_correct": true,
+      "e2e_correct": true
+    }
+  ]
+}

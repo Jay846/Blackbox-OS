@@ -1,0 +1,2036 @@
+{
+  "results": {
+    "60": {
+      "expert": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 41.66666666666667,
+        "schema_acc": 100.0,
+        "e2e_acc": 41.66666666666667
+      },
+      "expert_sandbox": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 91.66666666666666,
+        "schema_acc": 100.0,
+        "e2e_acc": 91.66666666666666
+      }
+    },
+    "200": {
+      "expert": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 41.66666666666667,
+        "schema_acc": 100.0,
+        "e2e_acc": 41.66666666666667
+      },
+      "expert_sandbox": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 91.66666666666666,
+        "schema_acc": 91.66666666666666,
+        "e2e_acc": 91.66666666666666
+      }
+    },
+    "500": {
+      "expert": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 41.66666666666667,
+        "schema_acc": 100.0,
+        "e2e_acc": 41.66666666666667
+      },
+      "expert_sandbox": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 100.0,
+        "schema_acc": 100.0,
+        "e2e_acc": 100.0
+      }
+    },
+    "1000": {
+      "expert": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 41.66666666666667,
+        "schema_acc": 100.0,
+        "e2e_acc": 41.66666666666667
+      },
+      "expert_sandbox": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 100.0,
+        "schema_acc": 100.0,
+        "e2e_acc": 100.0
+      }
+    }
+  },
+  "logs": [
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.25,\n  \"amount\": 2500.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.25,
+        "amount": 2500.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.2,\n  \"amount\": 10000.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.2,
+        "amount": 10000.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 7.5\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 7.5
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "```json\n{\n  \"ev\": 85.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 85.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"ev\": 70.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "ev": 70.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"The column 'total_revenue_offset' uses information from the target variable.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "The column 'total_revenue_offset' uses information from the target variable."
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"Column 'lagged_price_1' uses future information from the target variable.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "Column 'lagged_price_1' uses future information from the target variable."
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 31.4,\n  \"std\": 14.5\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 31.4,
+        "std": 14.5
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 30.0,\n  \"std\": 15.811388300841896\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 30.0,
+        "std": 15.811388300841896
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "{\n  \"skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import json\\n\\n# Given parameters\\nwin_rate = 0.55\\npayoff = 1.8\\nbankroll = 10000\\n\\n# Calculate the Kelly fraction\\nif win_rate <= 0 or payoff <= 0:\\n    fraction = 0.0\\n    amount = 0.0\\nelse:\\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\\n    amount = fraction * bankroll\\n\\n# Prepare the output\\noutput = {'fraction': fraction, 'amount': amount}\\n\\n# Print the output as a JSON dictionary\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "python_code": "import json\n\n# Given parameters\nwin_rate = 0.55\npayoff = 1.8\nbankroll = 10000\n\n# Calculate the Kelly fraction\nif win_rate <= 0 or payoff <= 0:\n    fraction = 0.0\n    amount = 0.0\nelse:\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = fraction * bankroll\n\n# Prepare the output\noutput = {'fraction': fraction, 'amount': amount}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "fraction": 0.3000000000000001,
+        "amount": 3000.000000000001
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given parameters\nwin_rate = 0.55\npayoff = 1.8\nbankroll = 10000\n\n# Calculate the Kelly fraction\nif win_rate <= 0 or payoff <= 0:\n    fraction = 0.0\n    amount = 0.0\nelse:\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = fraction * bankroll\n\n# Prepare the output\noutput = {'fraction': fraction, 'amount': amount}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "captured_output": {
+          "fraction": 0.3000000000000001,
+          "amount": 3000.000000000001
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "{\n  \"skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import json\\n\\n# Parameters\\nwin_rate = 0.60\\npayoff = 1.5\\nbankroll = 50000\\n\\n# Kelly Criterion Calculation\\nif win_rate <= 0 or payoff <= 0:\\n    fraction = 0.0\\n    amount = 0.0\\nelse:\\n    f = (win_rate * payoff - (1 - win_rate)) / payoff\\n    amount = f * bankroll\\n    fraction = f\\n\\n# Output\\noutput = {'fraction': fraction, 'amount': amount}\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "python_code": "import json\n\n# Parameters\nwin_rate = 0.60\npayoff = 1.5\nbankroll = 50000\n\n# Kelly Criterion Calculation\nif win_rate <= 0 or payoff <= 0:\n    fraction = 0.0\n    amount = 0.0\nelse:\n    f = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = f * bankroll\n    fraction = f\n\n# Output\noutput = {'fraction': fraction, 'amount': amount}\nprint(json.dumps(output))",
+        "fraction": 0.33333333333333326,
+        "amount": 16666.666666666664
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Parameters\nwin_rate = 0.60\npayoff = 1.5\nbankroll = 50000\n\n# Kelly Criterion Calculation\nif win_rate <= 0 or payoff <= 0:\n    fraction = 0.0\n    amount = 0.0\nelse:\n    f = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = f * bankroll\n    fraction = f\n\n# Output\noutput = {'fraction': fraction, 'amount': amount}\nprint(json.dumps(output))",
+        "captured_output": {
+          "fraction": 0.33333333333333326,
+          "amount": 16666.666666666664
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "{\n  \"skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import json\\n\\n# Constants\\natr = 15.2\\nmultiplier = 2.0\\n\\n# Calculate stop distance\\nif atr <= 0 or multiplier <= 0:\\n    stop_distance = 0.0\\nelse:\\n    stop_distance = atr * multiplier\\n\\n# Prepare output\\noutput = {\\\"stop_distance\\\": stop_distance}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "skill_id": "atr_dynamic_stop",
+        "python_code": "import json\n\n# Constants\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {\"stop_distance\": stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Constants\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {\"stop_distance\": stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "stop_distance": 30.4
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "{\n  \"skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import json\\n\\n# Constants\\natr = 2.5\\nmultiplier = 3.0\\n\\n# Calculate stop distance\\nif atr <= 0 or multiplier <= 0:\\n    stop_distance = 0.0\\nelse:\\n    stop_distance = atr * multiplier\\n\\n# Prepare output\\noutput = {\\\"stop_distance\\\": stop_distance}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "skill_id": "atr_dynamic_stop",
+        "python_code": "import json\n\n# Constants\natr = 2.5\nmultiplier = 3.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {\"stop_distance\": stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "stop_distance": 7.5
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Constants\natr = 2.5\nmultiplier = 3.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {\"stop_distance\": stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "stop_distance": 7.5
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "{\n  \"skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\n# Constants\\nwin_prob = 0.6\\nwin_return = 200.0\\nloss_return = -100.0\\nfee = 5.0\\n\\n# Expected Value Calculation\\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n\\n# Output schema\\noutput = {\\\"ev\\\": ev}\\n\\n# Print the result as a JSON dictionary\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "skill_id": "trade_ev_calculator",
+        "python_code": "import json\n\n# Constants\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Expected Value Calculation\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Output schema\noutput = {\"ev\": ev}\n\n# Print the result as a JSON dictionary\nprint(json.dumps(output))",
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Constants\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Expected Value Calculation\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Output schema\noutput = {\"ev\": ev}\n\n# Print the result as a JSON dictionary\nprint(json.dumps(output))",
+        "captured_output": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "{\n  \"skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\n# Given parameters\\nwin_prob = 0.4\\nwin_return = 300.0\\nloss_return = -50.0\\nfee = 10.0\\n\\n# Calculate expected value (EV)\\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n\\n# Prepare output\\noutput = {'ev': ev}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "skill_id": "trade_ev_calculator",
+        "python_code": "import json\n\n# Given parameters\nwin_prob = 0.4\nwin_return = 300.0\nloss_return = -50.0\nfee = 10.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': ev}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "ev": 80.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given parameters\nwin_prob = 0.4\nwin_return = 300.0\nloss_return = -50.0\nfee = 10.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': ev}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "ev": 80.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import json\\n\\ndef detect_leakage(column_formula, target_variable):\\n    leakage_detected = False\\n    reason = ''\\n    if target_variable in column_formula:\\n        leakage_detected = True\\n        reason = 'Column uses information from the target variable.'\\n    return {'leakage_detected': leakage_detected, 'reason': reason}\\n\\ncolumn_name = 'total_revenue_offset'\\ncolumn_formula = 'target * 5 + 10'\\ntarget_variable = 'target'\\n\\nresult = detect_leakage(column_formula, target_variable)\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "python_code": "import json\n\ndef detect_leakage(column_formula, target_variable):\n    leakage_detected = False\n    reason = ''\n    if target_variable in column_formula:\n        leakage_detected = True\n        reason = 'Column uses information from the target variable.'\n    return {'leakage_detected': leakage_detected, 'reason': reason}\n\ncolumn_name = 'total_revenue_offset'\ncolumn_formula = 'target * 5 + 10'\ntarget_variable = 'target'\n\nresult = detect_leakage(column_formula, target_variable)\nprint(json.dumps(result))",
+        "leakage_detected": true,
+        "reason": "Column uses information from the target variable."
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef detect_leakage(column_formula, target_variable):\n    leakage_detected = False\n    reason = ''\n    if target_variable in column_formula:\n        leakage_detected = True\n        reason = 'Column uses information from the target variable.'\n    return {'leakage_detected': leakage_detected, 'reason': reason}\n\ncolumn_name = 'total_revenue_offset'\ncolumn_formula = 'target * 5 + 10'\ntarget_variable = 'target'\n\nresult = detect_leakage(column_formula, target_variable)\nprint(json.dumps(result))",
+        "captured_output": {
+          "leakage_detected": true,
+          "reason": "Column uses information from the target variable."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import json\\n\\ndef check_lookahead_bias(column_formula):\\n    # Check if the column uses information from the target variable or future timestamps\\n    leakage_detected = False\\n    reason = \\\"\\\"\\n\\n    # Example logic to determine leakage\\n    if 'price_t' in column_formula:\\n        leakage_detected = True\\n        reason = \\\"Uses future price information.\\\"\\n\\n    return {\\n        'leakage_detected': leakage_detected,\\n        'reason': reason\\n    }\\n\\n# Column formula to check\\ncolumn_formula = 'price_t - 1'\\nresult = check_lookahead_bias(column_formula)\\n\\n# Print the result as a JSON dictionary\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "python_code": "import json\n\ndef check_lookahead_bias(column_formula):\n    # Check if the column uses information from the target variable or future timestamps\n    leakage_detected = False\n    reason = \"\"\n\n    # Example logic to determine leakage\n    if 'price_t' in column_formula:\n        leakage_detected = True\n        reason = \"Uses future price information.\"\n\n    return {\n        'leakage_detected': leakage_detected,\n        'reason': reason\n    }\n\n# Column formula to check\ncolumn_formula = 'price_t - 1'\nresult = check_lookahead_bias(column_formula)\n\n# Print the result as a JSON dictionary\nprint(json.dumps(result))",
+        "leakage_detected": true,
+        "reason": "Uses future price information."
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef check_lookahead_bias(column_formula):\n    # Check if the column uses information from the target variable or future timestamps\n    leakage_detected = False\n    reason = \"\"\n\n    # Example logic to determine leakage\n    if 'price_t' in column_formula:\n        leakage_detected = True\n        reason = \"Uses future price information.\"\n\n    return {\n        'leakage_detected': leakage_detected,\n        'reason': reason\n    }\n\n# Column formula to check\ncolumn_formula = 'price_t - 1'\nresult = check_lookahead_bias(column_formula)\n\n# Print the result as a JSON dictionary\nprint(json.dumps(result))",
+        "captured_output": {
+          "leakage_detected": true,
+          "reason": "Uses future price information."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "{\n  \"skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import numpy as np\\n\\nvalues = [12, 17, 33, 44, 51]\\nmean = np.mean(values)\\nstd = np.std(values, ddof=0)\\n\\nresult = {'mean': mean, 'std': std}\\nprint(result)\"\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "skill_id": "standard_scaler_apply",
+        "python_code": "import numpy as np\n\nvalues = [12, 17, 33, 44, 51]\nmean = np.mean(values)\nstd = np.std(values, ddof=0)\n\nresult = {'mean': mean, 'std': std}\nprint(result)",
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import numpy as np\n\nvalues = [12, 17, 33, 44, 51]\nmean = np.mean(values)\nstd = np.std(values, ddof=0)\n\nresult = {'mean': mean, 'std': std}\nprint(result)",
+        "captured_output": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "{\n  \"skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import numpy as np\\n\\n# Input data\\ndata = [10, 20, 30, 40, 50]\\n\\n# Calculate mean and standard deviation\\nmean = np.mean(data)\\nstd = np.std(data)\\n\\n# Prepare output\\noutput = {'mean': mean, 'std': std}\\n\\n# Print the output as JSON\\nimport json\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "skill_id": "standard_scaler_apply",
+        "python_code": "import numpy as np\n\n# Input data\ndata = [10, 20, 30, 40, 50]\n\n# Calculate mean and standard deviation\nmean = np.mean(data)\nstd = np.std(data)\n\n# Prepare output\noutput = {'mean': mean, 'std': std}\n\n# Print the output as JSON\nimport json\nprint(json.dumps(output))",
+        "mean": 30.0,
+        "std": 14.142135623730951
+      },
+      "sandbox_run_info": {
+        "code": "import numpy as np\n\n# Input data\ndata = [10, 20, 30, 40, 50]\n\n# Calculate mean and standard deviation\nmean = np.mean(data)\nstd = np.std(data)\n\n# Prepare output\noutput = {'mean': mean, 'std': std}\n\n# Print the output as JSON\nimport json\nprint(json.dumps(output))",
+        "captured_output": {
+          "mean": 30.0,
+          "std": 14.142135623730951
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "{\n  \"skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\n# Input values\\nks_score = 0.35\\nthreshold = 0.25\\n\\ndata_drift_detected = ks_score > threshold\\n\\n# Output schema\\noutput = {\\\"data_drift_detected\\\": data_drift_detected}\\n\\n# Print the result as a JSON dictionary\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "skill_id": "data_drift_monitor",
+        "python_code": "import json\n\n# Input values\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Output schema\noutput = {\"data_drift_detected\": data_drift_detected}\n\n# Print the result as a JSON dictionary\nprint(json.dumps(output))",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Input values\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Output schema\noutput = {\"data_drift_detected\": data_drift_detected}\n\n# Print the result as a JSON dictionary\nprint(json.dumps(output))",
+        "captured_output": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "{\n  \"skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\n# Input values\\nks_score = 0.12\\nthreshold = 0.20\\n\\ndata_drift_detected = ks_score > threshold\\n\\n# Output schema\\noutput = {\\\"data_drift_detected\\\": data_drift_detected}\\n\\n# Print the output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "skill_id": "data_drift_monitor",
+        "python_code": "import json\n\n# Input values\nks_score = 0.12\nthreshold = 0.20\n\ndata_drift_detected = ks_score > threshold\n\n# Output schema\noutput = {\"data_drift_detected\": data_drift_detected}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Input values\nks_score = 0.12\nthreshold = 0.20\n\ndata_drift_detected = ks_score > threshold\n\n# Output schema\noutput = {\"data_drift_detected\": data_drift_detected}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "data_drift_detected": false
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.08333333333333333,\n  \"amount\": 833.3333333333333\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.08333333333333333,
+        "amount": 833.3333333333333
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.2,\n  \"amount\": 10000.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.2,
+        "amount": 10000.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 7.5\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 7.5
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "```json\n{\n  \"ev\": 115.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 115.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "```json\n{\n  \"ev\": 70.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 70.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"The column 'total_revenue_offset' uses the target variable in its calculation, indicating lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "The column 'total_revenue_offset' uses the target variable in its calculation, indicating lookahead bias."
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"Column 'lagged_price_1' uses future information from 'price_t', indicating lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "Column 'lagged_price_1' uses future information from 'price_t', indicating lookahead bias."
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "```json\n{\n  \"mean\": 31.4,\n  \"std\": 14.88,\n  \"skill_id\": \"standard_scaler_apply\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 31.4,
+        "std": 14.88,
+        "skill_id": "standard_scaler_apply"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "```json\n{\n  \"mean\": 30.0,\n  \"std\": 15.811388300841896,\n  \"skill_id\": \"standard_scaler_apply\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 30.0,
+        "std": 15.811388300841896,
+        "skill_id": "standard_scaler_apply"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "{\n  \"skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import json\\n\\ndef kelly_fraction(win_rate, payoff, bankroll):\\n    if win_rate <= 0 or payoff <= 0:\\n        return 0.0, 0.0\\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\\n    amount = fraction * bankroll\\n    return fraction, amount\\n\\nwin_rate = 0.55\\npayoff = 1.8\\nbankroll = 10000\\nfraction, amount = kelly_fraction(win_rate, payoff, bankroll)\\n\\nresult = {'fraction': fraction, 'amount': amount}\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "python_code": "import json\n\ndef kelly_fraction(win_rate, payoff, bankroll):\n    if win_rate <= 0 or payoff <= 0:\n        return 0.0, 0.0\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = fraction * bankroll\n    return fraction, amount\n\nwin_rate = 0.55\npayoff = 1.8\nbankroll = 10000\nfraction, amount = kelly_fraction(win_rate, payoff, bankroll)\n\nresult = {'fraction': fraction, 'amount': amount}\nprint(json.dumps(result))",
+        "fraction": 0.3000000000000001,
+        "amount": 3000.000000000001
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef kelly_fraction(win_rate, payoff, bankroll):\n    if win_rate <= 0 or payoff <= 0:\n        return 0.0, 0.0\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = fraction * bankroll\n    return fraction, amount\n\nwin_rate = 0.55\npayoff = 1.8\nbankroll = 10000\nfraction, amount = kelly_fraction(win_rate, payoff, bankroll)\n\nresult = {'fraction': fraction, 'amount': amount}\nprint(json.dumps(result))",
+        "captured_output": {
+          "fraction": 0.3000000000000001,
+          "amount": 3000.000000000001
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "{\n  \"skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import json\\n\\ndef kelly_criterion(win_rate, payoff, bankroll):\\n    if win_rate <= 0 or payoff <= 0:\\n        return {'fraction': 0.0, 'amount': 0.0}\\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\\n    amount = fraction * bankroll\\n    return {'fraction': fraction, 'amount': amount}\\n\\nwin_rate = 0.60\\npayoff = 1.5\\nbankroll = 50000\\nresult = kelly_criterion(win_rate, payoff, bankroll)\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "python_code": "import json\n\ndef kelly_criterion(win_rate, payoff, bankroll):\n    if win_rate <= 0 or payoff <= 0:\n        return {'fraction': 0.0, 'amount': 0.0}\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = fraction * bankroll\n    return {'fraction': fraction, 'amount': amount}\n\nwin_rate = 0.60\npayoff = 1.5\nbankroll = 50000\nresult = kelly_criterion(win_rate, payoff, bankroll)\nprint(json.dumps(result))",
+        "fraction": 0.33333333333333326,
+        "amount": 16666.666666666664
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef kelly_criterion(win_rate, payoff, bankroll):\n    if win_rate <= 0 or payoff <= 0:\n        return {'fraction': 0.0, 'amount': 0.0}\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = fraction * bankroll\n    return {'fraction': fraction, 'amount': amount}\n\nwin_rate = 0.60\npayoff = 1.5\nbankroll = 50000\nresult = kelly_criterion(win_rate, payoff, bankroll)\nprint(json.dumps(result))",
+        "captured_output": {
+          "fraction": 0.33333333333333326,
+          "amount": 16666.666666666664
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "{\n  \"skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import json\\n\\n# Constants\\natr = 15.2\\nmultiplier = 2.0\\n\\n# Calculate stop distance\\nif atr <= 0 or multiplier <= 0:\\n    stop_distance = 0.0\\nelse:\\n    stop_distance = atr * multiplier\\n\\n# Prepare output\\noutput = {'stop_distance': stop_distance}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "skill_id": "atr_dynamic_stop",
+        "python_code": "import json\n\n# Constants\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Constants\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "stop_distance": 30.4
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "{\n  \"skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import json\\n\\n# Constants\\natr = 2.5\\nmultiplier = 3.0\\n\\n# Calculate stop distance\\nif atr <= 0 or multiplier <= 0:\\n    stop_distance = 0.0\\nelse:\\n    stop_distance = atr * multiplier\\n\\n# Prepare output\\noutput = {'stop_distance': stop_distance}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "skill_id": "atr_dynamic_stop",
+        "python_code": "import json\n\n# Constants\natr = 2.5\nmultiplier = 3.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "stop_distance": 7.5
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Constants\natr = 2.5\nmultiplier = 3.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "stop_distance": 7.5
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "{\n  \"skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\ndef calculate_expected_value(win_prob, win_return, loss_return, fee):\\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n    return {'ev': ev}\\n\\n# Given values\\nwin_prob = 0.6\\nwin_return = 200.0\\nloss_return = -100.0\\nfee = 5.0\\n\\n# Calculate expected value\\nresult = calculate_expected_value(win_prob, win_return, loss_return, fee)\\n\\n# Print result as JSON\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "skill_id": "trade_ev_calculator",
+        "python_code": "import json\n\ndef calculate_expected_value(win_prob, win_return, loss_return, fee):\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n    return {'ev': ev}\n\n# Given values\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value\nresult = calculate_expected_value(win_prob, win_return, loss_return, fee)\n\n# Print result as JSON\nprint(json.dumps(result))",
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef calculate_expected_value(win_prob, win_return, loss_return, fee):\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n    return {'ev': ev}\n\n# Given values\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value\nresult = calculate_expected_value(win_prob, win_return, loss_return, fee)\n\n# Print result as JSON\nprint(json.dumps(result))",
+        "captured_output": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "{\n  \"skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\ndef calculate_ev(win_prob, win_return, loss_return, fee):\\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n    return ev\\n\\nwin_prob = 0.4\\nwin_return = 300.0\\nloss_return = -50.0\\nfee = 10.0\\n\\nev = calculate_ev(win_prob, win_return, loss_return, fee)\\n\\noutput = {'ev': ev}\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "skill_id": "trade_ev_calculator",
+        "python_code": "import json\n\ndef calculate_ev(win_prob, win_return, loss_return, fee):\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n    return ev\n\nwin_prob = 0.4\nwin_return = 300.0\nloss_return = -50.0\nfee = 10.0\n\nev = calculate_ev(win_prob, win_return, loss_return, fee)\n\noutput = {'ev': ev}\nprint(json.dumps(output))",
+        "ev": 80.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef calculate_ev(win_prob, win_return, loss_return, fee):\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n    return ev\n\nwin_prob = 0.4\nwin_return = 300.0\nloss_return = -50.0\nfee = 10.0\n\nev = calculate_ev(win_prob, win_return, loss_return, fee)\n\noutput = {'ev': ev}\nprint(json.dumps(output))",
+        "captured_output": {
+          "ev": 80.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import json\\n\\ndef detect_leakage(column_formula, target_variable):\\n    leakage_detected = False\\n    reason = ''\\n    # Check if the column formula uses the target variable\\n    if target_variable in column_formula:\\n        leakage_detected = True\\n        reason = 'Column uses information from the target variable.'\\n    return {'leakage_detected': leakage_detected, 'reason': reason}\\n\\n# Example usage\\ncolumn_name = 'total_revenue_offset'\\ncolumn_formula = 'target * 5 + 10'\\ntarget_variable = 'target'\\n\\nresult = detect_leakage(column_formula, target_variable)\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "python_code": "import json\n\ndef detect_leakage(column_formula, target_variable):\n    leakage_detected = False\n    reason = ''\n    # Check if the column formula uses the target variable\n    if target_variable in column_formula:\n        leakage_detected = True\n        reason = 'Column uses information from the target variable.'\n    return {'leakage_detected': leakage_detected, 'reason': reason}\n\n# Example usage\ncolumn_name = 'total_revenue_offset'\ncolumn_formula = 'target * 5 + 10'\ntarget_variable = 'target'\n\nresult = detect_leakage(column_formula, target_variable)\nprint(json.dumps(result))",
+        "leakage_detected": true,
+        "reason": "Column uses information from the target variable."
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef detect_leakage(column_formula, target_variable):\n    leakage_detected = False\n    reason = ''\n    # Check if the column formula uses the target variable\n    if target_variable in column_formula:\n        leakage_detected = True\n        reason = 'Column uses information from the target variable.'\n    return {'leakage_detected': leakage_detected, 'reason': reason}\n\n# Example usage\ncolumn_name = 'total_revenue_offset'\ncolumn_formula = 'target * 5 + 10'\ntarget_variable = 'target'\n\nresult = detect_leakage(column_formula, target_variable)\nprint(json.dumps(result))",
+        "captured_output": {
+          "leakage_detected": true,
+          "reason": "Column uses information from the target variable."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\n\\n# Sample DataFrame to simulate the scenario\\n# In practice, this would be replaced with the actual DataFrame containing the data\\n\\ndata = {\\n    'price_t': [100, 101, 102, 103, 104],\\n    'lagged_price_1': [None, 100, 101, 102, 103]  # lagged price calculated as price_t - 1\\n}\\ndf = pd.DataFrame(data)\\n\\n# Check for lookahead bias\\nleakage_detected = False\\nreason = ''\\n\\n# Check if 'lagged_price_1' uses future information from 'price_t'\\nif df['lagged_price_1'].isnull().any():\\n    leakage_detected = True\\n    reason = 'lagged_price_1 contains None values, indicating potential future data usage.'\\nelse:\\n    # Check if any value in 'lagged_price_1' is derived from future 'price_t'\\n    for i in range(1, len(df)):\\n        if df['lagged_price_1'].iloc[i] != df['price_t'].iloc[i - 1]:\\n            leakage_detected = True\\n            reason = 'lagged_price_1 is not correctly lagged and may use future",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": null,
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "{\n  \"skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import numpy as np\\n\\n# Given values\\nvalues = [12, 17, 33, 44, 51]\\n\\n# Calculate mean and standard deviation\\nmean = np.mean(values)\\nstd = np.std(values, ddof=0)  # Population standard deviation\\n\\n# Prepare output\\noutput = {'mean': mean, 'std': std}\\n\\n# Print the output as JSON\\nimport json\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "skill_id": "standard_scaler_apply",
+        "python_code": "import numpy as np\n\n# Given values\nvalues = [12, 17, 33, 44, 51]\n\n# Calculate mean and standard deviation\nmean = np.mean(values)\nstd = np.std(values, ddof=0)  # Population standard deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std}\n\n# Print the output as JSON\nimport json\nprint(json.dumps(output))",
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import numpy as np\n\n# Given values\nvalues = [12, 17, 33, 44, 51]\n\n# Calculate mean and standard deviation\nmean = np.mean(values)\nstd = np.std(values, ddof=0)  # Population standard deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std}\n\n# Print the output as JSON\nimport json\nprint(json.dumps(output))",
+        "captured_output": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "{\n  \"skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import numpy as np\\n\\n# Input data\\ndata = [10, 20, 30, 40, 50]\\n\\n# Calculate mean and standard deviation\\nmean = np.mean(data)\\nstd = np.std(data, ddof=0)  # population std deviation\\n\\n# Prepare output\\noutput = {'mean': mean, 'std': std}\\n\\n# Print output as JSON\\nimport json\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "skill_id": "standard_scaler_apply",
+        "python_code": "import numpy as np\n\n# Input data\ndata = [10, 20, 30, 40, 50]\n\n# Calculate mean and standard deviation\nmean = np.mean(data)\nstd = np.std(data, ddof=0)  # population std deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std}\n\n# Print output as JSON\nimport json\nprint(json.dumps(output))",
+        "mean": 30.0,
+        "std": 14.142135623730951
+      },
+      "sandbox_run_info": {
+        "code": "import numpy as np\n\n# Input data\ndata = [10, 20, 30, 40, 50]\n\n# Calculate mean and standard deviation\nmean = np.mean(data)\nstd = np.std(data, ddof=0)  # population std deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std}\n\n# Print output as JSON\nimport json\nprint(json.dumps(output))",
+        "captured_output": {
+          "mean": 30.0,
+          "std": 14.142135623730951
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "{\n  \"skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\n# Parameters\\nks_score = 0.35\\nthreshold = 0.25\\n\\ndata_drift_detected = ks_score > threshold\\n\\n# Output schema\\noutput = {\\\"data_drift_detected\\\": data_drift_detected}\\n\\n# Print the result as a JSON dictionary\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "skill_id": "data_drift_monitor",
+        "python_code": "import json\n\n# Parameters\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Output schema\noutput = {\"data_drift_detected\": data_drift_detected}\n\n# Print the result as a JSON dictionary\nprint(json.dumps(output))",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Parameters\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Output schema\noutput = {\"data_drift_detected\": data_drift_detected}\n\n# Print the result as a JSON dictionary\nprint(json.dumps(output))",
+        "captured_output": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "{\n  \"skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\n# Input values\\nks_score = 0.12\\nthreshold = 0.20\\n\\ndata_drift_detected = ks_score > threshold\\n\\n# Output schema\\noutput = {\\\"data_drift_detected\\\": data_drift_detected}\\n\\n# Print the output as a JSON dictionary\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "skill_id": "data_drift_monitor",
+        "python_code": "import json\n\n# Input values\nks_score = 0.12\nthreshold = 0.20\n\ndata_drift_detected = ks_score > threshold\n\n# Output schema\noutput = {\"data_drift_detected\": data_drift_detected}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Input values\nks_score = 0.12\nthreshold = 0.20\n\ndata_drift_detected = ks_score > threshold\n\n# Output schema\noutput = {\"data_drift_detected\": data_drift_detected}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "captured_output": {
+          "data_drift_detected": false
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "```json\n{\n  \"fraction\": 0.09999999999999998,\n  \"amount\": 999.9999999999998,\n  \"chosen_skill_id\": \"kelly_position_size\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.09999999999999998,
+        "amount": 999.9999999999998,
+        "chosen_skill_id": "kelly_position_size"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "```json\n{\n  \"fraction\": 0.2,\n  \"amount\": 10000.0,\n  \"chosen_skill_id\": \"kelly_position_size\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.2,
+        "amount": 10000.0,
+        "chosen_skill_id": "kelly_position_size"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 7.5\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 7.5
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "```json\n{\n  \"ev\": 95.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 95.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "```json\n{\n  \"ev\": 70.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 70.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"The column 'total_revenue_offset' uses the target variable in its calculation, which leads to lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "The column 'total_revenue_offset' uses the target variable in its calculation, which leads to lookahead bias."
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"Column 'lagged_price_1' uses future information from 'price_t' to calculate its value, indicating potential lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "Column 'lagged_price_1' uses future information from 'price_t' to calculate its value, indicating potential lookahead bias."
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "```json\n{\n  \"mean\": 31.4,\n  \"std\": 14.64,\n  \"skill_id\": \"standard_scaler_apply\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 31.4,
+        "std": 14.64,
+        "skill_id": "standard_scaler_apply"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "```json\n{\n  \"mean\": 30.0,\n  \"std\": 15.811388300841896,\n  \"skill_id\": \"standard_scaler_apply\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 30.0,
+        "std": 15.811388300841896,
+        "skill_id": "standard_scaler_apply"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "{\n  \"skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import json\\n\\ndef calculate_kelly_fraction(win_rate, payoff, bankroll):\\n    if win_rate <= 0 or payoff <= 0:\\n        return 0.0, 0.0\\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\\n    amount = fraction * bankroll\\n    return fraction, amount\\n\\nwin_rate = 0.55\\npayoff = 1.8\\nbankroll = 10000\\nfraction, amount = calculate_kelly_fraction(win_rate, payoff, bankroll)\\n\\noutput = {'fraction': fraction, 'amount': amount}\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "python_code": "import json\n\ndef calculate_kelly_fraction(win_rate, payoff, bankroll):\n    if win_rate <= 0 or payoff <= 0:\n        return 0.0, 0.0\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = fraction * bankroll\n    return fraction, amount\n\nwin_rate = 0.55\npayoff = 1.8\nbankroll = 10000\nfraction, amount = calculate_kelly_fraction(win_rate, payoff, bankroll)\n\noutput = {'fraction': fraction, 'amount': amount}\nprint(json.dumps(output))",
+        "fraction": 0.3000000000000001,
+        "amount": 3000.000000000001
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef calculate_kelly_fraction(win_rate, payoff, bankroll):\n    if win_rate <= 0 or payoff <= 0:\n        return 0.0, 0.0\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = fraction * bankroll\n    return fraction, amount\n\nwin_rate = 0.55\npayoff = 1.8\nbankroll = 10000\nfraction, amount = calculate_kelly_fraction(win_rate, payoff, bankroll)\n\noutput = {'fraction': fraction, 'amount': amount}\nprint(json.dumps(output))",
+        "captured_output": {
+          "fraction": 0.3000000000000001,
+          "amount": 3000.000000000001
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "{\n  \"skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import json\\n\\ndef kelly_criterion(win_rate, payoff, bankroll):\\n    if win_rate <= 0 or payoff <= 0:\\n        return {'fraction': 0.0, 'amount': 0.0}\\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\\n    amount = fraction * bankroll\\n    return {'fraction': fraction, 'amount': amount}\\n\\nwin_rate = 0.60\\npayoff = 1.5\\nbankroll = 50000\\nresult = kelly_criterion(win_rate, payoff, bankroll)\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "python_code": "import json\n\ndef kelly_criterion(win_rate, payoff, bankroll):\n    if win_rate <= 0 or payoff <= 0:\n        return {'fraction': 0.0, 'amount': 0.0}\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = fraction * bankroll\n    return {'fraction': fraction, 'amount': amount}\n\nwin_rate = 0.60\npayoff = 1.5\nbankroll = 50000\nresult = kelly_criterion(win_rate, payoff, bankroll)\nprint(json.dumps(result))",
+        "fraction": 0.33333333333333326,
+        "amount": 16666.666666666664
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef kelly_criterion(win_rate, payoff, bankroll):\n    if win_rate <= 0 or payoff <= 0:\n        return {'fraction': 0.0, 'amount': 0.0}\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = fraction * bankroll\n    return {'fraction': fraction, 'amount': amount}\n\nwin_rate = 0.60\npayoff = 1.5\nbankroll = 50000\nresult = kelly_criterion(win_rate, payoff, bankroll)\nprint(json.dumps(result))",
+        "captured_output": {
+          "fraction": 0.33333333333333326,
+          "amount": 16666.666666666664
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "{\n  \"skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import json\\n\\n# Given values\\natr = 15.2\\nmultiplier = 2.0\\n\\n# Calculate stop distance\\nif atr <= 0 or multiplier <= 0:\\n    stop_distance = 0.0\\nelse:\\n    stop_distance = atr * multiplier\\n\\n# Prepare output\\noutput = {'stop_distance': stop_distance}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "skill_id": "atr_dynamic_stop",
+        "python_code": "import json\n\n# Given values\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given values\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "stop_distance": 30.4
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "{\n  \"skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import json\\n\\n# Given values\\natr = 2.5\\nmultiplier = 3.0\\n\\n# Calculate stop distance\\nstop_distance = atr * multiplier\\n\\n# Prepare output\\noutput = {'stop_distance': stop_distance}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "skill_id": "atr_dynamic_stop",
+        "python_code": "import json\n\n# Given values\natr = 2.5\nmultiplier = 3.0\n\n# Calculate stop distance\nstop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "stop_distance": 7.5
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given values\natr = 2.5\nmultiplier = 3.0\n\n# Calculate stop distance\nstop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "stop_distance": 7.5
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "{\n  \"skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\n# Given parameters\\nwin_prob = 0.6\\nwin_return = 200.0\\nloss_return = -100.0\\nfee = 5.0\\n\\n# Calculate expected value\\nexpected_value = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n\\n# Prepare output\\noutput = {'ev': expected_value}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "skill_id": "trade_ev_calculator",
+        "python_code": "import json\n\n# Given parameters\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value\nexpected_value = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': expected_value}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given parameters\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value\nexpected_value = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': expected_value}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "{\n  \"skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\n# Given parameters\\nwin_prob = 0.4\\nwin_return = 300.0\\nloss_return = -50.0\\nfee = 10.0\\n\\n# Calculate expected value (EV)\\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n\\n# Prepare the output\\noutput = {'ev': ev}\\n\\n# Print the output as a JSON dictionary\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "skill_id": "trade_ev_calculator",
+        "python_code": "import json\n\n# Given parameters\nwin_prob = 0.4\nwin_return = 300.0\nloss_return = -50.0\nfee = 10.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare the output\noutput = {'ev': ev}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "ev": 80.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given parameters\nwin_prob = 0.4\nwin_return = 300.0\nloss_return = -50.0\nfee = 10.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare the output\noutput = {'ev': ev}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "captured_output": {
+          "ev": 80.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import json\\n\\ndef detect_leakage(column_name, formula):\\n    # Check if the formula uses the target variable or future timestamps\\n    leakage_detected = 'target' in formula\\n    reason = 'Formula uses target variable directly, indicating potential leakage.' if leakage_detected else 'No leakage detected.'\\n    return {'leakage_detected': leakage_detected, 'reason': reason}\\n\\n# Example usage\\ncolumn_name = 'total_revenue_offset'\\nformula = 'target * 5 + 10'\\nresult = detect_leakage(column_name, formula)\\n\\n# Print the result as a JSON dictionary\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "python_code": "import json\n\ndef detect_leakage(column_name, formula):\n    # Check if the formula uses the target variable or future timestamps\n    leakage_detected = 'target' in formula\n    reason = 'Formula uses target variable directly, indicating potential leakage.' if leakage_detected else 'No leakage detected.'\n    return {'leakage_detected': leakage_detected, 'reason': reason}\n\n# Example usage\ncolumn_name = 'total_revenue_offset'\nformula = 'target * 5 + 10'\nresult = detect_leakage(column_name, formula)\n\n# Print the result as a JSON dictionary\nprint(json.dumps(result))",
+        "leakage_detected": true,
+        "reason": "Formula uses target variable directly, indicating potential leakage."
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef detect_leakage(column_name, formula):\n    # Check if the formula uses the target variable or future timestamps\n    leakage_detected = 'target' in formula\n    reason = 'Formula uses target variable directly, indicating potential leakage.' if leakage_detected else 'No leakage detected.'\n    return {'leakage_detected': leakage_detected, 'reason': reason}\n\n# Example usage\ncolumn_name = 'total_revenue_offset'\nformula = 'target * 5 + 10'\nresult = detect_leakage(column_name, formula)\n\n# Print the result as a JSON dictionary\nprint(json.dumps(result))",
+        "captured_output": {
+          "leakage_detected": true,
+          "reason": "Formula uses target variable directly, indicating potential leakage."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\n\\n# Sample DataFrame to simulate the data\\n# Replace this with the actual DataFrame containing your data\\n\\ndata = {\\n    'price_t': [100, 102, 101, 103, 105],\\n    'lagged_price_1': [None, 100, 102, 101, 103]  # Example lagged prices\\n}\\ndf = pd.DataFrame(data)\\n\\n# Check for lookahead bias\\nleakage_detected = False\\nreason = ''\\n\\n# Check if 'lagged_price_1' uses future information from 'price_t'\\nfor i in range(1, len(df)):\\n    if df['lagged_price_1'].iloc[i] != df['price_t'].iloc[i - 1]:\\n        leakage_detected = True\\n        reason = 'lagged_price_1 does not correctly reference price_t minus 1'\\n        break\\n\\n# Output the result\\nresult = {'leakage_detected': leakage_detected, 'reason': reason}\\nprint(result)\"\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "python_code": "import pandas as pd\n\n# Sample DataFrame to simulate the data\n# Replace this with the actual DataFrame containing your data\n\ndata = {\n    'price_t': [100, 102, 101, 103, 105],\n    'lagged_price_1': [None, 100, 102, 101, 103]  # Example lagged prices\n}\ndf = pd.DataFrame(data)\n\n# Check for lookahead bias\nleakage_detected = False\nreason = ''\n\n# Check if 'lagged_price_1' uses future information from 'price_t'\nfor i in range(1, len(df)):\n    if df['lagged_price_1'].iloc[i] != df['price_t'].iloc[i - 1]:\n        leakage_detected = True\n        reason = 'lagged_price_1 does not correctly reference price_t minus 1'\n        break\n\n# Output the result\nresult = {'leakage_detected': leakage_detected, 'reason': reason}\nprint(result)",
+        "leakage_detected": false,
+        "reason": ""
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\n\n# Sample DataFrame to simulate the data\n# Replace this with the actual DataFrame containing your data\n\ndata = {\n    'price_t': [100, 102, 101, 103, 105],\n    'lagged_price_1': [None, 100, 102, 101, 103]  # Example lagged prices\n}\ndf = pd.DataFrame(data)\n\n# Check for lookahead bias\nleakage_detected = False\nreason = ''\n\n# Check if 'lagged_price_1' uses future information from 'price_t'\nfor i in range(1, len(df)):\n    if df['lagged_price_1'].iloc[i] != df['price_t'].iloc[i - 1]:\n        leakage_detected = True\n        reason = 'lagged_price_1 does not correctly reference price_t minus 1'\n        break\n\n# Output the result\nresult = {'leakage_detected': leakage_detected, 'reason': reason}\nprint(result)",
+        "captured_output": {
+          "leakage_detected": false,
+          "reason": ""
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "{\n  \"skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import numpy as np\\n\\n# Given values\\nvalues = [12, 17, 33, 44, 51]\\n\\n# Calculate mean and standard deviation\\nmean = np.mean(values)\\nstd = np.std(values, ddof=0)  # Population standard deviation\\n\\n# Prepare output\\noutput = {'mean': mean, 'std': std}\\n\\n# Print the output as JSON\\nimport json\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "skill_id": "standard_scaler_apply",
+        "python_code": "import numpy as np\n\n# Given values\nvalues = [12, 17, 33, 44, 51]\n\n# Calculate mean and standard deviation\nmean = np.mean(values)\nstd = np.std(values, ddof=0)  # Population standard deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std}\n\n# Print the output as JSON\nimport json\nprint(json.dumps(output))",
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import numpy as np\n\n# Given values\nvalues = [12, 17, 33, 44, 51]\n\n# Calculate mean and standard deviation\nmean = np.mean(values)\nstd = np.std(values, ddof=0)  # Population standard deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std}\n\n# Print the output as JSON\nimport json\nprint(json.dumps(output))",
+        "captured_output": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "{\n  \"skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import numpy as np\\n\\n# Input data\\ndata = [10, 20, 30, 40, 50]\\n\\n# Calculate mean and standard deviation\\nmean = np.mean(data)\\nstd = np.std(data, ddof=0)  # Population std deviation\\n\\n# Prepare output\\noutput = {'mean': mean, 'std': std}\\n\\n# Print the output as JSON\\nimport json\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "skill_id": "standard_scaler_apply",
+        "python_code": "import numpy as np\n\n# Input data\ndata = [10, 20, 30, 40, 50]\n\n# Calculate mean and standard deviation\nmean = np.mean(data)\nstd = np.std(data, ddof=0)  # Population std deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std}\n\n# Print the output as JSON\nimport json\nprint(json.dumps(output))",
+        "mean": 30.0,
+        "std": 14.142135623730951
+      },
+      "sandbox_run_info": {
+        "code": "import numpy as np\n\n# Input data\ndata = [10, 20, 30, 40, 50]\n\n# Calculate mean and standard deviation\nmean = np.mean(data)\nstd = np.std(data, ddof=0)  # Population std deviation\n\n# Prepare output\noutput = {'mean': mean, 'std': std}\n\n# Print the output as JSON\nimport json\nprint(json.dumps(output))",
+        "captured_output": {
+          "mean": 30.0,
+          "std": 14.142135623730951
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "{\n  \"skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\n# Input values\\nks_score = 0.35\\nthreshold = 0.25\\n\\ndata_drift_detected = ks_score > threshold\\n\\n# Output result\\nresult = {'data_drift_detected': data_drift_detected}\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "skill_id": "data_drift_monitor",
+        "python_code": "import json\n\n# Input values\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Output result\nresult = {'data_drift_detected': data_drift_detected}\nprint(json.dumps(result))",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Input values\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Output result\nresult = {'data_drift_detected': data_drift_detected}\nprint(json.dumps(result))",
+        "captured_output": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "{\n  \"skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\n# Input values\\nks_score = 0.12\\nthreshold = 0.20\\n\\ndef check_drift(ks_score, threshold):\\n    return ks_score > threshold\\n\\ndrift_detected = check_drift(ks_score, threshold)\\n\\n# Prepare output\\noutput = {\\\"data_drift_detected\\\": drift_detected}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "skill_id": "data_drift_monitor",
+        "python_code": "import json\n\n# Input values\nks_score = 0.12\nthreshold = 0.20\n\ndef check_drift(ks_score, threshold):\n    return ks_score > threshold\n\ndrift_detected = check_drift(ks_score, threshold)\n\n# Prepare output\noutput = {\"data_drift_detected\": drift_detected}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Input values\nks_score = 0.12\nthreshold = 0.20\n\ndef check_drift(ks_score, threshold):\n    return ks_score > threshold\n\ndrift_detected = check_drift(ks_score, threshold)\n\n# Prepare output\noutput = {\"data_drift_detected\": drift_detected}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "data_drift_detected": false
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.15,\n  \"amount\": 1500.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.15,
+        "amount": 1500.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "```json\n{\n  \"fraction\": 0.25,\n  \"amount\": 12500.0,\n  \"chosen_skill_id\": \"kelly_position_size\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.25,
+        "amount": 12500.0,
+        "chosen_skill_id": "kelly_position_size"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 7.5\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 7.5
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "```json\n{\n  \"ev\": 115.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 115.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "```json\n{\n  \"ev\": 70.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 70.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"The column 'total_revenue_offset' uses the target variable in its calculation, indicating lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "The column 'total_revenue_offset' uses the target variable in its calculation, indicating lookahead bias."
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"Column 'lagged_price_1' uses future information from 'price_t' which is not available at time t.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "Column 'lagged_price_1' uses future information from 'price_t' which is not available at time t."
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "```json\n{\n  \"mean\": 31.4,\n  \"std\": 14.75,\n  \"chosen_skill_id\": \"standard_scaler_apply\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 31.4,
+        "std": 14.75,
+        "chosen_skill_id": "standard_scaler_apply"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 30.0,\n  \"std\": 15.811388300841896\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 30.0,
+        "std": 15.811388300841896
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "{\n  \"skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import json\\n\\ndef kelly_fraction(win_rate, payoff):\\n    if win_rate <= 0 or payoff <= 0:\\n        return 0.0\\n    return (win_rate * payoff - (1 - win_rate)) / payoff\\n\\ndef kelly_amount(fraction, bankroll):\\n    return fraction * bankroll\\n\\nwin_rate = 0.55\\npayoff = 1.8\\nbankroll = 10000\\n\\nfraction = kelly_fraction(win_rate, payoff)\\namount = kelly_amount(fraction, bankroll)\\n\\nresult = {'fraction': fraction, 'amount': amount}\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "python_code": "import json\n\ndef kelly_fraction(win_rate, payoff):\n    if win_rate <= 0 or payoff <= 0:\n        return 0.0\n    return (win_rate * payoff - (1 - win_rate)) / payoff\n\ndef kelly_amount(fraction, bankroll):\n    return fraction * bankroll\n\nwin_rate = 0.55\npayoff = 1.8\nbankroll = 10000\n\nfraction = kelly_fraction(win_rate, payoff)\namount = kelly_amount(fraction, bankroll)\n\nresult = {'fraction': fraction, 'amount': amount}\nprint(json.dumps(result))",
+        "fraction": 0.3000000000000001,
+        "amount": 3000.000000000001
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef kelly_fraction(win_rate, payoff):\n    if win_rate <= 0 or payoff <= 0:\n        return 0.0\n    return (win_rate * payoff - (1 - win_rate)) / payoff\n\ndef kelly_amount(fraction, bankroll):\n    return fraction * bankroll\n\nwin_rate = 0.55\npayoff = 1.8\nbankroll = 10000\n\nfraction = kelly_fraction(win_rate, payoff)\namount = kelly_amount(fraction, bankroll)\n\nresult = {'fraction': fraction, 'amount': amount}\nprint(json.dumps(result))",
+        "captured_output": {
+          "fraction": 0.3000000000000001,
+          "amount": 3000.000000000001
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "{\n  \"skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import json\\n\\ndef kelly_criterion(win_rate, payoff, bankroll):\\n    if win_rate <= 0 or payoff <= 0:\\n        return 0.0, 0.0\\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\\n    amount = fraction * bankroll\\n    return fraction, amount\\n\\nwin_rate = 0.60\\npayoff = 1.5\\nbankroll = 50000\\nfraction, amount = kelly_criterion(win_rate, payoff, bankroll)\\n\\nresult = {'fraction': fraction, 'amount': amount}\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "python_code": "import json\n\ndef kelly_criterion(win_rate, payoff, bankroll):\n    if win_rate <= 0 or payoff <= 0:\n        return 0.0, 0.0\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = fraction * bankroll\n    return fraction, amount\n\nwin_rate = 0.60\npayoff = 1.5\nbankroll = 50000\nfraction, amount = kelly_criterion(win_rate, payoff, bankroll)\n\nresult = {'fraction': fraction, 'amount': amount}\nprint(json.dumps(result))",
+        "fraction": 0.33333333333333326,
+        "amount": 16666.666666666664
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef kelly_criterion(win_rate, payoff, bankroll):\n    if win_rate <= 0 or payoff <= 0:\n        return 0.0, 0.0\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    amount = fraction * bankroll\n    return fraction, amount\n\nwin_rate = 0.60\npayoff = 1.5\nbankroll = 50000\nfraction, amount = kelly_criterion(win_rate, payoff, bankroll)\n\nresult = {'fraction': fraction, 'amount': amount}\nprint(json.dumps(result))",
+        "captured_output": {
+          "fraction": 0.33333333333333326,
+          "amount": 16666.666666666664
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "{\n  \"skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import json\\n\\n# Given values\\natr = 15.2\\nmultiplier = 2.0\\n\\n# Calculate stop distance\\nif atr <= 0 or multiplier <= 0:\\n    stop_distance = 0.0\\nelse:\\n    stop_distance = atr * multiplier\\n\\n# Prepare output\\noutput = {'stop_distance': stop_distance}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "skill_id": "atr_dynamic_stop",
+        "python_code": "import json\n\n# Given values\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "stop_distance": 30.4
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given values\natr = 15.2\nmultiplier = 2.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "stop_distance": 30.4
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "{\n  \"skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import json\\n\\n# Given values\\natr = 2.5\\nmultiplier = 3.0\\n\\n# Calculate stop distance\\nif atr <= 0 or multiplier <= 0:\\n    stop_distance = 0.0\\nelse:\\n    stop_distance = atr * multiplier\\n\\n# Prepare output\\noutput = {'stop_distance': stop_distance}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "skill_id": "atr_dynamic_stop",
+        "python_code": "import json\n\n# Given values\natr = 2.5\nmultiplier = 3.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "stop_distance": 7.5
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given values\natr = 2.5\nmultiplier = 3.0\n\n# Calculate stop distance\nif atr <= 0 or multiplier <= 0:\n    stop_distance = 0.0\nelse:\n    stop_distance = atr * multiplier\n\n# Prepare output\noutput = {'stop_distance': stop_distance}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "stop_distance": 7.5
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "{\n  \"skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\n# Given parameters\\nwin_prob = 0.6\\nwin_return = 200.0\\nloss_return = -100.0\\nfee = 5.0\\n\\n# Calculate expected value\\nexpected_value = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n\\n# Prepare output\\noutput = {'ev': expected_value}\\n\\n# Print the output as a JSON dictionary\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "skill_id": "trade_ev_calculator",
+        "python_code": "import json\n\n# Given parameters\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value\nexpected_value = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': expected_value}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Given parameters\nwin_prob = 0.6\nwin_return = 200.0\nloss_return = -100.0\nfee = 5.0\n\n# Calculate expected value\nexpected_value = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': expected_value}\n\n# Print the output as a JSON dictionary\nprint(json.dumps(output))",
+        "captured_output": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "{\n  \"skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\n# Parameters\\nwin_prob = 0.4\\nwin_return = 300.0\\nloss_return = -50.0\\nfee = 10.0\\n\\n# Calculate expected value (EV)\\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n\\n# Prepare output\\noutput = {'ev': ev}\\n\\n# Print output as JSON\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "skill_id": "trade_ev_calculator",
+        "python_code": "import json\n\n# Parameters\nwin_prob = 0.4\nwin_return = 300.0\nloss_return = -50.0\nfee = 10.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': ev}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "ev": 80.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Parameters\nwin_prob = 0.4\nwin_return = 300.0\nloss_return = -50.0\nfee = 10.0\n\n# Calculate expected value (EV)\nev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n\n# Prepare output\noutput = {'ev': ev}\n\n# Print output as JSON\nprint(json.dumps(output))",
+        "captured_output": {
+          "ev": 80.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import json\\n\\ndef detect_leakage(column_formula, target_variable):\\n    leakage_detected = False\\n    reason = ''\\n\\n    # Check if the column formula uses the target variable or future timestamps\\n    if target_variable in column_formula:\\n        leakage_detected = True\\n        reason = 'Column uses information from the target variable.'\\n    else:\\n        reason = 'No leakage detected.'\\n\\n    return {'leakage_detected': leakage_detected, 'reason': reason}\\n\\n# Example usage\\ncolumn_name = 'total_revenue_offset'\\ncolumn_formula = 'target * 5 + 10'\\ntarget_variable = 'target'\\n\\nresult = detect_leakage(column_formula, target_variable)\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "python_code": "import json\n\ndef detect_leakage(column_formula, target_variable):\n    leakage_detected = False\n    reason = ''\n\n    # Check if the column formula uses the target variable or future timestamps\n    if target_variable in column_formula:\n        leakage_detected = True\n        reason = 'Column uses information from the target variable.'\n    else:\n        reason = 'No leakage detected.'\n\n    return {'leakage_detected': leakage_detected, 'reason': reason}\n\n# Example usage\ncolumn_name = 'total_revenue_offset'\ncolumn_formula = 'target * 5 + 10'\ntarget_variable = 'target'\n\nresult = detect_leakage(column_formula, target_variable)\nprint(json.dumps(result))",
+        "leakage_detected": true,
+        "reason": "Column uses information from the target variable."
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef detect_leakage(column_formula, target_variable):\n    leakage_detected = False\n    reason = ''\n\n    # Check if the column formula uses the target variable or future timestamps\n    if target_variable in column_formula:\n        leakage_detected = True\n        reason = 'Column uses information from the target variable.'\n    else:\n        reason = 'No leakage detected.'\n\n    return {'leakage_detected': leakage_detected, 'reason': reason}\n\n# Example usage\ncolumn_name = 'total_revenue_offset'\ncolumn_formula = 'target * 5 + 10'\ntarget_variable = 'target'\n\nresult = detect_leakage(column_formula, target_variable)\nprint(json.dumps(result))",
+        "captured_output": {
+          "leakage_detected": true,
+          "reason": "Column uses information from the target variable."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\n\\n# Sample data for demonstration\\n# Replace this with your actual DataFrame\\ndata = {\\n    'price_t': [100, 101, 102, 103, 104],\\n    'lagged_price_1': [None, 100, 101, 102, 103]  # Example of lagged price\\n}\\ndf = pd.DataFrame(data)\\n\\n# Check for lookahead bias\\nleakage_detected = False\\nreason = ''\\n\\n# Check if 'lagged_price_1' uses future information from 'price_t'\\nfor i in range(1, len(df)):\\n    if df['lagged_price_1'].iloc[i] != df['price_t'].iloc[i - 1]:\\n        leakage_detected = True\\n        reason = 'Lagged price uses future information from price_t.'\\n        break\\n\\n# Output the result\\nresult = {\\n    'leakage_detected': leakage_detected,\\n    'reason': reason\\n}\\n\\nprint(result)\"\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "python_code": "import pandas as pd\n\n# Sample data for demonstration\n# Replace this with your actual DataFrame\ndata = {\n    'price_t': [100, 101, 102, 103, 104],\n    'lagged_price_1': [None, 100, 101, 102, 103]  # Example of lagged price\n}\ndf = pd.DataFrame(data)\n\n# Check for lookahead bias\nleakage_detected = False\nreason = ''\n\n# Check if 'lagged_price_1' uses future information from 'price_t'\nfor i in range(1, len(df)):\n    if df['lagged_price_1'].iloc[i] != df['price_t'].iloc[i - 1]:\n        leakage_detected = True\n        reason = 'Lagged price uses future information from price_t.'\n        break\n\n# Output the result\nresult = {\n    'leakage_detected': leakage_detected,\n    'reason': reason\n}\n\nprint(result)",
+        "leakage_detected": false,
+        "reason": ""
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\n\n# Sample data for demonstration\n# Replace this with your actual DataFrame\ndata = {\n    'price_t': [100, 101, 102, 103, 104],\n    'lagged_price_1': [None, 100, 101, 102, 103]  # Example of lagged price\n}\ndf = pd.DataFrame(data)\n\n# Check for lookahead bias\nleakage_detected = False\nreason = ''\n\n# Check if 'lagged_price_1' uses future information from 'price_t'\nfor i in range(1, len(df)):\n    if df['lagged_price_1'].iloc[i] != df['price_t'].iloc[i - 1]:\n        leakage_detected = True\n        reason = 'Lagged price uses future information from price_t.'\n        break\n\n# Output the result\nresult = {\n    'leakage_detected': leakage_detected,\n    'reason': reason\n}\n\nprint(result)",
+        "captured_output": {
+          "leakage_detected": false,
+          "reason": ""
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "{\n  \"skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import numpy as np\\n\\nvalues = [12, 17, 33, 44, 51]\\nmean = np.mean(values)\\nstd = np.std(values, ddof=0)  # population standard deviation\\n\\nresult = {'mean': mean, 'std': std}\\nprint(result)\"\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "skill_id": "standard_scaler_apply",
+        "python_code": "import numpy as np\n\nvalues = [12, 17, 33, 44, 51]\nmean = np.mean(values)\nstd = np.std(values, ddof=0)  # population standard deviation\n\nresult = {'mean': mean, 'std': std}\nprint(result)",
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import numpy as np\n\nvalues = [12, 17, 33, 44, 51]\nmean = np.mean(values)\nstd = np.std(values, ddof=0)  # population standard deviation\n\nresult = {'mean': mean, 'std': std}\nprint(result)",
+        "captured_output": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "{\n  \"skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import numpy as np\\n\\n# Input data\\ndata = [10, 20, 30, 40, 50]\\n\\n# Calculate mean and standard deviation\\nmean = np.mean(data)\\nstd = np.std(data, ddof=0)  # population std deviation\\n\\n# Output results\\noutput = {'mean': mean, 'std': std}\\nprint(output)\"\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "skill_id": "standard_scaler_apply",
+        "python_code": "import numpy as np\n\n# Input data\ndata = [10, 20, 30, 40, 50]\n\n# Calculate mean and standard deviation\nmean = np.mean(data)\nstd = np.std(data, ddof=0)  # population std deviation\n\n# Output results\noutput = {'mean': mean, 'std': std}\nprint(output)",
+        "mean": 30.0,
+        "std": 14.142135623730951
+      },
+      "sandbox_run_info": {
+        "code": "import numpy as np\n\n# Input data\ndata = [10, 20, 30, 40, 50]\n\n# Calculate mean and standard deviation\nmean = np.mean(data)\nstd = np.std(data, ddof=0)  # population std deviation\n\n# Output results\noutput = {'mean': mean, 'std': std}\nprint(output)",
+        "captured_output": {
+          "mean": 30.0,
+          "std": 14.142135623730951
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "{\n  \"skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\n# Input values\\nks_score = 0.35\\nthreshold = 0.25\\n\\ndata_drift_detected = ks_score > threshold\\n\\n# Output result\\nresult = {'data_drift_detected': data_drift_detected}\\nprint(json.dumps(result))\"\n}",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "skill_id": "data_drift_monitor",
+        "python_code": "import json\n\n# Input values\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Output result\nresult = {'data_drift_detected': data_drift_detected}\nprint(json.dumps(result))",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Input values\nks_score = 0.35\nthreshold = 0.25\n\ndata_drift_detected = ks_score > threshold\n\n# Output result\nresult = {'data_drift_detected': data_drift_detected}\nprint(json.dumps(result))",
+        "captured_output": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "{\n  \"skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\n# Input values\\nks_score = 0.12\\nthreshold = 0.20\\n\\ndata_drift_detected = ks_score > threshold\\n\\n# Output schema\\noutput = {'data_drift_detected': data_drift_detected}\\n\\n# Print the result as a JSON dictionary\\nprint(json.dumps(output))\"\n}",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "skill_id": "data_drift_monitor",
+        "python_code": "import json\n\n# Input values\nks_score = 0.12\nthreshold = 0.20\n\ndata_drift_detected = ks_score > threshold\n\n# Output schema\noutput = {'data_drift_detected': data_drift_detected}\n\n# Print the result as a JSON dictionary\nprint(json.dumps(output))",
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\n# Input values\nks_score = 0.12\nthreshold = 0.20\n\ndata_drift_detected = ks_score > threshold\n\n# Output schema\noutput = {'data_drift_detected': data_drift_detected}\n\n# Print the result as a JSON dictionary\nprint(json.dumps(output))",
+        "captured_output": {
+          "data_drift_detected": false
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    }
+  ]
+}

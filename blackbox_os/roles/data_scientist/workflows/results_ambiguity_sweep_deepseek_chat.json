@@ -1,0 +1,342 @@
+{
+  "LN_LA": {
+    "runs": [
+      {
+        "trial": 0,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Audit features.csv for lookahead bias. Check if any column formula references future timestamps.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 0,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Load trade_performance.json and calculate the net expected value (EV) deducting a transaction fee of 5.0.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 1,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Audit features.csv for lookahead bias. Check if any column formula references future timestamps.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 1,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Load trade_performance.json and calculate the net expected value (EV) deducting a transaction fee of 5.0.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 2,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Audit features.csv for lookahead bias. Check if any column formula references future timestamps.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 2,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Load trade_performance.json and calculate the net expected value (EV) deducting a transaction fee of 5.0.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 3,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Audit features.csv for lookahead bias. Check if any column formula references future timestamps.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 3,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Load trade_performance.json and calculate the net expected value (EV) deducting a transaction fee of 5.0.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 4,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Audit features.csv for lookahead bias. Check if any column formula references future timestamps.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 4,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Load trade_performance.json and calculate the net expected value (EV) deducting a transaction fee of 5.0.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      }
+    ],
+    "score": 100.0
+  },
+  "HN_LA": {
+    "runs": [
+      {
+        "trial": 0,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Scan our predictive features database schema to detect temporal contamination or future causality leaks in our mathematical formulas.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 0,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Analyze our trade outcomes database to calculate the mathematical expectation of return edge after adjusting for execution frictional cost.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 1,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Scan our predictive features database schema to detect temporal contamination or future causality leaks in our mathematical formulas.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 1,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Analyze our trade outcomes database to calculate the mathematical expectation of return edge after adjusting for execution frictional cost.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 2,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Scan our predictive features database schema to detect temporal contamination or future causality leaks in our mathematical formulas.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 2,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Analyze our trade outcomes database to calculate the mathematical expectation of return edge after adjusting for execution frictional cost.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 3,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Scan our predictive features database schema to detect temporal contamination or future causality leaks in our mathematical formulas.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 3,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Analyze our trade outcomes database to calculate the mathematical expectation of return edge after adjusting for execution frictional cost.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 4,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Scan our predictive features database schema to detect temporal contamination or future causality leaks in our mathematical formulas.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 4,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Analyze our trade outcomes database to calculate the mathematical expectation of return edge after adjusting for execution frictional cost.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      }
+    ],
+    "score": 100.0
+  },
+  "LN_HA": {
+    "runs": [
+      {
+        "trial": 0,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Check features.csv to audit if the columns are clean, valid, and free of bias or leakage.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 0,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Check trade_performance.json to compute the average return expectation and see if we have positive edge.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 1,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Check features.csv to audit if the columns are clean, valid, and free of bias or leakage.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 1,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Check trade_performance.json to compute the average return expectation and see if we have positive edge.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 2,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Check features.csv to audit if the columns are clean, valid, and free of bias or leakage.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 2,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Check trade_performance.json to compute the average return expectation and see if we have positive edge.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 3,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Check features.csv to audit if the columns are clean, valid, and free of bias or leakage.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 3,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Check trade_performance.json to compute the average return expectation and see if we have positive edge.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 4,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Check features.csv to audit if the columns are clean, valid, and free of bias or leakage.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 4,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Check trade_performance.json to compute the average return expectation and see if we have positive edge.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      }
+    ],
+    "score": 100.0
+  },
+  "HN_HA": {
+    "runs": [
+      {
+        "trial": 0,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Assess if the training columns suffer from leakage, distribution drift, or any future-dependent scaling issues.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 0,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Assess features.csv to analyze the mean return expectation and calculate our optimal allocation scale.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 1,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Assess if the training columns suffer from leakage, distribution drift, or any future-dependent scaling issues.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 1,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Assess features.csv to analyze the mean return expectation and calculate our optimal allocation scale.",
+        "response": "{\n  \"chosen_skill_id\": \"kelly_position_size\"\n}",
+        "chosen_skill": "kelly_position_size",
+        "success": false
+      },
+      {
+        "trial": 2,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Assess if the training columns suffer from leakage, distribution drift, or any future-dependent scaling issues.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 2,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Assess features.csv to analyze the mean return expectation and calculate our optimal allocation scale.",
+        "response": "{\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}",
+        "chosen_skill": "trade_ev_calculator",
+        "success": true
+      },
+      {
+        "trial": 3,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Assess if the training columns suffer from leakage, distribution drift, or any future-dependent scaling issues.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 3,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Assess features.csv to analyze the mean return expectation and calculate our optimal allocation scale.",
+        "response": "{\n  \"chosen_skill_id\": \"kelly_fractional_sizing\"\n}",
+        "chosen_skill": "kelly_fractional_sizing",
+        "success": false
+      },
+      {
+        "trial": 4,
+        "target_skill": "lookahead_bias_audit",
+        "user_prompt": "Assess if the training columns suffer from leakage, distribution drift, or any future-dependent scaling issues.",
+        "response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\"\n}",
+        "chosen_skill": "lookahead_bias_audit",
+        "success": true
+      },
+      {
+        "trial": 4,
+        "target_skill": "trade_ev_calculator",
+        "user_prompt": "Assess features.csv to analyze the mean return expectation and calculate our optimal allocation scale.",
+        "response": "{\n  \"chosen_skill_id\": \"dynamic_position_sizing_kelly\"\n}",
+        "chosen_skill": "dynamic_position_sizing_kelly",
+        "success": false
+      }
+    ],
+    "score": 70.0
+  }
+}

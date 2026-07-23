@@ -1,0 +1,12 @@
+Proposed Build Strategy: Workflow SOPs + Skills
+Your idea of writing workflow SOPs first is the most professional and scalable way to build this. If we just mapped raw skills to prompts, the agent wouldn't know the logical sequence of operations.
+Here is how we can implement this:
+Define 4 Core SOPs for the Data Scientist:SOP 1: Data Ingestion & Sanitization (Handles: Missing data, scaling/encoding, imbalanced classes).
+SOP 2: Feature Selection & Modeling (Handles: Feature selection, ensembling, regularization).
+SOP 3: Optimization & Evaluation (Handles: Hyperparameter tuning, cross-validation, metrics calculation).
+SOP 4: Compliance & Deployment (Handles: Data leakage scans, model interpretability, drift monitoring).
+Define a Shared State (Blackboard Pattern):Since sub-graphs are isolated, they must communicate via a common state object (e.g., containing dataset_path, active_features, model_type, evaluation_metrics).
+Map Skills to SOP Nodes:For each step in the SOP, the active agent node only has access to the tool subset assigned to that step. For example, during the Data Ingestion & Sanitization step, the agent only sees the 6 missing data tools and 7 scaling tools ($N=13$).
+4. Important Details to Consider
+Here are a few things we should account for to ensure the Blackbox OS runs reliably:
+Dynamic Sub-graph Exits: We need a mechanism for an agent to route backward or sideways. For example, if during model evaluation (SOP 3) the agent detects target leakage (via a data leakage tool), it must be able to raise a flag and route back to feature selection (SOP 2). 

@@ -31,6 +31,44 @@ class ValidationManager:
         if contract is None:
             contract = ValidationContract()
 
+        # Dynamic contract adjustments based on dataset properties
+        if state.dataset_path:
+            import os
+            if os.path.exists(state.dataset_path):
+                try:
+                    import pandas as pd
+                    df = pd.read_csv(state.dataset_path)
+                    num_samples = len(df)
+                    missing_ratio = df.isnull().mean().mean()
+                    
+                    # Compute minority ratio for classification targets
+                    minority_ratio = 0.5
+                    if state.target_column and state.target_column in df.columns:
+                        class_counts = df[state.target_column].value_counts()
+                        if len(class_counts) == 2:
+                            minority_ratio = class_counts.min() / len(df)
+                            
+                    # Apply dynamic threshold scaling rules
+                    if num_samples < 100:
+                        contract.w_latency = 0.02
+                        contract.w_drift = 1.0  # scale up drift penalty for small datasets
+                    
+                    if minority_ratio < 0.3:
+                        contract.w_metric = 1.5
+                        contract.threshold = 0.70  # stricter validation for imbalanced targets
+                        
+                except Exception:
+                    pass
+
+        # Apply Multiple-Testing Correction (Holm-Bonferroni adaptation) to prevent overfitting
+        if state.validation_history:
+            import numpy as np
+            trial_count = len(state.validation_history) + 1
+            adjustment = 0.04 * np.log(trial_count)
+            contract.threshold = min(0.95, contract.threshold + adjustment)
+
+
+
         # 1. Extract performance metric (M_metric)
         # We check for 'mcc' or 'f1_score' or 'accuracy' in order of preference
         m_metric = 0.0

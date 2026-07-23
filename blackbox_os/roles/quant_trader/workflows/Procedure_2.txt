@@ -1,0 +1,97 @@
+The Senior Quant Trader Catalog (Architecture, Governance, & Tradeoffs)
+The Senior persona owns real-time execution mechanics, capital management, order book dynamics, risk limits, exchange connectivity, and live portfolio preservation under market stress.
+
+Stage 1 — Capital Allocation & Mandate Setup
+strategy_capital_allocator: Allocates capital base across active strategy instances based on Sharpe and capacity.
+var_budget_allocator: Distributes daily Value-at-Risk (VaR) limits across trading desks and asset classes.
+max_position_limit_check: Sets hard boundaries on maximum gross/net notional exposure per asset.
+position_limit_compliance_check: Audits live positions against exchange and regulatory position caps.
+leverage_ratio_check: Enforces maximum leverage restrictions to prevent margin breaches.
+daily_loss_limit_enforcer: Establishes automatic trading pause triggers when daily loss limits are breached.
+fee_tier_optimizer: Optimizes trading venue selection based on volume-tiered fee schedules.
+maker_taker_fee_optimizer: Chooses maker limit vs taker market execution based on net fee/rebate structures.
+
+Stage 2 — Signal Ingestion & Multi-Timeframe Alignment
+multi_timeframe_signal_alignment: Synchronizes high-frequency signals with longer-term trend alphas.
+ensemble_signal_voting: Aggregates multiple sub-signal predictions into a unified trading conviction vector.
+signal_conflict_resolver: Resolves opposing long/short signals across different strategy modules.
+market_data_latency_monitor: Measures tick-to-trade latency and flags feed delays.
+clock_sync_monitor: Monitors PTP/NTP server clock synchronization accuracy across execution servers.
+quote_refresh_rate_controller: Throttles high-frequency quote subscription rates during bandwidth spikes.
+redundant_feed_failover: Automatically switches order book feeds upon primary WebSocket failure.
+websocket_reconnect_handler: Handles automated reconnection and state recovery during socket drops.
+order_book_snapshot_resync: Rebuilds L2/L3 order books from full snapshots following packet loss.
+
+Stage 3 — Pre-Trade Risk & Sizing Controls
+kelly_position_size: Calculates optimal fractional Kelly position sizing based on trade win probability and payout.
+correlation_adjusted_sizing: Scales down order sizes when asset correlation across the portfolio spikes.
+concentration_risk_check: Restricts oversized exposure to single issuers or correlated sectors.
+cross_margin_liquidation_price_calc: Dynamically computes portfolio liquidation price thresholds.
+margin_utilization_monitor: Alerts when margin utilization exceeds safety thresholds.
+trade_ev_calculator: Estimates net Expected Value (EV) of a trade after expected costs.
+slippage_estimator_pretrade: Forecasts market impact prior to order routing based on book depth.
+wash_trade_avoidance_check: Prevents self-matching orders across internal accounts to avoid regulatory violations.
+revenge_trading_guard: Imposes cooling-off periods after consecutive loss trades to enforce discipline.
+
+Stage 4 — Order Construction & Microstructure Strategy
+micro_price_estimate: Computes order book micro-price accounting for bid-ask queue imbalance.
+order_flow_imbalance: Measures high-frequency order flow imbalance (OFI) to forecast immediate price pressure.
+cvd_divergence: Detects Cumulative Volume Delta divergences against spot price trends.
+liquidity_depth_monitor: Scans real-time L2 order book depth to determine maximum slice sizes.
+entry_timing_optimizer: Optimizes trade execution entry sub-second timing using order book dynamics.
+bid_ask_quote_skew_setter: Skews maker quotes toward inventory rebalancing direction.
+spread_width_optimizer: Dynamically adjusts maker spread quotes based on market volatility.
+iceberg_order_construction: Slices large orders into hidden iceberg orders to minimize market footprint.
+queue_position_estimator: Estimates limit order position within L3 order book queues.
+
+Stage 5 — Smart Order Routing & Venue Execution
+smart_order_router: Routes order slices across multiple CEXs and DEXs to achieve best price.
+dark_pool_routing_decision: Evaluates mid-point match probability in non-displayed dark pools.
+vwap_execution_scheduler: Schedules order execution volume curves matching historical intraday VWAP.
+twap_execution_scheduler: Schedules linear time-weighted execution over target time horizons.
+cross_venue_arbitrage_scanner: Detects fleeting price discrepancies across correlated exchange venues.
+latency_arbitrage_guard: Protects passive quotes from toxic high-frequency latency arbitrageurs.
+cross_exchange_price_divergence: Monitors basis spreads between derivative and spot exchanges.
+api_rate_limit_manager: Throttles API requests to stay strictly within exchange rate limits.
+
+Stage 6 — Real-Time Execution Monitoring & Failover
+adverse_selection_estimator: Measures post-trade fill price drift to detect toxic order flow.
+order_cancel_replace_logic: Manages rapid order cancellation and replacement loops.
+partial_fill_handler: Handles unfilled order remnants and adjusts remaining execution schedules.
+realized_vs_expected_slippage_tracker: Logs execution shortfall vs pre-trade slippage estimates.
+stop_hunt_avoidance_placement: Places stop orders outside obvious liquidity pool clusters.
+exchange_downtime_contingency: Triggers fallback routes or position hedges when an exchange halts.
+strategy_kill_switch: Immediately cancels open orders and flattens positions during emergency events.
+
+Stage 7 — Position Management, Rebalancing & Hedging
+inventory_risk_rebalancer: Manages market maker inventory skew by adjusting quotes or taking liquidity.
+rebalance_trigger_scheduler: Triggers portfolio rebalancing based on time or drift thresholds.
+trailing_stop_logic: Dynamically updates trailing profit stops as price moves favorably.
+atr_dynamic_stop: Adjusts stop-loss distances based on Average True Range volatility.
+drawdown_throttle: Automatically scales down position sizing as drawdown deepens.
+volatility_regime_shift_detector: Identifies sudden regime shifts and switches execution profiles.
+correlation_breakdown_alert: Alerts when statistical pair correlation breaks down mid-trade.
+black_swan_hedge_overlay: Activates tail-risk options or futures hedges during market shocks.
+auto_deleverage_risk_monitor: Monitors ADL queue ranking on crypto derivative exchanges.
+liquidation_cascade_setup: Prepares liquidity provision strategies during cascading market liquidations.
+perp_expiry_rollover_handler: Manages perpetual funding settlement and futures contract rollovers.
+cross_strategy_netting: Nets opposing orders across internal strategies before sending to venue.
+cross_margin_transfer_automation: Automates collateral transfers between sub-accounts to prevent margin calls.
+
+Stage 8 — Post-Trade Attribution & System Postmortem
+trade_reconciliation: Reconciles internal trade logs against exchange fill reports daily.
+wallet_balance_reconciliation: Reconciles internal ledger balances with on-chain/exchange wallet balances.
+pnl_attribution: Decomposes daily PnL into signal alpha, market beta, execution drag, and fees.
+sharpe_ratio_live_monitor: Tracks real-time rolling live Sharpe ratio vs backtest expectations.
+strategy_health_dashboard: Publishes execution metrics, latency, and fill ratios to live monitoring UI.
+portfolio_heat_monitor: Displays real-time risk concentration heatmap across desks.
+strategy_correlation_monitor: Tracks live correlation between running automated strategies.
+daily_trade_log_summary: Compiles daily execution summary reports for trading desk management.
+daily_risk_report_generator: Generates regulatory and internal daily risk compliance reports.
+incident_postmortem_logging: Logs root-cause analysis and remediation steps for execution outages.
+discretionary_override_logger: Documents manual trader intervention actions for compliance audit.
+audit_trail_logging: Maintains immutable audit logs of all order events and parameter changes.
+best_execution_documentation: Documents best-execution compliance for regulatory standards (MiFID II).
+regulatory_reporting_prep: Formats trade records for automated regulatory reporting feeds.
+tax_lot_accounting: Tracks cost basis and tax lots (FIFO, LIFO, HIFO) for realized gains.
+investor_letter_data_prep: Prepares aggregated performance metrics for investor reporting.

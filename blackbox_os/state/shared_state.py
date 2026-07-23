@@ -29,3 +29,6 @@ class SharedState(BaseModel):
     
     # Agent execution log
     execution_history: List[str] = Field(default_factory=list, description="Chronological log of tools invoked across sub-graphs")
+
+    # Human-in-the-loop override
+    human_override: Optional[str] = Field(default=None, description="Manual override instruction or feedback")

@@ -1,0 +1,1190 @@
+{
+  "results": {
+    "60": {
+      "expert": {
+        "success_count": 0,
+        "success_rate": 0.0,
+        "avg_time": 8.106416487693787
+      },
+      "expert_sandbox": {
+        "success_count": 10,
+        "success_rate": 100.0,
+        "avg_time": 30.270462369918825
+      }
+    },
+    "500": {
+      "expert": {
+        "success_count": 0,
+        "success_rate": 0.0,
+        "avg_time": 10.888708877563477
+      },
+      "expert_sandbox": {
+        "success_count": 10,
+        "success_rate": 100.0,
+        "avg_time": 30.448176097869872
+      }
+    }
+  },
+  "logs": [
+    {
+      "size": 60,
+      "condition": "expert",
+      "run_index": 0,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.015,
+        "kelly_fraction": 0.25,
+        "kelly_amount": 12500.0
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 29.36320781408679,
+        "std": 9.722712217537653,
+        "fraction": 0.375,
+        "amount": 18750.0
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "run_index": 1,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0,
+        "scaled_std": 1.0,
+        "kelly_fraction": 0.2,
+        "kelly_amount": 10000.0
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 41.67619429309628,
+        "std": 9.699936128930101,
+        "fraction": 0.3763860369609856,
+        "amount": 18819.30184804928
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "run_index": 2,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.015,
+        "kelly_fraction": 0.25,
+        "kelly_amount": 12500.0
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 34.171041260457365,
+        "std": 10.433318509629968,
+        "fraction": 0.37773279352226713,
+        "amount": 18886.63967611336
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "run_index": 3,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.0123,
+        "kelly_fraction": 0.2,
+        "kelly_amount": 10000.0
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 43.76714551999506,
+        "std": 10.277877135538223,
+        "fraction": 0.37904191616766464,
+        "amount": 18952.09580838323
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "run_index": 4,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.015,
+        "kelly_fraction": 0.2,
+        "kelly_amount": 10000.0
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 31.922393745250854,
+        "std": 9.56064872754599,
+        "fraction": 0.38031496062992126,
+        "amount": 19015.748031496063
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "run_index": 5,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": -0.0025,
+        "scaled_std": 0.015,
+        "kelly_fraction": 0.25,
+        "kelly_amount": 12500.0
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 39.34722819832746,
+        "std": 12.702194132316782,
+        "fraction": 0.38155339805825234,
+        "amount": 19077.669902912618
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "run_index": 6,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.015,
+        "kelly_fraction": 0.12,
+        "kelly_amount": 6000.0
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 30.392347131093892,
+        "std": 11.024245722270797,
+        "fraction": 0.3827586206896551,
+        "amount": 19137.931034482754
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "run_index": 7,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0,
+        "scaled_std": 1.0,
+        "kelly_fraction": 0.25,
+        "kelly_amount": 12500.0
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 42.539599813726376,
+        "std": 9.599762187457276,
+        "fraction": 0.38393194706994327,
+        "amount": 19196.597353497164
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "run_index": 8,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.015,
+        "kelly_fraction": 0.2,
+        "kelly_amount": 10000.0
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 26.941338953703116,
+        "std": 11.326279801675255,
+        "fraction": 0.38507462686567157,
+        "amount": 19253.73134328358
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "run_index": 9,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0,
+        "scaled_std": 1.0,
+        "kelly_fraction": 0.25,
+        "kelly_amount": 12500.0
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 35.23964269204567,
+        "std": 11.722169081635178,
+        "fraction": 0.3861878453038674,
+        "amount": 19309.39226519337
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "run_index": 0,
+      "state": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "scaled_mean": 29.36320781408679,
+        "scaled_std": 9.722712217537653,
+        "kelly_fraction": 0.375,
+        "kelly_amount": 18750.0
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 29.36320781408679,
+        "std": 9.722712217537653,
+        "fraction": 0.375,
+        "amount": 18750.0
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "run_index": 1,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 41.67619429309628,
+        "scaled_std": 9.699936128930101,
+        "kelly_fraction": 0.3764,
+        "kelly_amount": 18819.3
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 41.67619429309628,
+        "std": 9.699936128930101,
+        "fraction": 0.3763860369609856,
+        "amount": 18819.30184804928
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "run_index": 2,
+      "state": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "scaled_mean": 34.171041260457365,
+        "scaled_std": 10.433318509629968,
+        "kelly_fraction": 0.37773279352226713,
+        "kelly_amount": 18886.63967611336
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 34.171041260457365,
+        "std": 10.433318509629968,
+        "fraction": 0.37773279352226713,
+        "amount": 18886.63967611336
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "run_index": 3,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 43.76714551999506,
+        "scaled_std": 10.277877135538223,
+        "kelly_fraction": 0.37904191616766464,
+        "kelly_amount": 18952.09580838323
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 43.76714551999506,
+        "std": 10.277877135538223,
+        "fraction": 0.37904191616766464,
+        "amount": 18952.09580838323
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "run_index": 4,
+      "state": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "scaled_mean": 31.922393745250854,
+        "scaled_std": 9.56064872754599,
+        "kelly_fraction": 0.38031496062992126,
+        "kelly_amount": 19015.748031496063
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 31.922393745250854,
+        "std": 9.56064872754599,
+        "fraction": 0.38031496062992126,
+        "amount": 19015.748031496063
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "run_index": 5,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 39.34722819832746,
+        "scaled_std": 12.702194132316782,
+        "kelly_fraction": 0.38155339805825234,
+        "kelly_amount": 19077.669902912618
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 39.34722819832746,
+        "std": 12.702194132316782,
+        "fraction": 0.38155339805825234,
+        "amount": 19077.669902912618
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "run_index": 6,
+      "state": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "scaled_mean": 30.392347131093892,
+        "scaled_std": 11.024245722270797,
+        "kelly_fraction": 0.3827586206896551,
+        "kelly_amount": 19137.931034482754
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 30.392347131093892,
+        "std": 11.024245722270797,
+        "fraction": 0.3827586206896551,
+        "amount": 19137.931034482754
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "run_index": 7,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 42.539599813726376,
+        "scaled_std": 9.599762187457276,
+        "kelly_fraction": 0.38393194706994327,
+        "kelly_amount": 19196.597353497164
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 42.539599813726376,
+        "std": 9.599762187457276,
+        "fraction": 0.38393194706994327,
+        "amount": 19196.597353497164
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "run_index": 8,
+      "state": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "scaled_mean": 26.941338953703113,
+        "scaled_std": 11.326279801675255,
+        "kelly_fraction": 0.3851,
+        "kelly_amount": 19253.73
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 26.941338953703116,
+        "std": 11.326279801675255,
+        "fraction": 0.38507462686567157,
+        "amount": 19253.73134328358
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "run_index": 9,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 35.23964269204567,
+        "scaled_std": 11.722169081635178,
+        "kelly_fraction": 0.3861878453038674,
+        "kelly_amount": 19309.39226519337
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 35.23964269204567,
+        "std": 11.722169081635178,
+        "fraction": 0.3861878453038674,
+        "amount": 19309.39226519337
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "run_index": 0,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0,
+        "scaled_std": 1.0,
+        "kelly_fraction": 0.2,
+        "kelly_amount": 10000.0
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 29.36320781408679,
+        "std": 9.722712217537653,
+        "fraction": 0.375,
+        "amount": 18750.0
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "run_index": 1,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0,
+        "scaled_std": 1.0,
+        "kelly_fraction": 0.25,
+        "kelly_amount": 12500.0
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 41.67619429309628,
+        "std": 9.699936128930101,
+        "fraction": 0.3763860369609856,
+        "amount": 18819.30184804928
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "run_index": 2,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.015,
+        "kelly_fraction": 0.2,
+        "kelly_amount": 10000.0
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 34.171041260457365,
+        "std": 10.433318509629968,
+        "fraction": 0.37773279352226713,
+        "amount": 18886.63967611336
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "run_index": 3,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.0123,
+        "kelly_fraction": 0.25,
+        "kelly_amount": 12500.0
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 43.76714551999506,
+        "std": 10.277877135538223,
+        "fraction": 0.37904191616766464,
+        "amount": 18952.09580838323
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "run_index": 4,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.015,
+        "kelly_fraction": 0.25,
+        "kelly_amount": 12500.0
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 31.922393745250854,
+        "std": 9.56064872754599,
+        "fraction": 0.38031496062992126,
+        "amount": 19015.748031496063
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "run_index": 5,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.015,
+        "kelly_fraction": 0.4,
+        "kelly_amount": 20000
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 39.34722819832746,
+        "std": 12.702194132316782,
+        "fraction": 0.38155339805825234,
+        "amount": 19077.669902912618
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "run_index": 6,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.015,
+        "kelly_fraction": 0.4,
+        "kelly_amount": 20000.0
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 30.392347131093892,
+        "std": 11.024245722270797,
+        "fraction": 0.3827586206896551,
+        "amount": 19137.931034482754
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "run_index": 7,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0,
+        "scaled_std": 1.0,
+        "kelly_fraction": 0.45,
+        "kelly_amount": 22500.0
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 42.539599813726376,
+        "std": 9.599762187457276,
+        "fraction": 0.38393194706994327,
+        "amount": 19196.597353497164
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "run_index": 8,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.015,
+        "kelly_fraction": 0.42,
+        "kelly_amount": 21000.0
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 26.941338953703116,
+        "std": 11.326279801675255,
+        "fraction": 0.38507462686567157,
+        "amount": 19253.73134328358
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "run_index": 9,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 0.0025,
+        "scaled_std": 0.015,
+        "kelly_fraction": 0.25,
+        "kelly_amount": 12500.0
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 35.23964269204567,
+        "std": 11.722169081635178,
+        "fraction": 0.3861878453038674,
+        "amount": 19309.39226519337
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "run_index": 0,
+      "state": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "scaled_mean": 29.36320781408679,
+        "scaled_std": 9.722712217537653,
+        "kelly_fraction": 0.375,
+        "kelly_amount": 18750.0
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 29.36320781408679,
+        "std": 9.722712217537653,
+        "fraction": 0.375,
+        "amount": 18750.0
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "run_index": 1,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 41.67619429309628,
+        "scaled_std": 9.699936128930101,
+        "kelly_fraction": 0.3763860369609856,
+        "kelly_amount": 18819.30184804928
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 41.67619429309628,
+        "std": 9.699936128930101,
+        "fraction": 0.3763860369609856,
+        "amount": 18819.30184804928
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "run_index": 2,
+      "state": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "scaled_mean": 34.171041260457365,
+        "scaled_std": 10.433318509629968,
+        "kelly_fraction": 0.3777,
+        "kelly_amount": 18886.64
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 34.171041260457365,
+        "std": 10.433318509629968,
+        "fraction": 0.37773279352226713,
+        "amount": 18886.63967611336
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "run_index": 3,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 43.76714551999506,
+        "scaled_std": 10.277877135538223,
+        "kelly_fraction": 0.37904191616766464,
+        "kelly_amount": 18952.09580838323
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 43.76714551999506,
+        "std": 10.277877135538223,
+        "fraction": 0.37904191616766464,
+        "amount": 18952.09580838323
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "run_index": 4,
+      "state": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "scaled_mean": 31.922393745250854,
+        "scaled_std": 9.56064872754599,
+        "kelly_fraction": 0.38031496062992126,
+        "kelly_amount": 19015.748031496063
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 31.922393745250854,
+        "std": 9.56064872754599,
+        "fraction": 0.38031496062992126,
+        "amount": 19015.748031496063
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "run_index": 5,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 39.34722819832746,
+        "scaled_std": 12.702194132316782,
+        "kelly_fraction": 0.38155339805825234,
+        "kelly_amount": 19077.669902912618
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 39.34722819832746,
+        "std": 12.702194132316782,
+        "fraction": 0.38155339805825234,
+        "amount": 19077.669902912618
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "run_index": 6,
+      "state": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "scaled_mean": 30.392347131093892,
+        "scaled_std": 11.024245722270797,
+        "kelly_fraction": 0.3827586206896551,
+        "kelly_amount": 19137.931034482754
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 30.392347131093892,
+        "std": 11.024245722270797,
+        "fraction": 0.3827586206896551,
+        "amount": 19137.931034482754
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "run_index": 7,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 42.539599813726376,
+        "scaled_std": 9.599762187457276,
+        "kelly_fraction": 0.38393194706994327,
+        "kelly_amount": 19196.597353497164
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 42.539599813726376,
+        "std": 9.599762187457276,
+        "fraction": 0.38393194706994327,
+        "amount": 19196.597353497164
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "run_index": 8,
+      "state": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "scaled_mean": 26.941338953703113,
+        "scaled_std": 11.326279801675255,
+        "kelly_fraction": 0.38507462686567157,
+        "kelly_amount": 19253.73134328358
+      },
+      "ground_truth": {
+        "leakage_detected": true,
+        "target_column": "clean_return",
+        "mean": 26.941338953703116,
+        "std": 11.326279801675255,
+        "fraction": 0.38507462686567157,
+        "amount": 19253.73134328358
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_leakage_dropped",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "run_index": 9,
+      "state": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "scaled_mean": 35.23964269204567,
+        "scaled_std": 11.722169081635178,
+        "kelly_fraction": 0.3861878453038674,
+        "kelly_amount": 19309.39226519337
+      },
+      "ground_truth": {
+        "leakage_detected": false,
+        "target_column": "leaked_return",
+        "mean": 35.23964269204567,
+        "std": 11.722169081635178,
+        "fraction": 0.3861878453038674,
+        "amount": 19309.39226519337
+      },
+      "history": [
+        "audit_node",
+        "remediation_node_no_leakage",
+        "scale_node",
+        "kelly_node"
+      ],
+      "errors": [],
+      "e2e_ok": true
+    }
+  ]
+}

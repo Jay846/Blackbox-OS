@@ -1,0 +1,1690 @@
+{
+  "results": {
+    "60": {
+      "bare": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 8.333333333333332,
+        "schema_acc": 16.666666666666664,
+        "e2e_acc": 8.333333333333332
+      },
+      "expert": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 41.66666666666667,
+        "schema_acc": 100.0,
+        "e2e_acc": 41.66666666666667
+      }
+    },
+    "200": {
+      "bare": {
+        "total": 12,
+        "selection_acc": 91.66666666666666,
+        "execution_acc": 16.666666666666664,
+        "schema_acc": 25.0,
+        "e2e_acc": 16.666666666666664
+      },
+      "expert": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 41.66666666666667,
+        "schema_acc": 100.0,
+        "e2e_acc": 41.66666666666667
+      }
+    },
+    "500": {
+      "bare": {
+        "total": 12,
+        "selection_acc": 83.33333333333334,
+        "execution_acc": 16.666666666666664,
+        "schema_acc": 25.0,
+        "e2e_acc": 16.666666666666664
+      },
+      "expert": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 41.66666666666667,
+        "schema_acc": 100.0,
+        "e2e_acc": 41.66666666666667
+      }
+    },
+    "1000": {
+      "bare": {
+        "total": 12,
+        "selection_acc": 91.66666666666666,
+        "execution_acc": 8.333333333333332,
+        "schema_acc": 16.666666666666664,
+        "e2e_acc": 8.333333333333332
+      },
+      "expert": {
+        "total": 12,
+        "selection_acc": 100.0,
+        "execution_acc": 41.66666666666667,
+        "schema_acc": 100.0,
+        "e2e_acc": 41.66666666666667
+      }
+    }
+  },
+  "logs": [
+    {
+      "size": 60,
+      "condition": "bare",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"kelly_fraction\": 0.1,\n  \"kelly_amount\": 1000.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "kelly_fraction": 0.1,
+        "kelly_amount": 1000.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "bare",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"kelly_fraction\": 0.2,\n  \"dollar_amount\": 10000\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "kelly_fraction": 0.2,
+        "dollar_amount": 10000
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "bare",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "bare",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"atr\": 2.5,\n  \"multiplier\": 3.0,\n  \"trailing_stop_distance\": 7.5\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "atr": 2.5,
+        "multiplier": 3.0,
+        "trailing_stop_distance": 7.5
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "bare",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"expected_value\": 115.0,\n  \"win_prob\": 0.6,\n  \"win_return\": 200.0,\n  \"loss_return\": -100.0,\n  \"fee\": 5.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "expected_value": 115.0,
+        "win_prob": 0.6,
+        "win_return": 200.0,
+        "loss_return": -100.0,
+        "fee": 5.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "bare",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"net_expected_value\": 50.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "net_expected_value": 50.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "bare",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"result\": {\n    \"column_name\": \"total_revenue_offset\",\n    \"calculation\": \"target * 5 + 10\",\n    \"lookahead_leakage_detected\": false\n  }\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "result": {
+          "column_name": "total_revenue_offset",
+          "calculation": "target * 5 + 10",
+          "lookahead_leakage_detected": false
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "bare",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"result\": {\n    \"column\": \"lagged_price_1\",\n    \"lookahead_bias_detected\": false,\n    \"message\": \"No lookahead bias detected in the column 'lagged_price_1'.\"\n  }\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "result": {
+          "column": "lagged_price_1",
+          "lookahead_bias_detected": false,
+          "message": "No lookahead bias detected in the column 'lagged_price_1'."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "bare",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 31.4,\n  \"std_dev\": 14.75\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 31.4,
+        "std_dev": 14.75
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "bare",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 30,\n  \"std\": 15.811388300841896\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 30,
+        "std": 15.811388300841896
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "bare",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"ks_score\": 0.35,\n  \"threshold\": 0.25,\n  \"drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "ks_score": 0.35,
+        "threshold": 0.25,
+        "drift_detected": true
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "bare",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"drift_check\": {\n    \"ks_score\": 0.12,\n    \"threshold\": 0.20,\n    \"drift_detected\": false\n  }\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "drift_check": {
+          "ks_score": 0.12,
+          "threshold": 0.2,
+          "drift_detected": false
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.25,\n  \"amount\": 2500.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.25,
+        "amount": 2500.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "```json\n{\n  \"fraction\": 0.2,\n  \"amount\": 10000.0,\n  \"chosen_skill_id\": \"kelly_position_size\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.2,
+        "amount": 10000.0,
+        "chosen_skill_id": "kelly_position_size"
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 7.5\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 7.5
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "```json\n{\n  \"ev\": 85.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 85.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"ev\": 70.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "ev": 70.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"The column 'total_revenue_offset' uses information from the target variable.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "The column 'total_revenue_offset' uses information from the target variable."
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"Column 'lagged_price_1' uses future information from the target variable.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "Column 'lagged_price_1' uses future information from the target variable."
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 31.4,\n  \"std\": 14.5\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 31.4,
+        "std": 14.5
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 30.0,\n  \"std\": 15.811388300841896\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 30.0,
+        "std": 15.811388300841896
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": true
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": false
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "bare",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"kelly_fraction\": 0.1,\n  \"kelly_amount\": 1000.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "kelly_fraction": 0.1,
+        "kelly_amount": 1000.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "bare",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"bet_size\": 5000.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "bet_size": 5000.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "bare",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "bare",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"atr\": 2.5,\n  \"multiplier\": 3.0,\n  \"trailing_stop_distance\": 7.5\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "atr": 2.5,
+        "multiplier": 3.0,
+        "trailing_stop_distance": 7.5
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "bare",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"expected_value\": 115.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "expected_value": 115.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "bare",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"net_expected_value\": 70.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "net_expected_value": 70.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "bare",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"result\": {\n    \"lookahead_leakage_detected\": false,\n    \"details\": \"No lookahead leakage detected in the specified column.\"\n  }\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "result": {
+          "lookahead_leakage_detected": false,
+          "details": "No lookahead leakage detected in the specified column."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "bare",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"result\": {\n    \"status\": \"success\",\n    \"message\": \"Lookahead bias check completed for column 'lagged_price_1'. No bias detected.\"\n  }\n}",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "result": {
+          "status": "success",
+          "message": "Lookahead bias check completed for column 'lagged_price_1'. No bias detected."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "bare",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "{\n  \"chosen_skill_id\": \"static_margin_classifier\",\n  \"calculations\": {\n    \"mean\": 31.4,\n    \"std_dev\": 14.78\n  }\n}",
+      "chosen_tool": "static_margin_classifier",
+      "parsed_json": {
+        "chosen_skill_id": "static_margin_classifier",
+        "calculations": {
+          "mean": 31.4,
+          "std_dev": 14.78
+        }
+      },
+      "selection_ok": false,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "bare",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 30.0,\n  \"std\": 15.811388300841896\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 30.0,
+        "std": 15.811388300841896
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "bare",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": true,\n  \"ks_score\": 0.35,\n  \"threshold\": 0.25\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": true,
+        "ks_score": 0.35,
+        "threshold": 0.25
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "bare",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"drift_detected\": false,\n  \"ks_score\": 0.12,\n  \"threshold\": 0.20\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "drift_detected": false,
+        "ks_score": 0.12,
+        "threshold": 0.2
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.08333333333333333,\n  \"amount\": 833.3333333333333\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.08333333333333333,
+        "amount": 833.3333333333333
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.2,\n  \"amount\": 10000.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.2,
+        "amount": 10000.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 7.5\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 7.5
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "```json\n{\n  \"ev\": 95.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 95.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "```json\n{\n  \"ev\": 70.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 70.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"The column 'total_revenue_offset' uses the 'target' variable, which is derived from future timestamps, indicating lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "The column 'total_revenue_offset' uses the 'target' variable, which is derived from future timestamps, indicating lookahead bias."
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"Column 'lagged_price_1' uses information from the target variable or future timestamps, indicating lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "Column 'lagged_price_1' uses information from the target variable or future timestamps, indicating lookahead bias."
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 31.4,\n  \"std\": 14.88\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 31.4,
+        "std": 14.88
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 30.0,\n  \"std\": 15.811388300841896\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 30.0,
+        "std": 15.811388300841896
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 200,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": false
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "bare",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "```json\n{\n  \"skill_id\": \"kelly_position_size\",\n  \"kelly_fraction\": 0.1,\n  \"kelly_amount\": 1000.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "kelly_fraction": 0.1,
+        "kelly_amount": 1000.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "bare",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"bet_size\": 5000\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "bet_size": 5000
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "bare",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "bare",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"volatility_adjusted_take_profit\",\n  \"atr\": 2.5,\n  \"multiplier\": 3.0,\n  \"trailing_stop_distance\": 7.5\n}\n```",
+      "chosen_tool": "volatility_adjusted_take_profit",
+      "parsed_json": {
+        "chosen_skill_id": "volatility_adjusted_take_profit",
+        "atr": 2.5,
+        "multiplier": 3.0,
+        "trailing_stop_distance": 7.5
+      },
+      "selection_ok": false,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "bare",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"expected_value\": 115.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "expected_value": 115.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "bare",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"net_expected_value\": 50.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "net_expected_value": 50.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "bare",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"result\": {\n    \"lookahead_leakage_detected\": false,\n    \"details\": \"No lookahead leakage detected in the column 'total_revenue_offset' calculated as 'target * 5 + 10'.\"\n  }\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "result": {
+          "lookahead_leakage_detected": false,
+          "details": "No lookahead leakage detected in the column 'total_revenue_offset' calculated as 'target * 5 + 10'."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "bare",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "```json\n{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"result\": {\n    \"lookahead_bias_detected\": false,\n    \"comments\": \"No lookahead bias detected in the 'lagged_price_1' column.\"\n  }\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "result": {
+          "lookahead_bias_detected": false,
+          "comments": "No lookahead bias detected in the 'lagged_price_1' column."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "bare",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"static_drawdown_normalization\",\n  \"population_mean\": 31.4,\n  \"population_std\": 14.78\n}\n```",
+      "chosen_tool": "static_drawdown_normalization",
+      "parsed_json": {
+        "chosen_skill_id": "static_drawdown_normalization",
+        "population_mean": 31.4,
+        "population_std": 14.78
+      },
+      "selection_ok": false,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "bare",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 30.0,\n  \"std\": 15.811388300841896\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 30.0,
+        "std": 15.811388300841896
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "bare",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": true,\n  \"ks_score\": 0.35,\n  \"threshold\": 0.25\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": true,
+        "ks_score": 0.35,
+        "threshold": 0.25
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "bare",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"drift_detected\": false,\n  \"ks_score\": 0.12,\n  \"threshold\": 0.20\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "drift_detected": false,
+        "ks_score": 0.12,
+        "threshold": 0.2
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "```json\n{\n  \"fraction\": 0.09999999999999998,\n  \"amount\": 999.9999999999998,\n  \"chosen_skill_id\": \"kelly_position_size\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.09999999999999998,
+        "amount": 999.9999999999998,
+        "chosen_skill_id": "kelly_position_size"
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "```json\n{\n  \"fraction\": 0.2,\n  \"amount\": 10000.0,\n  \"chosen_skill_id\": \"kelly_position_size\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.2,
+        "amount": 10000.0,
+        "chosen_skill_id": "kelly_position_size"
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "```json\n{\n  \"stop_distance\": 30.4,\n  \"chosen_skill_id\": \"atr_dynamic_stop\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "stop_distance": 30.4,
+        "chosen_skill_id": "atr_dynamic_stop"
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 7.5\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 7.5
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "```json\n{\n  \"ev\": 95.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 95.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "```json\n{\n  \"ev\": 70.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 70.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"The column 'total_revenue_offset' uses the 'target' variable, which is derived from future timestamps, indicating lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "The column 'total_revenue_offset' uses the 'target' variable, which is derived from future timestamps, indicating lookahead bias."
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"Column 'lagged_price_1' uses future information from 'price_t' to calculate its value, indicating potential lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "Column 'lagged_price_1' uses future information from 'price_t' to calculate its value, indicating potential lookahead bias."
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 31.4,\n  \"std\": 14.75\n}",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 31.4,
+        "std": 14.75
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 30.0,\n  \"std\": 15.811388300841896\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 30.0,
+        "std": 15.811388300841896
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": false
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "bare",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "```json\n{\n  \"skill_id\": \"kelly_position_size\",\n  \"kelly_fraction\": 0.1,\n  \"amount\": 1000\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "skill_id": "kelly_position_size",
+        "kelly_fraction": 0.1,
+        "amount": 1000
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "bare",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"bet_size\": 5000\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "bet_size": 5000
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "bare",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "bare",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"atr\": 2.5,\n  \"multiplier\": 3.0,\n  \"trailing_stop_distance\": 7.5\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "atr": 2.5,
+        "multiplier": 3.0,
+        "trailing_stop_distance": 7.5
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "bare",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"expected_value\": 115.0,\n  \"win_prob\": 0.6,\n  \"win_return\": 200.0,\n  \"loss_return\": -100.0,\n  \"fee\": 5.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "expected_value": 115.0,
+        "win_prob": 0.6,
+        "win_return": 200.0,
+        "loss_return": -100.0,
+        "fee": 5.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "bare",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"net_expected_value\": 50.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "net_expected_value": 50.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "bare",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "```json\n{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"result\": {\n    \"lookahead_leakage_detected\": false,\n    \"details\": \"No lookahead leakage detected in the specified column.\"\n  }\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "result": {
+          "lookahead_leakage_detected": false,
+          "details": "No lookahead leakage detected in the specified column."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "bare",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "```json\n{\n  \"skill_id\": \"lookahead_bias_audit\",\n  \"result\": {\n    \"lookahead_bias_detected\": false,\n    \"message\": \"No lookahead bias detected in column 'lagged_price_1'.\"\n  }\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "skill_id": "lookahead_bias_audit",
+        "result": {
+          "lookahead_bias_detected": false,
+          "message": "No lookahead bias detected in column 'lagged_price_1'."
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "bare",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"static_factor_explainer\",\n  \"population_mean\": 31.4,\n  \"population_std\": 14.78\n}\n```",
+      "chosen_tool": "static_factor_explainer",
+      "parsed_json": {
+        "chosen_skill_id": "static_factor_explainer",
+        "population_mean": 31.4,
+        "population_std": 14.78
+      },
+      "selection_ok": false,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "bare",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 30.0,\n  \"std\": 15.811388300841896\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 30.0,
+        "std": 15.811388300841896
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "bare",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"ks_score\": 0.35,\n  \"threshold\": 0.25,\n  \"drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "ks_score": 0.35,
+        "threshold": 0.25,
+        "drift_detected": true
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "bare",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"drift_detected\": false,\n  \"ks_score\": 0.12,\n  \"threshold\": 0.20\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "drift_detected": false,
+        "ks_score": 0.12,
+        "threshold": 0.2
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": false,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the Kelly fraction and amount for win_rate=0.55, payoff=1.8, and bankroll=10000.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.1,\n  \"amount\": 1000.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.1,
+        "amount": 1000.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Find my bet sizing using the Kelly criterion for win_rate=0.60, payoff=1.5, and bankroll=50000.",
+      "raw_response": "```json\n{\n  \"fraction\": 0.4,\n  \"amount\": 20000.0,\n  \"chosen_skill_id\": \"kelly_position_size\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.4,
+        "amount": 20000.0,
+        "chosen_skill_id": "kelly_position_size"
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute stop distance from atr=15.2 and multiplier=2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 30.4\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 30.4
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine trailing stop distance for atr=2.5 and multiplier=3.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 7.5\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 7.5
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Compute expected value with win_prob=0.6, win_return=200.0, loss_return=-100.0, and fee=5.0.",
+      "raw_response": "```json\n{\n  \"ev\": 115.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 115.0
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate trade net EV for win_prob=0.4, win_return=300.0, loss_return=-50.0, and fee=10.0.",
+      "raw_response": "```json\n{\n  \"ev\": 70.0,\n  \"chosen_skill_id\": \"trade_ev_calculator\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 70.0,
+        "chosen_skill_id": "trade_ev_calculator"
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"The column 'total_revenue_offset' uses the target variable directly in its calculation, indicating lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "The column 'total_revenue_offset' uses the target variable directly in its calculation, indicating lookahead bias."
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
+      "raw_response": "```json\n{\n  \"leakage_detected\": true,\n  \"reason\": \"Column 'lagged_price_1' uses future information from 'price_t' which is not available at the time of prediction, indicating lookahead bias.\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true,
+        "reason": "Column 'lagged_price_1' uses future information from 'price_t' which is not available at the time of prediction, indicating lookahead bias."
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute population mean and std for values=[12, 17, 33, 44, 51].",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 31.4,\n  \"std\": 14.75\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 31.4,
+        "std": 14.75
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Apply StandardScaler on list [10, 20, 30, 40, 50] to find mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 30.0,\n  \"std\": 15.811388300841896\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 30.0,
+        "std": 15.811388300841896
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Evaluate if data drift is detected for ks_score=0.35 and threshold=0.25.",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 1000,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Check for drift given ks_score=0.12 and threshold=0.20.",
+      "raw_response": "```json\n{\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": false
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    }
+  ]
+}

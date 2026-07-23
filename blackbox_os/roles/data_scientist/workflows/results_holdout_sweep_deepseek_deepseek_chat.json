@@ -1,0 +1,2349 @@
+{
+  "results": {
+    "60": {
+      "expert": {
+        "total": 30,
+        "selection_acc": 100.0,
+        "execution_acc": 10.0,
+        "schema_acc": 100.0,
+        "e2e_acc": 10.0
+      },
+      "expert_sandbox": {
+        "total": 30,
+        "selection_acc": 100.0,
+        "execution_acc": 80.0,
+        "schema_acc": 100.0,
+        "e2e_acc": 80.0
+      }
+    },
+    "500": {
+      "expert": {
+        "total": 30,
+        "selection_acc": 100.0,
+        "execution_acc": 6.666666666666667,
+        "schema_acc": 100.0,
+        "e2e_acc": 6.666666666666667
+      },
+      "expert_sandbox": {
+        "total": 30,
+        "selection_acc": 100.0,
+        "execution_acc": 83.33333333333334,
+        "schema_acc": 100.0,
+        "e2e_acc": 83.33333333333334
+      }
+    }
+  },
+  "logs": [
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Check the trades inside blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv. Filter only BTC/USDT fills, calculate the percentage of winning trades and positive/negative payoff ratio, then compute Kelly bet size for 50000 total capital.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.0,\n  \"amount\": 0.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.0,
+        "amount": 0.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Determine the Kelly positioning size for a total portfolio value of 50000 using the fill logs in blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv. We only care about BTC trades.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.0,\n  \"amount\": 0.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.0,
+        "amount": 0.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Extract the trading fills for BTC from the log grid_bot_fills.csv in mock_data. Calculate the win rate and the average win over absolute average loss, then return the Kelly sizing fraction and total amount for a 50000 bankroll.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.1,\n  \"amount\": 5000.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.1,
+        "amount": 5000.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Using blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv, find out the BTC trading performance. What is the win rate and payoff ratio? What would the Kelly allocation fraction and capital size be for a bankroll of 50000?",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.0,\n  \"amount\": 0.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.0,
+        "amount": 0.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the optimal Kelly fraction and investment amount for a bankroll of 50000 using trade execution records in blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv. Restrict analysis to BTC.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.0,\n  \"amount\": 0.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.0,
+        "amount": 0.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Using the price feed in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv, calculate the Average True Range (ATR) over 14 rows, and set a trailing stop distance with a factor of 2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 123.45\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 123.45
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine the stop distance (factor 2.0) from the ATR of the last 14 candlesticks in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 54.32\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 54.32
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute the ATR (14 periods) for eth_usd_prices.csv under mock_data. Using a multiplier of 2.0, what is the trailing stop loss distance?",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 0.0\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 0.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Given the historical price dataset in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv, calculate the ATR value over a rolling window of 14 points and multiply it by 2.0 to get the stop distance.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": \"float\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": "float"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Find the latest 14 prices in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv, compute the average true range (ATR), and scale it by 2.0 to calculate the dynamic stop loss distance.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 0.0\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 0.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Load the JSON performance file trade_performance.json from blackbox_os/roles/data_scientist/workflows/mock_data/. Calculate the expected value (EV) of the strategy, factoring in a 5.0 fee per trade.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"ev\": 0.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "ev": 0.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Using trade_performance.json in mock_data, find the win-rate, average win size, and average loss size. Compute the net EV subtracting a commission fee of 5.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"ev\": \"computed_value\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "ev": "computed_value"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Extract trade list from blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json. Compute the expected payoff (EV) of a trade after deducting a flat fee of 5.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"ev\": \"computed_value\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "ev": "computed_value"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Find the trade performance metrics in mock_data/trade_performance.json. Count wins and losses to get probabilities, average them, and return the net EV after a 5.0 fee per trade.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"metric_name\": \"ev\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "metric_name": "ev"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate the net expected value (EV) for trades listed in blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json with a flat 5.0 per-trade cost.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"ev\": -0.75\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "ev": -0.75
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Look through the features CSV file blackbox_os/roles/data_scientist/workflows/mock_data/features.csv and scan for lookahead bias. Return true if there is any column leaking future data.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"leakage_detected\": true\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "leakage_detected": true
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Audit mock_data/features.csv for lookahead bias. Scan the formulas for references to future index values (t+1, etc.) or targets.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"leakage_detected\": false\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "leakage_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Inspect the formulas in blackbox_os/roles/data_scientist/workflows/mock_data/features.csv to see if they reference future information or containing 'target', which would indicate data leakage.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"leakage_detected\": true\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "leakage_detected": true
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Determine if any feature formula in blackbox_os/roles/data_scientist/workflows/mock_data/features.csv suffers from data leakage (references future offsets or targets).",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"leakage_detected\": false\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "leakage_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check for target leakage or lookahead bias in blackbox_os/roles/data_scientist/workflows/mock_data/features.csv. Look for formulas referencing future periods or 'target'.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"leakage_detected\": false\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "leakage_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Read the raw returns dataset in blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv and run a population standard scaling normalization on the 'return' column. Output the population mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 0.0,\n  \"std\": 1.0\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 0.0,
+        "std": 1.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Calculate the population mean and population standard deviation (ddof=0) for standard scaling the 'return' column in mock_data/raw_returns.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"metric_name\": \"population_standard_scaler\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "metric_name": "population_standard_scaler"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute the z-score normalization parameters (mean and population std) for the returns listed in blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 0.0025,\n  \"std\": 0.015\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 0.0025,
+        "std": 0.015
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Determine the population mean and standard deviation of the returns column in blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 0.0,\n  \"std\": 1.0\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 0.0,
+        "std": 1.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Retrieve the returns from blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv, apply standard scaling, and return the population mean and standard deviation.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 0.0,\n  \"std\": 1.0\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 0.0,
+        "std": 1.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Load the data drift statistics file blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json. Compare the implied_vol's KS metric against its warning threshold to see if drift is detected.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Audit drift_metrics.json in mock_data for feature drift on implied_vol. Check if the KS test score exceeds the warning threshold.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Read the JSON drift metrics in blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json, look up implied_vol drift status, and determine if it exceeds the alert threshold.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Using blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json, check if the Kolmogorov-Smirnov drift score for implied_vol is greater than its warning threshold.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Determine if there is data drift for implied_vol using the KS score and threshold in blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"metric_name\": \"data_drift_detected\"\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "metric_name": "data_drift_detected"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Check the trades inside blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv. Filter only BTC/USDT fills, calculate the percentage of winning trades and positive/negative payoff ratio, then compute Kelly bet size for 50000 total capital.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef calculate_kelly_size(csv_path, symbol_filter, bankroll):\\n    df = pd.read_csv(csv_path)\\n    btc_trades = df[df['symbol'] == symbol_filter]\\n    \\n    if len(btc_trades) == 0:\\n        return {\\\"fraction\\\": 0.0, \\\"amount\\\": 0.0}\\n    \\n    win_rate = (btc_trades['realized_pnl'] > 0).mean()\\n    \\n    positive_pnls = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl']\\n    negative_pnls = btc_trades[btc_trades['realized_pnl'] <= 0]['realized_pnl']\\n    \\n    if len(positive_pnls) == 0 or len(negative_pnls) == 0:\\n        return {\\\"fraction\\\": 0.0, \\\"amount\\\": 0.0}\\n    \\n    avg_win = positive_pnls.mean()\\n    avg_loss = abs(negative_pnls.mean())\\n    payoff_ratio = avg_win / avg_loss\\n    \\n    kelly_fraction = (win_rate * payoff_ratio - (1 - win_rate)) / payoff_ratio\\n    kelly_amount = kelly_fraction * bankroll\\n    \\n    return {\\\"fraction\\\": kelly_fraction, \\\"amount\\\": kelly_amount}\\n\\nresult = calculate_kelly_size(\\n    csv_path='blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv',\\n    symbol_filter='BTC/USDT',\\n    bankroll=50000\\n)\\n\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.375,
+        "amount": 18750.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef calculate_kelly_size(csv_path, symbol_filter, bankroll):\n    df = pd.read_csv(csv_path)\n    btc_trades = df[df['symbol'] == symbol_filter]\n    \n    if len(btc_trades) == 0:\n        return {\"fraction\": 0.0, \"amount\": 0.0}\n    \n    win_rate = (btc_trades['realized_pnl'] > 0).mean()\n    \n    positive_pnls = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl']\n    negative_pnls = btc_trades[btc_trades['realized_pnl'] <= 0]['realized_pnl']\n    \n    if len(positive_pnls) == 0 or len(negative_pnls) == 0:\n        return {\"fraction\": 0.0, \"amount\": 0.0}\n    \n    avg_win = positive_pnls.mean()\n    avg_loss = abs(negative_pnls.mean())\n    payoff_ratio = avg_win / avg_loss\n    \n    kelly_fraction = (win_rate * payoff_ratio - (1 - win_rate)) / payoff_ratio\n    kelly_amount = kelly_fraction * bankroll\n    \n    return {\"fraction\": kelly_fraction, \"amount\": kelly_amount}\n\nresult = calculate_kelly_size(\n    csv_path='blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv',\n    symbol_filter='BTC/USDT',\n    bankroll=50000\n)\n\nprint(json.dumps(result))",
+        "result": {
+          "fraction": 0.375,
+          "amount": 18750.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Determine the Kelly positioning size for a total portfolio value of 50000 using the fill logs in blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv. We only care about BTC trades.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef compute_kelly_size(csv_path, bankroll):\\n    df = pd.read_csv(csv_path)\\n    btc_trades = df[df['symbol'].str.contains('BTC')]\\n    \\n    if len(btc_trades) == 0:\\n        return {\\\"fraction\\\": 0.0, \\\"amount\\\": 0.0}\\n    \\n    positive_pnl = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl']\\n    negative_pnl = btc_trades[btc_trades['realized_pnl'] <= 0]['realized_pnl']\\n    \\n    win_rate = len(positive_pnl) / len(btc_trades)\\n    avg_win = positive_pnl.mean()\\n    avg_loss = abs(negative_pnl.mean())\\n    \\n    payoff = avg_win / avg_loss if avg_loss != 0 else 0\\n    \\n    kelly_fraction = (win_rate * payoff - (1 - win_rate)) / payoff if payoff != 0 else 0\\n    kelly_amount = kelly_fraction * bankroll\\n    \\n    return {\\\"fraction\\\": kelly_fraction, \\\"amount\\\": kelly_amount}\\n\\nresult = compute_kelly_size('blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv', 50000)\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.375,
+        "amount": 18750.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef compute_kelly_size(csv_path, bankroll):\n    df = pd.read_csv(csv_path)\n    btc_trades = df[df['symbol'].str.contains('BTC')]\n    \n    if len(btc_trades) == 0:\n        return {\"fraction\": 0.0, \"amount\": 0.0}\n    \n    positive_pnl = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl']\n    negative_pnl = btc_trades[btc_trades['realized_pnl'] <= 0]['realized_pnl']\n    \n    win_rate = len(positive_pnl) / len(btc_trades)\n    avg_win = positive_pnl.mean()\n    avg_loss = abs(negative_pnl.mean())\n    \n    payoff = avg_win / avg_loss if avg_loss != 0 else 0\n    \n    kelly_fraction = (win_rate * payoff - (1 - win_rate)) / payoff if payoff != 0 else 0\n    kelly_amount = kelly_fraction * bankroll\n    \n    return {\"fraction\": kelly_fraction, \"amount\": kelly_amount}\n\nresult = compute_kelly_size('blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv', 50000)\nprint(json.dumps(result))",
+        "result": {
+          "fraction": 0.375,
+          "amount": 18750.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Extract the trading fills for BTC from the log grid_bot_fills.csv in mock_data. Calculate the win rate and the average win over absolute average loss, then return the Kelly sizing fraction and total amount for a 50000 bankroll.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef calculate_kelly_sizing(csv_file, bankroll):\\n    # Read the CSV file\\n    df = pd.read_csv(csv_file)\\n    \\n    # Filter for BTC trades\\n    btc_trades = df[df['symbol'].str.contains('BTC')]\\n    \\n    # Calculate win rate\\n    win_rate = (btc_trades['realized_pnl'] > 0).mean()\\n    \\n    # Calculate average win and average absolute loss\\n    wins = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl']\\n    losses = btc_trades[btc_trades['realized_pnl'] < 0]['realized_pnl']\\n    avg_win = wins.mean()\\n    avg_loss = abs(losses.mean())\\n    \\n    # Calculate payoff ratio\\n    payoff = avg_win / avg_loss\\n    \\n    # Calculate Kelly fraction\\n    kelly_fraction = (win_rate * payoff - (1 - win_rate)) / payoff\\n    \\n    # Calculate dollar amount\\n    amount = kelly_fraction * bankroll\\n    \\n    return {\\\"fraction\\\": float(kelly_fraction), \\\"amount\\\": float(amount)}\\n\\n# Example usage\\nresult = calculate_kelly_sizing('grid_bot_fills.csv', 50000)\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": null,
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef calculate_kelly_sizing(csv_file, bankroll):\n    # Read the CSV file\n    df = pd.read_csv(csv_file)\n    \n    # Filter for BTC trades\n    btc_trades = df[df['symbol'].str.contains('BTC')]\n    \n    # Calculate win rate\n    win_rate = (btc_trades['realized_pnl'] > 0).mean()\n    \n    # Calculate average win and average absolute loss\n    wins = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl']\n    losses = btc_trades[btc_trades['realized_pnl'] < 0]['realized_pnl']\n    avg_win = wins.mean()\n    avg_loss = abs(losses.mean())\n    \n    # Calculate payoff ratio\n    payoff = avg_win / avg_loss\n    \n    # Calculate Kelly fraction\n    kelly_fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    \n    # Calculate dollar amount\n    amount = kelly_fraction * bankroll\n    \n    return {\"fraction\": float(kelly_fraction), \"amount\": float(amount)}\n\n# Example usage\nresult = calculate_kelly_sizing('grid_bot_fills.csv', 50000)\nprint(json.dumps(result))",
+        "result": null
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Using blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv, find out the BTC trading performance. What is the win rate and payoff ratio? What would the Kelly allocation fraction and capital size be for a bankroll of 50000?",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\n# Load the CSV file\\ndata = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv')\\n\\n# Filter BTC trades\\nbtc_trades = data[data['symbol'].str.contains('BTC')]\\n\\n# Calculate win rate\\nwin_rate = (btc_trades['realized_pnl'] > 0).mean()\\n\\n# Calculate payoff ratio\\npositive_pnl = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl'].mean()\\nnegative_pnl = btc_trades[btc_trades['realized_pnl'] < 0]['realized_pnl'].mean()\\npayoff = positive_pnl / abs(negative_pnl)\\n\\n# Calculate Kelly fraction\\nf = (win_rate * payoff - (1 - win_rate)) / payoff\\n\\n# Calculate Kelly amount\\nbankroll = 50000\\namount = f * bankroll\\n\\n# Output the results\\nprint(json.dumps({\\\"fraction\\\": f, \\\"amount\\\": amount}))\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.375,
+        "amount": 18750.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\n# Load the CSV file\ndata = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv')\n\n# Filter BTC trades\nbtc_trades = data[data['symbol'].str.contains('BTC')]\n\n# Calculate win rate\nwin_rate = (btc_trades['realized_pnl'] > 0).mean()\n\n# Calculate payoff ratio\npositive_pnl = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl'].mean()\nnegative_pnl = btc_trades[btc_trades['realized_pnl'] < 0]['realized_pnl'].mean()\npayoff = positive_pnl / abs(negative_pnl)\n\n# Calculate Kelly fraction\nf = (win_rate * payoff - (1 - win_rate)) / payoff\n\n# Calculate Kelly amount\nbankroll = 50000\namount = f * bankroll\n\n# Output the results\nprint(json.dumps({\"fraction\": f, \"amount\": amount}))",
+        "result": {
+          "fraction": 0.375,
+          "amount": 18750.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the optimal Kelly fraction and investment amount for a bankroll of 50000 using trade execution records in blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv. Restrict analysis to BTC.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef compute_kelly_fraction(csv_path, bankroll=50000, asset_filter='BTC'):\\n    # Load the CSV file\\n    df = pd.read_csv(csv_path)\\n    \\n    # Filter for BTC trades (assuming 'symbol' column contains trading pairs like 'BTC/USDT')\\n    btc_trades = df[df['symbol'].str.contains(asset_filter, case=False)]\\n    \\n    # Calculate win rate\\n    total_trades = len(btc_trades)\\n    if total_trades == 0:\\n        return {\\\"fraction\\\": 0.0, \\\"amount\\\": 0.0}\\n    \\n    positive_pnl = btc_trades[btc_trades['realized_pnl'] > 0]\\n    win_rate = len(positive_pnl) / total_trades\\n    \\n    # Calculate average positive and negative pnl\\n    avg_positive_pnl = positive_pnl['realized_pnl'].mean() if len(positive_pnl) > 0 else 0\\n    avg_negative_pnl = btc_trades[btc_trades['realized_pnl'] <= 0]['realized_pnl'].mean() if len(btc_trades[btc_trades['realized_pnl'] <= 0]) > 0 else 0\\n    \\n    # Calculate payoff ratio (avoid division by zero)\\n    if avg_negative_pnl == 0:\\n        payoff = 0\\n    else:\\n        payoff = abs(avg_positive_pnl / avg_negative_pnl)\\n    \\n    # Compute Kelly fraction\\n    if payoff == 0:\\n        fraction = 0.0\\n    else:\\n        fraction = (win_rate * payoff - (1 - win_rate)) / payoff\\n    \\n    # Ensure fraction is within [0, 1]\\n    fraction = max(0.0, min(fraction, 1.0))\\n    \\n    # Compute dollar amount\\n    amount = fraction * bankroll\\n    \\n    return {\\\"fraction\\\": fraction, \\\"amount\\\": amount}\\n\\n# Example usage\\nresult = compute_kelly_fraction(\\\"blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv\\\")\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.375,
+        "amount": 18750.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef compute_kelly_fraction(csv_path, bankroll=50000, asset_filter='BTC'):\n    # Load the CSV file\n    df = pd.read_csv(csv_path)\n    \n    # Filter for BTC trades (assuming 'symbol' column contains trading pairs like 'BTC/USDT')\n    btc_trades = df[df['symbol'].str.contains(asset_filter, case=False)]\n    \n    # Calculate win rate\n    total_trades = len(btc_trades)\n    if total_trades == 0:\n        return {\"fraction\": 0.0, \"amount\": 0.0}\n    \n    positive_pnl = btc_trades[btc_trades['realized_pnl'] > 0]\n    win_rate = len(positive_pnl) / total_trades\n    \n    # Calculate average positive and negative pnl\n    avg_positive_pnl = positive_pnl['realized_pnl'].mean() if len(positive_pnl) > 0 else 0\n    avg_negative_pnl = btc_trades[btc_trades['realized_pnl'] <= 0]['realized_pnl'].mean() if len(btc_trades[btc_trades['realized_pnl'] <= 0]) > 0 else 0\n    \n    # Calculate payoff ratio (avoid division by zero)\n    if avg_negative_pnl == 0:\n        payoff = 0\n    else:\n        payoff = abs(avg_positive_pnl / avg_negative_pnl)\n    \n    # Compute Kelly fraction\n    if payoff == 0:\n        fraction = 0.0\n    else:\n        fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n    \n    # Ensure fraction is within [0, 1]\n    fraction = max(0.0, min(fraction, 1.0))\n    \n    # Compute dollar amount\n    amount = fraction * bankroll\n    \n    return {\"fraction\": fraction, \"amount\": amount}\n\n# Example usage\nresult = compute_kelly_fraction(\"blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv\")\nprint(json.dumps(result))",
+        "result": {
+          "fraction": 0.375,
+          "amount": 18750.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Using the price feed in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv, calculate the Average True Range (ATR) over 14 rows, and set a trailing stop distance with a factor of 2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\n# Load the CSV file\\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv')\\n\\n# Calculate True Range (TR)\\ndf['close_prev'] = df['close'].shift(1)\\ndf['TR'] = df.apply(lambda row: max(row['high'] - row['low'], abs(row['high'] - row['close_prev']), abs(row['low'] - row['close_prev'])), axis=1)\\n\\n# Calculate ATR over the last 14 periods\\natr = df['TR'].rolling(window=14).mean().iloc[-1]\\n\\n# Calculate stop distance\\nstop_distance = atr * 2.0\\n\\n# Output the result\\nprint(json.dumps({'stop_distance': stop_distance}))\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "stop_distance": 20.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\n# Load the CSV file\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv')\n\n# Calculate True Range (TR)\ndf['close_prev'] = df['close'].shift(1)\ndf['TR'] = df.apply(lambda row: max(row['high'] - row['low'], abs(row['high'] - row['close_prev']), abs(row['low'] - row['close_prev'])), axis=1)\n\n# Calculate ATR over the last 14 periods\natr = df['TR'].rolling(window=14).mean().iloc[-1]\n\n# Calculate stop distance\nstop_distance = atr * 2.0\n\n# Output the result\nprint(json.dumps({'stop_distance': stop_distance}))",
+        "result": {
+          "stop_distance": 20.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine the stop distance (factor 2.0) from the ATR of the last 14 candlesticks in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef calculate_atr_stop_distance(csv_file, multiplier=2.0, window=14):\\n    df = pd.read_csv(csv_file)\\n    \\n    # Calculate True Range (TR)\\n    df['close_prev'] = df['close'].shift(1)\\n    df['tr1'] = df['high'] - df['low']\\n    df['tr2'] = abs(df['high'] - df['close_prev'])\\n    df['tr3'] = abs(df['low'] - df['close_prev'])\\n    df['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\\n    \\n    # Calculate ATR\\n    atr = df['tr'].rolling(window=window).mean().iloc[-1]\\n    \\n    # Calculate stop distance\\n    stop_distance = atr * multiplier\\n    \\n    return {\\\"stop_distance\\\": stop_distance}\\n\\n# Example usage\\nresult = calculate_atr_stop_distance(\\\"blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv\\\", multiplier=2.0)\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "stop_distance": 20.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef calculate_atr_stop_distance(csv_file, multiplier=2.0, window=14):\n    df = pd.read_csv(csv_file)\n    \n    # Calculate True Range (TR)\n    df['close_prev'] = df['close'].shift(1)\n    df['tr1'] = df['high'] - df['low']\n    df['tr2'] = abs(df['high'] - df['close_prev'])\n    df['tr3'] = abs(df['low'] - df['close_prev'])\n    df['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\n    \n    # Calculate ATR\n    atr = df['tr'].rolling(window=window).mean().iloc[-1]\n    \n    # Calculate stop distance\n    stop_distance = atr * multiplier\n    \n    return {\"stop_distance\": stop_distance}\n\n# Example usage\nresult = calculate_atr_stop_distance(\"blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv\", multiplier=2.0)\nprint(json.dumps(result))",
+        "result": {
+          "stop_distance": 20.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute the ATR (14 periods) for eth_usd_prices.csv under mock_data. Using a multiplier of 2.0, what is the trailing stop loss distance?",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\n# Load the CSV file\\ndf = pd.read_csv('eth_usd_prices.csv')\\n\\n# Calculate True Range (TR)\\ndf['close_prev'] = df['close'].shift(1)\\ndf['TR'] = df.apply(lambda row: max(row['high'] - row['low'], abs(row['high'] - row['close_prev']), abs(row['low'] - row['close_prev'])), axis=1)\\n\\n# Calculate ATR (14 periods)\\natr = df['TR'].rolling(window=14).mean().iloc[-1]\\n\\n# Calculate trailing stop distance\\nstop_distance = atr * 2.0\\n\\n# Output the result\\nprint(json.dumps({'stop_distance': stop_distance}))\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": null,
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\n# Load the CSV file\ndf = pd.read_csv('eth_usd_prices.csv')\n\n# Calculate True Range (TR)\ndf['close_prev'] = df['close'].shift(1)\ndf['TR'] = df.apply(lambda row: max(row['high'] - row['low'], abs(row['high'] - row['close_prev']), abs(row['low'] - row['close_prev'])), axis=1)\n\n# Calculate ATR (14 periods)\natr = df['TR'].rolling(window=14).mean().iloc[-1]\n\n# Calculate trailing stop distance\nstop_distance = atr * 2.0\n\n# Output the result\nprint(json.dumps({'stop_distance': stop_distance}))",
+        "result": null
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Given the historical price dataset in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv, calculate the ATR value over a rolling window of 14 points and multiply it by 2.0 to get the stop distance.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef calculate_atr_stop_distance(file_path, window=14, multiplier=2.0):\\n    df = pd.read_csv(file_path)\\n    df['close_prev'] = df['close'].shift(1)\\n    df['tr1'] = df['high'] - df['low']\\n    df['tr2'] = abs(df['high'] - df['close_prev'])\\n    df['tr3'] = abs(df['low'] - df['close_prev'])\\n    df['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\\n    atr = df['tr'].rolling(window=window).mean().iloc[-1]\\n    stop_distance = atr * multiplier\\n    return {\\\"stop_distance\\\": stop_distance}\\n\\nif __name__ == \\\"__main__\\\":\\n    result = calculate_atr_stop_distance(\\\"blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv\\\")\\n    print(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "stop_distance": 20.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef calculate_atr_stop_distance(file_path, window=14, multiplier=2.0):\n    df = pd.read_csv(file_path)\n    df['close_prev'] = df['close'].shift(1)\n    df['tr1'] = df['high'] - df['low']\n    df['tr2'] = abs(df['high'] - df['close_prev'])\n    df['tr3'] = abs(df['low'] - df['close_prev'])\n    df['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\n    atr = df['tr'].rolling(window=window).mean().iloc[-1]\n    stop_distance = atr * multiplier\n    return {\"stop_distance\": stop_distance}\n\nif __name__ == \"__main__\":\n    result = calculate_atr_stop_distance(\"blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv\")\n    print(json.dumps(result))",
+        "result": {
+          "stop_distance": 20.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Find the latest 14 prices in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv, compute the average true range (ATR), and scale it by 2.0 to calculate the dynamic stop loss distance.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef calculate_atr_stop(csv_path, multiplier=2.0, window=14):\\n    df = pd.read_csv(csv_path)\\n    df['close_prev'] = df['close'].shift(1)\\n    df['tr1'] = df['high'] - df['low']\\n    df['tr2'] = abs(df['high'] - df['close_prev'])\\n    df['tr3'] = abs(df['low'] - df['close_prev'])\\n    df['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\\n    atr = df['tr'].rolling(window=window).mean().iloc[-1]\\n    stop_distance = atr * multiplier\\n    return {\\\"stop_distance\\\": stop_distance}\\n\\nresult = calculate_atr_stop(\\\"blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv\\\", multiplier=2.0)\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "stop_distance": 20.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef calculate_atr_stop(csv_path, multiplier=2.0, window=14):\n    df = pd.read_csv(csv_path)\n    df['close_prev'] = df['close'].shift(1)\n    df['tr1'] = df['high'] - df['low']\n    df['tr2'] = abs(df['high'] - df['close_prev'])\n    df['tr3'] = abs(df['low'] - df['close_prev'])\n    df['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\n    atr = df['tr'].rolling(window=window).mean().iloc[-1]\n    stop_distance = atr * multiplier\n    return {\"stop_distance\": stop_distance}\n\nresult = calculate_atr_stop(\"blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv\", multiplier=2.0)\nprint(json.dumps(result))",
+        "result": {
+          "stop_distance": 20.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Load the JSON performance file trade_performance.json from blackbox_os/roles/data_scientist/workflows/mock_data/. Calculate the expected value (EV) of the strategy, factoring in a 5.0 fee per trade.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\ndef calculate_ev(json_file_path, fee):\\n    with open(json_file_path, 'r') as file:\\n        data = json.load(file)\\n    \\n    trades = data.get('trades', [])\\n    if not trades:\\n        return {\\\"ev\\\": 0.0}\\n    \\n    positive_returns = [trade['return'] for trade in trades if trade['return'] > 0]\\n    negative_returns = [trade['return'] for trade in trades if trade['return'] <= 0]\\n    \\n    win_prob = len(positive_returns) / len(trades)\\n    win_return = sum(positive_returns) / len(positive_returns) if positive_returns else 0.0\\n    loss_return = sum(negative_returns) / len(negative_returns) if negative_returns else 0.0\\n    \\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n    \\n    return {\\\"ev\\\": ev}\\n\\n# Example usage\\njson_file_path = \\\"blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json\\\"\\nfee = 5.0\\nresult = calculate_ev(json_file_path, fee)\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef calculate_ev(json_file_path, fee):\n    with open(json_file_path, 'r') as file:\n        data = json.load(file)\n    \n    trades = data.get('trades', [])\n    if not trades:\n        return {\"ev\": 0.0}\n    \n    positive_returns = [trade['return'] for trade in trades if trade['return'] > 0]\n    negative_returns = [trade['return'] for trade in trades if trade['return'] <= 0]\n    \n    win_prob = len(positive_returns) / len(trades)\n    win_return = sum(positive_returns) / len(positive_returns) if positive_returns else 0.0\n    loss_return = sum(negative_returns) / len(negative_returns) if negative_returns else 0.0\n    \n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n    \n    return {\"ev\": ev}\n\n# Example usage\njson_file_path = \"blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json\"\nfee = 5.0\nresult = calculate_ev(json_file_path, fee)\nprint(json.dumps(result))",
+        "result": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Using trade_performance.json in mock_data, find the win-rate, average win size, and average loss size. Compute the net EV subtracting a commission fee of 5.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\ndef calculate_ev(file_path, fee):\\n    with open(file_path, 'r') as file:\\n        data = json.load(file)\\n    trades = data['trades']\\n    win_prob = sum(1 for trade in trades if trade['return'] > 0) / len(trades)\\n    win_return = sum(trade['return'] for trade in trades if trade['return'] > 0) / sum(1 for trade in trades if trade['return'] > 0)\\n    loss_return = sum(trade['return'] for trade in trades if trade['return'] < 0) / sum(1 for trade in trades if trade['return'] < 0)\\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n    return {\\\"ev\\\": ev}\\n\\nresult = calculate_ev('mock_data/trade_performance.json', 5.0)\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef calculate_ev(file_path, fee):\n    with open(file_path, 'r') as file:\n        data = json.load(file)\n    trades = data['trades']\n    win_prob = sum(1 for trade in trades if trade['return'] > 0) / len(trades)\n    win_return = sum(trade['return'] for trade in trades if trade['return'] > 0) / sum(1 for trade in trades if trade['return'] > 0)\n    loss_return = sum(trade['return'] for trade in trades if trade['return'] < 0) / sum(1 for trade in trades if trade['return'] < 0)\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n    return {\"ev\": ev}\n\nresult = calculate_ev('mock_data/trade_performance.json', 5.0)\nprint(json.dumps(result))",
+        "result": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Extract trade list from blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json. Compute the expected payoff (EV) of a trade after deducting a flat fee of 5.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\nimport sys\\n\\ndef compute_ev(trades, fee):\\n    if not trades:\\n        return 0.0\\n    \\n    positive_returns = [trade['return'] for trade in trades if trade['return'] > 0]\\n    negative_returns = [trade['return'] for trade in trades if trade['return'] <= 0]\\n    \\n    win_prob = len(positive_returns) / len(trades)\\n    win_return = sum(positive_returns) / len(positive_returns) if positive_returns else 0.0\\n    loss_return = sum(negative_returns) / len(negative_returns) if negative_returns else 0.0\\n    \\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n    return ev\\n\\nif __name__ == \\\"__main__\\\":\\n    if len(sys.argv) != 2:\\n        print(\\\"Usage: python script.py <input_json_file>\\\", file=sys.stderr)\\n        sys.exit(1)\\n    \\n    input_file = sys.argv[1]\\n    fee = 5.0\\n    \\n    try:\\n        with open(input_file, 'r') as f:\\n            data = json.load(f)\\n            trades = data.get('trades', [])\\n            ev = compute_ev(trades, fee)\\n            print(json.dumps({\\\"ev\\\": ev}))\\n    except Exception as e:\\n        print(f\\\"Error processing file: {e}\\\", file=sys.stderr)\\n        sys.exit(1)\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": null,
+      "sandbox_run_info": {
+        "code": "import json\nimport sys\n\ndef compute_ev(trades, fee):\n    if not trades:\n        return 0.0\n    \n    positive_returns = [trade['return'] for trade in trades if trade['return'] > 0]\n    negative_returns = [trade['return'] for trade in trades if trade['return'] <= 0]\n    \n    win_prob = len(positive_returns) / len(trades)\n    win_return = sum(positive_returns) / len(positive_returns) if positive_returns else 0.0\n    loss_return = sum(negative_returns) / len(negative_returns) if negative_returns else 0.0\n    \n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n    return ev\n\nif __name__ == \"__main__\":\n    if len(sys.argv) != 2:\n        print(\"Usage: python script.py <input_json_file>\", file=sys.stderr)\n        sys.exit(1)\n    \n    input_file = sys.argv[1]\n    fee = 5.0\n    \n    try:\n        with open(input_file, 'r') as f:\n            data = json.load(f)\n            trades = data.get('trades', [])\n            ev = compute_ev(trades, fee)\n            print(json.dumps({\"ev\": ev}))\n    except Exception as e:\n        print(f\"Error processing file: {e}\", file=sys.stderr)\n        sys.exit(1)",
+        "result": null
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Find the trade performance metrics in mock_data/trade_performance.json. Count wins and losses to get probabilities, average them, and return the net EV after a 5.0 fee per trade.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\ndef calculate_ev(file_path, fee):\\n    with open(file_path, 'r') as file:\\n        data = json.load(file)\\n    trades = data['trades']\\n    win_prob = sum(1 for trade in trades if trade['return'] > 0) / len(trades)\\n    win_return = sum(trade['return'] for trade in trades if trade['return'] > 0) / sum(1 for trade in trades if trade['return'] > 0)\\n    loss_return = sum(trade['return'] for trade in trades if trade['return'] < 0) / sum(1 for trade in trades if trade['return'] < 0)\\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n    return {'ev': ev}\\n\\nresult = calculate_ev('mock_data/trade_performance.json', 5.0)\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef calculate_ev(file_path, fee):\n    with open(file_path, 'r') as file:\n        data = json.load(file)\n    trades = data['trades']\n    win_prob = sum(1 for trade in trades if trade['return'] > 0) / len(trades)\n    win_return = sum(trade['return'] for trade in trades if trade['return'] > 0) / sum(1 for trade in trades if trade['return'] > 0)\n    loss_return = sum(trade['return'] for trade in trades if trade['return'] < 0) / sum(1 for trade in trades if trade['return'] < 0)\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n    return {'ev': ev}\n\nresult = calculate_ev('mock_data/trade_performance.json', 5.0)\nprint(json.dumps(result))",
+        "result": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate the net expected value (EV) for trades listed in blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json with a flat 5.0 per-trade cost.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\ndef calculate_ev(trades, fee):\\n    positive_returns = [trade['return'] for trade in trades if trade['return'] > 0]\\n    negative_returns = [trade['return'] for trade in trades if trade['return'] < 0]\\n    win_prob = len(positive_returns) / len(trades)\\n    win_return = sum(positive_returns) / len(positive_returns) if positive_returns else 0\\n    loss_return = sum(negative_returns) / len(negative_returns) if negative_returns else 0\\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n    return ev\\n\\nwith open('blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json', 'r') as file:\\n    data = json.load(file)\\n    trades = data['trades']\\n    fee = 5.0\\n    ev = calculate_ev(trades, fee)\\n    print(json.dumps({'ev': ev}))\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef calculate_ev(trades, fee):\n    positive_returns = [trade['return'] for trade in trades if trade['return'] > 0]\n    negative_returns = [trade['return'] for trade in trades if trade['return'] < 0]\n    win_prob = len(positive_returns) / len(trades)\n    win_return = sum(positive_returns) / len(positive_returns) if positive_returns else 0\n    loss_return = sum(negative_returns) / len(negative_returns) if negative_returns else 0\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n    return ev\n\nwith open('blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json', 'r') as file:\n    data = json.load(file)\n    trades = data['trades']\n    fee = 5.0\n    ev = calculate_ev(trades, fee)\n    print(json.dumps({'ev': ev}))",
+        "result": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Look through the features CSV file blackbox_os/roles/data_scientist/workflows/mock_data/features.csv and scan for lookahead bias. Return true if there is any column leaking future data.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\nimport json\\nimport sys\\n\\ndef check_lookahead_bias(csv_file):\\n    try:\\n        df = pd.read_csv(csv_file)\\n        if 'formula' not in df.columns:\\n            return {\\\"leakage_detected\\\": False}\\n        \\n        leakage_detected = False\\n        for formula in df['formula'].dropna():\\n            if isinstance(formula, str):\\n                if 't+' in formula.lower() or 'target' in formula.lower():\\n                    leakage_detected = True\\n                    break\\n        \\n        return {\\\"leakage_detected\\\": leakage_detected}\\n    except Exception as e:\\n        return {\\\"error\\\": str(e)}\\n\\nif __name__ == \\\"__main__\\\":\\n    if len(sys.argv) != 2:\\n        print(json.dumps({\\\"error\\\": \\\"Usage: python script.py <csv_file>\\\"}))\\n        sys.exit(1)\\n    \\n    result = check_lookahead_bias(sys.argv[1])\\n    print(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "error": "Usage: python script.py <csv_file>"
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\nimport sys\n\ndef check_lookahead_bias(csv_file):\n    try:\n        df = pd.read_csv(csv_file)\n        if 'formula' not in df.columns:\n            return {\"leakage_detected\": False}\n        \n        leakage_detected = False\n        for formula in df['formula'].dropna():\n            if isinstance(formula, str):\n                if 't+' in formula.lower() or 'target' in formula.lower():\n                    leakage_detected = True\n                    break\n        \n        return {\"leakage_detected\": leakage_detected}\n    except Exception as e:\n        return {\"error\": str(e)}\n\nif __name__ == \"__main__\":\n    if len(sys.argv) != 2:\n        print(json.dumps({\"error\": \"Usage: python script.py <csv_file>\"}))\n        sys.exit(1)\n    \n    result = check_lookahead_bias(sys.argv[1])\n    print(json.dumps(result))",
+        "result": {
+          "error": "Usage: python script.py <csv_file>"
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Audit mock_data/features.csv for lookahead bias. Scan the formulas for references to future index values (t+1, etc.) or targets.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\nimport json\\nimport sys\\n\\ndef check_lookahead_bias(csv_path):\\n    try:\\n        df = pd.read_csv(csv_path)\\n        if 'formula' not in df.columns:\\n            return {\\\"leakage_detected\\\": False}\\n        \\n        leakage_detected = False\\n        for formula in df['formula']:\\n            if isinstance(formula, str):\\n                if 't+' in formula.lower() or 'target' in formula.lower():\\n                    leakage_detected = True\\n                    break\\n        \\n        return {\\\"leakage_detected\\\": leakage_detected}\\n    except Exception as e:\\n        return {\\\"error\\\": str(e)}\\n\\nif __name__ == \\\"__main__\\\":\\n    if len(sys.argv) != 2:\\n        print(json.dumps({\\\"error\\\": \\\"Usage: python script.py <csv_path>\\\"}))\\n        sys.exit(1)\\n    \\n    result = check_lookahead_bias(sys.argv[1])\\n    print(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "error": "Usage: python script.py <csv_path>"
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\nimport sys\n\ndef check_lookahead_bias(csv_path):\n    try:\n        df = pd.read_csv(csv_path)\n        if 'formula' not in df.columns:\n            return {\"leakage_detected\": False}\n        \n        leakage_detected = False\n        for formula in df['formula']:\n            if isinstance(formula, str):\n                if 't+' in formula.lower() or 'target' in formula.lower():\n                    leakage_detected = True\n                    break\n        \n        return {\"leakage_detected\": leakage_detected}\n    except Exception as e:\n        return {\"error\": str(e)}\n\nif __name__ == \"__main__\":\n    if len(sys.argv) != 2:\n        print(json.dumps({\"error\": \"Usage: python script.py <csv_path>\"}))\n        sys.exit(1)\n    \n    result = check_lookahead_bias(sys.argv[1])\n    print(json.dumps(result))",
+        "result": {
+          "error": "Usage: python script.py <csv_path>"
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Inspect the formulas in blackbox_os/roles/data_scientist/workflows/mock_data/features.csv to see if they reference future information or containing 'target', which would indicate data leakage.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\n# Load the CSV file\\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/features.csv')\\n\\n# Initialize leakage_detected as False\\nleakage_detected = False\\n\\n# Check each formula for future references or 'target'\\nfor formula in df['formula']:\\n    if any(f't+{i}' in formula for i in range(1, 10)) or 'target' in formula:\\n        leakage_detected = True\\n        break\\n\\n# Output the result\\nprint(json.dumps({'leakage_detected': leakage_detected}))\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\n# Load the CSV file\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/features.csv')\n\n# Initialize leakage_detected as False\nleakage_detected = False\n\n# Check each formula for future references or 'target'\nfor formula in df['formula']:\n    if any(f't+{i}' in formula for i in range(1, 10)) or 'target' in formula:\n        leakage_detected = True\n        break\n\n# Output the result\nprint(json.dumps({'leakage_detected': leakage_detected}))",
+        "result": {
+          "leakage_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Determine if any feature formula in blackbox_os/roles/data_scientist/workflows/mock_data/features.csv suffers from data leakage (references future offsets or targets).",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\nimport json\\nimport sys\\n\\ndef detect_leakage(csv_path):\\n    try:\\n        df = pd.read_csv(csv_path)\\n        leakage_detected = False\\n        \\n        for _, row in df.iterrows():\\n            formula = str(row['formula']).lower()\\n            if 't+' in formula or 'target' in formula:\\n                leakage_detected = True\\n                break\\n        \\n        return {\\\"leakage_detected\\\": leakage_detected}\\n    except Exception as e:\\n        return {\\\"error\\\": str(e)}\\n\\nif __name__ == \\\"__main__\\\":\\n    if len(sys.argv) != 2:\\n        print(json.dumps({\\\"error\\\": \\\"Usage: python script.py <csv_path>\\\"}))\\n        sys.exit(1)\\n    \\n    result = detect_leakage(sys.argv[1])\\n    print(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "error": "Usage: python script.py <csv_path>"
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\nimport sys\n\ndef detect_leakage(csv_path):\n    try:\n        df = pd.read_csv(csv_path)\n        leakage_detected = False\n        \n        for _, row in df.iterrows():\n            formula = str(row['formula']).lower()\n            if 't+' in formula or 'target' in formula:\n                leakage_detected = True\n                break\n        \n        return {\"leakage_detected\": leakage_detected}\n    except Exception as e:\n        return {\"error\": str(e)}\n\nif __name__ == \"__main__\":\n    if len(sys.argv) != 2:\n        print(json.dumps({\"error\": \"Usage: python script.py <csv_path>\"}))\n        sys.exit(1)\n    \n    result = detect_leakage(sys.argv[1])\n    print(json.dumps(result))",
+        "result": {
+          "error": "Usage: python script.py <csv_path>"
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check for target leakage or lookahead bias in blackbox_os/roles/data_scientist/workflows/mock_data/features.csv. Look for formulas referencing future periods or 'target'.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\n# Load the CSV file\\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/features.csv')\\n\\n# Initialize leakage_detected as False\\nleakage_detected = False\\n\\n# Check each formula for lookahead bias\\nfor formula in df['formula']:\\n    if any(f't+{i}' in formula for i in range(1, 10)) or 'target' in formula:\\n        leakage_detected = True\\n        break\\n\\n# Output the result\\nprint(json.dumps({'leakage_detected': leakage_detected}))\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\n# Load the CSV file\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/features.csv')\n\n# Initialize leakage_detected as False\nleakage_detected = False\n\n# Check each formula for lookahead bias\nfor formula in df['formula']:\n    if any(f't+{i}' in formula for i in range(1, 10)) or 'target' in formula:\n        leakage_detected = True\n        break\n\n# Output the result\nprint(json.dumps({'leakage_detected': leakage_detected}))",
+        "result": {
+          "leakage_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Read the raw returns dataset in blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv and run a population standard scaling normalization on the 'return' column. Output the population mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import pandas as pd\\nimport json\\nimport sys\\nimport math\\n\\n# Read the CSV file\\ndata = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv')\\n\\n# Extract the 'return' column\\nreturns = data['return'].values\\n\\n# Calculate population mean\\nmean = sum(returns) / len(returns)\\n\\n# Calculate population standard deviation\\nstd = math.sqrt(sum((x - mean) ** 2 for x in returns) / len(returns))\\n\\n# Output the results\\nresult = {\\\"mean\\\": mean, \\\"std\\\": std}\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\nimport sys\nimport math\n\n# Read the CSV file\ndata = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv')\n\n# Extract the 'return' column\nreturns = data['return'].values\n\n# Calculate population mean\nmean = sum(returns) / len(returns)\n\n# Calculate population standard deviation\nstd = math.sqrt(sum((x - mean) ** 2 for x in returns) / len(returns))\n\n# Output the results\nresult = {\"mean\": mean, \"std\": std}\nprint(json.dumps(result))",
+        "result": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Calculate the population mean and population standard deviation (ddof=0) for standard scaling the 'return' column in mock_data/raw_returns.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import pandas as pd\\nimport json\\nimport sys\\nimport math\\n\\n# Read the CSV file\\ndf = pd.read_csv('mock_data/raw_returns.csv')\\n\\n# Calculate population mean and standard deviation\\nmean = df['return'].mean()\\nstd = math.sqrt(((df['return'] - mean) ** 2).mean())\\n\\n# Prepare the output\\nresult = {\\n    \\\"mean\\\": float(mean),\\n    \\\"std\\\": float(std)\\n}\\n\\n# Print the result as JSON\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\nimport sys\nimport math\n\n# Read the CSV file\ndf = pd.read_csv('mock_data/raw_returns.csv')\n\n# Calculate population mean and standard deviation\nmean = df['return'].mean()\nstd = math.sqrt(((df['return'] - mean) ** 2).mean())\n\n# Prepare the output\nresult = {\n    \"mean\": float(mean),\n    \"std\": float(std)\n}\n\n# Print the result as JSON\nprint(json.dumps(result))",
+        "result": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute the z-score normalization parameters (mean and population std) for the returns listed in blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import pandas as pd\\nimport json\\nimport sys\\nimport math\\n\\n# Read CSV file\\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv')\\n\\n# Calculate mean and population std\\nmean = df['return'].mean()\\nstd = math.sqrt(((df['return'] - mean) ** 2).sum() / len(df['return']))\\n\\n# Output results\\nresult = {\\\"mean\\\": float(mean), \\\"std\\\": float(std)}\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\nimport sys\nimport math\n\n# Read CSV file\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv')\n\n# Calculate mean and population std\nmean = df['return'].mean()\nstd = math.sqrt(((df['return'] - mean) ** 2).sum() / len(df['return']))\n\n# Output results\nresult = {\"mean\": float(mean), \"std\": float(std)}\nprint(json.dumps(result))",
+        "result": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Determine the population mean and standard deviation of the returns column in blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import pandas as pd\\nimport json\\nimport sys\\nimport math\\n\\ndef compute_stats(csv_path):\\n    df = pd.read_csv(csv_path)\\n    returns = df['return'].values\\n    mean = sum(returns) / len(returns)\\n    std = math.sqrt(sum((x - mean) ** 2 for x in returns) / len(returns))\\n    return {\\\"mean\\\": float(mean), \\\"std\\\": float(std)}\\n\\nif __name__ == \\\"__main__\\\":\\n    input_csv = sys.argv[1] if len(sys.argv) > 1 else \\\"blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv\\\"\\n    result = compute_stats(input_csv)\\n    print(json.dumps(result, indent=2))\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\nimport sys\nimport math\n\ndef compute_stats(csv_path):\n    df = pd.read_csv(csv_path)\n    returns = df['return'].values\n    mean = sum(returns) / len(returns)\n    std = math.sqrt(sum((x - mean) ** 2 for x in returns) / len(returns))\n    return {\"mean\": float(mean), \"std\": float(std)}\n\nif __name__ == \"__main__\":\n    input_csv = sys.argv[1] if len(sys.argv) > 1 else \"blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv\"\n    result = compute_stats(input_csv)\n    print(json.dumps(result, indent=2))",
+        "result": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Retrieve the returns from blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv, apply standard scaling, and return the population mean and standard deviation.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\n# Load the CSV file\\ndata = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv')\\n\\n# Calculate mean and standard deviation\\nmean = data['return'].mean()\\nstd = data['return'].std(ddof=0)\\n\\n# Prepare the output\\noutput = {\\n    \\\"mean\\\": mean,\\n    \\\"std\\\": std\\n}\\n\\n# Print the output as JSON\\nprint(json.dumps(output))\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\n# Load the CSV file\ndata = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv')\n\n# Calculate mean and standard deviation\nmean = data['return'].mean()\nstd = data['return'].std(ddof=0)\n\n# Prepare the output\noutput = {\n    \"mean\": mean,\n    \"std\": std\n}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "result": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Load the data drift statistics file blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json. Compare the implied_vol's KS metric against its warning threshold to see if drift is detected.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\ndef check_drift():\\n    with open('blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json') as f:\\n        data = json.load(f)\\n    \\n    ks_score = data['metrics']['implied_vol']['ks_score']\\n    warning_threshold = data['metrics']['implied_vol']['warning_threshold']\\n    \\n    data_drift_detected = ks_score > warning_threshold\\n    return {\\\"data_drift_detected\\\": data_drift_detected}\\n\\nif __name__ == \\\"__main__\\\":\\n    result = check_drift()\\n    print(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef check_drift():\n    with open('blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json') as f:\n        data = json.load(f)\n    \n    ks_score = data['metrics']['implied_vol']['ks_score']\n    warning_threshold = data['metrics']['implied_vol']['warning_threshold']\n    \n    data_drift_detected = ks_score > warning_threshold\n    return {\"data_drift_detected\": data_drift_detected}\n\nif __name__ == \"__main__\":\n    result = check_drift()\n    print(json.dumps(result))",
+        "result": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Audit drift_metrics.json in mock_data for feature drift on implied_vol. Check if the KS test score exceeds the warning threshold.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\nwith open('mock_data/drift_metrics.json') as f:\\n    data = json.load(f)\\n\\nks_score = data['metrics']['implied_vol']['ks_score']\\nwarning_threshold = data['metrics']['implied_vol']['warning_threshold']\\n\\ndata_drift_detected = ks_score > warning_threshold\\n\\nprint(json.dumps({'data_drift_detected': data_drift_detected}))\"\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\nwith open('mock_data/drift_metrics.json') as f:\n    data = json.load(f)\n\nks_score = data['metrics']['implied_vol']['ks_score']\nwarning_threshold = data['metrics']['implied_vol']['warning_threshold']\n\ndata_drift_detected = ks_score > warning_threshold\n\nprint(json.dumps({'data_drift_detected': data_drift_detected}))",
+        "result": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Read the JSON drift metrics in blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json, look up implied_vol drift status, and determine if it exceeds the alert threshold.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\ndef main():\\n    # Load the drift metrics JSON file\\n    with open('blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json', 'r') as f:\\n        data = json.load(f)\\n    \\n    # Extract the implied_vol metrics\\n    implied_vol_metrics = data['metrics']['implied_vol']\\n    ks_score = implied_vol_metrics['ks_score']\\n    warning_threshold = implied_vol_metrics['warning_threshold']\\n    \\n    # Determine if data drift is detected\\n    data_drift_detected = ks_score > warning_threshold\\n    \\n    # Print the result as a JSON dictionary\\n    print(json.dumps({\\\"data_drift_detected\\\": data_drift_detected}))\\n\\nif __name__ == \\\"__main__\\\":\\n    main()\"\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef main():\n    # Load the drift metrics JSON file\n    with open('blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json', 'r') as f:\n        data = json.load(f)\n    \n    # Extract the implied_vol metrics\n    implied_vol_metrics = data['metrics']['implied_vol']\n    ks_score = implied_vol_metrics['ks_score']\n    warning_threshold = implied_vol_metrics['warning_threshold']\n    \n    # Determine if data drift is detected\n    data_drift_detected = ks_score > warning_threshold\n    \n    # Print the result as a JSON dictionary\n    print(json.dumps({\"data_drift_detected\": data_drift_detected}))\n\nif __name__ == \"__main__\":\n    main()",
+        "result": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Using blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json, check if the Kolmogorov-Smirnov drift score for implied_vol is greater than its warning threshold.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\ndef compute_drift_detection(drift_metrics_file):\\n    with open(drift_metrics_file, 'r') as f:\\n        data = json.load(f)\\n    \\n    ks_score = data['metrics']['implied_vol']['ks_score']\\n    warning_threshold = data['metrics']['implied_vol']['warning_threshold']\\n    \\n    data_drift_detected = ks_score > warning_threshold\\n    \\n    return {\\\"data_drift_detected\\\": data_drift_detected}\\n\\nif __name__ == \\\"__main__\\\":\\n    result = compute_drift_detection(\\\"blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json\\\")\\n    print(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef compute_drift_detection(drift_metrics_file):\n    with open(drift_metrics_file, 'r') as f:\n        data = json.load(f)\n    \n    ks_score = data['metrics']['implied_vol']['ks_score']\n    warning_threshold = data['metrics']['implied_vol']['warning_threshold']\n    \n    data_drift_detected = ks_score > warning_threshold\n    \n    return {\"data_drift_detected\": data_drift_detected}\n\nif __name__ == \"__main__\":\n    result = compute_drift_detection(\"blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json\")\n    print(json.dumps(result))",
+        "result": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 60,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Determine if there is data drift for implied_vol using the KS score and threshold in blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\ndef compute_drift():\\n    # Load the drift metrics JSON file\\n    with open('blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json', 'r') as f:\\n        data = json.load(f)\\n    \\n    # Extract the required values\\n    ks_score = data['metrics']['implied_vol']['ks_score']\\n    warning_threshold = data['metrics']['implied_vol']['warning_threshold']\\n    \\n    # Determine if drift is detected\\n    data_drift_detected = ks_score > warning_threshold\\n    \\n    # Return the result\\n    print(json.dumps({\\\"data_drift_detected\\\": data_drift_detected}))\\n\\ncompute_drift()\"\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef compute_drift():\n    # Load the drift metrics JSON file\n    with open('blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json', 'r') as f:\n        data = json.load(f)\n    \n    # Extract the required values\n    ks_score = data['metrics']['implied_vol']['ks_score']\n    warning_threshold = data['metrics']['implied_vol']['warning_threshold']\n    \n    # Determine if drift is detected\n    data_drift_detected = ks_score > warning_threshold\n    \n    # Return the result\n    print(json.dumps({\"data_drift_detected\": data_drift_detected}))\n\ncompute_drift()",
+        "result": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Check the trades inside blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv. Filter only BTC/USDT fills, calculate the percentage of winning trades and positive/negative payoff ratio, then compute Kelly bet size for 50000 total capital.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.25,\n  \"amount\": 12500.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.25,
+        "amount": 12500.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Determine the Kelly positioning size for a total portfolio value of 50000 using the fill logs in blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv. We only care about BTC trades.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.25,\n  \"amount\": 12500\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.25,
+        "amount": 12500
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Extract the trading fills for BTC from the log grid_bot_fills.csv in mock_data. Calculate the win rate and the average win over absolute average loss, then return the Kelly sizing fraction and total amount for a 50000 bankroll.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.25,\n  \"amount\": 12500\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.25,
+        "amount": 12500
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Using blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv, find out the BTC trading performance. What is the win rate and payoff ratio? What would the Kelly allocation fraction and capital size be for a bankroll of 50000?",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.25,\n  \"amount\": 12500.0\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.25,
+        "amount": 12500.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the optimal Kelly fraction and investment amount for a bankroll of 50000 using trade execution records in blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv. Restrict analysis to BTC.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"fraction\": 0.25,\n  \"amount\": 12500\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "chosen_skill_id": "kelly_position_size",
+        "fraction": 0.25,
+        "amount": 12500
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Using the price feed in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv, calculate the Average True Range (ATR) over 14 rows, and set a trailing stop distance with a factor of 2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 0.0\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 0.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine the stop distance (factor 2.0) from the ATR of the last 14 candlesticks in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 0.0\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 0.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute the ATR (14 periods) for eth_usd_prices.csv under mock_data. Using a multiplier of 2.0, what is the trailing stop loss distance?",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": null\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": null
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Given the historical price dataset in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv, calculate the ATR value over a rolling window of 14 points and multiply it by 2.0 to get the stop distance.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": \"computed_value\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": "computed_value"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "atr_dynamic_stop",
+      "query": "Find the latest 14 prices in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv, compute the average true range (ATR), and scale it by 2.0 to calculate the dynamic stop loss distance.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"stop_distance\": 0.0\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "chosen_skill_id": "atr_dynamic_stop",
+        "stop_distance": 0.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Load the JSON performance file trade_performance.json from blackbox_os/roles/data_scientist/workflows/mock_data/. Calculate the expected value (EV) of the strategy, factoring in a 5.0 fee per trade.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"metric_name\": \"ev\",\n  \"fee_per_trade\": 5.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "metric_name": "ev",
+        "fee_per_trade": 5.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Using trade_performance.json in mock_data, find the win-rate, average win size, and average loss size. Compute the net EV subtracting a commission fee of 5.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"win_rate\": 0.6,\n  \"avg_win_size\": 150.0,\n  \"avg_loss_size\": -100.0,\n  \"net_ev\": 85.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "win_rate": 0.6,
+        "avg_win_size": 150.0,
+        "avg_loss_size": -100.0,
+        "net_ev": 85.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Extract trade list from blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json. Compute the expected payoff (EV) of a trade after deducting a flat fee of 5.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"ev\": 0.0\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "ev": 0.0
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Find the trade performance metrics in mock_data/trade_performance.json. Count wins and losses to get probabilities, average them, and return the net EV after a 5.0 fee per trade.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"ev\": -1.5\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "ev": -1.5
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate the net expected value (EV) for trades listed in blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json with a flat 5.0 per-trade cost.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"ev\": -1.25\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "chosen_skill_id": "trade_ev_calculator",
+        "ev": -1.25
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Look through the features CSV file blackbox_os/roles/data_scientist/workflows/mock_data/features.csv and scan for lookahead bias. Return true if there is any column leaking future data.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"leakage_detected\": false\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "leakage_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Audit mock_data/features.csv for lookahead bias. Scan the formulas for references to future index values (t+1, etc.) or targets.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"leakage_detected\": false\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "leakage_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Inspect the formulas in blackbox_os/roles/data_scientist/workflows/mock_data/features.csv to see if they reference future information or containing 'target', which would indicate data leakage.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"leakage_detected\": false\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "leakage_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Determine if any feature formula in blackbox_os/roles/data_scientist/workflows/mock_data/features.csv suffers from data leakage (references future offsets or targets).",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"leakage_detected\": false\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "leakage_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check for target leakage or lookahead bias in blackbox_os/roles/data_scientist/workflows/mock_data/features.csv. Look for formulas referencing future periods or 'target'.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"leakage_detected\": false\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "chosen_skill_id": "lookahead_bias_audit",
+        "leakage_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Read the raw returns dataset in blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv and run a population standard scaling normalization on the 'return' column. Output the population mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"metric_name\": \"population_standard_scaling\",\n  \"mean\": \"computed_mean_value\",\n  \"std\": \"computed_std_value\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "metric_name": "population_standard_scaling",
+        "mean": "computed_mean_value",
+        "std": "computed_std_value"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Calculate the population mean and population standard deviation (ddof=0) for standard scaling the 'return' column in mock_data/raw_returns.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"mean\": 0.0123,\n  \"std\": 0.0456\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "mean": 0.0123,
+        "std": 0.0456
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute the z-score normalization parameters (mean and population std) for the returns listed in blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"metric_name\": \"standard_scaler_parameters\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "metric_name": "standard_scaler_parameters"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Determine the population mean and standard deviation of the returns column in blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"metric_name\": \"population_standard_deviation\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "metric_name": "population_standard_deviation"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "standard_scaler_apply",
+      "query": "Retrieve the returns from blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv, apply standard scaling, and return the population mean and standard deviation.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"metric_name\": \"standard_scaler_apply\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "chosen_skill_id": "standard_scaler_apply",
+        "metric_name": "standard_scaler_apply"
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Load the data drift statistics file blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json. Compare the implied_vol's KS metric against its warning threshold to see if drift is detected.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Audit drift_metrics.json in mock_data for feature drift on implied_vol. Check if the KS test score exceeds the warning threshold.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": true\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Read the JSON drift metrics in blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json, look up implied_vol drift status, and determine if it exceeds the alert threshold.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Using blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json, check if the Kolmogorov-Smirnov drift score for implied_vol is greater than its warning threshold.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert",
+      "target_id": "data_drift_monitor",
+      "query": "Determine if there is data drift for implied_vol using the KS score and threshold in blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"data_drift_detected\": false\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "chosen_skill_id": "data_drift_monitor",
+        "data_drift_detected": false
+      },
+      "sandbox_run_info": null,
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Check the trades inside blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv. Filter only BTC/USDT fills, calculate the percentage of winning trades and positive/negative payoff ratio, then compute Kelly bet size for 50000 total capital.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef compute_kelly_fraction(df):\\n    win_rate = len(df[df['realized_pnl'] > 0]) / len(df)\\n    avg_win = df[df['realized_pnl'] > 0]['realized_pnl'].mean()\\n    avg_loss = abs(df[df['realized_pnl'] < 0]['realized_pnl'].mean())\\n    payoff = avg_win / avg_loss if avg_loss != 0 else 0\\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff if payoff != 0 else 0\\n    return fraction\\n\\ndef main():\\n    file_path = 'blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv'\\n    df = pd.read_csv(file_path)\\n    btc_df = df[df['symbol'].str.contains('BTC/USDT')]\\n    \\n    if len(btc_df) == 0:\\n        result = {\\n            \\\"fraction\\\": 0.0,\\n            \\\"amount\\\": 0.0\\n        }\\n    else:\\n        fraction = compute_kelly_fraction(btc_df)\\n        amount = fraction * 50000\\n        result = {\\n            \\\"fraction\\\": fraction,\\n            \\\"amount\\\": amount\\n        }\\n    \\n    print(json.dumps(result))\\n\\nif __name__ == \\\"__main__\\\":\\n    main()\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.375,
+        "amount": 18750.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef compute_kelly_fraction(df):\n    win_rate = len(df[df['realized_pnl'] > 0]) / len(df)\n    avg_win = df[df['realized_pnl'] > 0]['realized_pnl'].mean()\n    avg_loss = abs(df[df['realized_pnl'] < 0]['realized_pnl'].mean())\n    payoff = avg_win / avg_loss if avg_loss != 0 else 0\n    fraction = (win_rate * payoff - (1 - win_rate)) / payoff if payoff != 0 else 0\n    return fraction\n\ndef main():\n    file_path = 'blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv'\n    df = pd.read_csv(file_path)\n    btc_df = df[df['symbol'].str.contains('BTC/USDT')]\n    \n    if len(btc_df) == 0:\n        result = {\n            \"fraction\": 0.0,\n            \"amount\": 0.0\n        }\n    else:\n        fraction = compute_kelly_fraction(btc_df)\n        amount = fraction * 50000\n        result = {\n            \"fraction\": fraction,\n            \"amount\": amount\n        }\n    \n    print(json.dumps(result))\n\nif __name__ == \"__main__\":\n    main()",
+        "result": {
+          "fraction": 0.375,
+          "amount": 18750.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Determine the Kelly positioning size for a total portfolio value of 50000 using the fill logs in blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv. We only care about BTC trades.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef compute_kelly_position(csv_path, bankroll, target_asset):\\n    # Read CSV\\n    df = pd.read_csv(csv_path)\\n    \\n    # Filter for target asset trades (BTC)\\n    btc_trades = df[df['symbol'].str.contains(target_asset, case=False)]\\n    \\n    # Calculate win rate and payoff ratio\\n    positive_pnl = btc_trades[btc_trades['realized_pnl'] > 0]\\n    negative_pnl = btc_trades[btc_trades['realized_pnl'] < 0]\\n    \\n    if len(btc_trades) == 0 or len(positive_pnl) == 0 or len(negative_pnl) == 0:\\n        return {\\\"fraction\\\": 0.0, \\\"amount\\\": 0.0}\\n    \\n    win_rate = len(positive_pnl) / len(btc_trades)\\n    avg_win = positive_pnl['realized_pnl'].mean()\\n    avg_loss = abs(negative_pnl['realized_pnl'].mean())\\n    payoff = avg_win / avg_loss\\n    \\n    # Kelly fraction\\n    kelly_f = (win_rate * payoff - (1 - win_rate)) / payoff\\n    kelly_f = max(0.0, min(kelly_f, 1.0))  # Cap between 0 and 1\\n    \\n    # Dollar amount\\n    amount = kelly_f * bankroll\\n    \\n    return {\\\"fraction\\\": kelly_f, \\\"amount\\\": amount}\\n\\n# Execute\\nresult = compute_kelly_position(\\n    csv_path=\\\"blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv\\\",\\n    bankroll=50000,\\n    target_asset=\\\"BTC\\\"\\n)\\n\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.375,
+        "amount": 18750.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef compute_kelly_position(csv_path, bankroll, target_asset):\n    # Read CSV\n    df = pd.read_csv(csv_path)\n    \n    # Filter for target asset trades (BTC)\n    btc_trades = df[df['symbol'].str.contains(target_asset, case=False)]\n    \n    # Calculate win rate and payoff ratio\n    positive_pnl = btc_trades[btc_trades['realized_pnl'] > 0]\n    negative_pnl = btc_trades[btc_trades['realized_pnl'] < 0]\n    \n    if len(btc_trades) == 0 or len(positive_pnl) == 0 or len(negative_pnl) == 0:\n        return {\"fraction\": 0.0, \"amount\": 0.0}\n    \n    win_rate = len(positive_pnl) / len(btc_trades)\n    avg_win = positive_pnl['realized_pnl'].mean()\n    avg_loss = abs(negative_pnl['realized_pnl'].mean())\n    payoff = avg_win / avg_loss\n    \n    # Kelly fraction\n    kelly_f = (win_rate * payoff - (1 - win_rate)) / payoff\n    kelly_f = max(0.0, min(kelly_f, 1.0))  # Cap between 0 and 1\n    \n    # Dollar amount\n    amount = kelly_f * bankroll\n    \n    return {\"fraction\": kelly_f, \"amount\": amount}\n\n# Execute\nresult = compute_kelly_position(\n    csv_path=\"blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv\",\n    bankroll=50000,\n    target_asset=\"BTC\"\n)\n\nprint(json.dumps(result))",
+        "result": {
+          "fraction": 0.375,
+          "amount": 18750.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Extract the trading fills for BTC from the log grid_bot_fills.csv in mock_data. Calculate the win rate and the average win over absolute average loss, then return the Kelly sizing fraction and total amount for a 50000 bankroll.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\n# Load the CSV file\\ndata = pd.read_csv('grid_bot_fills.csv')\\n\\n# Filter for BTC trades\\nbtc_trades = data[data['symbol'].str.contains('BTC')]\\n\\n# Calculate win rate\\nwin_rate = len(btc_trades[btc_trades['realized_pnl'] > 0]) / len(btc_trades)\\n\\n# Calculate average win and average loss\\navg_win = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl'].mean()\\navg_loss = abs(btc_trades[btc_trades['realized_pnl'] < 0]['realized_pnl'].mean())\\n\\n# Calculate payoff\\npayoff = avg_win / avg_loss\\n\\n# Calculate Kelly fraction\\nkelly_fraction = (win_rate * payoff - (1 - win_rate)) / payoff\\n\\n# Calculate total amount for a 50000 bankroll\\ntotal_amount = kelly_fraction * 50000\\n\\n# Prepare the output\\noutput = {\\n    \\\"fraction\\\": kelly_fraction,\\n    \\\"amount\\\": total_amount\\n}\\n\\n# Print the output as a JSON string\\nprint(json.dumps(output))\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": null,
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\n# Load the CSV file\ndata = pd.read_csv('grid_bot_fills.csv')\n\n# Filter for BTC trades\nbtc_trades = data[data['symbol'].str.contains('BTC')]\n\n# Calculate win rate\nwin_rate = len(btc_trades[btc_trades['realized_pnl'] > 0]) / len(btc_trades)\n\n# Calculate average win and average loss\navg_win = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl'].mean()\navg_loss = abs(btc_trades[btc_trades['realized_pnl'] < 0]['realized_pnl'].mean())\n\n# Calculate payoff\npayoff = avg_win / avg_loss\n\n# Calculate Kelly fraction\nkelly_fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n\n# Calculate total amount for a 50000 bankroll\ntotal_amount = kelly_fraction * 50000\n\n# Prepare the output\noutput = {\n    \"fraction\": kelly_fraction,\n    \"amount\": total_amount\n}\n\n# Print the output as a JSON string\nprint(json.dumps(output))",
+        "result": null
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Using blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv, find out the BTC trading performance. What is the win rate and payoff ratio? What would the Kelly allocation fraction and capital size be for a bankroll of 50000?",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef calculate_kelly_position_size(csv_file, bankroll, target_asset='BTC'):\\n    # Read the CSV file\\n    df = pd.read_csv(csv_file)\\n    \\n    # Filter trades for the target asset (BTC)\\n    btc_trades = df[df['symbol'].str.contains(target_asset, case=False)]\\n    \\n    # Calculate win rate\\n    total_trades = len(btc_trades)\\n    if total_trades == 0:\\n        return {\\\"fraction\\\": 0.0, \\\"amount\\\": 0.0}\\n    \\n    win_rate = len(btc_trades[btc_trades['realized_pnl'] > 0]) / total_trades\\n    \\n    # Calculate payoff ratio (average win / average loss)\\n    avg_win = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl'].mean()\\n    avg_loss = abs(btc_trades[btc_trades['realized_pnl'] < 0]['realized_pnl'].mean())\\n    \\n    if avg_loss == 0:\\n        payoff_ratio = float('inf')\\n    else:\\n        payoff_ratio = avg_win / avg_loss\\n    \\n    # Calculate Kelly fraction\\n    if payoff_ratio == float('inf'):\\n        kelly_fraction = 1.0\\n    else:\\n        kelly_fraction = (win_rate * payoff_ratio - (1 - win_rate)) / payoff_ratio\\n    \\n    # Ensure fraction is between 0 and 1\\n    kelly_fraction = max(0.0, min(kelly_fraction, 1.0))\\n    \\n    # Calculate capital allocation\\n    capital_allocation = kelly_fraction * bankroll\\n    \\n    # Prepare results\\n    results = {\\n        \\\"win_rate\\\": win_rate,\\n        \\\"payoff_ratio\\\": payoff_ratio,\\n        \\\"fraction\\\": kelly_fraction,\\n        \\\"amount\\\": capital_allocation\\n    }\\n    \\n    return results\\n\\n# Example usage\\ncsv_file = \\\"blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv\\\"\\nbankroll = 50000\\nresults = calculate_kelly_position_size(csv_file, bankroll)\\nprint(json.dumps(results))\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "win_rate": 0.6,
+        "payoff_ratio": 1.7777777777777777,
+        "fraction": 0.375,
+        "amount": 18750.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef calculate_kelly_position_size(csv_file, bankroll, target_asset='BTC'):\n    # Read the CSV file\n    df = pd.read_csv(csv_file)\n    \n    # Filter trades for the target asset (BTC)\n    btc_trades = df[df['symbol'].str.contains(target_asset, case=False)]\n    \n    # Calculate win rate\n    total_trades = len(btc_trades)\n    if total_trades == 0:\n        return {\"fraction\": 0.0, \"amount\": 0.0}\n    \n    win_rate = len(btc_trades[btc_trades['realized_pnl'] > 0]) / total_trades\n    \n    # Calculate payoff ratio (average win / average loss)\n    avg_win = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl'].mean()\n    avg_loss = abs(btc_trades[btc_trades['realized_pnl'] < 0]['realized_pnl'].mean())\n    \n    if avg_loss == 0:\n        payoff_ratio = float('inf')\n    else:\n        payoff_ratio = avg_win / avg_loss\n    \n    # Calculate Kelly fraction\n    if payoff_ratio == float('inf'):\n        kelly_fraction = 1.0\n    else:\n        kelly_fraction = (win_rate * payoff_ratio - (1 - win_rate)) / payoff_ratio\n    \n    # Ensure fraction is between 0 and 1\n    kelly_fraction = max(0.0, min(kelly_fraction, 1.0))\n    \n    # Calculate capital allocation\n    capital_allocation = kelly_fraction * bankroll\n    \n    # Prepare results\n    results = {\n        \"win_rate\": win_rate,\n        \"payoff_ratio\": payoff_ratio,\n        \"fraction\": kelly_fraction,\n        \"amount\": capital_allocation\n    }\n    \n    return results\n\n# Example usage\ncsv_file = \"blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv\"\nbankroll = 50000\nresults = calculate_kelly_position_size(csv_file, bankroll)\nprint(json.dumps(results))",
+        "result": {
+          "win_rate": 0.6,
+          "payoff_ratio": 1.7777777777777777,
+          "fraction": 0.375,
+          "amount": 18750.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "kelly_position_size",
+      "query": "Calculate the optimal Kelly fraction and investment amount for a bankroll of 50000 using trade execution records in blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv. Restrict analysis to BTC.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"kelly_position_size\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\n# Load the CSV file\\ndata = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv')\\n\\n# Filter for BTC trades\\nbtc_trades = data[data['symbol'].str.contains('BTC')]\\n\\n# Calculate win rate\\nwin_rate = len(btc_trades[btc_trades['realized_pnl'] > 0]) / len(btc_trades)\\n\\n# Calculate average positive pnl\\navg_positive_pnl = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl'].mean()\\n\\n# Calculate average absolute negative pnl\\navg_negative_pnl = abs(btc_trades[btc_trades['realized_pnl'] < 0]['realized_pnl'].mean())\\n\\n# Calculate payoff\\npayoff = avg_positive_pnl / avg_negative_pnl\\n\\n# Calculate Kelly fraction\\nkelly_fraction = (win_rate * payoff - (1 - win_rate)) / payoff\\n\\n# Calculate investment amount\\nbankroll = 50000\\ninvestment_amount = kelly_fraction * bankroll\\n\\n# Prepare the output\\noutput = {\\n    \\\"fraction\\\": kelly_fraction,\\n    \\\"amount\\\": investment_amount\\n}\\n\\n# Print the output as JSON\\nprint(json.dumps(output))\"\n}\n```",
+      "chosen_tool": "kelly_position_size",
+      "parsed_json": {
+        "fraction": 0.375,
+        "amount": 18750.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\n# Load the CSV file\ndata = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/grid_bot_fills.csv')\n\n# Filter for BTC trades\nbtc_trades = data[data['symbol'].str.contains('BTC')]\n\n# Calculate win rate\nwin_rate = len(btc_trades[btc_trades['realized_pnl'] > 0]) / len(btc_trades)\n\n# Calculate average positive pnl\navg_positive_pnl = btc_trades[btc_trades['realized_pnl'] > 0]['realized_pnl'].mean()\n\n# Calculate average absolute negative pnl\navg_negative_pnl = abs(btc_trades[btc_trades['realized_pnl'] < 0]['realized_pnl'].mean())\n\n# Calculate payoff\npayoff = avg_positive_pnl / avg_negative_pnl\n\n# Calculate Kelly fraction\nkelly_fraction = (win_rate * payoff - (1 - win_rate)) / payoff\n\n# Calculate investment amount\nbankroll = 50000\ninvestment_amount = kelly_fraction * bankroll\n\n# Prepare the output\noutput = {\n    \"fraction\": kelly_fraction,\n    \"amount\": investment_amount\n}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "result": {
+          "fraction": 0.375,
+          "amount": 18750.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Using the price feed in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv, calculate the Average True Range (ATR) over 14 rows, and set a trailing stop distance with a factor of 2.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef calculate_atr_dynamic_stop(csv_file_path, multiplier=2.0, window=14):\\n    # Read the CSV file\\n    df = pd.read_csv(csv_file_path)\\n    \\n    # Calculate True Range (TR)\\n    df['prev_close'] = df['close'].shift(1)\\n    df['tr1'] = df['high'] - df['low']\\n    df['tr2'] = abs(df['high'] - df['prev_close'])\\n    df['tr3'] = abs(df['low'] - df['prev_close'])\\n    df['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\\n    \\n    # Calculate ATR\\n    df['atr'] = df['tr'].rolling(window=window).mean()\\n    \\n    # Calculate stop distance\\n    stop_distance = df['atr'].iloc[-1] * multiplier\\n    \\n    return stop_distance\\n\\n# Example usage:\\ncsv_file_path = \\\"blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv\\\"\\nstop_distance = calculate_atr_dynamic_stop(csv_file_path, multiplier=2.0, window=14)\\n\\n# Output the result as JSON\\nprint(json.dumps({\\\"stop_distance\\\": stop_distance}))\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "stop_distance": 20.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef calculate_atr_dynamic_stop(csv_file_path, multiplier=2.0, window=14):\n    # Read the CSV file\n    df = pd.read_csv(csv_file_path)\n    \n    # Calculate True Range (TR)\n    df['prev_close'] = df['close'].shift(1)\n    df['tr1'] = df['high'] - df['low']\n    df['tr2'] = abs(df['high'] - df['prev_close'])\n    df['tr3'] = abs(df['low'] - df['prev_close'])\n    df['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\n    \n    # Calculate ATR\n    df['atr'] = df['tr'].rolling(window=window).mean()\n    \n    # Calculate stop distance\n    stop_distance = df['atr'].iloc[-1] * multiplier\n    \n    return stop_distance\n\n# Example usage:\ncsv_file_path = \"blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv\"\nstop_distance = calculate_atr_dynamic_stop(csv_file_path, multiplier=2.0, window=14)\n\n# Output the result as JSON\nprint(json.dumps({\"stop_distance\": stop_distance}))",
+        "result": {
+          "stop_distance": 20.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Determine the stop distance (factor 2.0) from the ATR of the last 14 candlesticks in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\n# Read the CSV file\\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv')\\n\\n# Calculate True Range (TR)\\ndf['prev_close'] = df['close'].shift(1)\\ndf['tr1'] = df['high'] - df['low']\\ndf['tr2'] = abs(df['high'] - df['prev_close'])\\ndf['tr3'] = abs(df['low'] - df['prev_close'])\\ndf['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\\n\\n# Calculate ATR (14-period simple moving average of TR)\\natr = df['tr'].rolling(window=14).mean().iloc[-1]\\n\\n# Calculate stop distance (ATR * multiplier)\\nstop_distance = atr * 2.0\\n\\n# Prepare and print the output\\noutput = {\\n    \\\"stop_distance\\\": stop_distance\\n}\\nprint(json.dumps(output))\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "stop_distance": 20.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\n# Read the CSV file\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv')\n\n# Calculate True Range (TR)\ndf['prev_close'] = df['close'].shift(1)\ndf['tr1'] = df['high'] - df['low']\ndf['tr2'] = abs(df['high'] - df['prev_close'])\ndf['tr3'] = abs(df['low'] - df['prev_close'])\ndf['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\n\n# Calculate ATR (14-period simple moving average of TR)\natr = df['tr'].rolling(window=14).mean().iloc[-1]\n\n# Calculate stop distance (ATR * multiplier)\nstop_distance = atr * 2.0\n\n# Prepare and print the output\noutput = {\n    \"stop_distance\": stop_distance\n}\nprint(json.dumps(output))",
+        "result": {
+          "stop_distance": 20.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Compute the ATR (14 periods) for eth_usd_prices.csv under mock_data. Using a multiplier of 2.0, what is the trailing stop loss distance?",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import pandas as pd\\nimport numpy as np\\n\\n# Load the CSV file\\ndata = pd.read_csv('eth_usd_prices.csv')\\n\\n# Calculate True Range (TR)\\ndata['TR'] = np.maximum(data['high'] - data['low'], np.maximum(np.abs(data['high'] - data['close'].shift(1)), np.abs(data['low'] - data['close'].shift(1))))\\n\\n# Calculate ATR (14 periods)\\ndata['ATR'] = data['TR'].rolling(window=14).mean()\\n\\n# Calculate trailing stop distance\\nmultiplier = 2.0\\nstop_distance = data['ATR'].iloc[-1] * multiplier\\n\\n# Output the result\\nprint({\\\"stop_distance\\\": stop_distance})\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": null,
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport numpy as np\n\n# Load the CSV file\ndata = pd.read_csv('eth_usd_prices.csv')\n\n# Calculate True Range (TR)\ndata['TR'] = np.maximum(data['high'] - data['low'], np.maximum(np.abs(data['high'] - data['close'].shift(1)), np.abs(data['low'] - data['close'].shift(1))))\n\n# Calculate ATR (14 periods)\ndata['ATR'] = data['TR'].rolling(window=14).mean()\n\n# Calculate trailing stop distance\nmultiplier = 2.0\nstop_distance = data['ATR'].iloc[-1] * multiplier\n\n# Output the result\nprint({\"stop_distance\": stop_distance})",
+        "result": null
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Given the historical price dataset in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv, calculate the ATR value over a rolling window of 14 points and multiply it by 2.0 to get the stop distance.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef calculate_atr_stop_distance(csv_path):\\n    df = pd.read_csv(csv_path)\\n    df['close_prev'] = df['close'].shift(1)\\n    df['tr1'] = df['high'] - df['low']\\n    df['tr2'] = abs(df['high'] - df['close_prev'])\\n    df['tr3'] = abs(df['low'] - df['close_prev'])\\n    df['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\\n    atr = df['tr'].rolling(window=14).mean().iloc[-1]\\n    stop_distance = atr * 2.0\\n    return stop_distance\\n\\nstop_distance = calculate_atr_stop_distance('blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv')\\nprint(json.dumps({\\\"stop_distance\\\": stop_distance}))\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "stop_distance": 20.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef calculate_atr_stop_distance(csv_path):\n    df = pd.read_csv(csv_path)\n    df['close_prev'] = df['close'].shift(1)\n    df['tr1'] = df['high'] - df['low']\n    df['tr2'] = abs(df['high'] - df['close_prev'])\n    df['tr3'] = abs(df['low'] - df['close_prev'])\n    df['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\n    atr = df['tr'].rolling(window=14).mean().iloc[-1]\n    stop_distance = atr * 2.0\n    return stop_distance\n\nstop_distance = calculate_atr_stop_distance('blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv')\nprint(json.dumps({\"stop_distance\": stop_distance}))",
+        "result": {
+          "stop_distance": 20.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "atr_dynamic_stop",
+      "query": "Find the latest 14 prices in blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv, compute the average true range (ATR), and scale it by 2.0 to calculate the dynamic stop loss distance.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"atr_dynamic_stop\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\n# Read the CSV file\\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv')\\n\\n# Ensure the DataFrame has the required columns\\nrequired_columns = ['timestamp', 'high', 'low', 'close']\\nif not all(col in df.columns for col in required_columns):\\n    raise ValueError(\\\"CSV file must contain 'timestamp', 'high', 'low', and 'close' columns\\\")\\n\\n# Calculate True Range (TR)\\ndf['close_prev'] = df['close'].shift(1)\\ndf['tr1'] = df['high'] - df['low']\\ndf['tr2'] = abs(df['high'] - df['close_prev'])\\ndf['tr3'] = abs(df['low'] - df['close_prev'])\\ndf['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\\n\\n# Calculate ATR over the last 14 periods\\natr = df['tr'].tail(14).mean()\\n\\n# Calculate stop distance (ATR * 2.0)\\nstop_distance = atr * 2.0\\n\\n# Prepare the output\\noutput = {\\n    \\\"stop_distance\\\": stop_distance\\n}\\n\\n# Print the output as JSON\\nprint(json.dumps(output))\"\n}\n```",
+      "chosen_tool": "atr_dynamic_stop",
+      "parsed_json": {
+        "stop_distance": 20.0
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\n# Read the CSV file\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/eth_usd_prices.csv')\n\n# Ensure the DataFrame has the required columns\nrequired_columns = ['timestamp', 'high', 'low', 'close']\nif not all(col in df.columns for col in required_columns):\n    raise ValueError(\"CSV file must contain 'timestamp', 'high', 'low', and 'close' columns\")\n\n# Calculate True Range (TR)\ndf['close_prev'] = df['close'].shift(1)\ndf['tr1'] = df['high'] - df['low']\ndf['tr2'] = abs(df['high'] - df['close_prev'])\ndf['tr3'] = abs(df['low'] - df['close_prev'])\ndf['tr'] = df[['tr1', 'tr2', 'tr3']].max(axis=1)\n\n# Calculate ATR over the last 14 periods\natr = df['tr'].tail(14).mean()\n\n# Calculate stop distance (ATR * 2.0)\nstop_distance = atr * 2.0\n\n# Prepare the output\noutput = {\n    \"stop_distance\": stop_distance\n}\n\n# Print the output as JSON\nprint(json.dumps(output))",
+        "result": {
+          "stop_distance": 20.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Load the JSON performance file trade_performance.json from blackbox_os/roles/data_scientist/workflows/mock_data/. Calculate the expected value (EV) of the strategy, factoring in a 5.0 fee per trade.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\ndef calculate_ev(file_path, fee):\\n    with open(file_path, 'r') as f:\\n        data = json.load(f)\\n    \\n    trades = data.get('trades', [])\\n    if not trades:\\n        return {\\\"ev\\\": 0.0}\\n    \\n    positive_returns = []\\n    negative_returns = []\\n    \\n    for trade in trades:\\n        trade_return = trade.get('return', 0.0)\\n        if trade_return > 0:\\n            positive_returns.append(trade_return)\\n        else:\\n            negative_returns.append(trade_return)\\n    \\n    total_trades = len(trades)\\n    win_prob = len(positive_returns) / total_trades if total_trades > 0 else 0.0\\n    win_return = sum(positive_returns) / len(positive_returns) if positive_returns else 0.0\\n    loss_return = sum(negative_returns) / len(negative_returns) if negative_returns else 0.0\\n    \\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n    \\n    return {\\\"ev\\\": ev}\\n\\n# Example usage\\nfile_path = \\\"blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json\\\"\\nfee = 5.0\\nresult = calculate_ev(file_path, fee)\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef calculate_ev(file_path, fee):\n    with open(file_path, 'r') as f:\n        data = json.load(f)\n    \n    trades = data.get('trades', [])\n    if not trades:\n        return {\"ev\": 0.0}\n    \n    positive_returns = []\n    negative_returns = []\n    \n    for trade in trades:\n        trade_return = trade.get('return', 0.0)\n        if trade_return > 0:\n            positive_returns.append(trade_return)\n        else:\n            negative_returns.append(trade_return)\n    \n    total_trades = len(trades)\n    win_prob = len(positive_returns) / total_trades if total_trades > 0 else 0.0\n    win_return = sum(positive_returns) / len(positive_returns) if positive_returns else 0.0\n    loss_return = sum(negative_returns) / len(negative_returns) if negative_returns else 0.0\n    \n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n    \n    return {\"ev\": ev}\n\n# Example usage\nfile_path = \"blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json\"\nfee = 5.0\nresult = calculate_ev(file_path, fee)\nprint(json.dumps(result))",
+        "result": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Using trade_performance.json in mock_data, find the win-rate, average win size, and average loss size. Compute the net EV subtracting a commission fee of 5.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\nimport sys\\n\\n# Load the trade performance data\\nwith open('trade_performance.json', 'r') as f:\\n    data = json.load(f)\\n\\ntrades = data['trades']\\n\\n# Calculate win rate, average win size, and average loss size\\nwinning_trades = [trade for trade in trades if trade['return'] > 0]\\nlosing_trades = [trade for trade in trades if trade['return'] <= 0]\\n\\nwin_rate = len(winning_trades) / len(trades) if trades else 0\\navg_win = sum(trade['return'] for trade in winning_trades) / len(winning_trades) if winning_trades else 0\\navg_loss = sum(trade['return'] for trade in losing_trades) / len(losing_trades) if losing_trades else 0\\n\\n# Calculate net expected value with commission fee\\nfee = 5.0\\nev = (win_rate * (avg_win - fee)) + ((1 - win_rate) * (avg_loss - fee))\\n\\n# Output the result\\nprint(json.dumps({\\\"ev\\\": ev}))\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": null,
+      "sandbox_run_info": {
+        "code": "import json\nimport sys\n\n# Load the trade performance data\nwith open('trade_performance.json', 'r') as f:\n    data = json.load(f)\n\ntrades = data['trades']\n\n# Calculate win rate, average win size, and average loss size\nwinning_trades = [trade for trade in trades if trade['return'] > 0]\nlosing_trades = [trade for trade in trades if trade['return'] <= 0]\n\nwin_rate = len(winning_trades) / len(trades) if trades else 0\navg_win = sum(trade['return'] for trade in winning_trades) / len(winning_trades) if winning_trades else 0\navg_loss = sum(trade['return'] for trade in losing_trades) / len(losing_trades) if losing_trades else 0\n\n# Calculate net expected value with commission fee\nfee = 5.0\nev = (win_rate * (avg_win - fee)) + ((1 - win_rate) * (avg_loss - fee))\n\n# Output the result\nprint(json.dumps({\"ev\": ev}))",
+        "result": null
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Extract trade list from blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json. Compute the expected payoff (EV) of a trade after deducting a flat fee of 5.0.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\ndef compute_ev(trades, fee):\\n    win_prob = sum(1 for trade in trades if trade['return'] > 0) / len(trades)\\n    win_return = sum(trade['return'] for trade in trades if trade['return'] > 0) / sum(1 for trade in trades if trade['return'] > 0)\\n    loss_return = sum(trade['return'] for trade in trades if trade['return'] <= 0) / sum(1 for trade in trades if trade['return'] <= 0)\\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\\n    return ev\\n\\nwith open('blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json', 'r') as file:\\n    data = json.load(file)\\n    trades = data['trades']\\n    fee = 5.0\\n    ev = compute_ev(trades, fee)\\n    print(json.dumps({'ev': ev}))\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef compute_ev(trades, fee):\n    win_prob = sum(1 for trade in trades if trade['return'] > 0) / len(trades)\n    win_return = sum(trade['return'] for trade in trades if trade['return'] > 0) / sum(1 for trade in trades if trade['return'] > 0)\n    loss_return = sum(trade['return'] for trade in trades if trade['return'] <= 0) / sum(1 for trade in trades if trade['return'] <= 0)\n    ev = (win_prob * (win_return - fee)) + ((1 - win_prob) * (loss_return - fee))\n    return ev\n\nwith open('blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json', 'r') as file:\n    data = json.load(file)\n    trades = data['trades']\n    fee = 5.0\n    ev = compute_ev(trades, fee)\n    print(json.dumps({'ev': ev}))",
+        "result": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Find the trade performance metrics in mock_data/trade_performance.json. Count wins and losses to get probabilities, average them, and return the net EV after a 5.0 fee per trade.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\ndef calculate_ev(file_path, fee):\\n    with open(file_path, 'r') as f:\\n        data = json.load(f)\\n    \\n    trades = data.get('trades', [])\\n    if not trades:\\n        return {\\\"ev\\\": 0.0}\\n    \\n    positive_returns = []\\n    negative_returns = []\\n    \\n    for trade in trades:\\n        trade_return = trade.get('return', 0.0)\\n        if trade_return > 0:\\n            positive_returns.append(trade_return)\\n        else:\\n            negative_returns.append(trade_return)\\n    \\n    win_prob = len(positive_returns) / len(trades)\\n    loss_prob = 1 - win_prob\\n    \\n    avg_win = sum(positive_returns) / len(positive_returns) if positive_returns else 0.0\\n    avg_loss = sum(negative_returns) / len(negative_returns) if negative_returns else 0.0\\n    \\n    ev = (win_prob * (avg_win - fee)) + (loss_prob * (avg_loss - fee))\\n    \\n    return {\\\"ev\\\": ev}\\n\\nresult = calculate_ev(\\\"mock_data/trade_performance.json\\\", 5.0)\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef calculate_ev(file_path, fee):\n    with open(file_path, 'r') as f:\n        data = json.load(f)\n    \n    trades = data.get('trades', [])\n    if not trades:\n        return {\"ev\": 0.0}\n    \n    positive_returns = []\n    negative_returns = []\n    \n    for trade in trades:\n        trade_return = trade.get('return', 0.0)\n        if trade_return > 0:\n            positive_returns.append(trade_return)\n        else:\n            negative_returns.append(trade_return)\n    \n    win_prob = len(positive_returns) / len(trades)\n    loss_prob = 1 - win_prob\n    \n    avg_win = sum(positive_returns) / len(positive_returns) if positive_returns else 0.0\n    avg_loss = sum(negative_returns) / len(negative_returns) if negative_returns else 0.0\n    \n    ev = (win_prob * (avg_win - fee)) + (loss_prob * (avg_loss - fee))\n    \n    return {\"ev\": ev}\n\nresult = calculate_ev(\"mock_data/trade_performance.json\", 5.0)\nprint(json.dumps(result))",
+        "result": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "trade_ev_calculator",
+      "query": "Calculate the net expected value (EV) for trades listed in blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json with a flat 5.0 per-trade cost.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"trade_ev_calculator\",\n  \"python_code\": \"import json\\n\\ndef calculate_ev(trades, fee):\\n    positive_returns = []\\n    negative_returns = []\\n    \\n    for trade in trades:\\n        net_return = trade['return'] - fee\\n        if net_return > 0:\\n            positive_returns.append(net_return)\\n        else:\\n            negative_returns.append(net_return)\\n    \\n    win_prob = len(positive_returns) / len(trades) if trades else 0\\n    win_return = sum(positive_returns) / len(positive_returns) if positive_returns else 0\\n    loss_return = sum(negative_returns) / len(negative_returns) if negative_returns else 0\\n    \\n    ev = (win_prob * win_return) + ((1 - win_prob) * loss_return)\\n    return ev\\n\\n# Load trade data\\nwith open('blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json', 'r') as f:\\n    data = json.load(f)\\n    trades = data['trades']\\n\\n# Calculate EV with $5.0 fee per trade\\nev = calculate_ev(trades, 5.0)\\n\\n# Output result\\nprint(json.dumps({\\\"ev\\\": ev}))\"\n}\n```",
+      "chosen_tool": "trade_ev_calculator",
+      "parsed_json": {
+        "ev": 75.0
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef calculate_ev(trades, fee):\n    positive_returns = []\n    negative_returns = []\n    \n    for trade in trades:\n        net_return = trade['return'] - fee\n        if net_return > 0:\n            positive_returns.append(net_return)\n        else:\n            negative_returns.append(net_return)\n    \n    win_prob = len(positive_returns) / len(trades) if trades else 0\n    win_return = sum(positive_returns) / len(positive_returns) if positive_returns else 0\n    loss_return = sum(negative_returns) / len(negative_returns) if negative_returns else 0\n    \n    ev = (win_prob * win_return) + ((1 - win_prob) * loss_return)\n    return ev\n\n# Load trade data\nwith open('blackbox_os/roles/data_scientist/workflows/mock_data/trade_performance.json', 'r') as f:\n    data = json.load(f)\n    trades = data['trades']\n\n# Calculate EV with $5.0 fee per trade\nev = calculate_ev(trades, 5.0)\n\n# Output result\nprint(json.dumps({\"ev\": ev}))",
+        "result": {
+          "ev": 75.0
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Look through the features CSV file blackbox_os/roles/data_scientist/workflows/mock_data/features.csv and scan for lookahead bias. Return true if there is any column leaking future data.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef check_lookahead_bias(csv_path):\\n    try:\\n        df = pd.read_csv(csv_path)\\n        if 'formula' not in df.columns:\\n            return {\\\"leakage_detected\\\": False}\\n        \\n        for formula in df['formula'].astype(str):\\n            if 't+' in formula.lower() or 'target' in formula.lower():\\n                return {\\\"leakage_detected\\\": True}\\n        \\n        return {\\\"leakage_detected\\\": False}\\n    except Exception as e:\\n        return {\\\"error\\\": str(e)}\\n\\nresult = check_lookahead_bias(\\\"blackbox_os/roles/data_scientist/workflows/mock_data/features.csv\\\")\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef check_lookahead_bias(csv_path):\n    try:\n        df = pd.read_csv(csv_path)\n        if 'formula' not in df.columns:\n            return {\"leakage_detected\": False}\n        \n        for formula in df['formula'].astype(str):\n            if 't+' in formula.lower() or 'target' in formula.lower():\n                return {\"leakage_detected\": True}\n        \n        return {\"leakage_detected\": False}\n    except Exception as e:\n        return {\"error\": str(e)}\n\nresult = check_lookahead_bias(\"blackbox_os/roles/data_scientist/workflows/mock_data/features.csv\")\nprint(json.dumps(result))",
+        "result": {
+          "leakage_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Audit mock_data/features.csv for lookahead bias. Scan the formulas for references to future index values (t+1, etc.) or targets.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef check_lookahead_bias(file_path):\\n    try:\\n        df = pd.read_csv(file_path)\\n        leakage_detected = False\\n        \\n        if 'formula' in df.columns:\\n            for formula in df['formula']:\\n                if isinstance(formula, str):\\n                    if 't+' in formula.lower() or 'target' in formula.lower():\\n                        leakage_detected = True\\n                        break\\n        \\n        return {\\\"leakage_detected\\\": leakage_detected}\\n    except Exception as e:\\n        return {\\\"error\\\": str(e)}\\n\\nresult = check_lookahead_bias(\\\"mock_data/features.csv\\\")\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef check_lookahead_bias(file_path):\n    try:\n        df = pd.read_csv(file_path)\n        leakage_detected = False\n        \n        if 'formula' in df.columns:\n            for formula in df['formula']:\n                if isinstance(formula, str):\n                    if 't+' in formula.lower() or 'target' in formula.lower():\n                        leakage_detected = True\n                        break\n        \n        return {\"leakage_detected\": leakage_detected}\n    except Exception as e:\n        return {\"error\": str(e)}\n\nresult = check_lookahead_bias(\"mock_data/features.csv\")\nprint(json.dumps(result))",
+        "result": {
+          "leakage_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Inspect the formulas in blackbox_os/roles/data_scientist/workflows/mock_data/features.csv to see if they reference future information or containing 'target', which would indicate data leakage.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef check_leakage(csv_path):\\n    try:\\n        df = pd.read_csv(csv_path)\\n        if 'formula' not in df.columns:\\n            return {\\\"leakage_detected\\\": False}\\n            \\n        leakage_detected = False\\n        for formula in df['formula']:\\n            if pd.isna(formula):\\n                continue\\n            if 'target' in str(formula).lower():\\n                leakage_detected = True\\n                break\\n            if any(f't+{i}' in str(formula).lower() for i in range(1, 100)):\\n                leakage_detected = True\\n                break\\n        \\n        return {\\\"leakage_detected\\\": leakage_detected}\\n    except Exception as e:\\n        return {\\\"error\\\": str(e)}\\n\\n# Example usage\\nresult = check_leakage('blackbox_os/roles/data_scientist/workflows/mock_data/features.csv')\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef check_leakage(csv_path):\n    try:\n        df = pd.read_csv(csv_path)\n        if 'formula' not in df.columns:\n            return {\"leakage_detected\": False}\n            \n        leakage_detected = False\n        for formula in df['formula']:\n            if pd.isna(formula):\n                continue\n            if 'target' in str(formula).lower():\n                leakage_detected = True\n                break\n            if any(f't+{i}' in str(formula).lower() for i in range(1, 100)):\n                leakage_detected = True\n                break\n        \n        return {\"leakage_detected\": leakage_detected}\n    except Exception as e:\n        return {\"error\": str(e)}\n\n# Example usage\nresult = check_leakage('blackbox_os/roles/data_scientist/workflows/mock_data/features.csv')\nprint(json.dumps(result))",
+        "result": {
+          "leakage_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Determine if any feature formula in blackbox_os/roles/data_scientist/workflows/mock_data/features.csv suffers from data leakage (references future offsets or targets).",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\nimport json\\nimport sys\\n\\ndef check_leakage(csv_file):\\n    try:\\n        df = pd.read_csv(csv_file)\\n        leakage_detected = False\\n        \\n        if 'formula' not in df.columns:\\n            return {\\\"leakage_detected\\\": False}\\n            \\n        for formula in df['formula']:\\n            if pd.isna(formula):\\n                continue\\n            if any(f\\\"t+{i}\\\" in str(formula).lower() for i in range(1, 100)) or 'target' in str(formula).lower():\\n                leakage_detected = True\\n                break\\n        \\n        return {\\\"leakage_detected\\\": leakage_detected}\\n    except Exception as e:\\n        return {\\\"error\\\": str(e)}\\n\\nif __name__ == \\\"__main__\\\":\\n    if len(sys.argv) != 2:\\n        print(json.dumps({\\\"error\\\": \\\"Usage: python script.py <features_csv_path>\\\"}))\\n        sys.exit(1)\\n    \\n    result = check_leakage(sys.argv[1])\\n    print(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "error": "Usage: python script.py <features_csv_path>"
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\nimport sys\n\ndef check_leakage(csv_file):\n    try:\n        df = pd.read_csv(csv_file)\n        leakage_detected = False\n        \n        if 'formula' not in df.columns:\n            return {\"leakage_detected\": False}\n            \n        for formula in df['formula']:\n            if pd.isna(formula):\n                continue\n            if any(f\"t+{i}\" in str(formula).lower() for i in range(1, 100)) or 'target' in str(formula).lower():\n                leakage_detected = True\n                break\n        \n        return {\"leakage_detected\": leakage_detected}\n    except Exception as e:\n        return {\"error\": str(e)}\n\nif __name__ == \"__main__\":\n    if len(sys.argv) != 2:\n        print(json.dumps({\"error\": \"Usage: python script.py <features_csv_path>\"}))\n        sys.exit(1)\n    \n    result = check_leakage(sys.argv[1])\n    print(json.dumps(result))",
+        "result": {
+          "error": "Usage: python script.py <features_csv_path>"
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "lookahead_bias_audit",
+      "query": "Check for target leakage or lookahead bias in blackbox_os/roles/data_scientist/workflows/mock_data/features.csv. Look for formulas referencing future periods or 'target'.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"lookahead_bias_audit\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\n# Load the CSV file\\ndata = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/features.csv')\\n\\n# Initialize result\\nleakage_detected = False\\n\\n# Check each formula for lookahead bias\\nfor formula in data['formula']:\\n    if isinstance(formula, str):\\n        # Check for future references (t+1, t+2, etc.) or 'target' in formula\\n        if any(f't+{i}' in formula.lower() for i in range(1, 10)) or 'target' in formula.lower():\\n            leakage_detected = True\\n            break\\n\\n# Output the result\\nprint(json.dumps({\\\"leakage_detected\\\": leakage_detected}))\"\n}\n```",
+      "chosen_tool": "lookahead_bias_audit",
+      "parsed_json": {
+        "leakage_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\n# Load the CSV file\ndata = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/features.csv')\n\n# Initialize result\nleakage_detected = False\n\n# Check each formula for lookahead bias\nfor formula in data['formula']:\n    if isinstance(formula, str):\n        # Check for future references (t+1, t+2, etc.) or 'target' in formula\n        if any(f't+{i}' in formula.lower() for i in range(1, 10)) or 'target' in formula.lower():\n            leakage_detected = True\n            break\n\n# Output the result\nprint(json.dumps({\"leakage_detected\": leakage_detected}))",
+        "result": {
+          "leakage_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Read the raw returns dataset in blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv and run a population standard scaling normalization on the 'return' column. Output the population mean and std.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\n# Load the dataset\\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv')\\n\\n# Calculate population mean and std\\nmean = df['return'].mean()\\nstd = df['return'].std(ddof=0)\\n\\n# Output the results\\nresult = {'mean': mean, 'std': std}\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\n# Load the dataset\ndf = pd.read_csv('blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv')\n\n# Calculate population mean and std\nmean = df['return'].mean()\nstd = df['return'].std(ddof=0)\n\n# Output the results\nresult = {'mean': mean, 'std': std}\nprint(json.dumps(result))",
+        "result": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Calculate the population mean and population standard deviation (ddof=0) for standard scaling the 'return' column in mock_data/raw_returns.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import pandas as pd\\nimport json\\nimport sys\\n\\ndef compute_standard_scaler(csv_path):\\n    try:\\n        df = pd.read_csv(csv_path)\\n        if 'return' not in df.columns:\\n            raise ValueError(\\\"CSV must contain a 'return' column\\\")\\n        \\n        mean = df['return'].mean()\\n        std = df['return'].std(ddof=0)\\n        \\n        result = {\\n            \\\"mean\\\": float(mean),\\n            \\\"std\\\": float(std)\\n        }\\n        print(json.dumps(result))\\n    except Exception as e:\\n        print(json.dumps({\\\"error\\\": str(e)}), file=sys.stderr)\\n        sys.exit(1)\\n\\nif __name__ == \\\"__main__\\\":\\n    if len(sys.argv) != 2:\\n        print(json.dumps({\\\"error\\\": \\\"Usage: python script.py <csv_path>\\\"}), file=sys.stderr)\\n        sys.exit(1)\\n    compute_standard_scaler(sys.argv[1])\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": null,
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\nimport sys\n\ndef compute_standard_scaler(csv_path):\n    try:\n        df = pd.read_csv(csv_path)\n        if 'return' not in df.columns:\n            raise ValueError(\"CSV must contain a 'return' column\")\n        \n        mean = df['return'].mean()\n        std = df['return'].std(ddof=0)\n        \n        result = {\n            \"mean\": float(mean),\n            \"std\": float(std)\n        }\n        print(json.dumps(result))\n    except Exception as e:\n        print(json.dumps({\"error\": str(e)}), file=sys.stderr)\n        sys.exit(1)\n\nif __name__ == \"__main__\":\n    if len(sys.argv) != 2:\n        print(json.dumps({\"error\": \"Usage: python script.py <csv_path>\"}), file=sys.stderr)\n        sys.exit(1)\n    compute_standard_scaler(sys.argv[1])",
+        "result": null
+      },
+      "selection_ok": true,
+      "execution_ok": false,
+      "schema_ok": true,
+      "e2e_ok": false
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Compute the z-score normalization parameters (mean and population std) for the returns listed in blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import pandas as pd\\nimport json\\nimport sys\\n\\ndef compute_standard_scaler_params(csv_path):\\n    try:\\n        df = pd.read_csv(csv_path)\\n        if 'return' not in df.columns:\\n            return {'error': \\\"Column 'return' not found in CSV\\\"}\\n        \\n        mean = df['return'].mean()\\n        std = df['return'].std(ddof=0)  # Population std (ddof=0)\\n        \\n        return {'mean': float(mean), 'std': float(std)}\\n    except Exception as e:\\n        return {'error': str(e)}\\n\\nif __name__ == \\\"__main__\\\":\\n    # For testing, you can pass the path as an argument\\n    # In production, the system will handle the file path\\n    csv_path = 'blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv'\\n    result = compute_standard_scaler_params(csv_path)\\n    print(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\nimport sys\n\ndef compute_standard_scaler_params(csv_path):\n    try:\n        df = pd.read_csv(csv_path)\n        if 'return' not in df.columns:\n            return {'error': \"Column 'return' not found in CSV\"}\n        \n        mean = df['return'].mean()\n        std = df['return'].std(ddof=0)  # Population std (ddof=0)\n        \n        return {'mean': float(mean), 'std': float(std)}\n    except Exception as e:\n        return {'error': str(e)}\n\nif __name__ == \"__main__\":\n    # For testing, you can pass the path as an argument\n    # In production, the system will handle the file path\n    csv_path = 'blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv'\n    result = compute_standard_scaler_params(csv_path)\n    print(json.dumps(result))",
+        "result": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Determine the population mean and standard deviation of the returns column in blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import pandas as pd\\nimport json\\n\\ndef compute_stats(csv_path):\\n    df = pd.read_csv(csv_path)\\n    mean = df['return'].mean()\\n    std = df['return'].std(ddof=0)  # Population std\\n    return {\\\"mean\\\": float(mean), \\\"std\\\": float(std)}\\n\\nif __name__ == \\\"__main__\\\":\\n    stats = compute_stats(\\\"blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv\\\")\\n    print(json.dumps(stats))\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\n\ndef compute_stats(csv_path):\n    df = pd.read_csv(csv_path)\n    mean = df['return'].mean()\n    std = df['return'].std(ddof=0)  # Population std\n    return {\"mean\": float(mean), \"std\": float(std)}\n\nif __name__ == \"__main__\":\n    stats = compute_stats(\"blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv\")\n    print(json.dumps(stats))",
+        "result": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "standard_scaler_apply",
+      "query": "Retrieve the returns from blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv, apply standard scaling, and return the population mean and standard deviation.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"standard_scaler_apply\",\n  \"python_code\": \"import pandas as pd\\nimport json\\nimport sys\\n\\ndef compute_standard_scaler(csv_path):\\n    try:\\n        df = pd.read_csv(csv_path)\\n        \\n        if 'return' not in df.columns:\\n            return {\\\"error\\\": \\\"CSV must contain a 'return' column\\\"}\\n            \\n        returns = df['return'].dropna()\\n        mean = returns.mean()\\n        std = returns.std(ddof=0)  # Population std (ddof=0)\\n        \\n        return {\\\"mean\\\": float(mean), \\\"std\\\": float(std)}\\n    except Exception as e:\\n        return {\\\"error\\\": str(e)}\\n\\nif __name__ == \\\"__main__\\\":\\n    input_csv = \\\"blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv\\\"\\n    result = compute_standard_scaler(input_csv)\\n    print(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "standard_scaler_apply",
+      "parsed_json": {
+        "mean": 31.4,
+        "std": 15.02797391533536
+      },
+      "sandbox_run_info": {
+        "code": "import pandas as pd\nimport json\nimport sys\n\ndef compute_standard_scaler(csv_path):\n    try:\n        df = pd.read_csv(csv_path)\n        \n        if 'return' not in df.columns:\n            return {\"error\": \"CSV must contain a 'return' column\"}\n            \n        returns = df['return'].dropna()\n        mean = returns.mean()\n        std = returns.std(ddof=0)  # Population std (ddof=0)\n        \n        return {\"mean\": float(mean), \"std\": float(std)}\n    except Exception as e:\n        return {\"error\": str(e)}\n\nif __name__ == \"__main__\":\n    input_csv = \"blackbox_os/roles/data_scientist/workflows/mock_data/raw_returns.csv\"\n    result = compute_standard_scaler(input_csv)\n    print(json.dumps(result))",
+        "result": {
+          "mean": 31.4,
+          "std": 15.02797391533536
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Load the data drift statistics file blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json. Compare the implied_vol's KS metric against its warning threshold to see if drift is detected.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\ndef check_drift(metrics_path):\\n    with open(metrics_path, 'r') as f:\\n        data = json.load(f)\\n    \\n    ks_score = data['metrics']['implied_vol']['ks_score']\\n    warning_threshold = data['metrics']['implied_vol']['warning_threshold']\\n    \\n    data_drift_detected = ks_score > warning_threshold\\n    \\n    return {\\\"data_drift_detected\\\": data_drift_detected}\\n\\nresult = check_drift(\\\"blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json\\\")\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef check_drift(metrics_path):\n    with open(metrics_path, 'r') as f:\n        data = json.load(f)\n    \n    ks_score = data['metrics']['implied_vol']['ks_score']\n    warning_threshold = data['metrics']['implied_vol']['warning_threshold']\n    \n    data_drift_detected = ks_score > warning_threshold\n    \n    return {\"data_drift_detected\": data_drift_detected}\n\nresult = check_drift(\"blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json\")\nprint(json.dumps(result))",
+        "result": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Audit drift_metrics.json in mock_data for feature drift on implied_vol. Check if the KS test score exceeds the warning threshold.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\ndef check_drift(drift_metrics):\\n    ks_score = drift_metrics['metrics']['implied_vol']['ks_score']\\n    warning_threshold = drift_metrics['metrics']['implied_vol']['warning_threshold']\\n    data_drift_detected = ks_score > warning_threshold\\n    return {\\\"data_drift_detected\\\": data_drift_detected}\\n\\n# Load the drift_metrics.json file\\nwith open('mock_data/drift_metrics.json', 'r') as f:\\n    drift_metrics = json.load(f)\\n\\n# Check for drift\\nresult = check_drift(drift_metrics)\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef check_drift(drift_metrics):\n    ks_score = drift_metrics['metrics']['implied_vol']['ks_score']\n    warning_threshold = drift_metrics['metrics']['implied_vol']['warning_threshold']\n    data_drift_detected = ks_score > warning_threshold\n    return {\"data_drift_detected\": data_drift_detected}\n\n# Load the drift_metrics.json file\nwith open('mock_data/drift_metrics.json', 'r') as f:\n    drift_metrics = json.load(f)\n\n# Check for drift\nresult = check_drift(drift_metrics)\nprint(json.dumps(result))",
+        "result": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Read the JSON drift metrics in blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json, look up implied_vol drift status, and determine if it exceeds the alert threshold.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\ndef check_drift_metrics(file_path):\\n    with open(file_path, 'r') as file:\\n        data = json.load(file)\\n    \\n    metrics = data.get('metrics', {})\\n    implied_vol = metrics.get('implied_vol', {})\\n    ks_score = implied_vol.get('ks_score', 0)\\n    warning_threshold = implied_vol.get('warning_threshold', 0)\\n    \\n    data_drift_detected = ks_score > warning_threshold\\n    \\n    result = {\\n        \\\"data_drift_detected\\\": data_drift_detected\\n    }\\n    \\n    print(json.dumps(result))\\n\\ncheck_drift_metrics('blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json')\"\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef check_drift_metrics(file_path):\n    with open(file_path, 'r') as file:\n        data = json.load(file)\n    \n    metrics = data.get('metrics', {})\n    implied_vol = metrics.get('implied_vol', {})\n    ks_score = implied_vol.get('ks_score', 0)\n    warning_threshold = implied_vol.get('warning_threshold', 0)\n    \n    data_drift_detected = ks_score > warning_threshold\n    \n    result = {\n        \"data_drift_detected\": data_drift_detected\n    }\n    \n    print(json.dumps(result))\n\ncheck_drift_metrics('blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json')",
+        "result": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Using blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json, check if the Kolmogorov-Smirnov drift score for implied_vol is greater than its warning threshold.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\nwith open('blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json', 'r') as file:\\n    data = json.load(file)\\n\\nks_score = data['metrics']['implied_vol']['ks_score']\\nwarning_threshold = data['metrics']['implied_vol']['warning_threshold']\\n\\ndata_drift_detected = ks_score > warning_threshold\\n\\nprint(json.dumps({'data_drift_detected': data_drift_detected}))\"\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\nwith open('blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json', 'r') as file:\n    data = json.load(file)\n\nks_score = data['metrics']['implied_vol']['ks_score']\nwarning_threshold = data['metrics']['implied_vol']['warning_threshold']\n\ndata_drift_detected = ks_score > warning_threshold\n\nprint(json.dumps({'data_drift_detected': data_drift_detected}))",
+        "result": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    },
+    {
+      "size": 500,
+      "condition": "expert_sandbox",
+      "target_id": "data_drift_monitor",
+      "query": "Determine if there is data drift for implied_vol using the KS score and threshold in blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json.",
+      "raw_response": "```json\n{\n  \"chosen_skill_id\": \"data_drift_monitor\",\n  \"python_code\": \"import json\\n\\ndef check_drift(json_file_path):\\n    with open(json_file_path, 'r') as file:\\n        data = json.load(file)\\n    \\n    ks_score = data['metrics']['implied_vol']['ks_score']\\n    warning_threshold = data['metrics']['implied_vol']['warning_threshold']\\n    \\n    data_drift_detected = ks_score > warning_threshold\\n    \\n    return {\\\"data_drift_detected\\\": data_drift_detected}\\n\\nresult = check_drift(\\\"blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json\\\")\\nprint(json.dumps(result))\"\n}\n```",
+      "chosen_tool": "data_drift_monitor",
+      "parsed_json": {
+        "data_drift_detected": true
+      },
+      "sandbox_run_info": {
+        "code": "import json\n\ndef check_drift(json_file_path):\n    with open(json_file_path, 'r') as file:\n        data = json.load(file)\n    \n    ks_score = data['metrics']['implied_vol']['ks_score']\n    warning_threshold = data['metrics']['implied_vol']['warning_threshold']\n    \n    data_drift_detected = ks_score > warning_threshold\n    \n    return {\"data_drift_detected\": data_drift_detected}\n\nresult = check_drift(\"blackbox_os/roles/data_scientist/workflows/mock_data/drift_metrics.json\")\nprint(json.dumps(result))",
+        "result": {
+          "data_drift_detected": true
+        }
+      },
+      "selection_ok": true,
+      "execution_ok": true,
+      "schema_ok": true,
+      "e2e_ok": true
+    }
+  ]
+}
