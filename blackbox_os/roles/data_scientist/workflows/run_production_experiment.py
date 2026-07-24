@@ -187,10 +187,6 @@ def query_llm(system_prompt: str, user_prompt: str) -> str:
     import urllib.request
     import json
     
-    req = urllib.request.Request(url, method="POST")
-    for k, v in headers.items():
-        req.add_header(k, v)
-        
     data = {
         "model": MODEL,
         "messages": [
@@ -201,12 +197,20 @@ def query_llm(system_prompt: str, user_prompt: str) -> str:
         "max_tokens": 512
     }
     
-    try:
-        with urllib.request.urlopen(req, data=json.dumps(data).encode("utf-8"), timeout=15) as response:
-            res_body = json.loads(response.read().decode("utf-8"))
-            return res_body["choices"][0]["message"]["content"]
-    except Exception as e:
-        return f'{{"error": "{str(e)}"}}'
+    for attempt in range(5):
+        try:
+            req = urllib.request.Request(url, method="POST")
+            for k, v in headers.items():
+                req.add_header(k, v)
+            with urllib.request.urlopen(req, data=json.dumps(data).encode("utf-8"), timeout=20) as response:
+                res_body = json.loads(response.read().decode("utf-8"))
+                return res_body["choices"][0]["message"]["content"]
+        except Exception as e:
+            if "429" in str(e) and attempt < 4:
+                time.sleep(2 * (attempt + 1))
+                continue
+            return f'{{"error": "{str(e)}"}}'
+    return '{"error": "Max retries exceeded"}'
 
 def execute_sandbox_code(code: str) -> Optional[Dict[str, Any]]:
     # Create temporary execution file

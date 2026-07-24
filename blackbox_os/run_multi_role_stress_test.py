@@ -86,14 +86,21 @@ def main():
     print("=" * 80)
     
     roles = ["data_scientist", "quant_researcher", "quant_trader"]
-    models = ["deepseek-v4-flash", "gpt-4o-mini"]
+    models = [
+        "deepseek-v4-flash",
+        "gpt-4o-mini",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "google/gemma-4-26b-a4b-it:free"
+    ]
     routing_types = ["expert", "bare"]
     sizes = [30, 100, 150, 200, 400, 500]
     
     # Model baseline parameters (Expert first-pass success)
     model_params = {
         "deepseek-v4-flash": {"baseline_prob": 0.37},
-        "gpt-4o-mini": {"baseline_prob": 0.30}
+        "gpt-4o-mini": {"baseline_prob": 0.30},
+        "nvidia/nemotron-3-ultra-550b-a55b:free": {"baseline_prob": 0.33},
+        "google/gemma-4-26b-a4b-it:free": {"baseline_prob": 0.35}
     }
     
     orchestrators = {
@@ -156,17 +163,23 @@ def main():
         
         # DeepSeek
         ax_success.plot(sizes, results[role]["deepseek-v4-flash"]["expert"]["overall_success"], "o-", label="DS Expert Overall", color="#2563eb", linewidth=2.5)
-        ax_success.plot(sizes, results[role]["deepseek-v4-flash"]["expert"]["direct_success"], "o--", label="DS Expert Direct", color="#60a5fa", linewidth=1.5)
         ax_success.plot(sizes, results[role]["deepseek-v4-flash"]["bare"]["overall_success"], "x-", label="DS Bare Overall", color="#0891b2", linewidth=2)
-        ax_success.plot(sizes, results[role]["deepseek-v4-flash"]["bare"]["direct_success"], "x--", label="DS Bare Direct", color="#67e8f9", linewidth=1)
         
         # GPT-4o-mini
         ax_success.plot(sizes, results[role]["gpt-4o-mini"]["expert"]["overall_success"], "s-", label="GPT Expert Overall", color="#16a34a", linewidth=2.5)
-        ax_success.plot(sizes, results[role]["gpt-4o-mini"]["expert"]["direct_success"], "s--", label="GPT Expert Direct", color="#4ade80", linewidth=1.5)
         ax_success.plot(sizes, results[role]["gpt-4o-mini"]["bare"]["overall_success"], "d-", label="GPT Bare Overall", color="#ca8a04", linewidth=2)
-        ax_success.plot(sizes, results[role]["gpt-4o-mini"]["bare"]["direct_success"], "d--", label="GPT Bare Direct", color="#fde047", linewidth=1)
+
+        # NVIDIA Nemotron
+        m_nemo = "nvidia/nemotron-3-ultra-550b-a55b:free"
+        ax_success.plot(sizes, results[role][m_nemo]["expert"]["overall_success"], "^-", label="Nemotron Expert Overall", color="#9333ea", linewidth=2.5)
+        ax_success.plot(sizes, results[role][m_nemo]["bare"]["overall_success"], "v-", label="Nemotron Bare Overall", color="#c084fc", linewidth=2)
+
+        # Google Gemma
+        m_gemma = "google/gemma-4-26b-a4b-it:free"
+        ax_success.plot(sizes, results[role][m_gemma]["expert"]["overall_success"], "*-", label="Gemma Expert Overall", color="#dc2626", linewidth=2.5)
+        ax_success.plot(sizes, results[role][m_gemma]["bare"]["overall_success"], "+-", label="Gemma Bare Overall", color="#f87171", linewidth=2)
         
-        ax_success.set_title(f"{role_labels[role]}: Success Rates (Expert vs. Bare)", fontweight="bold")
+        ax_success.set_title(f"{role_labels[role]}: Success Rates (4 Models - Expert vs. Bare)", fontweight="bold")
         ax_success.set_ylabel("Success Rate (%)")
         ax_success.set_ylim(0, 110)
         ax_success.grid(True, linestyle="--", alpha=0.5)
@@ -176,30 +189,39 @@ def main():
         ax_loops = axes[idx, 1]
         
         # DeepSeek
-        ax_loops.plot(sizes, results[role]["deepseek-v4-flash"]["expert"]["avg_loopbacks"], "o-", label="DS Expert", color="#2563eb", linewidth=2.5)
-        ax_loops.plot(sizes, results[role]["deepseek-v4-flash"]["bare"]["avg_loopbacks"], "x-", label="DS Bare", color="#0891b2", linewidth=2)
+        ax_loops.plot(sizes, results[role]["deepseek-v4-flash"]["expert"]["avg_loopbacks"], "o-", label="DS Expert", color="#2563eb", linewidth=2)
+        ax_loops.plot(sizes, results[role]["deepseek-v4-flash"]["bare"]["avg_loopbacks"], "x-", label="DS Bare", color="#0891b2", linewidth=1.5)
         
         # GPT-4o-mini
-        ax_loops.plot(sizes, results[role]["gpt-4o-mini"]["expert"]["avg_loopbacks"], "s-", label="GPT Expert", color="#16a34a", linewidth=2.5)
-        ax_loops.plot(sizes, results[role]["gpt-4o-mini"]["bare"]["avg_loopbacks"], "d-", label="GPT Bare", color="#ca8a04", linewidth=2)
+        ax_loops.plot(sizes, results[role]["gpt-4o-mini"]["expert"]["avg_loopbacks"], "s-", label="GPT Expert", color="#16a34a", linewidth=2)
+        ax_loops.plot(sizes, results[role]["gpt-4o-mini"]["bare"]["avg_loopbacks"], "d-", label="GPT Bare", color="#ca8a04", linewidth=1.5)
         
-        ax_loops.set_title(f"{role_labels[role]}: Avg Loopbacks (Expert vs. Bare)", fontweight="bold")
+        # Nemotron
+        ax_loops.plot(sizes, results[role][m_nemo]["expert"]["avg_loopbacks"], "^-", label="Nemotron Expert", color="#9333ea", linewidth=2)
+        ax_loops.plot(sizes, results[role][m_nemo]["bare"]["avg_loopbacks"], "v-", label="Nemotron Bare", color="#c084fc", linewidth=1.5)
+
+        # Gemma
+        ax_loops.plot(sizes, results[role][m_gemma]["expert"]["avg_loopbacks"], "*-", label="Gemma Expert", color="#dc2626", linewidth=2)
+        ax_loops.plot(sizes, results[role][m_gemma]["bare"]["avg_loopbacks"], "+-", label="Gemma Bare", color="#f87171", linewidth=1.5)
+
+        ax_loops.set_title(f"{role_labels[role]}: Avg Loopbacks (4 Models - Expert vs. Bare)", fontweight="bold")
         ax_loops.set_ylabel("Avg Loopbacks / Run")
         ax_loops.set_ylim(0.0, 2.0)
         ax_loops.grid(True, linestyle="--", alpha=0.5)
-        ax_loops.legend(loc="upper right", fontsize="small")
+        ax_loops.legend(loc="upper right", fontsize="x-small", ncol=2)
         
         if idx == 2:
             ax_success.set_xlabel("Number of Tasks (Volume)")
             ax_loops.set_xlabel("Number of Tasks (Volume)")
             
-    fig.suptitle("Blackbox OS Multi-Role Volume Stress Test: Expert (SOP) vs. Bare (Flat)", fontsize=16, fontweight="bold")
+    fig.suptitle("Blackbox OS Multi-Role Stress Test (4 Models): Expert (SOP) vs. Bare (Flat)", fontsize=16, fontweight="bold")
     fig.tight_layout(rect=[0, 0, 1, 0.95])
     
-    chart_path = os.path.join(artifacts_dir, "multi_role_stress_test_comparison.png")
+    chart_path = os.path.join(os.getcwd(), "images", "multi_role_stress_test_comparison.png")
+    os.makedirs(os.path.dirname(chart_path), exist_ok=True)
     plt.savefig(chart_path, dpi=300)
     plt.close()
-    print(f"Comparative progression curves saved to: {chart_path}\n")
+    print(f"Comparative 4-model progression curves saved to: {chart_path}\n")
 
 if __name__ == "__main__":
     main()
