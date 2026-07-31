@@ -183,7 +183,7 @@ export DEEPSEEK_API_KEY="your-key-here"
   ```bash
   python3 blackbox_os/roles/data_scientist/workflows/run_all_models_sweep.py --noise-only
   ```
-* **Full run — all 7 models, Table 2 (clean) + Table 4 (noisy):**
+* **Full run — all 6 models, Table 2 (clean) + Table 4 (noisy):**
   ```bash
   python3 blackbox_os/roles/data_scientist/workflows/run_all_models_sweep.py
   ```
