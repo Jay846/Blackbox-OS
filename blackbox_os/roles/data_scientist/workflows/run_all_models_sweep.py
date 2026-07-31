@@ -1,7 +1,7 @@
 """
 run_all_models_sweep.py
 =======================
-Batch runner: sweeps all 7 benchmark models sequentially through
+Batch runner: sweeps all 6 benchmark models sequentially through
 run_sandbox_experiment.py for both clean (Table 3) and noisy (Table 4)
 query conditions.
 
@@ -21,15 +21,14 @@ import argparse
 from datetime import datetime
 
 # ── Model Registry ────────────────────────────────────────────────────────────
-# All 7 benchmark models routed through OpenRouter
+# All 6 benchmark models routed through OpenRouter
 MODELS = [
     {"label": "DeepSeek V4 Flash",    "model": "deepseek-chat",        "provider": "openrouter"},
     {"label": "DeepSeek V4 Pro",      "model": "deepseek-v4-pro",      "provider": "openrouter"},
     {"label": "GPT-4o-mini",          "model": "gpt-4o-mini",          "provider": "openrouter"},
     {"label": "GPT-OSS 20B",          "model": "gpt-oss-20b",          "provider": "openrouter"},
     {"label": "Google Gemma 26B",     "model": "google-gemma-26b",     "provider": "openrouter"},
-    {"label": "Google Gemma 31B",     "model": "google-gemma-31b",     "provider": "openrouter"},
-    {"label": "NVIDIA Nemotron 550B", "model": "nvidia-nemotron-550b", "provider": "openrouter"},
+    {"label": "NVIDIA Nemotron 550B", "model": "nvidia-nemotron-550b", "provider": "openrouter"}
 ]
 
 SCRIPT_DIR  = os.path.dirname(os.path.abspath(__file__))
