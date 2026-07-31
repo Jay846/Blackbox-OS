@@ -261,7 +261,6 @@ OPENROUTER_MODEL_MAP = {
     "gpt-4o-mini": "openai/gpt-4o-mini",
     "nvidia/nemotron-3-ultra-550b-a55b:free": "nvidia/nemotron-3-ultra-550b-a55b:free",
     "google/gemma-4-26b-a4b-it:free": "google/gemma-4-26b-a4b-it:free",
-    "google/gemma-4-31b-it:free": "google/gemma-4-31b-it:free",
     "openai/gpt-oss-20b:free": "openai/gpt-oss-20b:free"
 }
 
