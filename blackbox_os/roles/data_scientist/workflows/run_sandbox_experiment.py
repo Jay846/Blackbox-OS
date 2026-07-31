@@ -10,7 +10,7 @@ from typing import Any, Dict, List, Tuple, Optional
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import re
 
-DEEPSEEK_API_KEY = os.environ.get('DEEPSEEK_API_KEY', 'API_KEY')
+DEEPSEEK_API_KEY = os.environ.get('DEEPSEEK_API_KEY', 'YOUR_API_KEY')
 DEEPSEEK_URL = 'https://api.deepseek.com/chat/completions'
 OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions'
 
