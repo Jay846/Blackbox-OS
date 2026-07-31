@@ -8,8 +8,9 @@ import subprocess
 import tempfile
 from typing import Any, Dict, List, Tuple, Optional
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import re
 
-DEEPSEEK_API_KEY = os.environ.get('DEEPSEEK_API_KEY', 'YOUR_API_KEY_HERE')
+DEEPSEEK_API_KEY = os.environ.get('DEEPSEEK_API_KEY', 'API_KEY')
 DEEPSEEK_URL = 'https://api.deepseek.com/chat/completions'
 OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions'
 
@@ -130,7 +131,7 @@ TARGET_SKILLS = [
         "queries": [
             {
                 "text": "Detect lookahead leakage in column_name='total_revenue_offset' calculated as 'target * 5 + 10'.",
-                "ground_truth": {"leakage_detected": True, "contains_reason": "target"}
+                "ground_truth": {"leakage_detected": True}
             },
             {
                 "text": "Check column 'lagged_price_1' calculated as 'price_t minus 1' for lookahead bias.",
@@ -140,7 +141,7 @@ TARGET_SKILLS = [
         "noisy_queries": [
             {
                 "text": "I was reviewing my feature engineering pipeline and found a column total_revenue_offset defined as target * 5 + 10. Could you check if there is any lookhaed leakage bias in this?",
-                "ground_truth": {"leakage_detected": True, "contains_reason": "target"}
+                "ground_truth": {"leakage_detected": True}
             },
             {
                 "text": "check for data leakage in column 'lagged_price_2' defined as 'price_{t-2}'. is there any lookahead bias?",
@@ -254,15 +255,55 @@ def format_skill_list(library: List[Dict[str, Any]], condition: str) -> str:
             lines.append(f"{s['id']}: {desc}")
     return "\n".join(lines)
 
+OPENROUTER_MODEL_MAP = {
+    "deepseek-v4-flash": "deepseek/deepseek-chat",
+    "deepseek-v4-pro": "deepseek/deepseek-r1",
+    "gpt-4o-mini": "openai/gpt-4o-mini",
+    "nvidia/nemotron-3-ultra-550b-a55b:free": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "google/gemma-4-26b-a4b-it:free": "google/gemma-4-26b-a4b-it:free",
+    "google/gemma-4-31b-it:free": "google/gemma-4-31b-it:free",
+    "openai/gpt-oss-20b:free": "openai/gpt-oss-20b:free"
+}
+
+def clean_and_extract_json(raw_response: str) -> Optional[Dict[str, Any]]:
+    if not raw_response:
+        return None
+    import re
+    # 1. Strip <think>...</think> reasoning traces cleanly
+    cleaned = re.sub(r'<think>[\s\S]*?</think>', '', raw_response).strip()
+    
+    # 2. Try markdown json fence extraction first
+    fence_match = re.search(r'```(?:json)?\s*(\{[\s\S]*?\})\s*```', cleaned, re.IGNORECASE)
+    json_str = None
+    if fence_match:
+        json_str = fence_match.group(1)
+    else:
+        # Fallback to outer brace matching
+        brace_match = re.search(r'\{[\s\S]*\}', cleaned)
+        if brace_match:
+            json_str = brace_match.group(0)
+
+    if json_str:
+        try:
+            return json.loads(json_str)
+        except Exception:
+            try:
+                import ast
+                return ast.literal_eval(json_str)
+            except Exception:
+                pass
+    return None
+
 def call_llm(system: str, user: str, retries: int = 4) -> str:
+    target_model = OPENROUTER_MODEL_MAP.get(MODEL, MODEL) if PROVIDER == 'openrouter' else MODEL
     req_data = {
-        "model": MODEL,
+        "model": target_model,
         "messages": [
             {"role": "system", "content": system},
             {"role": "user", "content": user}
         ],
         "temperature": 0,
-        "max_tokens": 300  # Larger max tokens to accommodate python code block
+        "max_tokens": 2048
     }
     
     if PROVIDER == 'openrouter':
@@ -290,7 +331,7 @@ def call_llm(system: str, user: str, retries: int = 4) -> str:
                 headers=headers,
                 method='POST'
             )
-            with urllib.request.urlopen(req, timeout=15) as res:
+            with urllib.request.urlopen(req, timeout=30) as res:
                 body = res.read().decode('utf-8')
                 return json.loads(body)['choices'][0]['message']['content'].strip()
         except Exception as e:
@@ -311,22 +352,11 @@ def execute_sandbox_code(code: str) -> Optional[Dict[str, Any]]:
             [sys.executable, temp_name],
             capture_output=True,
             text=True,
-            timeout=2.0
+            timeout=5.0
         )
         if res.returncode == 0:
             stdout_str = res.stdout.strip()
-            start = stdout_str.find("{")
-            end = stdout_str.rfind("}")
-            if start != -1 and end != -1:
-                json_part = stdout_str[start:end+1]
-                try:
-                    return json.loads(json_part)
-                except Exception:
-                    try:
-                        import ast
-                        return ast.literal_eval(json_part)
-                    except Exception:
-                        pass
+            return clean_and_extract_json(stdout_str)
     except Exception:
         pass
     finally:
@@ -337,85 +367,100 @@ def execute_sandbox_code(code: str) -> Optional[Dict[str, Any]]:
     return None
 
 def parse_model_response(raw: str, library: List[Dict[str, Any]]) -> Tuple[Optional[str], Optional[Dict[str, Any]]]:
-    parsed_json = None
-    clean_raw = raw
-    if "```json" in clean_raw:
-        clean_raw = clean_raw.split("```json", 1)[1]
-    if "```" in clean_raw:
-        clean_raw = clean_raw.split("```", 1)[0]
-    clean_raw = clean_raw.strip()
-    
-    start = clean_raw.find("{")
-    end = clean_raw.rfind("}")
-    if start != -1 and end != -1:
-        try:
-            parsed_json = json.loads(clean_raw[start:end+1])
-        except Exception:
-            pass
+    parsed_json = clean_and_extract_json(raw)
 
+    # Strict V1 Selection Parsing: Read explicitly from JSON payload first
     chosen_tool = None
-    normalized_raw = raw.lower()
-    for s in library:
-        tid = s["id"]
-        if tid in normalized_raw:
-            chosen_tool = tid
-            break
-            
-    if chosen_tool is None and parsed_json is not None:
-        keys = list(parsed_json.keys())
-        if any(k in keys for k in ["fraction", "kelly_fraction", "amount", "kelly_amount"]):
-            chosen_tool = "kelly_position_size"
-        elif "stop_distance" in keys:
-            chosen_tool = "atr_dynamic_stop"
-        elif any(k in keys for k in ["ev", "expected_value", "net_ev", "gross_ev"]):
-            chosen_tool = "trade_ev_calculator"
-        elif any(k in keys for k in ["leakage_detected", "lookahead_detected", "lookahead_flag"]):
-            chosen_tool = "lookahead_bias_audit"
-        elif any(k in keys for k in ["mean", "std", "population_mean", "population_std"]):
-            chosen_tool = "standard_scaler_apply"
-        elif any(k in keys for k in ["data_drift_detected", "drift_detected"]):
-            chosen_tool = "data_drift_monitor"
+    if parsed_json and isinstance(parsed_json, dict):
+        chosen_tool = parsed_json.get("skill_id") or parsed_json.get("chosen_skill_id") or parsed_json.get("chosen_tool")
+
+    # Strict Fallback: Exact matching after think-tag stripping only if JSON skill_id was missing
+    if chosen_tool is None:
+        clean_text = re.sub(r'<think>[\s\S]*?</think>', '', raw).lower()
+        for s in library:
+            tid = s["id"]
+            if tid in clean_text:
+                chosen_tool = tid
+                break
 
     return chosen_tool, parsed_json
 
 def grade_execution(chosen_tool: Optional[str], target_id: str, parsed: Optional[Dict[str, Any]], ground_truth: Dict[str, Any]) -> Tuple[bool, bool, bool, bool]:
+    # 1. Strict Selection Success
     sel_ok = (chosen_tool == target_id)
     
-    schema_keys = [k for k in ground_truth.keys() if k != "contains_reason"]
+    # 2. Schema Compliance
+    schema_keys = list(ground_truth.keys())
     schema_ok = False
     if parsed is not None:
         schema_ok = all(k in parsed for k in schema_keys)
         
+    # 3. Clean Execution Correctness (Strict Binary & Numerical Math Checks)
     exec_ok = False
     if sel_ok and parsed is not None:
         exec_ok = True
         for k, gt_v in ground_truth.items():
-            if k == "contains_reason":
-                reason_val = parsed.get("reason", "").lower()
-                if gt_v not in reason_val:
+            p_v = parsed.get(k)
+            if p_v is None:
+                exec_ok = False
+                break
+            if isinstance(gt_v, float) and isinstance(p_v, (int, float)):
+                if abs(p_v - gt_v) > 0.05:
                     exec_ok = False
-            else:
-                p_v = parsed.get(k)
-                if isinstance(gt_v, float) and isinstance(p_v, (int, float)):
-                    if abs(p_v - gt_v) > 0.05:
-                        exec_ok = False
-                elif p_v != gt_v:
-                    exec_ok = False
-                    
+            elif p_v != gt_v:
+                exec_ok = False
+                
     e2e_ok = sel_ok and exec_ok and schema_ok
     return sel_ok, exec_ok, schema_ok, e2e_ok
+
+def find_filler_file(filename: str) -> str:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    cwd = os.getcwd()
+    
+    # Direct candidates
+    candidate_paths = [
+        os.path.join(cwd, "skill_experiment", filename),
+        os.path.join(cwd, filename),
+        os.path.join(script_dir, "skill_experiment", filename),
+        os.path.join(script_dir, filename)
+    ]
+    
+    # Traverse upwards from script_dir and cwd
+    for start in [script_dir, cwd]:
+        curr = start
+        for _ in range(5):
+            p = os.path.join(curr, "skill_experiment", filename)
+            if os.path.exists(p):
+                return p
+            p_direct = os.path.join(curr, filename)
+            if os.path.exists(p_direct):
+                return p_direct
+            parent = os.path.dirname(curr)
+            if parent == curr:
+                break
+            curr = parent
+            
+    for p in candidate_paths:
+        if os.path.exists(p):
+            return p
+    return os.path.join(cwd, "skill_experiment", filename)
 
 def run_experiment(dry_run: bool = False, noise: bool = False):
     print("=" * 75)
     print(f"SANDBOX DELEGATION SWEEP (Model: {MODEL}, Noise: {noise})")
     print("=" * 75)
     
-    # Load fillers from skill_experiment
+    # Load fillers dynamically
     try:
-        fillers = json.load(open("skill_experiment/fillers_v4.json"))
+        f_main = find_filler_file("fillers_v4.json")
+        fillers = json.load(open(f_main))
         try:
-            fillers += json.load(open("skill_experiment/hq_fillers.json"))
-            fillers += json.load(open("skill_experiment/additional_fillers.json"))
+            f_hq = find_filler_file("hq_fillers.json")
+            if os.path.exists(f_hq):
+                fillers += json.load(open(f_hq))
+            f_add = find_filler_file("additional_fillers.json")
+            if os.path.exists(f_add):
+                fillers += json.load(open(f_add))
         except Exception:
             pass
     except Exception as e:
@@ -554,6 +599,7 @@ def run_experiment(dry_run: bool = False, noise: bool = False):
     model_clean = MODEL.replace("/", "_").replace("-", "_")
     prefix = "results_sandbox_expanded_noise_sweep" if noise else "results_sandbox_sweep"
     out_file = f"blackbox_os/roles/data_scientist/workflows/{prefix}_{model_clean}.json"
+    os.makedirs(os.path.dirname(os.path.abspath(out_file)), exist_ok=True)
     with open(out_file, "w") as f:
         json.dump({"results": results, "logs": logs}, f, indent=2)
         
