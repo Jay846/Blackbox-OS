@@ -170,7 +170,25 @@ export OPENROUTER_API_KEY="your-key-here"
 export DEEPSEEK_API_KEY="your-key-here"
 ```
 
-### 3. Run Executable Sweeps & Validation Suite
+### 3. Atomic Primitives (Clean & Noisy Queries For Data Scientist role)
+* **Quick test first — only N=60 & N=200 (dry-run):**
+  ```bash
+  python3 blackbox_os/roles/data_scientist/workflows/run_all_models_sweep.py --dry-run
+  ```
+* **Only Table 3 (clean queries):**
+  ```bash
+  python3 blackbox_os/roles/data_scientist/workflows/run_all_models_sweep.py --clean-only
+  ```
+* **Only Table 4 (noisy queries):**
+  ```bash
+  python3 blackbox_os/roles/data_scientist/workflows/run_all_models_sweep.py --noise-only
+  ```
+* **Full run — all 7 models, Table 2 (clean) + Table 4 (noisy):**
+  ```bash
+  python3 blackbox_os/roles/data_scientist/workflows/run_all_models_sweep.py
+  ```
+
+### 4. Run Executable Sweeps & Validation Suite
 * **Run Multi-Role Volume Stress Test Across All 3 Roles:**
   ```bash
   python3 blackbox_os/run_multi_role_stress_test.py --dry-run
