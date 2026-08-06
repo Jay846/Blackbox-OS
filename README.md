@@ -31,7 +31,7 @@ Even when correctly routed, LLMs fail to execute tools reliably under context pr
 * **Query Variation Matrix (2×2):** High phrasing novelty (unfamiliar jargon) or high semantic ambiguity alone do not degrade routing. However, their combination causes routing accuracy to drop to **70%** as the agent is pulled toward semantically related but incorrect tools.
 
 <p align="center">
-  <img src="images/noise_gradient_fracture.png" width="48%" alt="Noise Gradient Fracture & Guardrail Recovery" />
+  <img src="images/noise_gradient.png" width="48%" alt="Noise Gradient Fracture & Guardrail Recovery" />
   <img src="images/query_variation_heatmap.png" width="48%" alt="Query Variation Heatmap" />
 </p>
 
