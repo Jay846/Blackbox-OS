@@ -12,7 +12,7 @@ Monolithic routing—injecting all available tool schemas into a single LLM's sy
 * **Geometric Origin:** Semantic packing analysis shows that as catalog size $N$ increases, the maximum cosine similarity between target tools and distractors rises monotonically. When similarity crosses the critical **$0.53 - 0.56$ threshold**, the self-attention mechanism fails, causing routing to fail.
 
 <p align="center">
-  <img src="images/semantic_density_vs_accuracy.png" width="48%" alt="Semantic Density vs Routing Accuracy" />
+  <img src="images/Cosine.png" width="48%" alt="Semantic Density vs Routing Accuracy" />
   <img src="images/attention_degradation_curve.png" width="48%" alt="Attention Degradation Curve" />
 </p>
 
