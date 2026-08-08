@@ -13,7 +13,7 @@ Monolithic routing—injecting all available tool schemas into a single LLM's sy
 
 <p align="center">
   <img src="images/Cosine.png" width="48%" alt="Semantic Density vs Routing Accuracy" />
-  <img src="images/Selection_Error_Rate.png" width="48%" alt="Attention Degradation Curve" />
+  <img src="images/Selection_Error_Rate.png" width="60%" alt="Attention Degradation Curve" />
 </p>
 
 ### 2. The Two-Stage Execution Collapse
