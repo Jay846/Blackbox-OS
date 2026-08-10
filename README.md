@@ -34,7 +34,7 @@ Even when correctly routed, LLMs fail to execute tools reliably under context pr
 * **Query variation matrix (2×2):** Strong models stay high on many cells; combined novelty + ambiguity is **model-dependent**, not a single universal 70% collapse.
 
 <p align="center">
-  <img src="images/noise_gradient_fracture.png" width="48%" alt="Noise Gradient Fracture & Guardrail Recovery" />
+  <img src="images/noise_gradient_ats.png" width="48%" alt="Noise Gradient Fracture & Guardrail Recovery" />
   <img src="images/Query_Variation_Heatmap.png" width="48%" alt="Query Variation Heatmap" />
 </p>
 
