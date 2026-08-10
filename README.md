@@ -15,7 +15,7 @@
 * **SOP Sub-Graph Bounding:** Bounding active contexts to $K \le 15$ tools per node via Process Templates (SOPs) keeps local cosine similarity bounded below $\bar{S}_{\text{NN}} \le 0.3559$, eliminating semantic attention saturation.
 
 <p align="center">
-  <img src="images/semantic_density_vs_accuracy.png" width="48%" alt="Semantic Density vs Routing Accuracy" />
+  <img src="images/Cosine.png" width="48%" alt="Semantic Density vs Routing Accuracy" />
   <img src="images/Selection_Error_Rate.png" width="60%" alt="Attention Degradation Curve" />
 </p>
 
