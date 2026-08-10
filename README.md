@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21413144.svg)](https://doi.org/10.5281/zenodo.21413144)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Blackbox OS** is a graph-based agentic operating system designed for quantitative research, data science, and algorithmic trading. Rather than relying on monolithic context windows—which suffer from severe routing degradation and execution collapse as the tool library scales—Blackbox OS orchestrates specialized agents across modular sub-graphs, executing calculations via a containerized **Sandbox Delegation Pattern** and protecting pipelines with **Dynamic Validation Guardrails**.
+Blackbox OS is a research prototype for reliable LLM tool use in quant/data-science settings: stage-local tool partitions, expert process templates (SOPs), sandboxed code execution, and light validation guardrails. Full multi-agent “desk” composition remains future work.
 
 ---
 
@@ -11,8 +11,8 @@
 
 ### 1. The Skill Phase Transition (Routing Collapse)
 * **Monolithic Routing Collapse:** Injecting all available tool schemas into a single LLM prompt suffers from non-linear accuracy collapse beyond $N \sim 60$ tools due to semantic conflation.
-* **Geometric Origin:** Semantic packing analysis demonstrates that as catalog size $N$ increases ($15 \to 1000$), the mean nearest-neighbor cosine similarity ($\bar{S}_{\text{NN}}$) between target tools and distractors rises from $0.3500$ to $0.5100$. When similarity crosses the critical **$0.50\text{--}0.53$ threshold**, self-attention heads fail, causing routing accuracy to drop sharply (e.g., GPT-OSS 20B falling to $46.7\%$).
-* **SOP Sub-Graph Bounding:** Bounding active contexts to $K \le 15$ tools per node via Process Templates (SOPs) keeps local cosine similarity bounded below $\bar{S}_{\text{NN}} \le 0.3559$, eliminating semantic attention saturation.
+* **Geometric packing:** Mean max nearest-neighbor cosine similarity (MiniLM) rises with catalog size N (Bare peak ≈0.51 at N=500 in our runs). Expert descriptions remain more separable than short bare text. We do **not** treat a fixed 0.50–0.56 band as a proven universal phase boundary.
+* **Stage-local tool exposure (K ≤ 15 per node)** is a practical design rule that kept multi-step E2E high in the live Data Scientist stress test; it is not a formal guarantee of “zero saturation.”
 
 <p align="center">
   <img src="images/Cosine.png" width="48%" alt="Semantic Density vs Routing Accuracy" />
@@ -23,15 +23,15 @@
 Even when correctly routed, LLMs fail to execute tools reliably under context pressure due to two distinct failure modes:
 * **Schema Collapse:** Bare prompts fail to adhere to JSON structures in up to $73\%$ of trials, omitting required keys or returning malformed outputs.
 * **Arithmetic Collapse:** When schemas are enforced (via structured outputs), LLMs frequently fail at floating-point calculations and statistical aggregation (mental math hallucinations).
-* **Mitigation:** Enforcing expert **Process Templates (SOPs)** completely eliminates schema collapse, while delegating calculations to a **Python Sandbox** bypasses the mental math bottleneck, lifting E2E success from $25\%$ to $>90\%$.
+* **Mitigation:** Enforcing expert **Process Templates (SOPs)** largely eliminates schema failures on atomic tasks, while delegating calculations to a **Python Sandbox** bypasses the mental math bottleneck, lifting atomic E2E success substantially.
 
 <p align="center">
   <img src="images/execution_benchmark_comparison.png" width="75%" alt="Prompt Math vs Python Sandbox Execution Benchmark" />
 </p>
 
 ### 3. Robustness Boundaries & Fracture Points
-* **Noise Gradient ($L_0\text{--}L_5$):** Agents remain robust to typos, fluff, and prompt reordering ($L_0\text{--}L_4$ success at $97\text{--}100\%$). However, they fracture under adversarial prompt injections ($L_5$), collapsing to $0\%$ success. Adding a **Script-Integrity Guardrail** restores success to $100\%$.
-* **Query Variation Matrix ($2 \times 2$):** High phrasing novelty or high semantic ambiguity alone do not degrade routing. However, their combination causes routing accuracy to drop to $70\%$ as the agent is pulled toward semantically adjacent tools.
+* **Noise gradient (L0–L5):** Mild noise is often tolerated; adversarial injection (L5) collapses E2E for several models. An AST script-integrity guardrail recovers a **substantial but incomplete** fraction of L5 failures (e.g. ~0% → ~47% on DeepSeek V4 Flash and GPT-4o-mini)—not 100%.
+* **Query variation matrix (2×2):** Strong models stay high on many cells; combined novelty + ambiguity is **model-dependent**, not a single universal 70% collapse.
 
 <p align="center">
   <img src="images/noise_gradient_fracture.png" width="48%" alt="Noise Gradient Fracture & Guardrail Recovery" />
@@ -87,9 +87,9 @@ To bypass the routing cliff, tool catalogs are partitioned into isolated, domain
 
 | Model | Configuration Mode | E2E Success | Direct Success | Loopback Recovery | Avg Loopbacks / Run |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| **DeepSeek V4 Flash** | **Expert (SOP)** | **100.0%** | **100.0%** | **100.0%** | **0.00** |
+| **DeepSeek V4 Flash** | **Expert (SOP)** | **100.0%** | **100.0%** | **N/A** | **0.00** |
 | | Bare (Flat $N=77$) | 63.3% | 53.3% | 21.4% | 0.87 |
-| **GPT-4o-mini** | **Expert (SOP)** | **100.0%** | **100.0%** | **100.0%** | **0.00** |
+| **GPT-4o-mini** | **Expert (SOP)** | **100.0%** | **100.0%** | **N/A** | **0.00** |
 | | Bare (Flat $N=77$) | 46.7% | 46.7% | 0.0% | 1.07 |
 | **Nemotron 550B** | **Expert (SOP)** | **93.3%** | **60.0%** | **83.3%** | **0.70** |
 | | Bare (Flat $N=77$) | 46.7% | 16.7% | 36.0% | 1.57 |
