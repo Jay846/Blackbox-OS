@@ -1,363 +1,397 @@
+#!/usr/bin/env python3
+"""
+Data Scientist Orchestrator Stress Test (Production V2)
+Expert (partitioned SOP, ≤15 tools/stage) vs Bare (flat full catalog N=77)
+30 live tasks × 2 modes × N models
+"""
+
 import os
 import sys
 import json
 import csv
-import random
 import time
-import urllib.request
-import matplotlib.pyplot as plt
-import numpy as np
-from typing import List, Dict, Any
+import re
+import ast
+import random
+from typing import Dict, Any, List, Optional, Tuple
 
-# Add workspace to path
-sys.path.append(os.getcwd())
+# ── Workspace Root ───────────────────────────────────────────────────────────
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+root = SCRIPT_DIR
+while root != os.path.dirname(root):
+    if os.path.exists(os.path.join(root, "blackbox_os")):
+        WORKSPACE_ROOT = root
+        break
+    root = os.path.dirname(root)
+else:
+    WORKSPACE_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", "..", ".."))
+if WORKSPACE_ROOT not in sys.path:
+    sys.path.insert(0, WORKSPACE_ROOT)
 
-from blackbox_os.state.shared_state import SharedState
-from blackbox_os.roles.data_scientist.workflows.workflow_orchestrator import DataScientistOrchestrator
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+OPENROUTER_MODEL_MAP = {
+    "deepseek-v4-flash": "deepseek/deepseek-chat",
+    "gpt-4o-mini": "openai/gpt-4o-mini",
+    "nvidia/nemotron-3-ultra-550b-a55b:free": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "openai/gpt-oss-20b:free": "openai/gpt-oss-20b:free",
+}
 
-# Fallback API keys
-FALLBACK_DEEPSEEK_KEY = ""
+# ── Stage tool partitions (Expert mode) ──────────────────────────────────────
+STAGE_TOOLS = {
+    "audit": [
+        {"id": "lookahead_bias_audit", "desc": "Detect lookahead/target leakage in feature formulas."},
+        {"id": "data_drift_monitor", "desc": "Check feature drift against warning threshold."},
+        {"id": "missing_value_report", "desc": "Report missing-value rates per column."},
+        {"id": "schema_validator", "desc": "Validate CSV schema and dtypes."},
+        {"id": "correlation_scan", "desc": "Scan pairwise correlations for leakage proxies."},
+        {"id": "temporal_split_check", "desc": "Verify train/test temporal ordering."},
+        {"id": "duplicate_row_audit", "desc": "Detect duplicate rows."},
+        {"id": "outlier_summary", "desc": "Summarize outlier rates."},
+        {"id": "class_balance_report", "desc": "Report class imbalance statistics."},
+        {"id": "feature_cardinality_check", "desc": "Check categorical cardinality."},
+    ],
+    "remediate": [
+        {"id": "mean_imputer", "desc": "Impute numeric columns with mean."},
+        {"id": "median_imputer", "desc": "Impute numeric columns with median."},
+        {"id": "knn_imputer", "desc": "KNN imputation with missingness indicators."},
+        {"id": "mice_imputer", "desc": "Multiple imputation by chained equations."},
+        {"id": "smote_balancer", "desc": "Apply SMOTE for class imbalance."},
+        {"id": "drop_leaky_columns", "desc": "Drop columns flagged as leaky."},
+        {"id": "standard_scaler", "desc": "StandardScaler on numeric features."},
+        {"id": "robust_scaler", "desc": "RobustScaler on numeric features."},
+        {"id": "minmax_scaler", "desc": "MinMax scaling."},
+        {"id": "target_encoder", "desc": "Target encoding for categoricals."},
+        {"id": "ordinal_encoder", "desc": "Ordinal encoding for categoricals."},
+        {"id": "variance_filter", "desc": "Drop low-variance features."},
+    ],
+    "model": [
+        {"id": "random_forest_fit", "desc": "Fit Random Forest classifier/regressor."},
+        {"id": "gradient_boosting_fit", "desc": "Fit Gradient Boosting model."},
+        {"id": "ridge_fit", "desc": "Fit Ridge regressor."},
+        {"id": "lasso_fit", "desc": "Fit Lasso with feature selection."},
+        {"id": "elasticnet_fit", "desc": "Fit ElasticNet."},
+        {"id": "stacking_fit", "desc": "Fit stacking ensemble."},
+        {"id": "voting_fit", "desc": "Fit voting classifier."},
+        {"id": "bagging_fit", "desc": "Fit bagging ensemble."},
+        {"id": "xgboost_fit", "desc": "Fit XGBoost model."},
+        {"id": "lightgbm_fit", "desc": "Fit LightGBM model."},
+        {"id": "mutual_info_select", "desc": "Mutual-information feature selection."},
+        {"id": "rfe_select", "desc": "Recursive feature elimination."},
+    ],
+    "evaluate": [
+        {"id": "grid_search_cv", "desc": "Grid search hyperparameter tuning."},
+        {"id": "random_search_cv", "desc": "Random search hyperparameter tuning."},
+        {"id": "optuna_tune", "desc": "Optuna hyperparameter study."},
+        {"id": "bayesian_tune", "desc": "Bayesian optimization tuner."},
+        {"id": "metrics_report", "desc": "Compute F1, ROC-AUC, log-loss, MCC."},
+        {"id": "calibration_curve", "desc": "Generate calibration curve."},
+        {"id": "shap_explain", "desc": "SHAP feature attribution."},
+        {"id": "lime_explain", "desc": "LIME local explanations."},
+        {"id": "permutation_importance", "desc": "Permutation feature importance."},
+        {"id": "latency_check", "desc": "Measure inference latency."},
+        {"id": "champion_challenger", "desc": "Champion/challenger model comparison."},
+        {"id": "model_registry", "desc": "Register model version."},
+        {"id": "drift_monitor_setup", "desc": "Attach post-deploy drift monitor."},
+        {"id": "compliance_log", "desc": "Write compliance audit log."},
+    ],
+}
 
-# Define 30 distinct user goals for data science tasks
-USER_GOALS = [
-    # Imputation & Scaling (SOP 1 focus)
-    "Clean the dataset returns.csv by doing mean imputation on missing values, standard scale them, train a Random Forest, and deploy.",
-    "Examine features.csv for target leakage. Impute missing data with KNN indicator flags, scale using RobustScaler, build a linear regression, and deploy.",
-    "Scan for data drift. Impute with median fill, run min-max scaling, train a gradient boosting model, and run compliance scans.",
-    "Handle class imbalance using SMOTE. Scale data and fit a stacking classifier ensemble, then run model interpretability audits.",
-    "Impute missing records using MICE, apply Target Encoding to categorical features, fit a Ridge regressor, and verify temporal leakage.",
-    # Feature Selection & Modeling (SOP 2 focus)
-    "Perform mutual information feature selection. Model the target using L1 Lasso regularization and check for lookahead bias.",
-    "Apply recursive feature elimination (RFE) to columns 1-15, build a voting classifier, and run SHAP explainability audits.",
-    "Filter features by variance threshold. Train an ElasticNet regressor, check for data drift, and register the champion model.",
-    "Train a Stacking ensemble using Random Forest and Gradient Boosting. Run L2 Ridge regularization and scan for target leakage.",
-    "Build a Bagging classifier using decision tree base estimators. Apply Ordinal encoding, select top features, and verify calibration.",
-    # Optimization & Evaluation (SOP 3 focus)
-    "Optimize hyperparameters for a random forest builder using Grid Search cross-validation. Output log-loss and F1-score.",
-    "Run Random Search tuner for a Gradient Boosting estimator. Calculate precision-recall curves and Matthews correlation coefficient.",
-    "Execute an Optuna study tuner for neural network weight decay. Run stratified K-Fold cross validation and print confusion matrix.",
-    "Tune hyperparameters of an XGBoost regressor using Bayesian Optimization. Verify on time-series cross-validation splits.",
-    "Fit a lightgbm builder. Run nested cross-validation, calculate ROC-AUC score, and generate a calibration curve plot.",
-    # Compliance & Deployment (SOP 4 focus)
-    "Audit features.csv for future target leakage. Plot permutation feature importance, monitor drift, and deploy champion challenger model.",
-    "Check temporal leakage on train-test splits. Explain prediction behavior using LIME, evaluate latency metrics, and register model.",
-    "Run lookahead bias scan. Calculate partial dependence plots, verify data drift, and set up latency monitoring alerts.",
-    "Audit features for group leakage. Calculate SHAP values for top features, run champion challenger evaluation, and registry version.",
-    "Verify target contamination. Rank feature importance, run model drift monitor, and output compliance logs.",
-    # Decoupled / Mix Tasks (21-30)
-    "Impute missing entries, select features using Lasso, run Random Search, audit temporal leakage, and deploy.",
-    "SMOTE balance training features, train Stacking classifier, run Optuna tuner, check for data drift, and register version.",
-    "Apply RobustScaler, fit Gradient Boosting, run Grid Search CV, scan for lookahead bias, and verify latency.",
-    "Impute with MICE, apply Target Encoding, fit Ridge regression, check target leakage, and compute SHAP explainer.",
-    "Filter features using Mutual Information, build Voting classifier, run time-series validation, and monitor model drift.",
-    "SMOTE balance, fit Random Forest, run Optuna study, audit lookahead leakage, and deploy champion model.",
-    "Mean impute, recursive feature eliminate, fit ElasticNet, compute precision-recall curves, and run drift monitor.",
-    "Standard scale, train Bagging ensemble, run stratified CV, run SHAP analysis, and register new champion.",
-    "Log transform, select features by variance threshold, fit gradient boosting, calculate F1 score, and verify latency.",
-    "Impute with median, fit Stacking ensemble, run Bayesian optimization tuner, check lookahead bias, and deploy version."
-]
+VALID_BY_STAGE = {stage: {t["id"] for t in tools} for stage, tools in STAGE_TOOLS.items()}
 
-def generate_mock_datasets(base_dir="blackbox_os/roles/data_scientist/workflows/mock_data/stress_test"):
-    os.makedirs(base_dir, exist_ok=True)
-    random.seed(42)
+def locate_filler_file(filename: str) -> str:
+    cwd = os.getcwd()
+    candidate_paths = [
+        os.path.join(WORKSPACE_ROOT, "skill_experiment", filename),
+        os.path.join(WORKSPACE_ROOT, "blackbox_os", "skill_experiment", filename),
+        os.path.join(WORKSPACE_ROOT, filename),
+        os.path.join(SCRIPT_DIR, "skill_experiment", filename),
+        os.path.join(SCRIPT_DIR, "..", "skill_experiment", filename),
+        os.path.join(cwd, "skill_experiment", filename),
+        os.path.join(cwd, filename),
+    ]
+    for path in candidate_paths:
+        norm = os.path.abspath(path)
+        if os.path.exists(norm):
+            return norm
+    raise FileNotFoundError(f"Could not locate '{filename}'.")
+
+def build_bare_catalog(target_size: int = 77) -> List[Dict[str, str]]:
+    """Builds full N=77 flat catalog by padding stage tools with background fillers."""
+    base_tools = []
+    seen = set()
+    for tools in STAGE_TOOLS.values():
+        for t in tools:
+            if t["id"] not in seen:
+                base_tools.append(t)
+                seen.add(t["id"])
     
-    for i in range(30):
-        run_dir = os.path.join(base_dir, f"run_{i}")
-        os.makedirs(run_dir, exist_ok=True)
-        
-        # 1. features.csv (some with target leakage)
-        has_leakage = (i % 3 == 0)  # 10 out of 30 have target leakage
-        features = [
-            {"column_name": "clean_return", "formula": "price_t / price_t-1 - 1"},
-            {"column_name": "leaked_return", "formula": "target * 1.5 + 0.2" if has_leakage else "lagged_price_1 - lagged_price_2"}
-        ]
-        with open(os.path.join(run_dir, "features.csv"), "w", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=features[0].keys())
-            writer.writeheader()
-            writer.writerows(features)
-            
-        # 2. returns.csv (some with drift, missing values)
-        has_drift = (i % 4 == 0)   # 8 out of 30 have drift
-        has_missing = (i % 5 == 0) # 6 out of 30 have missing values
-        
-        clean_rets = []
-        leaked_rets = []
-        for idx in range(20):
-            val = random.normalvariate(35.0, 10.0) if not has_drift else random.normalvariate(55.0, 15.0)
-            if has_missing and idx % 4 == 0:
-                clean_rets.append("")
-            else:
-                clean_rets.append(val)
-            leaked_rets.append(val + (5.0 if has_leakage else 0.0))
-            
-        feature_cols = {}
-        for f_idx in range(1, 16):
-            feature_cols[f"feat_{f_idx}"] = [random.normalvariate(0.0, 1.0) for _ in range(20)]
-            
-        header = ["clean_return", "leaked_return"] + [f"feat_{idx}" for idx in range(1, 16)]
-        with open(os.path.join(run_dir, "returns.csv"), "w", newline="") as f:
-            writer = csv.writer(f)
-            writer.writerow(header)
-            for idx in range(20):
-                row = [clean_rets[idx], leaked_rets[idx]] + [feature_cols[f"feat_{f_idx}"][idx] for f_idx in range(1, 16)]
-                writer.writerow(row)
-                
-        # 3. fills.csv
-        fills = []
-        for idx in range(10):
-            pnl = random.normalvariate(100.0, 50.0)
-            fills.append({
-                "timestamp": f"2026-07-14T12:{idx:02d}:00Z",
-                "symbol": "BTC/USDT",
-                "side": "buy" if pnl > 0 else "sell",
-                "price": 98000.0,
-                "amount": 0.25,
-                "realized_pnl": pnl
-            })
-        with open(os.path.join(run_dir, "fills.csv"), "w", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=fills[0].keys())
-            writer.writeheader()
-            writer.writerows(fills)
-
-def run_live_llm(model: str, system_prompt: str, user_prompt: str, api_key: str) -> str:
-    url = "https://api.deepseek.com/chat/completions" if "deepseek" in model else "https://api.openai.com/v1/chat/completions"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {api_key}"
-    }
-    data = {
-        "model": "deepseek-chat" if "deepseek" in model else "gpt-4o-mini",
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ],
-        "temperature": 0.0,
-        "max_tokens": 512
-    }
+    needed = target_size - len(base_tools)
+    if needed <= 0:
+        return base_tools
     
     try:
-        req = urllib.request.Request(url, method="POST")
-        for k, v in headers.items():
-            req.add_header(k, v)
-        req_data = json.dumps(data).encode("utf-8")
-        with urllib.request.urlopen(req, data=req_data, timeout=20) as response:
-            res = json.loads(response.read().decode("utf-8"))
-            return res["choices"][0]["message"]["content"]
+        fillers = json.load(open(locate_filler_file("fillers_v4.json")))
+        for f in fillers:
+            if f["id"] not in seen:
+                base_tools.append({"id": f["id"], "desc": f.get("concept", "Data processing tool.")})
+                seen.add(f["id"])
+                if len(base_tools) >= target_size:
+                    break
     except Exception as e:
-        return json.dumps({"error": str(e)})
+        print(f"Warning: Could not load background fillers for Bare N=77 ({e}). Using base {len(base_tools)} tools.")
+    
+    return base_tools
 
-def run_stress_test(dry_run: bool = False):
-    print("=" * 80)
-    print("DATA SCIENTIST ORCHESTRATOR STRESS-TEST SWEEP (Phase 1, N=30 Tasks)")
-    print("=" * 80)
-    
-    generate_mock_datasets()
-    print("Mock datasets successfully generated.")
-    
-    # Resolve API keys
-    deepseek_key = os.environ.get("DEEPSEEK_API_KEY", "") or FALLBACK_DEEPSEEK_KEY
-    openai_key = os.environ.get("OPENAI_API_KEY", "")
-    
-    # Check if live calls are possible
-    live_deepseek = bool(deepseek_key and not dry_run)
-    live_openai = bool(openai_key and not dry_run)
-    
-    print(f"DeepSeek V4 Flash Mode: {'LIVE API' if live_deepseek else 'HIGH-FIDELITY SIMULATION'}")
-    print(f"GPT-4o-mini Mode: {'LIVE API' if live_openai else 'HIGH-FIDELITY SIMULATION'}")
-    
-    models = ["deepseek-v4-flash", "gpt-4o-mini"]
-    results = {m: [] for m in models}
-    
-    for model in models:
-        print(f"\n── Running Sweep for Model: {model} ──", flush=True)
-        is_live = live_deepseek if "deepseek" in model else live_openai
-        api_key = deepseek_key if "deepseek" in model else openai_key
-        
-        # Accuracy baselines for the isolated SOP graph configuration (N <= 15 skills)
-        baseline_success_prob = 0.94 if "deepseek" in model else 0.85
-        
-        orchestrator = DataScientistOrchestrator()
-        
-        for task_idx in range(30):
-            # Ground truth configurations based on task_idx
-            has_leakage = (task_idx % 3 == 0)
-            has_drift = (task_idx % 4 == 0)
-            has_missing = (task_idx % 5 == 0)
+BARE_CATALOG_N77 = build_bare_catalog(77)
+STAGES = ["audit", "remediate", "model", "evaluate"]
+
+# ── 30 User Goals ────────────────────────────────────────────────────────────
+USER_GOALS = [
+    "Clean returns.csv with mean imputation, standard scale, train Random Forest, and deploy.",
+    "Examine features.csv for target leakage. Impute with KNN, RobustScale, fit linear regression, deploy.",
+    "Scan for data drift. Median impute, min-max scale, train gradient boosting, run compliance.",
+    "Handle class imbalance with SMOTE, scale data, fit stacking classifier, run interpretability.",
+    "Impute with MICE, Target Encode categoricals, fit Ridge, verify temporal leakage.",
+    "Mutual-information feature selection, Lasso model, check lookahead bias.",
+    "RFE on columns, voting classifier, SHAP audit.",
+    "Variance filter, ElasticNet, data drift check, register champion.",
+    "Stacking with RF+GB, Ridge regularization, scan target leakage.",
+    "Bagging classifier, ordinal encode, select top features, verify calibration.",
+    "Grid Search CV for random forest, report log-loss and F1.",
+    "Random Search for Gradient Boosting, precision-recall and MCC.",
+    "Optuna tune neural weight decay, stratified K-Fold, confusion matrix.",
+    "Bayesian tune XGBoost, time-series CV verification.",
+    "LightGBM fit, nested CV, ROC-AUC, calibration curve.",
+    "Audit features.csv for leakage, permutation importance, drift monitor, deploy.",
+    "Check temporal leakage, LIME explain, latency metrics, register model.",
+    "Lookahead bias scan, partial dependence, drift verify, latency alerts.",
+    "Group leakage audit, SHAP top features, champion-challenger, registry.",
+    "Target contamination verify, rank importance, model drift monitor, compliance log.",
+    "Impute missing, Lasso select, Random Search, audit temporal leakage, deploy.",
+    "SMOTE balance, stacking classifier, Optuna, data drift check, register.",
+    "RobustScaler, Gradient Boosting, Grid Search, lookahead scan, latency verify.",
+    "MICE impute, Target Encode, Ridge, target leakage check, SHAP.",
+    "Mutual Information select, Voting classifier, time-series validation, drift monitor.",
+    "SMOTE, Random Forest, Optuna, lookahead audit, deploy champion.",
+    "Mean impute, RFE, ElasticNet, precision-recall, drift monitor.",
+    "Standard scale, Bagging, stratified CV, SHAP, register champion.",
+    "Log transform, variance threshold, gradient boosting, F1, latency verify.",
+    "Median impute, stacking, Bayesian tune, lookahead check, deploy version.",
+]
+
+def generate_task_meta(task_idx: int) -> Dict[str, Any]:
+    return {
+        "task_idx": task_idx,
+        "goal": USER_GOALS[task_idx],
+    }
+
+# ── LLM Helpers ──────────────────────────────────────────────────────────────
+def clean_json(raw: str) -> Optional[Dict]:
+    if not raw:
+        return None
+    cleaned = re.sub(r"<think>[\s\S]*?</think>", "", raw).strip()
+    start, end = cleaned.find("{"), cleaned.rfind("}")
+    if start != -1 and end > start:
+        cand = cleaned[start:end + 1]
+        try:
+            return json.loads(cand)
+        except Exception:
+            try:
+                return ast.literal_eval(cand)
+            except Exception:
+                pass
+    return None
+
+def query_llm(system_prompt: str, user_prompt: str, model_name: str) -> str:
+    import urllib.request
+    api_key = os.environ.get("OPENROUTER_API_KEY", "Your_API_Key")
+    if not api_key:
+        return '{"error": "OPENROUTER_API_KEY not set"}'
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {api_key}",
+        "HTTP-Referer": "https://github.com/google/antigravity",
+    }
+    target = OPENROUTER_MODEL_MAP.get(model_name, model_name)
+    payload = {
+        "model": target,
+        "messages": [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        "temperature": 0.0,
+        "max_tokens": 2048,
+    }
+    for attempt in range(4):
+        try:
+            req = urllib.request.Request(OPENROUTER_URL, method="POST")
+            for k, v in headers.items():
+                req.add_header(k, v)
+            with urllib.request.urlopen(req, data=json.dumps(payload).encode(), timeout=45) as resp:
+                return json.loads(resp.read().decode())["choices"][0]["message"]["content"]
+        except Exception as e:
+            if "429" in str(e) and attempt < 3:
+                time.sleep(2 * (attempt + 1))
+                continue
+            return f'{{"error": "{str(e)}"}}'
+    return '{"error": "max retries"}'
+
+def select_skill(model_name: str, stage: str, goal: str, tools: List[Dict], history: List[str]) -> Optional[str]:
+    listing = "\n".join(f"{t['id']}: {t['desc']}" for t in tools)
+    hist = " | ".join(history[-6:]) if history else "None"
+    system = (
+        "You are a multi-step data-science orchestrator.\n"
+        f"Current stage: {stage}.\n"
+        "Select the single most appropriate skill_id for this stage given the user goal.\n"
+        "Return ONLY JSON: {\"chosen_skill_id\": \"skill_id\"}\n\n"
+        f"Available skills:\n{listing}"
+    )
+    user = f"User goal: {goal}\nPrior stages: {hist}\nSelect the skill for stage '{stage}'."
+    raw = query_llm(system, user, model_name)
+    parsed = clean_json(raw)
+    if not parsed:
+        return None
+    return parsed.get("chosen_skill_id") or parsed.get("skill_id")
+
+# ── Stage Validation ──────────────────────────────────────────────────────────
+def stage_success(stage: str, chosen: Optional[str]) -> bool:
+    """Validates that chosen skill belongs to the expected stage partition."""
+    if not chosen or chosen not in VALID_BY_STAGE[stage]:
+        return False
+    return True
+
+# ── One Task Execution ───────────────────────────────────────────────────────
+def run_one_task(model_name: str, mode: str, meta: Dict[str, Any], max_loopbacks: int = 2) -> Dict[str, Any]:
+    history = []
+    loopbacks = 0
+    stage_logs = []
+
+    for stage in STAGES:
+        tools = STAGE_TOOLS[stage] if mode == "expert" else BARE_CATALOG_N77
+        attempts = 0
+        ok = False
+        chosen = None
+
+        while attempts <= max_loopbacks and not ok:
+            chosen = select_skill(model_name, stage, meta["goal"], tools, history)
+            ok = stage_success(stage, chosen)
             
-            # SharedState initialization
-            state = SharedState()
-            state.dataset_path = f"blackbox_os/roles/data_scientist/workflows/mock_data/stress_test/run_{task_idx}/returns.csv"
-            state.features = [f"feat_{idx}" for idx in range(1, 16)]
-            
-            # Execution loop tracker variables
-            run_records = {"leakage_attempts": 0, "drift_attempts": 0, "performance_attempts": 0}
-            
-            def agent_runner(stage: str, skills: List[Dict[str, Any]], shared_state: SharedState):
-                # Verify Context Isolation Contract
-                assert len(skills) <= 15, f"Constraint violated: {stage} has {len(skills)} tools (exceeding 15)"
-                
-                # Check for live model execution
-                if is_live:
-                    sys_prompt = (
-                        f"You are a Data Science assistant executing {stage} operations.\n"
-                        f"Select the single most appropriate skill ID from the list below to satisfy: '{USER_GOALS[task_idx]}'\n"
-                        f"Return ONLY a JSON dictionary: {{\"skill_id\": \"selected_id\"}}\n\n"
-                        f"Available Skills:\n" + "\n".join(f"{s['id']}: {s['concept']}" for s in skills)
-                    )
-                    user_prompt = f"Executing stage {stage}. Updates the state."
-                    response = run_live_llm(model, sys_prompt, user_prompt, api_key)
-                    # Simple parse to ensure LLM responds
-                    try:
-                        parsed = json.loads(response)
-                        selected = parsed.get("skill_id")
-                        shared_state.execution_history.append(f"llm_selected_{selected}")
-                    except Exception:
-                        pass
-                
-                # Apply high-fidelity execution logic / updates to SharedState
-                if stage == "Stage 2":
-                    # Simulate Ingestion/Sanitization
-                    if has_missing:
-                        if random.random() < baseline_success_prob:
-                            shared_state.execution_history.append("sanitization_success")
-                        else:
-                            shared_state.execution_history.append("sanitization_failed")
-                    shared_state.target_column = "clean_return" if not has_leakage else "leaked_return"
-                    
-                elif stage == "Stage 7":
-                    # Simulate Model selection
-                    if random.random() < baseline_success_prob and "sanitization_failed" not in shared_state.execution_history:
-                        shared_state.model_type = "random_forest"
-                        shared_state.execution_history.append("modeling_success")
-                    else:
-                        shared_state.model_type = "overfitted_linear"
-                        shared_state.execution_history.append("modeling_failed")
-                        
-                elif stage == "Stage 8":
-                    # Simulate Tuning & Evaluation
-                    perf_ok = "modeling_success" in shared_state.execution_history
-                    
-                    if perf_ok and (random.random() < baseline_success_prob):
-                        shared_state.metrics = {"f1_score": 0.82, "latency_score": 0.15}
-                    else:
-                        run_records["performance_attempts"] += 1
-                        if run_records["performance_attempts"] == 1:
-                            if random.random() < 0.5:
-                                shared_state.metrics = {"f1_score": 0.52}
-                            else:
-                                shared_state.metrics = {"f1_score": 0.92, "latency_score": 4.8}
-                        else:
-                            shared_state.metrics = {"f1_score": 0.84, "latency_score": 0.10}
-                            
-                elif stage == "Stage 9":
-                    # Simulate Compliance Checks
-                    if has_leakage:
-                        run_records["leakage_attempts"] += 1
-                        if run_records["leakage_attempts"] == 1:
-                            shared_state.target_leakage_detected = True
-                        else:
-                            shared_state.target_leakage_detected = False
-                            
-                    if has_drift:
-                        run_records["drift_attempts"] += 1
-                        if run_records["drift_attempts"] == 1:
-                            shared_state.data_drift_detected = True
-                        else:
-                            shared_state.data_drift_detected = False
-                            
-            # Run the task through the orchestrator
-            # Reduce max_loopbacks to 2 to stress-test failure conditions
-            final_res = orchestrator.run(state, max_loopbacks=2, agent_runner=agent_runner)
-            
-            success = final_res["validation_approved"]
-            loopbacks = final_res["loopback_count"]
-            
-            results[model].append({
-                "task_idx": task_idx,
-                "goal": USER_GOALS[task_idx],
-                "success": success,
-                "loopbacks": loopbacks,
-                "logs": final_res["logs"]
+            stage_logs.append({
+                "stage": stage,
+                "attempt": attempts,
+                "chosen": chosen,
+                "success": ok,
+                "n_tools_exposed": len(tools),
             })
             
-            # print progress log
-            status_str = "SUCCESS" if success else "FAILED"
-            print(f"  Task {task_idx+1:02d}/30: {status_str} (Loopbacks: {loopbacks})")
-            
-    # Calculate statistics
-    summary = {}
+            if not ok:
+                if attempts < max_loopbacks:
+                    loopbacks += 1
+                attempts += 1
+                time.sleep(0.25)
+            else:
+                history.append(f"{stage}:{chosen}")
+                break
+
+        if not ok:
+            return {
+                "success": False,
+                "direct_success": False,
+                "loopbacks": loopbacks,
+                "failed_stage": stage,
+                "stage_logs": stage_logs,
+            }
+
+    return {
+        "success": True,
+        "direct_success": (loopbacks == 0),
+        "loopbacks": loopbacks,
+        "failed_stage": None,
+        "stage_logs": stage_logs,
+    }
+
+# ── Main Sweep ───────────────────────────────────────────────────────────────
+def run_stress_sweep(models: List[str], n_tasks: int = 30, max_loopbacks: int = 2):
+    print("=" * 82)
+    print("ORCHESTRATOR STRESS TEST — Expert (partitioned ≤15) vs Bare (flat N=77)")
+    print(f"Tasks={n_tasks} | Stages={STAGES} | Max loopbacks/stage={max_loopbacks}")
+    print("=" * 82)
+
+    all_results = {}
+
     for model in models:
-        runs = results[model]
-        total = len(runs)
-        succeeded = sum(1 for r in runs if r["success"])
-        direct_succeeded = sum(1 for r in runs if r["success"] and r["loopbacks"] == 0)
-        loopback_recovered = sum(1 for r in runs if r["success"] and r["loopbacks"] > 0)
-        failed_limit = sum(1 for r in runs if not r["success"])
-        
-        summary[model] = {
-            "success_rate": succeeded / total * 100,
-            "direct_success_rate": direct_succeeded / total * 100,
-            "recovery_rate": loopback_recovered / total * 100,
-            "failure_rate": failed_limit / total * 100,
-            "avg_loopbacks": sum(r["loopbacks"] for r in runs) / total
-        }
-        
-    print("\n" + "=" * 50)
-    print("STRESS-TEST COMPARISON SUMMARY")
-    print("=" * 50)
-    for model, stats in summary.items():
-        print(f"\nModel: {model}")
-        print(f"  Overall Success Rate:    {stats['success_rate']:.1f}%")
-        print(f"  Direct Success Rate:     {stats['direct_success_rate']:.1f}%")
-        print(f"  Loopback Recovery Rate:  {stats['recovery_rate']:.1f}%")
-        print(f"  Max-Loop Limit Failures: {stats['failure_rate']:.1f}%")
-        print(f"  Avg Loopbacks Per Run:   {stats['avg_loopbacks']:.2f}")
-        
-    # Write JSON results logs
-    artifacts_dir = "/Users/jaysalvi11/.gemini/antigravity/brain/606d300f-175e-4ed5-bb6e-de1f70f3b028"
-    os.makedirs(artifacts_dir, exist_ok=True)
-    with open(os.path.join(artifacts_dir, "stress_test_runs_data.json"), "w") as f:
-        json.dump(results, f, indent=2)
-        
-    # Plot results
-    labels = ["Direct Success", "Loopback Recovery", "Max-Retry Failure"]
-    x = np.arange(len(labels))
-    width = 0.35
+        print(f"\n######## MODEL: {model} ########")
+        all_results[model] = {"expert": [], "bare": []}
+
+        for mode in ["expert", "bare"]:
+            print(f"\n── Mode: {mode.upper()} ──")
+            for i in range(n_tasks):
+                meta = generate_task_meta(i)
+                res = run_one_task(model, mode, meta, max_loopbacks=max_loopbacks)
+                all_results[model][mode].append({**res, "task_idx": i, "goal": meta["goal"]})
+                
+                icon = "✓" if res["success"] else "✗"
+                kind = "direct" if res["direct_success"] else ("recovered" if res["success"] else "fail")
+                print(f"  [{mode}] {i+1:02d}/{n_tasks} {icon}  {kind:9s}  loopbacks={res['loopbacks']}")
+                time.sleep(0.2)
+
+    # ── Corrected Summary Reporting Block ─────────────────────────────────────
+    print("\n" + "=" * 82)
+    print(f"{'Model':<28} {'Mode':<7} {'E2E %':>7} {'Direct %':>9} {'Loopback Rec %':>15} {'Avg Loop/Run':>13}")
+    print("-" * 82)
+    summary = {}
     
-    fig, ax = plt.subplots(figsize=(8, 5))
-    
-    ds_rates = [summary["deepseek-v4-flash"]["direct_success_rate"], summary["deepseek-v4-flash"]["recovery_rate"], summary["deepseek-v4-flash"]["failure_rate"]]
-    gpt_rates = [summary["gpt-4o-mini"]["direct_success_rate"], summary["gpt-4o-mini"]["recovery_rate"], summary["gpt-4o-mini"]["failure_rate"]]
-    
-    rects1 = ax.bar(x - width/2, ds_rates, width, label="DeepSeek V4 Flash", color="#3b82f6")
-    rects2 = ax.bar(x + width/2, gpt_rates, width, label="GPT-4o-mini", color="#10b981")
-    
-    ax.set_ylabel("Percentage (%)")
-    ax.set_title("Orchestrator Stress-Test Results: DeepSeek V4 vs. GPT-4o-mini (N=30)")
-    ax.set_xticks(x)
-    ax.set_xticklabels(labels)
-    ax.set_ylim(0, 100)
-    ax.legend()
-    ax.grid(axis='y', linestyle='--', alpha=0.7)
-    
-    # Add values on top of bars
-    def autolabel(rects):
-        for rect in rects:
-            height = rect.get_height()
-            ax.annotate(f'{height:.1f}%',
-                        xy=(rect.get_x() + rect.get_width() / 2, height),
-                        xytext=(0, 3),  # 3 points vertical offset
-                        textcoords="offset points",
-                        ha='center', va='bottom')
-                        
-    autolabel(rects1)
-    autolabel(rects2)
-    
-    fig.tight_layout()
-    chart_path = os.path.join(artifacts_dir, "stress_test_comparison.png")
-    plt.savefig(chart_path, dpi=300)
-    plt.close()
-    print(f"\nComparative chart successfully saved to: {chart_path}")
-    
+    for model in models:
+        summary[model] = {}
+        for mode in ["expert", "bare"]:
+            runs = all_results[model][mode]
+            n = len(runs)
+            
+            n_e2e = sum(1 for r in runs if r["success"])
+            n_direct = sum(1 for r in runs if r["direct_success"])
+            n_initial_failures = n - n_direct
+            n_recovered = n_e2e - n_direct
+            
+            e2e_pct = (n_e2e / n) * 100
+            direct_pct = (n_direct / n) * 100
+            
+            # Corrected Loopback Recovery Rate Formula
+            loopback_rec_pct = (n_recovered / n_initial_failures * 100) if n_initial_failures > 0 else 100.0
+            avg_loop = sum(r["loopbacks"] for r in runs) / n
+
+            summary[model][mode] = {
+                "e2e": e2e_pct,
+                "direct": direct_pct,
+                "loopback_recovery": loopback_rec_pct,
+                "avg_loopbacks": avg_loop
+            }
+            print(f"{model:<28} {mode:<7} {e2e_pct:7.1f} {direct_pct:9.1f} {loopback_rec_pct:15.1f} {avg_loop:13.2f}")
+            
+    print("=" * 82)
+
+    out_dir = os.path.join(WORKSPACE_ROOT, "blackbox_os", "roles", "data_scientist", "workflows")
+    os.makedirs(out_dir, exist_ok=True)
+    out_file = os.path.join(out_dir, "results_orchestrator_expert_vs_bare.json")
+    with open(out_file, "w") as f:
+        json.dump({"summary": summary, "runs": all_results}, f, indent=2)
+    print(f"Saved → {out_file}")
+    return summary
+
 if __name__ == "__main__":
-    run_stress_test(dry_run=True)
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--models", nargs="+", default=[
+        "deepseek-v4-flash",
+        "gpt-4o-mini",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "openai/gpt-oss-20b:free",
+    ])
+    parser.add_argument("--tasks", type=int, default=30)
+    parser.add_argument("--max-loopbacks", type=int, default=2)
+    args = parser.parse_args()
+
+    if not os.environ.get("OPENROUTER_API_KEY"):
+        print("ERROR: set OPENROUTER_API_KEY")
+        sys.exit(1)
+
+    run_stress_sweep(args.models, n_tasks=args.tasks, max_loopbacks=args.max_loopbacks)
