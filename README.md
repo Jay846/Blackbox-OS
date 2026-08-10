@@ -35,7 +35,7 @@ Even when correctly routed, LLMs fail to execute tools reliably under context pr
 
 <p align="center">
   <img src="images/noise_gradient_fracture.png" width="48%" alt="Noise Gradient Fracture & Guardrail Recovery" />
-  <img src="images/query_variation_heatmap.png" width="48%" alt="Query Variation Heatmap" />
+  <img src="images/Query_Variation_Heatmap.png" width="48%" alt="Query Variation Heatmap" />
 </p>
 
 ---
