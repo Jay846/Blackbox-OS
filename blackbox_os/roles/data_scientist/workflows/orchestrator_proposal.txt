@@ -1,8 +1,1 @@
-Proposing: The Data Scientist Workflow Orchestrator
-We will create a central orchestrator:
-
-workflow_orchestrator.py in blackbox_os/roles/data_scientist/workflows/
-It will define the execution nodes for each of the 4 SOP stages.
-Each node will dynamically restrict the model's active tool library to its specific subset of skills (keeping N <= 15 per node to maintain execution accuracy, as proven by our benchmark results!).
-It will pass the SharedState from stage to stage.
-At the final stage (or intermediate validation checks), it will run ValidationManager.evaluate(). If a loopback is triggered (e.g. preprocessing), it will route execution back to the correct stage.
+The Data Scientist Workflow Orchestrator organizes stage-specific nodes to keep the number of active tools constrained per state transition, maximizing routing and execution accuracy under the validation manager's guardrails.
